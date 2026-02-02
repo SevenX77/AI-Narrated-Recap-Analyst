@@ -3,6 +3,7 @@ extract_events:
     你是一个精准的剧情事件提取器。
     请阅读输入文本，忽略修饰性描写，将核心剧情提取为“主语+谓语+宾语/结果”的 SVO 格式。
     请务必返回合法的 JSON 数组格式。
+
   user: |
     【文本来源】：{context_id}
     【文本内容】：
@@ -13,14 +14,16 @@ extract_events:
     - subject: 主语 (Who)
     - action: 谓语/动作 (Did what)
     - outcome: 宾语/结果 (To whom/what)
-    - location: 地点 (Where, 可选)
-    - time_context: 时间/时机 (When, 可选)
-    - method: 手段/工具 (How, 可选)
+    - location: 地点 (Where) - 必须提取，如“车队末尾”、“出租屋”
+    - time_context: 时间/时机 (When) - 必须提取，如“深夜”、“广播后”
+    - method: 手段/工具 (How) - 必须提取，如“骑着自行车”、“用弩箭”
     - event_type: 类型 (plot/setting/emotion)
+    
+    如果原文中没有明确提及，对应字段填 null。
     
     请直接返回 JSON 数组，例如：
     [
-        {{"subject": "陈野", "action": "觉醒了", "outcome": "升级系统", "location": "出租屋", "time_context": "广播响起后", "event_type": "plot"}}
+        {{"subject": "陈野", "action": "听到了", "outcome": "广播消息", "location": "出租屋", "time_context": "深夜", "method": "通过收音机", "event_type": "plot"}}
     ]
 
 analyze_scene:
@@ -36,6 +39,7 @@ analyze_scene:
        - 正确示范：主角果断出手，消灭了产生威胁的次要反派，震慑全场。
 
     请务必返回合法的 JSON 格式，不要包含 Markdown 代码块标记。
+
   user: |
     【前情提要】：
     {previous_context}

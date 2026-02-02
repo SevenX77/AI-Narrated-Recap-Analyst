@@ -2,64 +2,84 @@ import os
 import argparse
 import json
 import shutil
+import asyncio
 from src.agents.deepseek_analyst import DeepSeekAnalyst, get_llm_client
 from src.agents.deepseek_writer import DeepSeekWriter
 from src.workflows.training_workflow import TrainingWorkflow
+from src.utils.logger import op_logger, logger
+from src.core.project_manager import project_manager
+from src.core.artifact_manager import artifact_manager
 
-def setup_novel_workspace(novel_name):
-    base_dir = f"output/novels/{novel_name}"
-    os.makedirs(f"{base_dir}/raw", exist_ok=True)
-    os.makedirs(f"{base_dir}/analysis", exist_ok=True)
-    os.makedirs(f"{base_dir}/scripts", exist_ok=True)
-    os.makedirs(f"{base_dir}/evaluation", exist_ok=True)
-    return base_dir
+def run_production_pipeline(project_id):
+    logger.info(f"🚀 启动生产流程: {project_id}")
+    
+    # 1. Initialize Project (Ensure paths exist)
+    if not project_manager.initialize_project(project_id):
+        logger.error(f"Failed to initialize project {project_id}")
+        return
 
-def run_production_pipeline(novel_path, novel_name):
-    print(f"🚀 启动生产流程: {novel_name}")
-    workspace = setup_novel_workspace(novel_name)
+    paths = project_manager.get_project_paths(project_id)
     
-    # Copy novel to workspace
-    dest_path = f"{workspace}/raw/novel.txt"
-    shutil.copy(novel_path, dest_path)
-    
-    client = get_llm_client()
-    analyst = DeepSeekAnalyst(client)
-    writer = DeepSeekWriter(client)
-    
-    print("1. 读取小说内容...")
-    with open(dest_path, 'r', encoding='utf-8') as f:
+    # 2. Load Novel Content
+    novel_path = os.path.join(paths['raw'], "novel.txt")
+    if not os.path.exists(novel_path):
+        logger.error(f"Novel file not found at {novel_path}")
+        return
+
+    logger.info("1. 读取小说内容...")
+    with open(novel_path, 'r', encoding='utf-8') as f:
         content = f.read()
         
     # In production, we might process chunk by chunk. 
     # For now, let's take the first 15k chars as a demo "Episode 1"
     chunk = content[:15000]
     
-    print("2. 执行深度分析 (Analyst)...")
+    client = get_llm_client()
+    analyst = DeepSeekAnalyst(client)
+    writer = DeepSeekWriter(client)
+    
+    logger.info("2. 执行深度分析 (Analyst)...")
     analysis = analyst.analyze(chunk, previous_context="小说开篇")
     
-    # Save analysis
-    analysis_path = f"{workspace}/analysis/ep01_analysis.json"
-    with open(analysis_path, 'w', encoding='utf-8') as f:
-        json.dump(analysis.model_dump(), f, ensure_ascii=False, indent=2)
-    print(f"   - 分析结果已保存: {analysis_path}")
+    # Save analysis using ArtifactManager
+    analysis_path = artifact_manager.save_artifact(
+        analysis.model_dump(), 
+        "ep01_analysis", 
+        project_id, 
+        paths['analysis']
+    )
+    logger.info(f"   - 分析结果已保存: {analysis_path}")
     
-    print("3. 生成解说文案 (Writer)...")
+    logger.info("3. 生成解说文案 (Writer)...")
     script = writer.generate_script(analysis, style="first_person")
     
-    # Save script
-    script_path = f"{workspace}/scripts/ep01_script.json"
-    with open(script_path, 'w', encoding='utf-8') as f:
-        json.dump(script.model_dump(), f, ensure_ascii=False, indent=2)
-    print(f"   - 解说稿已保存: {script_path}")
+    # Save script using ArtifactManager (to production/scripts)
+    scripts_dir = os.path.join(paths['root'], "production", "scripts")
+    os.makedirs(scripts_dir, exist_ok=True)
     
-    print("\n✅ 生产流程完成！")
+    script_path = artifact_manager.save_artifact(
+        script.model_dump(),
+        "ep01_script",
+        project_id,
+        scripts_dir
+    )
+    logger.info(f"   - 解说稿已保存: {script_path}")
+    
+    # Log operation
+    op_logger.log_operation(
+        project_id=project_id,
+        action="Generate Script (Production)",
+        output_files=[analysis_path, script_path],
+        details=f"Generated EP01 script"
+    )
 
-def run_training_pipeline(novel_path, srt_folder, novel_name):
-    print(f"🧪 启动训练/验证流程: {novel_name}")
-    workspace = setup_novel_workspace(novel_name)
+    logger.info("\n✅ 生产流程完成！")
+
+def run_training_pipeline(project_id):
+    logger.info(f"🧪 启动训练/验证流程: {project_id}")
     
-    workflow = TrainingWorkflow(novel_path, srt_folder, workspace)
-    workflow.run()
+    workflow = TrainingWorkflow(project_id)
+    asyncio.run(workflow.run())
 
 def main():
     parser = argparse.ArgumentParser(description="AI Narrated Recap Analyst CLI")
@@ -67,21 +87,27 @@ def main():
     
     # Production Command
     prod_parser = subparsers.add_parser("generate", help="Generate recap script from novel")
-    prod_parser.add_argument("--novel", required=True, help="Path to novel text file")
-    prod_parser.add_argument("--name", required=True, help="Project name (e.g. 'my_novel')")
+    prod_parser.add_argument("--id", required=True, help="Project ID (e.g. PROJ_001)")
     
     # Training Command
     train_parser = subparsers.add_parser("train", help="Run alignment training/verification")
-    train_parser.add_argument("--novel", required=True, help="Path to novel text file")
-    train_parser.add_argument("--srt", required=True, help="Path to folder containing SRT files")
-    train_parser.add_argument("--name", required=True, help="Project name")
+    train_parser.add_argument("--id", required=True, help="Project ID (e.g. PROJ_001)")
+    
+    # List Projects Command
+    list_parser = subparsers.add_parser("list", help="List available projects")
 
     args = parser.parse_args()
     
     if args.command == "generate":
-        run_production_pipeline(args.novel, args.name)
+        run_production_pipeline(args.id)
     elif args.command == "train":
-        run_training_pipeline(args.novel, args.srt, args.name)
+        run_training_pipeline(args.id)
+    elif args.command == "list":
+        projects = project_manager.list_projects()
+        print(f"{'ID':<10} {'Name':<30} {'Status':<15}")
+        print("-" * 60)
+        for p in projects:
+            print(f"{p['id']:<10} {p['name']:<30} {p.get('status', 'unknown'):<15}")
     else:
         parser.print_help()
 

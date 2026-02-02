@@ -15,7 +15,7 @@ class AppConfig:
     
     # Paths
     base_dir: str = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    output_dir: str = os.getenv("OUTPUT_DIR", os.path.join(base_dir, "output"))
+    logs_dir: str = os.getenv("LOGS_DIR", os.path.join(base_dir, "logs"))
     data_dir: str = os.getenv("DATA_DIR", os.path.join(base_dir, "data"))
     analysis_source_dir: str = os.getenv("ANALYSIS_SOURCE_DIR", os.path.join(base_dir, "分析资料"))
 

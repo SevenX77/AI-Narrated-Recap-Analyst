@@ -12,11 +12,12 @@ from .writer import WriterAgent
 logger = logging.getLogger(__name__)
 
 class DeepSeekWriter(WriterAgent):
-    def __init__(self):
-        client = OpenAI(
-            api_key=config.llm.api_key,
-            base_url=config.llm.base_url
-        )
+    def __init__(self, client=None):
+        if not client:
+            client = OpenAI(
+                api_key=config.llm.api_key,
+                base_url=config.llm.base_url
+            )
         super().__init__(client=client, model_name=config.llm.model_name)
         self.prompts = load_prompts("writer")
 

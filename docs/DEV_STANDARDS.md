@@ -36,12 +36,18 @@ src/
 ├── tools/          # 独立工具库 (Stateless, Reusable)
 ├── agents/         # 智能体实现 (Stateful, LLM-driven)
 ├── workflows/      # 业务流程编排 (Orchestration)
+├── modules/        # 业务逻辑模块 (Alignment, etc.)
 ├── utils/          # 通用辅助函数 (Logging, Config)
 ├── prompts/        # Prompt 模板 (YAML/JSON)
 └── main.py         # 入口文件
 docs/
 ├── architecture/   # 架构设计与逻辑文档 (必须与代码同步)
 └── api/            # 自动生成的 API 文档 (可选)
+root/
+├── data/           # 项目数据存储 (Projects, Raw Data, Artifacts)
+├── output/         # 系统输出 (Logs, Operation History)
+├── logs/           # 运行日志 (Deprecated, moved to output/)
+└── scripts/        # 运维脚本 (Validation, Migration)
 ```
 
 ## 3. 模块定义规范 (Module Specifications)
@@ -61,6 +67,27 @@ docs/
 - 继承自 `src.core.interfaces.BaseWorkflow`。
 - 定义明确的 `steps` (步骤)。
 - 负责错误处理和全局状态管理。
+
+### 3.4 Modules (业务模块)
+- 存放于 `src/modules/`。
+- 负责特定的业务逻辑或算法实现（如 Alignment, Ingestion）。
+- 可以包含复杂的逻辑，但不应像 Agent 那样具有自主决策性。
+- 应尽量保持无状态或仅依赖输入数据。
+- 必须定义清晰的输入输出 Schema。
+
+### 3.5 Core (核心层)
+- 存放于 `src/core/`。
+- 仅包含：
+    - **Interfaces**: 抽象基类 (Base Classes)。
+    - **Config**: 配置定义与加载。
+    - **Schemas**: Pydantic 数据模型。
+- **禁止** 包含具体的业务逻辑实现。
+
+### 3.6 Utils (工具库)
+- 存放于 `src/utils/`。
+- 必须是纯函数 (Pure Functions) 或通用 Helper 类。
+- **禁止** 包含业务状态或特定业务逻辑。
+- **禁止** 循环依赖 Core 或 Modules。
 
 ## 4. 工作流与逻辑同步 (Workflow & Logic Sync)
 

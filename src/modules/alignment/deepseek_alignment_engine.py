@@ -1,9 +1,14 @@
 import json
 from typing import List, Dict, Tuple
 from src.core.schemas import AlignmentItem
+from src.utils.logger import logger
+from src.utils.prompt_loader import load_prompts
 from .alignment_engine import AlignmentEngine
 
 class DeepSeekAlignmentEngine(AlignmentEngine):
+    def __init__(self, client=None, model_name: str = "deepseek-chat"):
+        super().__init__(client, model_name)
+        self.prompts = load_prompts("alignment")
     
     def _format_events(self, events_data: List[Dict]) -> str:
         """Helper to format event lists into readable text"""
@@ -52,35 +57,11 @@ class DeepSeekAlignmentEngine(AlignmentEngine):
         Phase 1: 分析解说结构，寻找钩子与正文的分界点
         核心逻辑：寻找解说中与小说第一章线性叙事接轨的时间点
         """
-        system_prompt = """
-        你是一个专业的剧情结构分析师。
-        任务：分析解说文案的结构，找出“钩子(Hook)”与“正文(Body)”的分界点。
-        
-        【判断依据】
-        1. 钩子(Hook)：通常是倒叙（来自未来的高潮片段）、世界观概括、或者悬念前置。它与小说第一章的开头往往在时间线上不连续。
-        2. 正文(Body)：开始按照小说第一章的顺序进行线性叙事。
-        
-        【输入】
-        - 解说开头片段
-        - 小说第一章片段
-        
-        【输出】
-        JSON格式：
-        {
-            "has_hook": true/false,
-            "body_start_time": "00:45", // 正文开始的时间点
-            "hook_summary": "...", // 钩子内容的概括
-            "reason": "..." // 判断理由
-        }
-        """
-        
-        user_prompt = f"""
-        【小说第一章 (Novel Start)】
-        {novel_start_context}
-        
-        【解说文案开头 (Script Start)】
-        {script_context}
-        """
+        system_prompt = self.prompts["detect_hook"]["system"]
+        user_prompt = self.prompts["detect_hook"]["user"].format(
+            novel_start_context=novel_start_context,
+            script_context=script_context
+        )
         
         try:
             response = self.client.chat.completions.create(
@@ -94,7 +75,7 @@ class DeepSeekAlignmentEngine(AlignmentEngine):
             )
             return json.loads(response.choices[0].message.content)
         except Exception as e:
-            print(f"Error detecting hook: {e}")
+            logger.error(f"Error detecting hook: {e}")
             return {"has_hook": False, "body_start_time": "00:00"}
 
     def align_script_with_novel(self, novel_events_data: List[Dict], script_events_data: List[Dict]) -> List[AlignmentItem]:
@@ -113,49 +94,21 @@ class DeepSeekAlignmentEngine(AlignmentEngine):
         
         hook_info = self._detect_hook_boundary(script_start_preview, novel_start_preview)
         
-        print(f"Hook Detection Result: {hook_info}")
+        logger.info(f"Hook Detection Result: {hook_info}")
         
         # 3. Phase 2: Alignment
         # 将 Hook 信息注入到 System Prompt 中，指导模型进行分段匹配
         
-        system_prompt = f"""
-        你是一个专业的剧情逻辑分析师。
-        你的任务是对比“解说文案事件流”和“小说原文事件流”，找出解说文案对应的原小说章节。
-        
-        【结构提示】
-        根据分析，该解说文案的结构如下：
-        - 是否有钩子(Hook): {hook_info.get('has_hook')}
-        - 正文开始时间: {hook_info.get('body_start_time', '00:00')}
-        - 钩子内容概括: {hook_info.get('hook_summary', '无')}
-        
-        【匹配策略】
-        1. 对于“钩子”部分（正文开始时间之前）：
-           - 尝试匹配小说中的“高潮/倒叙”片段，或者标记为“设定/预告”。
-           - 如果在第一章找不到对应，不要强行匹配，可以标记为 matched_novel_chapter="Hook/Flashback"。
-           
-        2. 对于“正文”部分（正文开始时间之后）：
-           - 严格按照小说章节顺序进行线性匹配。
-           - 利用新增的 [时间] [地点] [手段] 信息来区分相似事件。
-           
-        请直接返回 JSON 数组。
-        """
+        system_prompt = self.prompts["align_events"]["system"].format(
+            has_hook=hook_info.get('has_hook'),
+            body_start_time=hook_info.get('body_start_time', '00:00'),
+            hook_summary=hook_info.get('hook_summary', '无')
+        )
 
-        user_prompt = f"""
-        【小说事件流 (Novel Events)】
-        {novel_context}
-        
-        【解说事件流 (Script Events)】
-        {script_context}
-        
-        【输出要求】
-        请以 JSON 格式输出匹配结果列表。字段如下：
-        - script_time: 解说时间点
-        - script_event: 解说事件概括
-        - matched_novel_chapter: 匹配的小说章节 (若无匹配填 "None", 若是钩子填 "Hook/Flashback")
-        - matched_novel_event: 匹配的小说事件概括
-        - match_reason: 匹配理由
-        - confidence: 高/中/低
-        """
+        user_prompt = self.prompts["align_events"]["user"].format(
+            novel_context=novel_context,
+            script_context=script_context
+        )
         
         try:
             response = self.client.chat.completions.create(
@@ -183,7 +136,7 @@ class DeepSeekAlignmentEngine(AlignmentEngine):
             return [AlignmentItem(**item) for item in items_list]
 
         except Exception as e:
-            print(f"Error aligning events: {e}")
+            logger.error(f"Error aligning events: {e}")
             return []
 
     def aggregate_context(self, alignment_results: List[AlignmentItem], novel_chapters: Dict[str, str]) -> Dict[str, str]:

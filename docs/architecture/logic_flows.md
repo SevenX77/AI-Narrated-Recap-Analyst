@@ -8,7 +8,8 @@ This document serves as the single source of truth for the system's logic and da
 ### 1. Project Management
 - **Project Index**: `data/project_index.json` maps source folders to unique IDs (e.g., `PROJ_001`).
 - **Source Data**: Located in `分析资料/` (Analysis Data), organized by Novel Name.
-- **Output Data**: Located in `output/`, organized by Project ID or Name.
+- **Project Data**: Located in `data/projects/PROJ_XXX/`. Stores all persistent artifacts including raw text, alignment maps, analysis results, and generated scripts.
+- **System Output**: Located in `output/`. Stores system logs (`app.log`) and operation history (`operation_history.jsonl`).
 
 ### 2. Agent Responsibilities
 - **Analyst (`src.agents.deepseek_analyst`)**: 
@@ -16,6 +17,7 @@ This document serves as the single source of truth for the system's logic and da
   - **Input**: Raw Text (Novel or Script).
   - **Output**: Structured Events (SVO), Characters, Scenes.
   - **Note**: Does NOT know about alignment or script generation logic.
+  - **Prompts**: Managed in `src/prompts/analyst.yaml`.
 - **Writer (`src.agents.deepseek_writer`)**: 
   - **Role**: Creative Writing.
   - **Input**: Novel Context (Chapter-level), Analysis Data.
@@ -25,6 +27,12 @@ This document serves as the single source of truth for the system's logic and da
   - **Input**: Novel Events, Script Events.
   - **Output**: Alignment Map (Script Segment -> Novel Chapters).
   - **Feature**: `aggregate_context` converts map to full text context.
+  - **Prompts**: Managed in `src/prompts/alignment.yaml`.
+- **Feedback Agent (`src.agents.feedback_agent`)**:
+  - **Role**: Evaluation & Methodology Extraction.
+  - **Input**: Alignment Results.
+  - **Output**: Feedback Report & Methodology Update.
+  - **Prompts**: Managed in `src/prompts/feedback.yaml`.
 
 ### 3. Data Versioning Strategy
 - **Principle**: "Latest Pointer + Timestamped Versions".
@@ -60,21 +68,21 @@ This document serves as the single source of truth for the system's logic and da
     - Output `alignment.json`: Defines which Novel Chapters correspond to which Script Segments.
     - **Granularity**: Event-to-Event matching, but Context is aggregated at Chapter level.
 
-### Workflow 2: Training Loop (Iterative Optimization)
+### Workflow 2: Training Workflow (`src.workflows.training_workflow.py`)
 *Executed to train/optimize the Writer Agent.*
 
-1.  **Load Context**:
-    - Read `alignment_latest.json`.
-    - For a specific Script Segment (e.g., 00:00-02:00), fetch corresponding **Full Novel Chapters**.
-2.  **Generation (Writer)**:
-    - Input: Aggregated Novel Chapters.
-    - Action: Writer generates a candidate script.
-3.  **Evaluation**:
-    - Compare `Candidate Script` vs `Ground Truth Script` (from SRT).
-    - Metrics: Plot coverage, Tone similarity, Pacing.
-4.  **Optimization**:
-    - Update Prompt / Context selection based on feedback.
-    - Repeat.
+1.  **Initialization**:
+    - Inputs: Novel Path, SRT Folder, Workspace Directory.
+    - Agents: Analyst, Alignment Engine, Feedback Agent.
+2.  **Data Processing**:
+    - **Novel**: Reads novel text -> Splits by chapter -> Extracts events (Cached).
+    - **Script**: Reads SRTs -> Splits by time/block -> Extracts events.
+3.  **Alignment**:
+    - Aligns Script Events with Novel Events using `DeepSeekAlignmentEngine`.
+4.  **Feedback & Optimization**:
+    - `FeedbackAgent` analyzes the alignment.
+    - Generates `feedback_report.json` (Score, Issues, Suggestions).
+    - Updates `methodology_v1.txt` with extracted insights.
 
 ### Workflow 3: Production Generation
 *Executed to generate scripts for new novels.*
@@ -84,4 +92,4 @@ This document serves as the single source of truth for the system's logic and da
 3.  **Writing**: Writer generates script chunk by chunk.
 
 ---
-*Last Updated: 2026-02-03*
+*Last Updated: 2026-02-03 12:30*
