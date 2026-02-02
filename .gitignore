@@ -1,0 +1,33 @@
+# User specified ignores
+分析资料/
+browser_data/
+FanqieNovelDownloader/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Mac
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Cursor/IDE
+.cursorrules
+.idea/
+.vscode/
+
+# Output data
+output/
+data/projects/

@@ -1,0 +1,282 @@
+[
+  {
+    "name": "x-web-secsdk-uid",
+    "value": "3de08317-8d4d-47f7-b4dc-03da7023aa95",
+    "domain": "fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "HMACCOUNT_BFESS",
+    "value": "1F0D57002C201110",
+    "domain": ".hm.baidu.com",
+    "path": "/",
+    "secure": true,
+    "http_only": false
+  },
+  {
+    "name": "Hm_lvt_2667d29c8e792e6fa9182c20a3013175",
+    "value": "1770041722",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "Hm_lpvt_2667d29c8e792e6fa9182c20a3013175",
+    "value": "1770045552",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "Hm_ck_1770041721736",
+    "value": "42",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "HMACCOUNT",
+    "value": "1F0D57002C201110",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "csrf_session_id",
+    "value": "fd7cee4a79a5a518148208d1514095e4",
+    "domain": "fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": false
+  },
+  {
+    "name": "ttwid",
+    "value": "1%7CgirIe7Ok2pognI6AWLaJnu9eqo-XAwXfXtfJ25AaU78%7C1770045552%7C2b7537c49e20dce895a3b2b6e58d34a4d28a856d93bdf7fa569cbeec4a1d324f",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "s_v_web_id",
+    "value": "verify_ml5952fo_s0UTHB9Q_A3UH_4BYj_8Bfv_fbwrpbb94she",
+    "domain": "fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "novel_web_id",
+    "value": "7602271265765197350",
+    "domain": "fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "Hm_ck_1770045395902",
+    "value": "42",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "gfkadpd",
+    "value": "2503,36144",
+    "domain": "fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": false
+  },
+  {
+    "name": "serial_uuid",
+    "value": "7602271265765197350",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "serial_webid",
+    "value": "7602271265765197350",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "Hm_ck_1770045500235",
+    "value": "42",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "passport_csrf_token",
+    "value": "7caac26d747b61fe290248a8b5b9b9ab",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": false
+  },
+  {
+    "name": "passport_csrf_token_default",
+    "value": "7caac26d747b61fe290248a8b5b9b9ab",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "passport_mfa_token",
+    "value": "CjVgYeJy%2BzyR9MA2auEpRSpkiJl5HY2CaDxh2gYAUSo2N92D2jnXlHHpfx7TMRR2S8Fg%2BOpvyxpKCjwAAAAAAAAAAAAAUAao%2ByLUePB%2FLe0sn9YA7Iy3nyK0e%2F4r2NBpF63j1GcM2BTlRerSkizBjX3Aw%2FsExXoQkcmIDhj2sdFsIAIiAQPuSV0L",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "d_ticket",
+    "value": "97640c57e30c3dd8da0cc73d31b2bd023da15",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": true
+  },
+  {
+    "name": "odin_tt",
+    "value": "7f3c363e34c69138b8a6196c6de5afe2b2731d9a2bc0eb08d4d7288f2df7191615dba090a2d2eaba5aae36ecef4fa474",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": true
+  },
+  {
+    "name": "n_mh",
+    "value": "rWlh8Q4qguDv_646IXETjtIhwq30_CEhpJPaqCfgRMA",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": true
+  },
+  {
+    "name": "passport_auth_status",
+    "value": "6091494514b71d09c68a1bd4f254e714%2C",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": true
+  },
+  {
+    "name": "passport_auth_status_ss",
+    "value": "6091494514b71d09c68a1bd4f254e714%2C",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "sid_guard",
+    "value": "517f1298980094decfac92955c0ce4fe%7C1770045536%7C5184000%7CFri%2C+03-Apr-2026+15%3A18%3A56+GMT",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "uid_tt",
+    "value": "ea5b0c4312b5189901e5dd0273420d4a",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "uid_tt_ss",
+    "value": "ea5b0c4312b5189901e5dd0273420d4a",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "sid_tt",
+    "value": "517f1298980094decfac92955c0ce4fe",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "sessionid",
+    "value": "517f1298980094decfac92955c0ce4fe",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "sessionid_ss",
+    "value": "517f1298980094decfac92955c0ce4fe",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "session_tlb_tag",
+    "value": "sttt%7C17%7CUX8SmJgAlN7PrJKVXAzk_v__________JckWy5AZ-PAOCSpGyeXLPiHKgVlIlvKeW-8O7lg168E%3D",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "is_staff_user",
+    "value": "false",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "sid_ucp_v1",
+    "value": "1.0.0-KDgwNjE3YWM5Nzg0Y2Y1MjRjODkxNGQxNzQ5MzQwZDBlYzNkMWUyZTIKHQj7h-XQlwIQ4ICDzAYYxxMgDDD3l4rQBTgCQPEHGgJscSIgNTE3ZjEyOTg5ODAwOTRkZWNmYWM5Mjk1NWMwY2U0ZmU",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "ssid_ucp_v1",
+    "value": "1.0.0-KDgwNjE3YWM5Nzg0Y2Y1MjRjODkxNGQxNzQ5MzQwZDBlYzNkMWUyZTIKHQj7h-XQlwIQ4ICDzAYYxxMgDDD3l4rQBTgCQPEHGgJscSIgNTE3ZjEyOTg5ODAwOTRkZWNmYWM5Mjk1NWMwY2U0ZmU",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": true,
+    "http_only": true
+  },
+  {
+    "name": "Hm_ck_1770045542804",
+    "value": "42",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  },
+  {
+    "name": "Hm_ck_1770045552231",
+    "value": "42",
+    "domain": ".fanqienovel.com",
+    "path": "/",
+    "secure": false,
+    "http_only": false
+  }
+]

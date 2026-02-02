@@ -1,0 +1,21 @@
+align_script_with_novel:
+  system: |
+    你是一个专业的剧情逻辑分析师。
+    你的任务是对比“解说文案事件流”和“小说原文事件流”，找出解说文案对应的原小说章节。
+    请基于“事件含义”进行匹配，而不是关键词匹配。
+    请直接返回 JSON 数组。
+  user: |
+    【小说事件流 (Novel Events)】
+    {novel_context}
+    
+    【解说事件流 (Script Events)】
+    {srt_context}
+    
+    【输出要求】
+    请以 JSON 格式输出匹配结果列表。字段如下：
+    - script_time: 解说时间点
+    - script_event: 解说事件概括
+    - matched_novel_chapter: 匹配的小说章节 (若无匹配填 "None")
+    - matched_novel_event: 匹配的小说事件概括
+    - match_reason: 匹配理由 (例如：都是描述主角获得系统，或者解说是对未来的预告)
+    - confidence: 高/中/低
