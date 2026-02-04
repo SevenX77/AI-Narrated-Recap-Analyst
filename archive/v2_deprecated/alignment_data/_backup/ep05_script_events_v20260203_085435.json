@@ -1,0 +1,291 @@
+[
+  {
+    "time": "00:00:00,033",
+    "events": [
+      {
+        "subject": "我",
+        "action": "伸出手与他握住",
+        "outcome": "楚彻",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "询问",
+        "outcome": "车队的汽油情况",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "楚彻",
+        "action": "态度明确想要就得用物资去换",
+        "outcome": "汽油",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "原本以为超凡就能带来地位和福利",
+        "outcome": "现实却狠狠给了我一巴掌",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "我",
+        "action": "认识到",
+        "outcome": "在这里既没有特权也没有庇护只有等价交换",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:00:15,300",
+    "events": [
+      {
+        "subject": "楚彻",
+        "action": "补上",
+        "outcome": "一句话",
+        "location": "车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "举办",
+        "outcome": "内部交易会",
+        "location": "车队",
+        "time_context": "很快",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "人",
+        "action": "付出代价",
+        "outcome": "换到任何想要的东西",
+        "location": "车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "车队",
+        "action": "有",
+        "outcome": "4辆四个轮子的车",
+        "location": "车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "泰坦序列傻大哥",
+        "action": "拥有",
+        "outcome": "大巴车",
+        "location": "车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "女明星",
+        "action": "拥有",
+        "outcome": "小汽车",
+        "location": "车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:00:31,200",
+    "events": [
+      {
+        "subject": "他",
+        "action": "搬出",
+        "outcome": "一桶汽油",
+        "location": "摊位前",
+        "time_context": "末世前",
+        "method": "从车里",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "他",
+        "action": "提供",
+        "outcome": "汽油给陈先生",
+        "location": "摊位前",
+        "time_context": "末世前",
+        "method": "用铁桶",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "他",
+        "action": "报价",
+        "outcome": "8斤大米",
+        "location": "摊位前",
+        "time_context": "末世前",
+        "method": "通过言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "看穿",
+        "outcome": "他的算盘",
+        "location": "摊位前",
+        "time_context": "末世前",
+        "method": "一眼",
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "time": "00:00:47,866",
+    "events": [
+      {
+        "subject": "我",
+        "action": "挑明",
+        "outcome": "要求周兰给油",
+        "location": null,
+        "time_context": "当周兰沉默半分钟后",
+        "method": "直接说",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周兰",
+        "action": "同意",
+        "outcome": "成交",
+        "location": null,
+        "time_context": "沉默半分钟后",
+        "method": "咬牙",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周兰",
+        "action": "交给",
+        "outcome": "汽油给我",
+        "location": null,
+        "time_context": "当成交后",
+        "method": "把桶",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周兰的弟弟",
+        "action": "急了",
+        "outcome": "担心车成废铁",
+        "location": null,
+        "time_context": "当汽油被交给时",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "time": "00:01:02,733",
+    "events": [
+      {
+        "subject": "少年",
+        "action": "吵嚷着要拿回",
+        "outcome": "油",
+        "location": null,
+        "time_context": null,
+        "method": "故意放大声音",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "有人",
+        "action": "幸灾乐祸地看",
+        "outcome": "我笑话",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "周兰",
+        "action": "没有阻止",
+        "outcome": "少年",
+        "location": null,
+        "time_context": null,
+        "method": "心虚地扭过了头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "走向",
+        "outcome": "楚彻",
+        "location": null,
+        "time_context": null,
+        "method": "径直",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "换走",
+        "outcome": "一桶汽油",
+        "location": null,
+        "time_context": null,
+        "method": "用黑狗血的消息",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "找到",
+        "outcome": "娜娜",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "换来",
+        "outcome": "一把岛国品牌的户外柴刀",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:17,900",
+    "events": []
+  }
+]

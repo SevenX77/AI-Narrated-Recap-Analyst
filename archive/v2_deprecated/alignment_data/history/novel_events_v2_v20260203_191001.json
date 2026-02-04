@@ -1,0 +1,823 @@
+[
+  {
+    "event_id": "event_001",
+    "title": "车队收听广播得知上沪沦陷",
+    "semantic_blocks": [
+      {
+        "block_id": "block_001",
+        "theme": "收听广播消息",
+        "sentences": [
+          {
+            "text": "“滋滋……现在的时间是2030年10月13日上午10:23。",
+            "time_range": null,
+            "index": 0
+          },
+          {
+            "text": "”\n\n“这或许是本电台最后一次广播！",
+            "time_range": null,
+            "index": 1
+          },
+          {
+            "text": "”\n\n“上沪己经沦陷成为无人区！",
+            "time_range": null,
+            "index": 2
+          },
+          {
+            "text": "”\n\n“不要前往！",
+            "time_range": null,
+            "index": 3
+          },
+          {
+            "text": "不要前往！",
+            "time_range": null,
+            "index": 4
+          },
+          {
+            "text": "”\n\n“告所有幸存者同胞：不要直视红月超过三秒，不要和路灯下的影子打招呼，不要相信死去的亲人会活过来！",
+            "time_range": null,
+            "index": 5
+          },
+          {
+            "text": "”\n\n“人类火种……永不熄灭！",
+            "time_range": null,
+            "index": 6
+          },
+          {
+            "text": "”\n\n“滋滋……”\n\n陈野听着收音机里的杂乱电流，只觉得浑身冰凉。",
+            "time_range": null,
+            "index": 7
+          }
+        ],
+        "characters": [
+          "陈野"
+        ],
+        "location": "车队",
+        "time_context": "2030年10月13日上午10:23",
+        "time_range": null,
+        "summary": "陈野在车队中收听收音机广播，得知上沪沦陷为无人区，并收到对幸存者的警告。"
+      },
+      {
+        "block_id": "block_002",
+        "theme": "车队背景和绝望情绪",
+        "sentences": [
+          {
+            "text": "整个车队弥漫一种绝望的窒息情绪。",
+            "time_range": null,
+            "index": 8
+          },
+          {
+            "text": "上沪作为全球数一数二的超级城市，现在却沦为人类禁区！",
+            "time_range": null,
+            "index": 9
+          },
+          {
+            "text": "……\n\n几个月前，全球诡异爆发。",
+            "time_range": null,
+            "index": 10
+          },
+          {
+            "text": "只用了很短的时间，一些小的国家直接沦为人类禁区。",
+            "time_range": null,
+            "index": 11
+          },
+          {
+            "text": "人类的热武器在诡异面前只是个笑话。",
+            "time_range": null,
+            "index": 12
+          },
+          {
+            "text": "诡异无法被杀死，或者说很难被杀死。",
+            "time_range": null,
+            "index": 13
+          },
+          {
+            "text": "陈野从江城逃出来，和一众幸存者组成车队，打算前往上沪的幸存者基地。",
+            "time_range": null,
+            "index": 14
+          },
+          {
+            "text": "此时的陈野骑着一辆二八大杠在车队之中，车座后面有一个大大的包裹，里面装的是自己所有的家当。",
+            "time_range": null,
+            "index": 15
+          },
+          {
+            "text": "至于为什么都末日了，不换一辆小汽车作为载具，而只弄了一辆二八大扛？",
+            "time_range": null,
+            "index": 16
+          },
+          {
+            "text": "陈野曾经用石头砸碎了车窗户打开车门。",
+            "time_range": null,
+            "index": 17
+          },
+          {
+            "text": "奈何没有钥匙，根本没办法启动这辆车。",
+            "time_range": null,
+            "index": 18
+          },
+          {
+            "text": "作为一个普通人，他根本就做不到像电影里那样，拽出两根线一搭就能把一辆车开走。",
+            "time_range": null,
+            "index": 19
+          },
+          {
+            "text": "没有钥匙的情况下，陈野很难拿到一辆车的使用权。",
+            "time_range": null,
+            "index": 20
+          },
+          {
+            "text": "谁也没有想到会突然末日，提前去学类似的技能。",
+            "time_range": null,
+            "index": 21
+          },
+          {
+            "text": "至于为什么没有弄到一辆小电驴或者摩托车……\n\n原因同上。",
+            "time_range": null,
+            "index": 22
+          },
+          {
+            "text": "就算是这辆二八大杠也是车棚里仅剩的一辆。",
+            "time_range": null,
+            "index": 23
+          },
+          {
+            "text": "这个车队组成很是杂乱。",
+            "time_range": null,
+            "index": 24
+          },
+          {
+            "text": "有开改装越野车的，大巴车的，骑摩托车的。",
+            "time_range": null,
+            "index": 25
+          },
+          {
+            "text": "甚至还有开老头乐和小电驴的。",
+            "time_range": null,
+            "index": 26
+          },
+          {
+            "text": "当然，骑自行车的也不少。",
+            "time_range": null,
+            "index": 27
+          },
+          {
+            "text": "毕竟自行车的迁徙能力和装载能力，再怎么也比两条腿强的太多。",
+            "time_range": null,
+            "index": 28
+          },
+          {
+            "text": "在这个车队的人，必须谨记两条铁律！",
+            "time_range": null,
+            "index": 29
+          },
+          {
+            "text": "第一条：不要掉队！",
+            "time_range": null,
+            "index": 30
+          },
+          {
+            "text": "不要掉队！",
+            "time_range": null,
+            "index": 31
+          },
+          {
+            "text": "不要掉队！",
+            "time_range": null,
+            "index": 32
+          },
+          {
+            "text": "第二条：尽可能多的储备物资！",
+            "time_range": null,
+            "index": 33
+          },
+          {
+            "text": "第一条铁律优于第二条。",
+            "time_range": null,
+            "index": 34
+          },
+          {
+            "text": "没有物资还有办法活下去。",
+            "time_range": null,
+            "index": 35
+          },
+          {
+            "text": "因为总有一些善良的人会给你。",
+            "time_range": null,
+            "index": 36
+          },
+          {
+            "text": "又或者……\n\n如果你掉了队，迎接你的只有死亡。",
+            "time_range": null,
+            "index": 37
+          },
+          {
+            "text": "车队里的人大都是由从江城逃出来的幸存者。",
+            "time_range": null,
+            "index": 38
+          },
+          {
+            "text": "打算前往上沪。",
+            "time_range": null,
+            "index": 39
+          },
+          {
+            "text": "上沪作为全国数一数二的大城市，每个人都相信上沪肯定是有办法解决诡异。",
+            "time_range": null,
+            "index": 40
+          },
+          {
+            "text": "结果还没有到目的地，就听到收音机里的消息。",
+            "time_range": null,
+            "index": 41
+          },
+          {
+            "text": "上沪己经沦为无人区。",
+            "time_range": null,
+            "index": 42
+          },
+          {
+            "text": "那可是全国数一数二的大城市，一个城市就有数千万人口。",
+            "time_range": null,
+            "index": 43
+          },
+          {
+            "text": "而现在……\n\n听到这个消息，周围传来绝望的啜泣声。",
+            "time_range": null,
+            "index": 44
+          },
+          {
+            "text": "之前眼神里还有希望的小火苗，现在都成了一片灰白的绝望。",
+            "time_range": null,
+            "index": 45
+          },
+          {
+            "text": "车队就这样在超低的氛围之中前进着。",
+            "time_range": null,
+            "index": 46
+          },
+          {
+            "text": "一种难以形容的气氛在车队之中弥漫。",
+            "time_range": null,
+            "index": 47
+          }
+        ],
+        "characters": [
+          "陈野",
+          "幸存者"
+        ],
+        "location": "车队",
+        "time_context": "几个月后",
+        "time_range": null,
+        "summary": "描述全球诡异爆发背景，陈野从江城逃出组成车队前往上沪，车队组成和铁律，以及听到上沪沦陷消息后的绝望氛围。"
+      }
+    ],
+    "characters": [
+      "陈野",
+      "幸存者"
+    ],
+    "location": "车队",
+    "time_context": "2030年10月13日上午10:23及几个月后背景",
+    "chapter_range": [
+      1,
+      1
+    ],
+    "time_range": null,
+    "episode": null
+  },
+  {
+    "event_id": "event_002",
+    "title": "露营夜晚的生存日常与系统发现",
+    "semantic_blocks": [
+      {
+        "block_id": "block_003",
+        "theme": "夜晚露营和诡异环境",
+        "sentences": [
+          {
+            "text": "夜幕降临，车队露营。",
+            "time_range": null,
+            "index": 48
+          },
+          {
+            "text": "血月悄悄升上天空挂在树梢上，给天地之间撒上了一层血纱。",
+            "time_range": null,
+            "index": 49
+          },
+          {
+            "text": "诡异的气息瞬间弥漫大地，幸存者们压低了啜泣声，似乎是怕惊动黑暗深处的一些不可知诡异。",
+            "time_range": null,
+            "index": 50
+          },
+          {
+            "text": "夜晚，是诡异最为活跃的时候。",
+            "time_range": null,
+            "index": 51
+          },
+          {
+            "text": "远处沦为人类禁区的城镇隐隐传来求救声，是在引诱人类前往救援。",
+            "time_range": null,
+            "index": 52
+          },
+          {
+            "text": "类似的手段在诡异之中屡见不鲜。",
+            "time_range": null,
+            "index": 53
+          }
+        ],
+        "characters": [
+          "陈野",
+          "幸存者"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "time_range": null,
+        "summary": "夜幕降临车队露营，血月升起诡异活跃，远处传来引诱人类的求救声。"
+      },
+      {
+        "block_id": "block_004",
+        "theme": "陈野准备和吃泡面",
+        "sentences": [
+          {
+            "text": "陈野从二八大杠的后座上取下包袱，找到露营锅和卡式炉，还有半瓶矿泉水。",
+            "time_range": null,
+            "index": 54
+          },
+          {
+            "text": "路营锅和卡式炉这些东西是陈野从逃亡的路上搜集而来的。",
+            "time_range": null,
+            "index": 55
+          },
+          {
+            "text": "一起搜集而来的，还有腰上的一把手弩。",
+            "time_range": null,
+            "index": 56
+          },
+          {
+            "text": "在这样混乱的末世，有时候人比诡异更加可怕。",
+            "time_range": null,
+            "index": 57
+          },
+          {
+            "text": "撕开包装将面饼丢进锅里，倒进去半瓶矿泉水，点燃卡式炉。",
+            "time_range": null,
+            "index": 58
+          },
+          {
+            "text": "蓝色的火苗舔舐锅底，锅里的水开始慢慢冒出气泡。",
+            "time_range": null,
+            "index": 59
+          },
+          {
+            "text": "想了想，陈野又加了一根香肠这才罢休。",
+            "time_range": null,
+            "index": 60
+          },
+          {
+            "text": "这是最后一罐气，这罐气用完，以后想要吃点儿热的怕是难了。",
+            "time_range": null,
+            "index": 61
+          },
+          {
+            "text": "锅里升腾起热气，泡面的香味慢慢飘了出来。",
+            "time_range": null,
+            "index": 62
+          },
+          {
+            "text": "露营锅慢慢升腾蒸汽，陈野陷入了思索。",
+            "time_range": null,
+            "index": 63
+          },
+          {
+            "text": "现在上沪己经沦陷成为无人区。",
+            "time_range": null,
+            "index": 64
+          },
+          {
+            "text": "未来的路到底该怎么走？",
+            "time_range": null,
+            "index": 65
+          },
+          {
+            "text": "记得诡异爆发之前，曾经在网上看到过一篇帖子。",
+            "time_range": null,
+            "index": 66
+          },
+          {
+            "text": "帖子上说过：“诡是无法被杀死的，只有觉醒序列超凡才能杀死诡！",
+            "time_range": null,
+            "index": 67
+          },
+          {
+            "text": "”\n\n这句话当时还不信，以为是什么精神病玩抽象。",
+            "time_range": null,
+            "index": 68
+          },
+          {
+            "text": "诡异爆发之后。",
+            "time_range": null,
+            "index": 69
+          },
+          {
+            "text": "他用手弩射杀过一只诡异。",
+            "time_range": null,
+            "index": 70
+          },
+          {
+            "text": "结果就是没有任何作用！",
+            "time_range": null,
+            "index": 71
+          },
+          {
+            "text": "序列超凡！",
+            "time_range": null,
+            "index": 72
+          },
+          {
+            "text": "帖子里说过觉醒超凡序列有很多种方法。",
+            "time_range": null,
+            "index": 73
+          },
+          {
+            "text": "有人是突然觉醒的，没有任何预兆。",
+            "time_range": null,
+            "index": 74
+          },
+          {
+            "text": "还有人可以用一种叫做序列针剂的药剂注射之后就能觉醒。",
+            "time_range": null,
+            "index": 75
+          },
+          {
+            "text": "那帖子说序列有几百种，每个序列的能力也不一样。",
+            "time_range": null,
+            "index": 76
+          },
+          {
+            "text": "真是好奇啊~~~\n\n序列超凡到底是什么样的能力。",
+            "time_range": null,
+            "index": 77
+          }
+        ],
+        "characters": [
+          "陈野"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "time_range": null,
+        "summary": "陈野从自行车取下包袱，用卡式炉煮泡面加香肠，思考未来并回忆关于序列超凡的帖子。"
+      },
+      {
+        "block_id": "block_005",
+        "theme": "泡面引发的贪婪和警惕",
+        "sentences": [
+          {
+            "text": "卡式炉的锅里散发着泡面的香味。",
+            "time_range": null,
+            "index": 78
+          },
+          {
+            "text": "以前陈野是很不喜欢吃泡面的。",
+            "time_range": null,
+            "index": 79
+          },
+          {
+            "text": "但现在的环境，能有泡面吃就不错了。",
+            "time_range": null,
+            "index": 80
+          },
+          {
+            "text": "可就算是这碗泡面，很多人也是没有的。",
+            "time_range": null,
+            "index": 81
+          },
+          {
+            "text": "周围不少幸存者闻着泡面的香味，忍不住吞咽口水，眼神之中也露出贪婪。",
+            "time_range": null,
+            "index": 82
+          },
+          {
+            "text": "如果不是陈野抬了抬手弩，怕是己经有人上来抢了。",
+            "time_range": null,
+            "index": 83
+          },
+          {
+            "text": "要知道，有些人己经好一天没吃过饭了。",
+            "time_range": null,
+            "index": 84
+          },
+          {
+            "text": "一碗泡面很快吃完。",
+            "time_range": null,
+            "index": 85
+          },
+          {
+            "text": "整个过程，陈野都没有放下手里的手弩。",
+            "time_range": null,
+            "index": 86
+          },
+          {
+            "text": "洗碗这么奢侈的事情，也只能以后找到充足水源再说了。",
+            "time_range": null,
+            "index": 87
+          },
+          {
+            "text": "现在的每一滴水都十分珍贵。",
+            "time_range": null,
+            "index": 88
+          }
+        ],
+        "characters": [
+          "陈野",
+          "幸存者"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "time_range": null,
+        "summary": "泡面香味吸引其他幸存者，陈野用手弩保持警惕，吃完后处理洗碗和水源问题。"
+      },
+      {
+        "block_id": "block_006",
+        "theme": "陈野抽烟缓解焦虑",
+        "sentences": [
+          {
+            "text": "点燃烟盒里的最后一支烟，将空掉的烟盒捏成一团丢了出去。",
+            "time_range": null,
+            "index": 89
+          },
+          {
+            "text": "在这样的末日背景下，香烟也成了紧俏的物资，抽一根就少一根。",
+            "time_range": null,
+            "index": 90
+          },
+          {
+            "text": "微微亮起的火光照亮了陈野的侧脸轮廓。",
+            "time_range": null,
+            "index": 91
+          },
+          {
+            "text": "醇香在口鼻之间游荡，微微缓解了陈野的焦虑和迷茫。",
+            "time_range": null,
+            "index": 92
+          },
+          {
+            "text": "一支烟一直抽到有焦糊味儿这才被丢掉。",
+            "time_range": null,
+            "index": 93
+          }
+        ],
+        "characters": [
+          "陈野"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "time_range": null,
+        "summary": "陈野点燃最后一支烟，缓解焦虑和迷茫，抽完后丢弃烟头。"
+      },
+      {
+        "block_id": "block_007",
+        "theme": "发现升级系统",
+        "sentences": [
+          {
+            "text": "夜幕降临，陈野打算从包里找出那条从别墅区搜集到的毛毯对付一晚。",
+            "time_range": null,
+            "index": 94
+          },
+          {
+            "text": "当他的手刚刚接触到毛毯的时候。",
+            "time_range": null,
+            "index": 95
+          },
+          {
+            "text": "一道信息出现在陈野的脑海之中。",
+            "time_range": null,
+            "index": 96
+          },
+          {
+            "text": "【升级毛毯需要消耗杀戮值129，是否需要升级？",
+            "time_range": null,
+            "index": 97
+          },
+          {
+            "text": "】\n\n升级？",
+            "time_range": null,
+            "index": 98
+          },
+          {
+            "text": "……\n\n一刻钟后，陈野弄清楚了眼前看到的这行字所代表的含义。",
+            "time_range": null,
+            "index": 99
+          },
+          {
+            "text": "自己觉醒的并不是序列能力，而是升级系统。",
+            "time_range": null,
+            "index": 100
+          },
+          {
+            "text": "只要是自己愿意，就能给任何接触到的物品升级。",
+            "time_range": null,
+            "index": 101
+          },
+          {
+            "text": "比如手里的毛毯，腰间的手弩，亦或者刚刚煮饭的卡式炉。",
+            "time_range": null,
+            "index": 102
+          },
+          {
+            "text": "唯一的要求便是需要杀戮点。",
+            "time_range": null,
+            "index": 103
+          },
+          {
+            "text": "只要杀戮点足够，甚至能将毛毯升级成魔毯。",
+            "time_range": null,
+            "index": 104
+          },
+          {
+            "text": "开始的欣喜之后，陈野像是被一盆冷水从头泼下。",
+            "time_range": null,
+            "index": 105
+          },
+          {
+            "text": "自己手上根本就没有杀戮点。",
+            "time_range": null,
+            "index": 106
+          },
+          {
+            "text": "就在陈野失望的时候，一行信息再次出现。",
+            "time_range": null,
+            "index": 107
+          },
+          {
+            "text": "【鉴于宿主是第一次使用本系统。",
+            "time_range": null,
+            "index": 108
+          },
+          {
+            "text": "】\n\n【本系统可借贷给宿主三百杀戮点，期限一个月！",
+            "time_range": null,
+            "index": 109
+          },
+          {
+            "text": "】\n\n还能借贷？",
+            "time_range": null,
+            "index": 110
+          },
+          {
+            "text": "想都没想，陈野直接就点了确定借贷。",
+            "time_range": null,
+            "index": 111
+          },
+          {
+            "text": "在这样的末日情况下，或许明天就被诡异杀死，这时候不借才是傻子。",
+            "time_range": null,
+            "index": 112
+          }
+        ],
+        "characters": [
+          "陈野"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "time_range": null,
+        "summary": "陈野接触毛毯时发现升级系统，了解其功能后借贷300杀戮点。"
+      },
+      {
+        "block_id": "block_008",
+        "theme": "升级自行车",
+        "sentences": [
+          {
+            "text": "有了杀戮点陈野看向自己那辆二八大扛。",
+            "time_range": null,
+            "index": 113
+          },
+          {
+            "text": "对于现在的自己，这辆二八大杠就是自己最重要的财富。",
+            "time_range": null,
+            "index": 114
+          },
+          {
+            "text": "升级这两二八大杠绝对是最划算的方案。",
+            "time_range": null,
+            "index": 115
+          },
+          {
+            "text": "陈野亲眼见到那些掉队的人再也没有跟上来。",
+            "time_range": null,
+            "index": 116
+          },
+          {
+            "text": "车队第一铁律：不要掉队！",
+            "time_range": null,
+            "index": 117
+          },
+          {
+            "text": "不要掉队！",
+            "time_range": null,
+            "index": 118
+          },
+          {
+            "text": "不要掉队！",
+            "time_range": null,
+            "index": 119
+          },
+          {
+            "text": "【以我所有的杀戮点升级自行车！",
+            "time_range": null,
+            "index": 120
+          },
+          {
+            "text": "】\n\n陈野在心中尝试着向系统发出一条指令。",
+            "time_range": null,
+            "index": 121
+          },
+          {
+            "text": "很快系统就有了反应。",
+            "time_range": null,
+            "index": 122
+          },
+          {
+            "text": "【确定用三百杀戮点升级自行车？",
+            "time_range": null,
+            "index": 123
+          },
+          {
+            "text": "】\n\n陈野立刻确认。",
+            "time_range": null,
+            "index": 124
+          },
+          {
+            "text": "一个沙漏倒计时出现在二八大杠的上方。",
+            "time_range": null,
+            "index": 125
+          },
+          {
+            "text": "【升级倒计时：04:59:59】\n\n【04:59:58】\n\n【……】\n\n末日的夜晚显得安静。",
+            "time_range": null,
+            "index": 126
+          }
+        ],
+        "characters": [
+          "陈野"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "time_range": null,
+        "summary": "陈野用借贷的杀戮点升级自行车，系统开始倒计时升级。"
+      },
+      {
+        "block_id": "block_009",
+        "theme": "夜晚等待和升级完成",
+        "sentences": [
+          {
+            "text": "或许是人类停止了活动。",
+            "time_range": null,
+            "index": 127
+          },
+          {
+            "text": "就连天上的星星都多了起来。",
+            "time_range": null,
+            "index": 128
+          },
+          {
+            "text": "如果不是周围不时传来的啜泣声，陈野会觉得这个世界从来没有发生过变化。",
+            "time_range": null,
+            "index": 129
+          },
+          {
+            "text": "天边微微亮起鱼肚白。",
+            "time_range": null,
+            "index": 130
+          },
+          {
+            "text": "一道系统提示惊醒了陈野。",
+            "time_range": null,
+            "index": 131
+          },
+          {
+            "text": "【升级完成！",
+            "time_range": null,
+            "index": 132
+          }
+        ],
+        "characters": [
+          "陈野"
+        ],
+        "location": "露营地点",
+        "time_context": "夜晚到黎明",
+        "time_range": null,
+        "summary": "夜晚安静，陈野等待升级完成，天快亮时系统提示升级完成。"
+      }
+    ],
+    "characters": [
+      "陈野",
+      "幸存者"
+    ],
+    "location": "露营地点",
+    "time_context": "夜晚到黎明",
+    "chapter_range": [
+      1,
+      1
+    ],
+    "time_range": null,
+    "episode": null
+  }
+]

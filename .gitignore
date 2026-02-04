@@ -3,6 +3,11 @@
 browser_data/
 FanqieNovelDownloader/
 
+# Temporary files
+cookies.json
+chapter_*.txt
+*.bak
+
 # Python
 __pycache__/
 *.pyc

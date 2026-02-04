@@ -1,0 +1,4501 @@
+[
+  {
+    "id": "第1章 车队第一铁律 ===",
+    "events": [
+      {
+        "subject": "电台",
+        "action": "广播了",
+        "outcome": "上沪沦陷为无人区的消息和警告",
+        "location": "收音机",
+        "time_context": "2030年10月13日上午10:23",
+        "method": "通过广播",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "听到了",
+        "outcome": "广播消息",
+        "location": "车队中",
+        "time_context": "广播后",
+        "method": "通过收音机",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "从江城逃出",
+        "outcome": "加入幸存者车队",
+        "location": "江城",
+        "time_context": "几个月前",
+        "method": "骑二八大杠",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "制定了",
+        "outcome": "两条铁律",
+        "location": "车队",
+        "time_context": "逃亡期间",
+        "method": "通过共识",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "陈野",
+        "action": "露营",
+        "outcome": "煮泡面",
+        "location": "露营地点",
+        "time_context": "夜幕降临后",
+        "method": "用卡式炉和露营锅",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "接触了",
+        "outcome": "毛毯",
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "method": "用手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "提示了",
+        "outcome": "升级毛毯需要杀戮值",
+        "location": "陈野的脑海",
+        "time_context": "接触毛毯时",
+        "method": "通过信息显示",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "觉醒了",
+        "outcome": "升级系统",
+        "location": "露营地点",
+        "time_context": "夜晚",
+        "method": "通过接触物品",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "借贷了",
+        "outcome": "三百杀戮点给陈野",
+        "location": "陈野的脑海",
+        "time_context": "觉醒系统后",
+        "method": "通过信息提示",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "升级了",
+        "outcome": "二八大杠",
+        "location": "露营地点",
+        "time_context": "借贷后",
+        "method": "使用杀戮点",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "完成了",
+        "outcome": "升级",
+        "location": "露营地点",
+        "time_context": "天边亮起鱼肚白时",
+        "method": "通过倒计时",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第2章 自行车变三轮车 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "看见",
+        "outcome": "自行车变成三轮车",
+        "location": "天边微光下",
+        "time_context": "天亮前",
+        "method": "借助微光",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "升级",
+        "outcome": "三轮车加装省力系统",
+        "location": "陈野的三轮车上",
+        "time_context": "升级后",
+        "method": "系统升级",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "注意",
+        "outcome": "陈野的三轮车",
+        "location": "车队中",
+        "time_context": "天亮后",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "瑜伽裤女人",
+        "action": "请求",
+        "outcome": "坐陈野的车斗",
+        "location": "车队中",
+        "time_context": "天亮后",
+        "method": "走过来询问",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拒绝",
+        "outcome": "瑜伽裤女人的请求",
+        "location": "车队中",
+        "time_context": "天亮后",
+        "method": "直接拒绝",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "强子",
+        "action": "邀请",
+        "outcome": "瑜伽裤女人坐他的自行车",
+        "location": "车队中",
+        "time_context": "陈野拒绝后",
+        "method": "出声讨好",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "瑜伽裤女人",
+        "action": "建议",
+        "outcome": "抢陈野的三轮车",
+        "location": "强子自行车后座",
+        "time_context": "抱怨后",
+        "method": "压低声音",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "强子",
+        "action": "拒绝",
+        "outcome": "抢三轮车的建议",
+        "location": "强子自行车后座",
+        "time_context": "建议后",
+        "method": "忌惮陈野的手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队成员",
+        "action": "发现",
+        "outcome": "前方有房子",
+        "location": "行进路上",
+        "time_context": "行进中",
+        "method": "大声道",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "加速",
+        "outcome": "冲向镇子",
+        "location": "路边镇子前",
+        "time_context": "发现镇子后",
+        "method": "骑车或徒步",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "改装越野车",
+        "action": "急刹车",
+        "outcome": "停在镇子前",
+        "location": "镇子入口",
+        "time_context": "即将进入镇子时",
+        "method": "刹车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "放慢车速",
+        "outcome": "来到镇子前",
+        "location": "镇子入口",
+        "time_context": "越野车刹车后",
+        "method": "骑着三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "感觉",
+        "outcome": "恐惧感",
+        "location": "镇子前",
+        "time_context": "看清楚镇子时",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "id": "第3章 搜集物资 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "杏花镇门楼和破败街道",
+        "location": "杏花镇门口",
+        "time_context": "下午三点",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "壮汉",
+        "action": "冲向",
+        "outcome": "远处商超",
+        "location": "杏花镇街道",
+        "time_context": "大家踌躇不前时",
+        "method": "从越野车挤下后奔跑",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "其他人",
+        "action": "跟随",
+        "outcome": "壮汉",
+        "location": "杏花镇街道",
+        "time_context": "壮汉行动后",
+        "method": "驾驶越野车或老头乐",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "选择",
+        "outcome": "街道两边的商铺作为目标",
+        "location": "杏花镇街道",
+        "time_context": "其他人冲向商超时",
+        "method": "骑着三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "进入",
+        "outcome": "烟酒副食店",
+        "location": "杏花镇街道副食店",
+        "time_context": "下午三点多将近四点",
+        "method": "推开腐蚀的锁",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "扫荡",
+        "outcome": "食物和香烟",
+        "location": "副食店内",
+        "time_context": "进入店铺后",
+        "method": "用背包装",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "纸哭童",
+        "location": "副食店内",
+        "time_context": "扫荡物资后",
+        "method": "转身看到",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "试图逃跑",
+        "outcome": "但门被锁上",
+        "location": "副食店门口",
+        "time_context": "发现纸哭童后",
+        "method": "撞翻柜台",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "瑜伽裤女和强子在外面",
+        "location": "副食店门外",
+        "time_context": "门被锁后",
+        "method": "透过玻璃门",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "射击",
+        "outcome": "纸哭童",
+        "location": "副食店内",
+        "time_context": "纸哭童出现后",
+        "method": "用手弩射出弩箭",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第4章 他能拿我咋的？ ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "进入",
+        "outcome": "烟酒副食店",
+        "location": "烟酒副食店",
+        "time_context": "在陈野进去搜集物资的时候",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "佳佳和强子",
+        "action": "盯着",
+        "outcome": "陈野的一举一动",
+        "location": "烟酒副食店外",
+        "time_context": "在陈野进去的时候",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "佳佳和强子",
+        "action": "关上并插上木棍",
+        "outcome": "店铺门",
+        "location": "烟酒副食店",
+        "time_context": "在陈野进去的时候",
+        "method": "用木棍",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "扫货",
+        "outcome": "物资",
+        "location": "烟酒副食店内",
+        "time_context": "在店铺门被关上的时候",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "佳佳和强子",
+        "action": "打量并骑走",
+        "outcome": "三轮车",
+        "location": "烟酒副食店外",
+        "time_context": "在陈野被困时",
+        "method": "骑三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "佳佳和强子",
+        "location": "烟酒副食店内",
+        "time_context": "在撞翻柜台后",
+        "method": "隔着玻璃门",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "强子",
+        "action": "骑三轮车离开",
+        "outcome": "逃离此地",
+        "location": "烟酒副食店外",
+        "time_context": "被陈野目光吓到后",
+        "method": "站起来蹬",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "踹碎",
+        "outcome": "玻璃门",
+        "location": "烟酒副食店",
+        "time_context": "在诡异接近时",
+        "method": "用脚踹",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "冲出",
+        "outcome": "店铺",
+        "location": "烟酒副食店",
+        "time_context": "玻璃门碎后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "追向",
+        "outcome": "三轮车方向",
+        "location": "街面",
+        "time_context": "下午西点多",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "强子和佳佳",
+        "action": "前往",
+        "outcome": "大商超方向",
+        "location": "街面",
+        "time_context": "骑三轮车时",
+        "method": "骑三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "强子",
+        "action": "担忧",
+        "outcome": "陈野可能出来",
+        "location": "三轮车上",
+        "time_context": "飞蹬三轮车时",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "佳佳",
+        "action": "鄙夷并鼓励",
+        "outcome": "强子",
+        "location": "三轮车上",
+        "time_context": "强子担忧后",
+        "method": "拍后脑勺和说话",
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "id": "第5章 这是序列超凡 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "来到",
+        "outcome": "商场门口",
+        "location": "商场门口",
+        "time_context": "西点钟",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "车队车辆停在商超门口",
+        "location": "商场门口",
+        "time_context": "西点钟",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "自己的三轮车停在商超门口",
+        "location": "商场门口",
+        "time_context": "西点钟",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "决定",
+        "outcome": "在门口转转搜集物资",
+        "location": "商场门口",
+        "time_context": "西点钟",
+        "method": "计划",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "靠近",
+        "outcome": "商超门口",
+        "location": "商场门口",
+        "time_context": "西点钟",
+        "method": "猫着腰",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "超市面积大，门口货架空",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "两道人影在货架间拿东西",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "走到",
+        "outcome": "食品区域",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "猫着腰",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "剪刀女在货架间逡巡",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "避开",
+        "outcome": "剪刀女的视线",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "猫着腰",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拿",
+        "outcome": "牛肉面塞进包里",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "轻手轻脚",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "撞到",
+        "outcome": "前面幸存者的后背",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "行走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "纸哭童挡在前面",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "剪刀女",
+        "action": "走向",
+        "outcome": "幸存者",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "大踏步",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "剪刀女",
+        "action": "剪断",
+        "outcome": "两名幸存者",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "用剪刀",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "壮汉",
+        "action": "变成",
+        "outcome": "巨人",
+        "location": "商超内",
+        "time_context": "西点钟",
+        "method": "序列超凡",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第6章 心狠手辣 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "听到",
+        "outcome": "序列超凡对抗诡异的信息",
+        "location": "从江城逃出时",
+        "time_context": "逃出后",
+        "method": "听人说",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "巨汉",
+        "action": "变成",
+        "outcome": "魔鬼肌肉人",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "序列超凡能力",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "攻击",
+        "outcome": "白衣剪刀女",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "挥舞拳头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "白衣剪刀女",
+        "action": "接下",
+        "outcome": "魔鬼肌肉人的攻击",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "单手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "射击",
+        "outcome": "白衣剪刀女",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "用手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "攻击",
+        "outcome": "白衣剪刀女",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "用拳头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "获得",
+        "outcome": "杀戮点+200",
+        "location": "超市食品区",
+        "time_context": "攻击后",
+        "method": "系统提示",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "白衣剪刀女",
+        "action": "甩飞",
+        "outcome": "魔鬼肌肉人",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "用纤细手臂",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "跳出",
+        "outcome": "货架",
+        "location": "超市食品区",
+        "time_context": "被甩飞后",
+        "method": "从倒塌货架",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "逃跑",
+        "outcome": "远离战斗",
+        "location": "超市食品区",
+        "time_context": "战斗时",
+        "method": "背起背包狂奔",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "纸哭童",
+        "action": "抓住",
+        "outcome": "陈野的脚脖子",
+        "location": "超市内",
+        "time_context": "逃跑时",
+        "method": "苍白小手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "递糖",
+        "outcome": "纸哭童",
+        "location": "超市内",
+        "time_context": "被抓住后",
+        "method": "从地面捡糖果",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "跑向",
+        "outcome": "商超门口",
+        "location": "超市内",
+        "time_context": "递糖后",
+        "method": "快速奔跑",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "站在",
+        "outcome": "阳光下面",
+        "location": "商超门口",
+        "time_context": "逃跑后",
+        "method": "跑到门口",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "坐进",
+        "outcome": "车斗",
+        "location": "商超门口",
+        "time_context": "逃出后",
+        "method": "丢进两包东西",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "瑜伽裤女佳佳",
+        "action": "质问",
+        "outcome": "陈野",
+        "location": "商超门口",
+        "time_context": "陈野坐车后",
+        "method": "用不善女声",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "射击",
+        "outcome": "健身教练强子",
+        "location": "商超门口",
+        "time_context": "质问后",
+        "method": "用手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "获得",
+        "outcome": "杀戮值+1000",
+        "location": "商超门口",
+        "time_context": "射杀后",
+        "method": "系统提示",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "瑜伽裤女佳佳",
+        "action": "逃跑",
+        "outcome": "商超侧门",
+        "location": "商超门口",
+        "time_context": "强子被杀后",
+        "method": "尖叫转身",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "衣衫褴褛人影",
+        "action": "抓住",
+        "outcome": "瑜伽裤女佳佳",
+        "location": "商超侧门",
+        "time_context": "逃跑时",
+        "method": "抓住头发",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看着",
+        "outcome": "瑜伽裤女被拖走",
+        "location": "商超门口",
+        "time_context": "被抓后",
+        "method": "退入阳光中",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "蹬着",
+        "outcome": "三轮车逃跑",
+        "location": "商超门口",
+        "time_context": "事件后",
+        "method": "捡起包裹丢进车",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第7章 逃亡 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "魔鬼肌肉人无法对付剪刀女",
+        "location": "镇子内",
+        "time_context": "诡异爆发后",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "蹬着三轮车",
+        "outcome": "逃往镇子口",
+        "location": "街道",
+        "time_context": "太阳西斜时",
+        "method": "骑三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "无数影子在阴影中",
+        "location": "街道",
+        "time_context": "逃亡途中",
+        "method": "余光观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "背剑少女",
+        "action": "划过",
+        "outcome": "屋顶",
+        "location": "屋顶",
+        "time_context": "逃亡途中",
+        "method": "轻点广告",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "冲过",
+        "outcome": "镇子口门楼",
+        "location": "镇子口",
+        "time_context": "到达镇子口时",
+        "method": "骑三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "人群",
+        "action": "围上",
+        "outcome": "陈野一行人",
+        "location": "镇子口",
+        "time_context": "冲过镇子口后",
+        "method": "聚集",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "挤出",
+        "outcome": "人群",
+        "location": "镇子口",
+        "time_context": "被围后",
+        "method": "抓着手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "赤足男子",
+        "action": "尝了",
+        "outcome": "沙土",
+        "location": "镇子口",
+        "time_context": "下车后",
+        "method": "丢进嘴里",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "赤足男子",
+        "action": "说",
+        "outcome": "快走",
+        "location": "镇子口",
+        "time_context": "尝沙土后",
+        "method": "口头警告",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "跑",
+        "outcome": "离开镇子口",
+        "location": "镇子口",
+        "time_context": "警告后",
+        "method": "开车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "试图阻拦",
+        "outcome": "车队",
+        "location": "镇子口",
+        "time_context": "车队离开时",
+        "method": "拦阻",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "踹",
+        "outcome": "中年大妈",
+        "location": "镇子口",
+        "time_context": "被拦时",
+        "method": "用脚",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "蹬三轮车",
+        "outcome": "跟上车队",
+        "location": "镇子口",
+        "time_context": "踹人后",
+        "method": "骑三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "大巴车",
+        "action": "撞飞",
+        "outcome": "幸存者",
+        "location": "镇子口",
+        "time_context": "冲出镇子后",
+        "method": "开车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "踩三轮车",
+        "outcome": "吊在摩托车后",
+        "location": "路上",
+        "time_context": "逃亡途中",
+        "method": "骑三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "和车队汇合",
+        "outcome": "停车搭帐篷",
+        "location": "营地",
+        "time_context": "半小时后",
+        "method": "骑三轮车到达",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "杀戮值一千二百多",
+        "location": "营地",
+        "time_context": "休息后",
+        "method": "调出系统",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第8章 升级电动三轮车 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "意识到",
+        "outcome": "电动三轮车的珍贵",
+        "location": "车队中",
+        "time_context": "经历危险后",
+        "method": "通过经历",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问系统",
+        "outcome": "是否可以自己设计升级方案",
+        "location": "车队中",
+        "time_context": "思考升级时",
+        "method": "在心里",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "给出",
+        "outcome": "升级方案",
+        "location": "陈野眼前",
+        "time_context": "询问后",
+        "method": "显示3D效果图",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "设计",
+        "outcome": "三轮车升级方案",
+        "location": "车队中",
+        "time_context": "系统给出方案后",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "提示",
+        "outcome": "升级需要3500点杀戮值",
+        "location": "陈野眼前",
+        "time_context": "设计后",
+        "method": "显示信息",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "修改",
+        "outcome": "升级方案",
+        "location": "车队中",
+        "time_context": "杀戮值不足后",
+        "method": "剔除不必要功能",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "提示",
+        "outcome": "升级需要1200点杀戮值",
+        "location": "陈野眼前",
+        "time_context": "修改后",
+        "method": "显示信息",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "废弃摩托车",
+        "location": "路边",
+        "time_context": "准备升级时",
+        "method": "看到",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问系统",
+        "outcome": "配件是否能减免杀戮值",
+        "location": "车队中",
+        "time_context": "发现摩托车后",
+        "method": "在心里",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "答复",
+        "outcome": "可以减免",
+        "location": "陈野眼前",
+        "time_context": "询问后",
+        "method": "显示信息",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拖",
+        "outcome": "摩托车到三轮车边",
+        "location": "路边",
+        "time_context": "决定利用配件后",
+        "method": "用手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问系统",
+        "outcome": "利用摩托车改造",
+        "location": "车队中",
+        "time_context": "拖来摩托车后",
+        "method": "在心里",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "提示",
+        "outcome": "改造需要900点杀戮值",
+        "location": "陈野眼前",
+        "time_context": "询问后",
+        "method": "显示信息",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "确认",
+        "outcome": "升级",
+        "location": "车队中",
+        "time_context": "系统提示后",
+        "method": "点击系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "开始",
+        "outcome": "升级三轮车",
+        "location": "陈野的三轮车上",
+        "time_context": "确认后",
+        "method": "显示沙漏倒计时",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第9章 觉醒序列超凡的法子 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "打开",
+        "outcome": "两个袋子",
+        "location": "营地",
+        "time_context": "末日",
+        "method": "从商超带出",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "一群人到来",
+        "location": "营地",
+        "time_context": "黑暗之中",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "警告",
+        "outcome": "那些人",
+        "location": "营地",
+        "time_context": "营地喧闹时",
+        "method": "将手弩放在手边",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "打开",
+        "outcome": "袋子",
+        "location": "营地",
+        "time_context": "收拾收获时",
+        "method": "检查",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "大米和零食",
+        "location": "营地",
+        "time_context": "打开袋子后",
+        "method": "查看",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "打开",
+        "outcome": "瑜伽裤女的袋子",
+        "location": "营地",
+        "time_context": "收拾收获时",
+        "method": "检查",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "衣物和卫生用品",
+        "location": "营地",
+        "time_context": "打开袋子后",
+        "method": "查看",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "打开",
+        "outcome": "强子的袋子",
+        "location": "营地",
+        "time_context": "收拾收获时",
+        "method": "检查",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "腊肉、零食、挂面、衣服和鞋子",
+        "location": "营地",
+        "time_context": "打开袋子后",
+        "method": "查看",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "换上",
+        "outcome": "速干衣",
+        "location": "营地",
+        "time_context": "发现衣服后",
+        "method": "更换",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "准备",
+        "outcome": "做饭",
+        "location": "营地",
+        "time_context": "换衣后",
+        "method": "用卡式炉和锅具",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "系统",
+        "location": "营地",
+        "time_context": "等待饭熟时",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "回复",
+        "outcome": "觉醒序列超凡的两种方式",
+        "location": "营地",
+        "time_context": "询问后",
+        "method": "信息传递",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "系统",
+        "location": "营地",
+        "time_context": "得知方式后",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "回复",
+        "outcome": "自我觉醒方法需要三千杀戮点",
+        "location": "营地",
+        "time_context": "询问后",
+        "method": "信息传递",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "兑换",
+        "outcome": "对付诡异的方案",
+        "location": "营地",
+        "time_context": "思考后",
+        "method": "消耗三百杀戮点",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "提供",
+        "outcome": "黑狗血能对诡异起作用",
+        "location": "营地",
+        "time_context": "兑换后",
+        "method": "信息传递",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "系统",
+        "location": "营地",
+        "time_context": "得知黑狗血后",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "回复",
+        "outcome": "可以兑换汽油或其他物资",
+        "location": "营地",
+        "time_context": "询问后",
+        "method": "信息传递",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第10章 机械师序列 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "升级了",
+        "outcome": "三轮自行车",
+        "location": "车队末尾",
+        "time_context": "天光微亮时",
+        "method": "使用系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "观察了",
+        "outcome": "车队头部车辆",
+        "location": "车队末尾",
+        "time_context": "升级后",
+        "method": "用眼睛看",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "注意到了",
+        "outcome": "陈野的摩托三轮车",
+        "location": "车队末尾",
+        "time_context": "升级后",
+        "method": "用眼睛看",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "讨论了",
+        "outcome": "陈野的改装能力",
+        "location": "车队末尾",
+        "time_context": "升级后",
+        "method": "用语言交流",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "怀疑了",
+        "outcome": "陈野是诡异",
+        "location": "车队末尾",
+        "time_context": "讨论后",
+        "method": "用眼神和猜测",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "女孩",
+        "action": "走了过来",
+        "outcome": "陈野处",
+        "location": "车队末尾",
+        "time_context": "骚动后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "女孩",
+        "action": "询问了",
+        "outcome": "陈野是否觉醒序列超凡",
+        "location": "车队末尾",
+        "time_context": "见面后",
+        "method": "用语言",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "女孩",
+        "action": "带走了",
+        "outcome": "陈野",
+        "location": "从车队末尾到车队前部",
+        "time_context": "询问后",
+        "method": "步行引导",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "明白了",
+        "outcome": "女孩误认系统为序列能力",
+        "location": "车队前部",
+        "time_context": "被带走后",
+        "method": "思考",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第11章 人类还有希望吗？ ===",
+    "events": [
+      {
+        "subject": "女孩",
+        "action": "宣布",
+        "outcome": "陈野觉醒机械师序列",
+        "location": "车队",
+        "time_context": "陈野觉醒后",
+        "method": "口头说明",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "人们",
+        "action": "看向",
+        "outcome": "陈野",
+        "location": "车队",
+        "time_context": "女孩宣布后",
+        "method": "用眼神",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少女",
+        "action": "示意",
+        "outcome": "摩托三轮车",
+        "location": "车队",
+        "time_context": "宣布后",
+        "method": "甩头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "赤足男人",
+        "action": "欢迎",
+        "outcome": "陈野",
+        "location": "车队",
+        "time_context": "陈野觉醒后",
+        "method": "伸出手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "被请到",
+        "outcome": "帐篷",
+        "location": "车队",
+        "time_context": "觉醒后",
+        "method": "邀请",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "介绍",
+        "outcome": "序列超凡信息",
+        "location": "帐篷",
+        "time_context": "陈野进入帐篷后",
+        "method": "口头解释",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "解释",
+        "outcome": "机械师序列能力",
+        "location": "帐篷",
+        "time_context": "陈野提问后",
+        "method": "口头说明",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "描述",
+        "outcome": "诡异和序列超凡情况",
+        "location": "帐篷",
+        "time_context": "解释过程中",
+        "method": "口头叙述",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "说明",
+        "outcome": "车队安全原因",
+        "location": "帐篷",
+        "time_context": "解释过程中",
+        "method": "口头说明",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "邀请",
+        "outcome": "陈野加入车队",
+        "location": "帐篷",
+        "time_context": "解释后",
+        "method": "口头邀请",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "同意",
+        "outcome": "加入车队",
+        "location": "帐篷",
+        "time_context": "邀请后",
+        "method": "握手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "汽油",
+        "location": "帐篷",
+        "time_context": "加入后",
+        "method": "口头提问",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "提议",
+        "outcome": "内部交易会",
+        "location": "帐篷",
+        "time_context": "陈野询问后",
+        "method": "口头建议",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "期待",
+        "outcome": "交易会",
+        "location": "帐篷",
+        "time_context": "提议后",
+        "method": "思考",
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "id": "第12章 交换物资 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "明白了",
+        "outcome": "车队的生存法则",
+        "location": "车队",
+        "time_context": "很快",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "举办",
+        "outcome": "物资交换会",
+        "location": "车队",
+        "time_context": "欢迎陈野加入时",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拿出",
+        "outcome": "摩托车上的物资",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拒绝交换",
+        "outcome": "香烟",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "女明星周岚",
+        "location": "车队",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "询问",
+        "outcome": "女式衣服",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "太阳能充电板",
+        "location": "褚澈的后备箱",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "提议交换",
+        "outcome": "血红皮子",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": "用一袋米或两条华子",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拒绝",
+        "outcome": "褚澈的提议",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "汽油价格",
+        "location": "褚澈的摊位",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "报价",
+        "outcome": "汽油",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": "一箱泡面、十条士力架、五斤大米",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "查看",
+        "outcome": "娜娜的后备箱",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "提议交换",
+        "outcome": "掌机",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": "用一袋面粉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "查看",
+        "outcome": "长刀",
+        "location": "娜娜的摊位",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "报价",
+        "outcome": "长刀",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": "十斤面粉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "汽油价格",
+        "location": "娜娜的摊位",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "报价",
+        "outcome": "汽油",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": "二十斤大米",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "查看",
+        "outcome": "大巴车的物资",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "修理工具",
+        "location": "大巴车的摊位",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "眼镜男",
+        "action": "提议交换",
+        "outcome": "修理工具",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": "十斤大米或两箱泡面",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "交换条件",
+        "location": "交易会",
+        "time_context": "交易会期间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第13章 如此臭不要脸 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "皱眉",
+        "outcome": "对报价不满",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "陈野",
+        "action": "交换",
+        "outcome": "修理工具",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "用五斤大米或免费维修两次",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "交换",
+        "outcome": "调味料",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "用几包泡面",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发愁",
+        "outcome": "未换到汽油",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "思考",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "周岚",
+        "action": "观察",
+        "outcome": "陈野",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "视线",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "拿出",
+        "outcome": "汽油桶",
+        "location": "小汽车旁",
+        "time_context": "交易期间",
+        "method": "打开车后座",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少年",
+        "action": "阻止",
+        "outcome": "周岚",
+        "location": "小汽车旁",
+        "time_context": "交易期间",
+        "method": "拉住手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "走向",
+        "outcome": "陈野",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "提着油桶",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "提出交换",
+        "outcome": "汽油",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "报价八斤大米",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "打量",
+        "outcome": "周岚",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "拒绝",
+        "outcome": "周岚的报价",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "生气",
+        "outcome": "对陈野的话",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "言语和表情",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "陈野",
+        "action": "解释",
+        "outcome": "自己的立场",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "同意",
+        "outcome": "交易",
+        "location": "交易现场",
+        "time_context": "交易期间",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第14章 大明星后悔了 ===",
+    "events": [
+      {
+        "subject": "周岚",
+        "action": "送出了",
+        "outcome": "一桶汽油给陈野",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "直接给予",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "反对了",
+        "outcome": "姐姐送汽油的行为",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "言语争论",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "拿回了",
+        "outcome": "汽油从陈野处",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "直接取走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "告诉了",
+        "outcome": "黑狗血对付诡异的法子给褚澈",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "言语交流",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "交换了",
+        "outcome": "一桶汽油给陈野",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "以消息换取",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "告诉了",
+        "outcome": "黑狗血对付诡异的法子给娜娜",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "言语交流",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "交换了",
+        "outcome": "一把户外柴刀给陈野",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "以消息换取",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "换到了",
+        "outcome": "两小袋黑狗血",
+        "location": "车队",
+        "time_context": "末日",
+        "method": "用巧克力和香肠交换",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "调整了",
+        "outcome": "弩箭",
+        "location": "摩托三轮车上",
+        "time_context": "末日",
+        "method": "用柴刀",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "出发了",
+        "outcome": "移动",
+        "location": "车队",
+        "time_context": "十五分钟后",
+        "method": "车辆行驶",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第15章 有诡 ===",
+    "events": []
+  },
+  {
+    "id": "第16章 新的幸存者 ===",
+    "events": [
+      {
+        "subject": "妇人",
+        "action": "尖叫",
+        "outcome": "引起营地混乱",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "发出声音",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看见",
+        "outcome": "剑光和铁狮、娜娜出动",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "戒备",
+        "outcome": "手弩和黑狗血弩箭",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "拿过手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "树林",
+        "action": "出现",
+        "outcome": "几十道鬼影",
+        "location": "营地附近树林",
+        "time_context": "夜晚",
+        "method": "影影绰绰",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "黑影",
+        "action": "走出",
+        "outcome": "一个人",
+        "location": "树林阴影",
+        "time_context": "夜晚",
+        "method": "行走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "黑影",
+        "action": "请求",
+        "outcome": "救救我们",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "出现",
+        "outcome": "询问身份",
+        "location": "人群前",
+        "time_context": "夜晚",
+        "method": "行走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "黑影",
+        "action": "回答",
+        "outcome": "从鹿城逃出",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "是否吸引诡异",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "靠近褚澈说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "发动能力",
+        "outcome": "感知无诡异",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "吃土",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "宣布",
+        "outcome": "加入规矩",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "黑影",
+        "action": "同意",
+        "outcome": "遵守规矩",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "挑人",
+        "outcome": "中年妇女做饭",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "选择",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "打盹",
+        "outcome": "养足精神",
+        "location": "车斗",
+        "time_context": "夜晚",
+        "method": "裹紧衣服",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "女声",
+        "action": "抗议",
+        "outcome": "不公平",
+        "location": "营地",
+        "time_context": "夜晚",
+        "method": "大声说话",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第17章 还是有人搞不清自己的位置 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "听到",
+        "outcome": "挑事的声音",
+        "location": "车队营地",
+        "time_context": "末日期间",
+        "method": "听觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "微胖女人",
+        "action": "发表言论",
+        "outcome": "质疑公平性",
+        "location": "车队营地",
+        "time_context": "做饭时",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "询问",
+        "outcome": "公平标准",
+        "location": "车队营地",
+        "time_context": "女人发言后",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "命令",
+        "outcome": "男人做饭",
+        "location": "车队营地",
+        "time_context": "女人发言后",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "阿宝叔",
+        "action": "选人",
+        "outcome": "男人做饭",
+        "location": "幸存者人群",
+        "time_context": "褚澈命令后",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "做饭女人们",
+        "action": "仇视",
+        "outcome": "微胖女人",
+        "location": "车队营地",
+        "time_context": "失去工作后",
+        "method": "眼神",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "褚澈",
+        "action": "支付",
+        "outcome": "面包给帮忙男人",
+        "location": "车队营地",
+        "time_context": "饭后",
+        "method": "分发",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "卷发大妈",
+        "action": "扇巴掌",
+        "outcome": "微胖女人",
+        "location": "车队营地",
+        "time_context": "饭后",
+        "method": "肢体动作",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "其他大妈",
+        "action": "攻击",
+        "outcome": "微胖女人",
+        "location": "车队营地",
+        "time_context": "饭后",
+        "method": "肢体动作",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "观察",
+        "outcome": "褚澈的意图",
+        "location": "车斗",
+        "time_context": "事件后",
+        "method": "思考",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "做饭",
+        "outcome": "野菜炒腊肉",
+        "location": "车斗",
+        "time_context": "天亮后",
+        "method": "卡式炉和柴刀",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老妇人",
+        "action": "请求",
+        "outcome": "分享食物",
+        "location": "陈野车斗旁",
+        "time_context": "陈野做饭后",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "小孩",
+        "action": "抢夺",
+        "outcome": "陈野的饭碗",
+        "location": "陈野车斗旁",
+        "time_context": "老妇人请求后",
+        "method": "肢体动作",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "阴沉表情",
+        "outcome": "对熊孩子不耐烦",
+        "location": "车斗",
+        "time_context": "小孩抢夺后",
+        "method": "表情",
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "id": "第18章 他是个孩子，但不是畜生 ===",
+    "events": [
+      {
+        "subject": "熊孩子",
+        "action": "抢饭",
+        "outcome": "陈野",
+        "location": "营地",
+        "time_context": "晚饭时",
+        "method": "动手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "扇巴掌",
+        "outcome": "熊孩子",
+        "location": "营地",
+        "time_context": "熊孩子抢饭后",
+        "method": "用手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老妇人",
+        "action": "指责",
+        "outcome": "陈野",
+        "location": "营地",
+        "time_context": "陈野扇巴掌后",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "踢飞",
+        "outcome": "熊孩子",
+        "location": "营地",
+        "time_context": "老妇人指责后",
+        "method": "用脚",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "踢翻",
+        "outcome": "老妇人",
+        "location": "营地",
+        "time_context": "老妇人要拼命后",
+        "method": "用脚",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "警告",
+        "outcome": "奶孙",
+        "location": "营地",
+        "time_context": "踢翻老妇人后",
+        "method": "言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "出发",
+        "outcome": "移动",
+        "location": "营地",
+        "time_context": "事件结束后",
+        "method": "发动车辆",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发动",
+        "outcome": "摩托三轮车",
+        "location": "营地",
+        "time_context": "车队出发时",
+        "method": "用钥匙",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第19章 奇物01257 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "感觉到",
+        "outcome": "微风有寒意",
+        "location": "摩托三轮车上",
+        "time_context": "十一月初",
+        "method": "骑在摩托三轮车上",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "陈野",
+        "action": "计划搜集",
+        "outcome": "御寒衣物",
+        "location": "下一次搜集物资时",
+        "time_context": "冬天前",
+        "method": "通过搜集物资",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "计划改造",
+        "outcome": "摩托三轮车",
+        "location": "车斗和车头",
+        "time_context": "前些天下雨后",
+        "method": "加棚顶",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "准备",
+        "outcome": "足够的弩箭",
+        "location": "摩托三轮车上",
+        "time_context": "这次",
+        "method": "准备弩箭",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "计划获取",
+        "outcome": "杀戮值",
+        "location": "长寿村",
+        "time_context": "到达长寿村后",
+        "method": "大开杀戒",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "行进",
+        "outcome": "速度不快",
+        "location": "行进途中",
+        "time_context": "日常",
+        "method": "徒步或使用交通工具",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "铁狮",
+        "action": "坐满",
+        "outcome": "大巴车",
+        "location": "大巴车里",
+        "time_context": "昨天晚上加入新幸存者后",
+        "method": "收纳新人",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈和娜娜",
+        "action": "保持",
+        "outcome": "越野车三人配置",
+        "location": "越野车内",
+        "time_context": "昨天晚上加入新幸存者后",
+        "method": "不收纳新人",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "被盯上",
+        "outcome": "摩托三轮车",
+        "location": "车队中",
+        "time_context": "昨天晚上加入新幸存者后",
+        "method": "鉴于陈野之前的态度",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "带领",
+        "outcome": "车队寻找庇护所",
+        "location": "晚上",
+        "time_context": "第一天的行程结束后",
+        "method": "带领车队",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "血月",
+        "action": "升起",
+        "outcome": "染红天地",
+        "location": "天空",
+        "time_context": "晚上",
+        "method": "悄悄升起",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "褚澈",
+        "action": "回应",
+        "outcome": "不满抗议",
+        "location": "营地",
+        "time_context": "晚上提供晚餐时",
+        "method": "用一句话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "做",
+        "outcome": "晚餐",
+        "location": "车斗附近",
+        "time_context": "晚上",
+        "method": "用拙劣的厨艺",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "感觉到",
+        "outcome": "怨恨目光",
+        "location": "营地",
+        "time_context": "晚上",
+        "method": "看过去",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "陈野",
+        "action": "睡",
+        "outcome": "在车斗里",
+        "location": "车斗里",
+        "time_context": "晚上",
+        "method": "铺满衣服",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "阿宝叔",
+        "action": "通知",
+        "outcome": "陈野开会",
+        "location": "车斗",
+        "time_context": "晚上",
+        "method": "来通知",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "参加",
+        "outcome": "会议",
+        "location": "帐篷",
+        "time_context": "晚上",
+        "method": "跟着阿宝叔",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "提到",
+        "outcome": "徐娇娇串联",
+        "location": "帐篷",
+        "time_context": "会议中",
+        "method": "倒茶后说",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "回应",
+        "outcome": "跳梁小丑",
+        "location": "帐篷",
+        "time_context": "会议中",
+        "method": "喝茶后说",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "预估",
+        "outcome": "到达长寿村",
+        "location": "帐篷",
+        "time_context": "会议中",
+        "method": "根据预估",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "拿出",
+        "outcome": "偷听收音机",
+        "location": "帐篷",
+        "time_context": "会议中",
+        "method": "摆弄收音机",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "解释",
+        "outcome": "奇物01257",
+        "location": "帐篷",
+        "time_context": "会议中",
+        "method": "解释收音机",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第20章 偷听收音机 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "心中犯嘀咕",
+        "outcome": "关于编号排名和娜娜的知识",
+        "location": "车队",
+        "time_context": "末日开始后几个月",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "褚澈",
+        "action": "抬起头",
+        "outcome": "宣布收音机准备好",
+        "location": "车队",
+        "time_context": "广播前",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "偷听收音机",
+        "action": "播放广播",
+        "outcome": "介绍长寿村信息",
+        "location": "车队",
+        "time_context": "2030年11月5号晚上8:35分",
+        "method": "通过电台频道",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "广播",
+        "action": "报道",
+        "outcome": "长寿村有357口村民死亡",
+        "location": "长寿村",
+        "time_context": "三个月前",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "广播",
+        "action": "提供信息",
+        "outcome": "长寿村物资和危险评级",
+        "location": "长寿村",
+        "time_context": "当前",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "询问",
+        "outcome": "陈野是否一起行动",
+        "location": "车队",
+        "time_context": "广播后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "表示",
+        "outcome": "要和大家一起行动",
+        "location": "车队",
+        "time_context": "广播后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚澈",
+        "action": "分配物资",
+        "outcome": "褚澈和娜娜各三成，铁狮和陈野各两成",
+        "location": "车队",
+        "time_context": "广播后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "偷听收音机",
+        "action": "播放",
+        "outcome": "褚澈的私下评论",
+        "location": "车队",
+        "time_context": "大家商量计划时",
+        "method": "偷听持有者话语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "质问",
+        "outcome": "褚澈关于不男不女的评论",
+        "location": "车队",
+        "time_context": "广播播放评论后",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "铁狮",
+        "action": "表达委屈",
+        "outcome": "褚澈关于泰坦序列的评论",
+        "location": "车队",
+        "time_context": "广播播放评论后",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "娜娜",
+        "action": "抽出长剑",
+        "outcome": "准备攻击褚澈",
+        "location": "车队",
+        "time_context": "广播播放评论后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第21章 这村子没有活人 ===",
+    "events": [
+      {
+        "subject": "褚队长",
+        "action": "被娜娜推开",
+        "outcome": "熊猫眼",
+        "location": "大帐篷",
+        "time_context": "离开帐篷时",
+        "method": "娜娜推",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "推开",
+        "outcome": "陈野和铁狮",
+        "location": "大帐篷",
+        "time_context": "离开帐篷时",
+        "method": "大踏步",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "丢给",
+        "outcome": "褚队长活该的眼神",
+        "location": "大帐篷",
+        "time_context": "离开帐篷时",
+        "method": "眼神",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "启动",
+        "outcome": "形成长蛇",
+        "location": "路上",
+        "time_context": "离开帐篷后",
+        "method": "加速",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "感觉",
+        "outcome": "怨毒的眼睛",
+        "location": "车队后面",
+        "time_context": "行进中",
+        "method": "回头",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "陈野",
+        "action": "思考",
+        "outcome": "序列代价",
+        "location": "摩托三轮车",
+        "time_context": "行进中",
+        "method": "吸烟",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "惊呼",
+        "outcome": "发现村子",
+        "location": "队伍中",
+        "time_context": "行进中",
+        "method": "大声",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "意识到",
+        "outcome": "油箱见底",
+        "location": "摩托三轮车",
+        "time_context": "行进中",
+        "method": "看仪表盘",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "落在",
+        "outcome": "所有人后面",
+        "location": "村子口",
+        "time_context": "到达时",
+        "method": "摩托没油",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "感觉",
+        "outcome": "村子阴森",
+        "location": "长寿村口",
+        "time_context": "大中午",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "感觉",
+        "outcome": "心里发凉",
+        "location": "长寿村口",
+        "time_context": "大中午",
+        "method": "看村子",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "周岚",
+        "action": "建议",
+        "outcome": "别去村子",
+        "location": "长寿村口",
+        "time_context": "大中午",
+        "method": "对话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚队长",
+        "action": "宣布",
+        "outcome": "时间限制",
+        "location": "长寿村口",
+        "time_context": "早上十一点",
+        "method": "用喇叭",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼子",
+        "action": "出现",
+        "outcome": "在村口",
+        "location": "长寿村村口",
+        "time_context": "大中午",
+        "method": "杵拐杖",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "骚动",
+        "outcome": "因为驼子",
+        "location": "长寿村口",
+        "time_context": "驼子出现后",
+        "method": "看到",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "娜娜",
+        "action": "说",
+        "outcome": "村子没有活人",
+        "location": "长寿村口",
+        "time_context": "驼子出现后",
+        "method": "引用收音机",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第22章 众生相 ===",
+    "events": [
+      {
+        "subject": "驼背老头",
+        "action": "走向",
+        "outcome": "村子里",
+        "location": "村子外",
+        "time_context": "幸存者聚集后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "说道",
+        "outcome": "让陈野跟紧",
+        "location": "村子外",
+        "time_context": "驼背老头消失后",
+        "method": "瓮声瓮气地说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "走向",
+        "outcome": "村子里",
+        "location": "村子外",
+        "time_context": "说话后",
+        "method": "大踏步",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "跟随",
+        "outcome": "铁狮",
+        "location": "村子外",
+        "time_context": "铁狮行动后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "携带",
+        "outcome": "手弩和背包",
+        "location": "村子外",
+        "time_context": "进入村子前",
+        "method": "手持和背负",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "少女剑仙",
+        "action": "跟随",
+        "outcome": "陈野和铁狮",
+        "location": "村子外",
+        "time_context": "铁狮行动后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "猥琐老头",
+        "action": "跟随",
+        "outcome": "三人",
+        "location": "村子外",
+        "time_context": "三人行动后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "说道",
+        "outcome": "让周岚跟上",
+        "location": "村子外",
+        "time_context": "幸存者犹豫时",
+        "method": "小声说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "跟随",
+        "outcome": "陈野等人",
+        "location": "村子外",
+        "time_context": "说话后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "跟随",
+        "outcome": "周晓晓",
+        "location": "村子外",
+        "time_context": "周晓晓行动后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老妇人",
+        "action": "说道",
+        "outcome": "要去给孙子找吃的",
+        "location": "村子外",
+        "time_context": "幸存者聚集时",
+        "method": "对熊孩子说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "褚队长",
+        "action": "听到",
+        "outcome": "奶孙对话",
+        "location": "村子外",
+        "time_context": "奶孙对话时",
+        "method": "通过收音机监听",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "进入",
+        "outcome": "村子",
+        "location": "村子入口",
+        "time_context": "幸存者进入后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少女剑仙",
+        "action": "解释",
+        "outcome": "鬼蜮",
+        "location": "村子内",
+        "time_context": "进入村子后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "两名幸存者",
+        "action": "进入",
+        "outcome": "屋子",
+        "location": "村子门口",
+        "time_context": "进入村子后",
+        "method": "蹑手蹑脚",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "两名幸存者",
+        "action": "消失",
+        "outcome": "在屋子里",
+        "location": "村子门口屋子",
+        "time_context": "进入屋子后",
+        "method": "被吞掉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "戴眼镜男人",
+        "action": "逃跑",
+        "outcome": "向村子口",
+        "location": "村子内",
+        "time_context": "幸存者消失后",
+        "method": "转身跑",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第23章 你们可曾见过那女孩？ ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "带领队伍",
+        "outcome": "前往村中心大柳树",
+        "location": "长寿村",
+        "time_context": "深入村子时",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "出现并告知",
+        "outcome": "大柳树下有小超市",
+        "location": "村子路上",
+        "time_context": "陈野等人前进时",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "听到",
+        "outcome": "求救声",
+        "location": "驼背老傀方向",
+        "time_context": "驼背老傀离开时",
+        "method": "听觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "射击",
+        "outcome": "驼背老傀",
+        "location": "村子路上",
+        "time_context": "听到求救声后",
+        "method": "用手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "攻击",
+        "outcome": "驼背老傀",
+        "location": "村子路上",
+        "time_context": "陈野射击后",
+        "method": "用长剑",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "被斩断",
+        "outcome": "身体分成两段",
+        "location": "村子路上",
+        "time_context": "娜娜攻击后",
+        "method": "被长剑斩击",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "逃走",
+        "outcome": "爬上屋顶",
+        "location": "村子路上",
+        "time_context": "被斩断后",
+        "method": "蹦跳",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "逃离",
+        "outcome": "队伍",
+        "location": "长寿村",
+        "time_context": "驼背老傀逃走后",
+        "method": "跑向村口",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少女",
+        "action": "发现",
+        "outcome": "阿梓失踪",
+        "location": "队伍中",
+        "time_context": "继续前进时",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少女",
+        "action": "冲回",
+        "outcome": "来时的方向",
+        "location": "长寿村",
+        "time_context": "发现阿梓失踪后",
+        "method": "奔跑",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "是否见过那女孩",
+        "location": "长寿村",
+        "time_context": "事件发生后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第24章 大柳树小超市 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "说出",
+        "outcome": "关于陌生女孩的话",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "反驳",
+        "outcome": "陈野的话",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "发现",
+        "outcome": "自己叫不出女孩名字",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "搜索记忆",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "冷笑",
+        "outcome": "指出女孩有问题",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "拉住",
+        "outcome": "周晓晓",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "物理动作",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "瞥",
+        "outcome": "女扮男装的女孩",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "视觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少女剑仙",
+        "action": "说",
+        "outcome": "要快些行动",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "一行人",
+        "action": "往",
+        "outcome": "大柳树走去",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "讨论",
+        "outcome": "大柳树",
+        "location": "长寿村",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "走过拐角",
+        "outcome": "呆立不动",
+        "location": "大柳树附近",
+        "time_context": "在车队行进中",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "问",
+        "outcome": "铁狮发生了什么",
+        "location": "大柳树附近",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "走过拐角",
+        "outcome": "浑身颤抖",
+        "location": "大柳树附近",
+        "time_context": "在车队行进中",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "娜娜惊恐的表情",
+        "location": "大柳树附近",
+        "time_context": "在车队行进中",
+        "method": "视觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "靠近",
+        "outcome": "拐角",
+        "location": "大柳树附近",
+        "time_context": "在车队行进中",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "看到",
+        "outcome": "大柳树下吊着的尸体",
+        "location": "大柳树广场",
+        "time_context": "在车队行进中",
+        "method": "视觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "提醒",
+        "outcome": "收集物资",
+        "location": "大柳树广场",
+        "time_context": "在车队行进中",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "一行人",
+        "action": "钻进",
+        "outcome": "小超市",
+        "location": "大柳树下",
+        "time_context": "在车队行进中",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮和娜娜",
+        "action": "打开",
+        "outcome": "手电筒",
+        "location": "小超市内",
+        "time_context": "在车队行进中",
+        "method": "使用工具",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "所有人",
+        "action": "看到",
+        "outcome": "超市物资",
+        "location": "小超市内",
+        "time_context": "在车队行进中",
+        "method": "视觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老太太",
+        "action": "看到",
+        "outcome": "物资并感到贪婪",
+        "location": "小超市内",
+        "time_context": "在车队行进中",
+        "method": "视觉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "风",
+        "action": "吹动",
+        "outcome": "柳枝下的尸体",
+        "location": "大柳树广场",
+        "time_context": "在车队行进中",
+        "method": "自然现象",
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "id": "第25章 物资不够 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "装进",
+        "outcome": "香烟",
+        "location": "小超市",
+        "time_context": "搜刮物资时",
+        "method": "用袋子",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "搜刮",
+        "outcome": "大米和面粉",
+        "location": "小超市",
+        "time_context": "装香烟后",
+        "method": "用背包",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "准备装进",
+        "outcome": "腊肉和腊鱼",
+        "location": "小超市",
+        "time_context": "搜刮物资时",
+        "method": "用背包",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老妇人",
+        "action": "抓住",
+        "outcome": "腊肉和腊鱼",
+        "location": "小超市",
+        "time_context": "陈野准备装时",
+        "method": "用手臂",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "抽出",
+        "outcome": "柴刀",
+        "location": "小超市",
+        "time_context": "老妇人抓住后",
+        "method": "从腰间",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "砍向",
+        "outcome": "老妇人",
+        "location": "小超市",
+        "time_context": "抽出柴刀后",
+        "method": "用柴刀",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老妇人",
+        "action": "缩回手",
+        "outcome": "避免被砍",
+        "location": "小超市",
+        "time_context": "陈野砍来时",
+        "method": "因害怕",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "搜刮",
+        "outcome": "物资",
+        "location": "小超市",
+        "time_context": "陈野和老妇人冲突后",
+        "method": "用背包和袋子",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "小超市",
+        "action": "被搜刮",
+        "outcome": "空",
+        "location": "小超市",
+        "time_context": "幸存者们搜刮后",
+        "method": "被幸存者们",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野、娜娜、铁狮",
+        "action": "决定前往",
+        "outcome": "村长家",
+        "location": "小超市",
+        "time_context": "物资不够后",
+        "method": "商议",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "呵斥",
+        "outcome": "幸存者们",
+        "location": "小超市",
+        "time_context": "幸存者们争吵时",
+        "method": "用言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "宣布",
+        "outcome": "继续搜集物资",
+        "location": "小超市",
+        "time_context": "呵斥后",
+        "method": "用言语",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "走出",
+        "outcome": "超市外",
+        "location": "小超市门口",
+        "time_context": "宣布后",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第26章 诡异村子 ===",
+    "events": [
+      {
+        "subject": "娜娜",
+        "action": "提醒",
+        "outcome": "时间紧迫",
+        "location": "村子",
+        "time_context": "下午一点西十六",
+        "method": "看手表",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "看到",
+        "outcome": "大柳树",
+        "location": "小超市外",
+        "time_context": "从小超市出来后",
+        "method": "视觉观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "经过",
+        "outcome": "大柳树",
+        "location": "大柳树旁",
+        "time_context": "从小超市出来后",
+        "method": "踮脚静悄悄",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "注意到",
+        "outcome": "尸体方向变化",
+        "location": "大柳树下",
+        "time_context": "从小超市出来后",
+        "method": "视觉观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "未知人物",
+        "action": "发出",
+        "outcome": "尖叫声",
+        "location": "村子",
+        "time_context": "从小超市出来后",
+        "method": "尖叫",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "命令",
+        "outcome": "周晓晓闭嘴",
+        "location": "大柳树附近",
+        "time_context": "听到尖叫声后",
+        "method": "冷喝",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "身后无人",
+        "location": "大柳树附近",
+        "time_context": "离开大柳树范围后",
+        "method": "回头看",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "指出",
+        "outcome": "小庄尸体",
+        "location": "大柳树下",
+        "time_context": "陈野回头看后",
+        "method": "用颤抖的食指指",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "看到",
+        "outcome": "小庄尸体",
+        "location": "大柳树下",
+        "time_context": "周晓晓指出后",
+        "method": "视觉观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "决定",
+        "outcome": "离开",
+        "location": "大柳树下",
+        "time_context": "看到小庄尸体后",
+        "method": "抬腿就走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "宣布",
+        "outcome": "物资足够",
+        "location": "村子",
+        "time_context": "离开大柳树下后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "跑向",
+        "outcome": "村口",
+        "location": "村子",
+        "time_context": "宣布物资足够后",
+        "method": "连滚带爬",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "到达",
+        "outcome": "村长家",
+        "location": "长寿村",
+        "time_context": "离开大柳树下后",
+        "method": "疾行",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第27章 继续搜集物资 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "弹了弹烟灰",
+        "outcome": "说道",
+        "location": "院子外",
+        "time_context": "时间不多时",
+        "method": "声音低沉",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "走进",
+        "outcome": "院子",
+        "location": "院子",
+        "time_context": "时间不多时",
+        "method": "背着背包",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "走进",
+        "outcome": "院子",
+        "location": "院子",
+        "time_context": "时间不多时",
+        "method": "迈着腿",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "走进",
+        "outcome": "院子",
+        "location": "院子",
+        "time_context": "时间不多时",
+        "method": "抬着手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老太婆",
+        "action": "跟在",
+        "outcome": "陈野身后",
+        "location": "院子",
+        "time_context": "周岚准备进去时",
+        "method": "佝偻身影",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周岚",
+        "action": "拉了一下",
+        "outcome": "周晓晓",
+        "location": "院子",
+        "time_context": "周晓晓想骂人时",
+        "method": "伸手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "找到",
+        "outcome": "面粉、大米、挂面等食材",
+        "location": "厨房",
+        "time_context": "搜寻时",
+        "method": "手电筒照射",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "电子表",
+        "location": "三楼衣柜",
+        "time_context": "搜寻时",
+        "method": "在衣柜里",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "塞进",
+        "outcome": "电子表",
+        "location": "三楼",
+        "time_context": "发现后",
+        "method": "直接",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少年",
+        "action": "发现",
+        "outcome": "地门",
+        "location": "楼梯口旁",
+        "time_context": "两点半时",
+        "method": "手持钢管",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "跳下",
+        "outcome": "地下室",
+        "location": "地下室",
+        "time_context": "发现后",
+        "method": "闪身",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "发现",
+        "outcome": "土豆",
+        "location": "地下室",
+        "time_context": "跳下后",
+        "method": "手电筒照射",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "少年",
+        "action": "跳下",
+        "outcome": "地下室",
+        "location": "地下室",
+        "time_context": "听到声音后",
+        "method": "第一个",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "周晓晓",
+        "action": "跳下",
+        "outcome": "地下室",
+        "location": "地下室",
+        "time_context": "少年跳下后",
+        "method": "紧跟",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "跳下",
+        "outcome": "地下室",
+        "location": "地下室",
+        "time_context": "周晓晓跳下后",
+        "method": "接着",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老太太",
+        "action": "跳下",
+        "outcome": "地下室",
+        "location": "地下室",
+        "time_context": "幸存者们跳下后",
+        "method": "灵敏动作",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "递到",
+        "outcome": "背包",
+        "location": "地洞口",
+        "time_context": "装土豆后",
+        "method": "装满土豆",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "接住",
+        "outcome": "背包",
+        "location": "地洞口",
+        "time_context": "娜娜递到后",
+        "method": "单手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发射",
+        "outcome": "弩箭",
+        "location": "一楼",
+        "time_context": "看到佝偻身影时",
+        "method": "手持弩箭",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "获得",
+        "outcome": "杀戮值+100",
+        "location": "一楼",
+        "time_context": "发射弩箭后",
+        "method": "对驼背老傀产生伤害",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第28章 物资丰富 ===",
+    "events": [
+      {
+        "subject": "陈野",
+        "action": "猜测",
+        "outcome": "村长储存物资",
+        "location": "地窖",
+        "time_context": "发现物资时",
+        "method": "基于观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "发现",
+        "outcome": "丰富物资",
+        "location": "地窖",
+        "time_context": "探索时",
+        "method": "搜索",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "意识到",
+        "outcome": "收音机是宝物",
+        "location": "地窖附近",
+        "time_context": "发现物资后",
+        "method": "思考",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "戴眼镜青年",
+        "action": "催促",
+        "outcome": "赵大妈",
+        "location": "地窖洞口",
+        "time_context": "离开前",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "赵大妈",
+        "action": "装物资",
+        "outcome": "土豆",
+        "location": "地窖",
+        "time_context": "离开前",
+        "method": "手动",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "装满背包",
+        "outcome": "物资",
+        "location": "地窖",
+        "time_context": "离开前",
+        "method": "替换零食",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "背物资",
+        "outcome": "大背包",
+        "location": "地窖",
+        "time_context": "离开前",
+        "method": "背负",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "催促离开",
+        "outcome": "众人",
+        "location": "村长屋子",
+        "time_context": "西点前",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "查看腕表",
+        "outcome": "时间紧张",
+        "location": "村长屋子",
+        "time_context": "西点前",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "离开",
+        "outcome": "村长屋子",
+        "location": "村长屋子",
+        "time_context": "西点前",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "警惕",
+        "outcome": "不安感",
+        "location": "离开路上",
+        "time_context": "离开时",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "赵大妈",
+        "action": "爬出地窖",
+        "outcome": "携带物资",
+        "location": "地窖",
+        "time_context": "离开时",
+        "method": "大学生帮助",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "带路",
+        "outcome": "众人",
+        "location": "离开路上",
+        "time_context": "离开时",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "拆卸门",
+        "outcome": "带出背包",
+        "location": "村长屋子门口",
+        "time_context": "离开时",
+        "method": "暴力",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "往回走",
+        "outcome": "原路",
+        "location": "村子道路",
+        "time_context": "离开时",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "停住",
+        "outcome": "发现重复路",
+        "location": "村子道路",
+        "time_context": "离开时",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "打量环境",
+        "outcome": "眼熟感",
+        "location": "村子道路",
+        "time_context": "停住后",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "声音",
+        "action": "指出",
+        "outcome": "大柳树在前",
+        "location": "村子道路",
+        "time_context": "停住后",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "娜娜",
+        "action": "建议",
+        "outcome": "往回走",
+        "location": "村子道路",
+        "time_context": "发现错误后",
+        "method": "口头",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第29章 长寿村大逃杀1 ===",
+    "events": [
+      {
+        "subject": "众人",
+        "action": "离开",
+        "outcome": "村口方向",
+        "location": "大柳树附近",
+        "time_context": "之前",
+        "method": "快步走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "看到",
+        "outcome": "大柳树",
+        "location": "长寿村",
+        "time_context": "再次",
+        "method": "行走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "提议",
+        "outcome": "砍大柳树",
+        "location": "长寿村",
+        "time_context": "众人惊慌时",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "长腿少女",
+        "action": "询问",
+        "outcome": "陈野的看法",
+        "location": "长寿村",
+        "time_context": "时间紧迫时",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "决定",
+        "outcome": "再试一次",
+        "location": "长寿村",
+        "time_context": "还剩二十分钟",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "再次离开",
+        "outcome": "大柳树相反方向",
+        "location": "长寿村",
+        "time_context": "再次尝试时",
+        "method": "加快脚步",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "再次看到",
+        "outcome": "大柳树",
+        "location": "长寿村",
+        "time_context": "再次尝试后",
+        "method": "行走",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者",
+        "action": "指责",
+        "outcome": "陈野",
+        "location": "长寿村",
+        "time_context": "绝望时",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "踹飞",
+        "outcome": "幸存者",
+        "location": "长寿村",
+        "time_context": "幸存者发疯时",
+        "method": "用腿",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "长腿少女",
+        "action": "提议",
+        "outcome": "会会大柳树",
+        "location": "长寿村",
+        "time_context": "无法出去时",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "走向",
+        "outcome": "大柳树",
+        "location": "长寿村",
+        "time_context": "决定战斗时",
+        "method": "大踏步",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "出现",
+        "outcome": "前路",
+        "location": "长寿村",
+        "time_context": "众人准备去大柳树时",
+        "method": "出现",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "驼背老傀身份",
+        "location": "长寿村",
+        "time_context": "驼背老傀出现后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "回答",
+        "outcome": "是村长",
+        "location": "长寿村",
+        "time_context": "陈野询问后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "询问",
+        "outcome": "如何出去",
+        "location": "长寿村",
+        "time_context": "驼背老傀回答后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "回答",
+        "outcome": "出不去",
+        "location": "长寿村",
+        "time_context": "陈野询问后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "长腿少女",
+        "action": "攻击",
+        "outcome": "驼背老傀",
+        "location": "长寿村",
+        "time_context": "驼背老傀回答后",
+        "method": "用长剑",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "驼背老傀",
+        "action": "避开",
+        "outcome": "剑光",
+        "location": "长寿村",
+        "time_context": "长腿少女攻击时",
+        "method": "敏捷移动",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "剑光",
+        "action": "斩中",
+        "outcome": "驼背老傀的驼峰",
+        "location": "长寿村",
+        "time_context": "长腿少女攻击时",
+        "method": "剑光",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "众人",
+        "action": "发现",
+        "outcome": "驼背是人头",
+        "location": "长寿村",
+        "time_context": "衣物破碎后",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "id": "第30章 长寿村大逃杀2 ===",
+    "events": [
+      {
+        "subject": "驼背老傀",
+        "action": "露出",
+        "outcome": "背后的女人头",
+        "location": "长寿村",
+        "time_context": "大逃杀期间",
+        "method": "驼峰变形",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "女人头",
+        "action": "求救",
+        "outcome": "众人",
+        "location": "长寿村",
+        "time_context": "被惊醒后",
+        "method": "转头说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "射击",
+        "outcome": "驼背老傀",
+        "location": "长寿村",
+        "time_context": "发现女人头后",
+        "method": "用手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "长腿少女",
+        "action": "施展",
+        "outcome": "剑气",
+        "location": "长寿村民房",
+        "time_context": "驼背老傀逃跑后",
+        "method": "念咒饮血",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "长腿少女",
+        "action": "斩击",
+        "outcome": "民房坍塌",
+        "location": "长寿村",
+        "time_context": "施展剑气后",
+        "method": "用长剑",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "发现",
+        "outcome": "大柳树尸体增多",
+        "location": "长寿村广场",
+        "time_context": "再次到达后",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "长腿少女",
+        "action": "解释",
+        "outcome": "无人离开村子",
+        "location": "长寿村广场",
+        "time_context": "陈野发现后",
+        "method": "说话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "铁狮",
+        "action": "变身",
+        "outcome": "体型膨胀",
+        "location": "长寿村广场",
+        "time_context": "看到尸体后",
+        "method": "泰坦序列能力",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "尸体",
+        "action": "活动",
+        "outcome": "转向铁狮",
+        "location": "长寿村广场",
+        "time_context": "铁狮行动时",
+        "method": "僵硬移动",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "陈野",
+        "action": "警告",
+        "outcome": "铁狮",
+        "location": "长寿村广场",
+        "time_context": "尸体活动后",
+        "method": "说话并瞄准",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  }
+]

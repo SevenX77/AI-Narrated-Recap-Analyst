@@ -42,6 +42,7 @@ src/
 └── main.py         # 入口文件
 docs/
 ├── architecture/   # 架构设计与逻辑文档 (必须与代码同步)
+├── maintenance/    # 维护性文档 (清理报告、变更记录、迁移日志)
 └── api/            # 自动生成的 API 文档 (可选)
 root/
 ├── data/           # 项目数据存储 (Projects, Raw Data, Artifacts)
@@ -49,6 +50,23 @@ root/
 ├── logs/           # 运行日志 (Deprecated, moved to output/)
 └── scripts/        # 运维脚本 (Validation, Migration)
 ```
+
+### 📍 文档管理规范
+
+**保持根目录简洁是强制要求！**
+
+| 文档类型 | 必须放置位置 | 示例 | 说明 |
+|---------|------------|------|------|
+| 核心文档 | `docs/` | DEV_STANDARDS.md, PROJECT_STRUCTURE.md | 永久性、全局性的文档 |
+| 架构设计 | `docs/architecture/` | logic_flows.md | 系统架构和设计文档 |
+| 功能优化 | `docs/maintenance/` | ingestion_optimization_*.md | 针对特定功能的优化/部署文档 |
+| 维护记录 | `docs/maintenance/` | CLEANUP_SUMMARY.md | 清理报告、变更日志、迁移记录 |
+| 示例脚本 | `scripts/examples/` | generate_ep01_recap.py | 使用示例代码 |
+
+**❌ 严格禁止**：
+- 在 `docs/` 根目录创建针对特定功能的文档（应放在 `maintenance/` 下）
+- 在项目根目录创建任何 `.md` 或 `.txt` 文档文件
+- 在根目录创建临时测试文件
 
 ## 3. 模块定义规范 (Module Specifications)
 

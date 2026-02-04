@@ -69,9 +69,11 @@ class IngestionWorkflow(BaseWorkflow):
         srt_files = sorted(glob.glob(os.path.join(self.paths['raw'], "*.srt")))
         
         all_alignment_results = []
+        all_script_events = {}
         
         for srt_path in srt_files:
             filename = os.path.basename(srt_path)
+            episode_name = os.path.splitext(filename)[0]  # e.g., "ep01"
             logger.info(f"   - 分析: {filename}")
             
             with open(srt_path, 'r', encoding='utf-8') as f:
@@ -100,6 +102,16 @@ class IngestionWorkflow(BaseWorkflow):
             for chunk in srt_chunks:
                 events = self.analyst.extract_events(chunk['content'], f"{filename} {chunk['time']}")
                 srt_events_data.append({"time": chunk['time'], "events": [e.model_dump() for e in events]})
+            
+            # Save Script Events Artifact (per episode)
+            script_events_path = artifact_manager.save_artifact(
+                srt_events_data,
+                f"{episode_name}_script_events",
+                self.project_id,
+                self.paths['alignment']
+            )
+            logger.info(f"   - 脚本事件已保存: {script_events_path}")
+            all_script_events[episode_name] = srt_events_data
                 
             # Align
             logger.info(f"   - 对齐: {filename}")
@@ -114,11 +126,21 @@ class IngestionWorkflow(BaseWorkflow):
             self.paths['alignment']
         )
         
+        # Collect all output files for logging
+        output_files = [alignment_path]
+        output_files.extend([
+            os.path.join(self.paths['alignment'], f"{ep}_script_events_latest.json") 
+            for ep in all_script_events.keys()
+        ])
+        
         op_logger.log_operation(
             project_id=self.project_id,
             action="Ingestion & Alignment",
-            output_files=[alignment_path],
-            details=f"Processed {len(srt_files)} SRT files"
+            output_files=output_files,
+            details=f"Processed {len(srt_files)} SRT files, extracted novel events and script events"
         )
         
         logger.info("✅ 数据摄入与对齐完成！")
+        logger.info(f"   - Novel Events: novel_events_latest.json")
+        logger.info(f"   - Script Events: {len(all_script_events)} episodes")
+        logger.info(f"   - Alignment Results: alignment_latest.json")

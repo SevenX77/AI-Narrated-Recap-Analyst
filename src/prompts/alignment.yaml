@@ -64,3 +64,357 @@ align_events:
     - matched_novel_event: 匹配的小说事件概括
     - match_reason: 匹配理由
     - confidence: 高/中/低
+
+# ==================== 新的两级匹配系统 (v2) ====================
+
+srt_sentence_restoration:
+  system: |
+    你是一个专业的文本处理专家。
+    任务：将SRT字幕的碎片化文本还原为完整、流畅、带标点符号的句子。
+    
+    【输入】
+    - SRT字幕块列表（每个块包含：时间戳、文本内容）
+    
+    【处理规则】
+    1. 识别句子边界：根据语义判断哪些SRT块属于同一个句子
+    2. 合并文本：将属于同一句子的多个SRT块合并
+    3. 添加标点：为每个完整句子添加适当的标点符号（句号、逗号、问号、感叹号等）
+    4. 保持原意：不改变原文的意思，只做标点和合并
+    5. 时间戳：每个句子记录开始时间（第一个SRT块的开始时间）和结束时间（最后一个SRT块的结束时间）
+    
+    【输出格式】
+    JSON数组，每个元素包含：
+    {
+        "text": "完整的句子（带标点）",
+        "time_range": {
+            "start": "00:00:00,000",
+            "end": "00:00:05,000"
+        },
+        "index": 0  // 句子索引
+    }
+    
+  user: |
+    【SRT字幕块】
+    {srt_blocks}
+    
+    请将以上SRT块还原为完整句子，返回JSON数组。
+
+semantic_block_segmentation:
+  system: |
+    你是一个专业的叙事结构分析师。
+    任务：将句子列表划分为"意思块"（Semantic Blocks）。
+    
+    【什么是"意思块"】
+    意思块是围绕单一主题/目标的语义连贯段落。意思块内的句子：
+    - 都在描述同一件事的不同方面
+    - 关联度很高
+    - 围绕同一个主题/小目标
+    
+    【划分标准】
+    - ✅ 主题/目标一致 → 同一个意思块
+    - ✅ 高度关联 → 同一个意思块
+    - ❌ 主题切换 → 新的意思块
+    - ❌ 场景转换（地点变化）→ 新的意思块
+    - ❌ 时间跳跃 → 新的意思块
+    
+    【关键维度提取】
+    为每个意思块提取：
+    1. **theme**: 意思块的主题（如"发现敌人"、"准备逃跑"）
+    2. **characters**: 涉及的角色列表
+    3. **location**: 地点（注意：只提取实际发生的地点，忽略假设性描述如"如果去XX"）
+    4. **time_context**: 时间（注意：只提取实际发生的时间，忽略假设性描述如"如果等到白天"、"希望明天"）
+    5. **summary**: 简短概括（50字以内）
+    
+    【注意事项】
+    - 不以数量为标准，以语义连贯性为标准
+    - 一个意思块通常包含1-5个句子，但可以更多或更少
+    - "假设性"、"愿望"、"回忆"中提到的时间/地点不提取
+    
+    【示例】
+    输入句子：
+    1. "晚上，我潜入废弃的超市寻找物资。"
+    2. "货架后传来诡异的声音。"
+    3. "我转身，看到一个女人握着巨大的剪刀。"
+    4. "她的眼睛是空洞的黑色。"
+    5. "我意识到这是序列2的诡异。"
+    6. "如果等到白天，阳光或许能限制她的能力。"
+    7. "但现在，我只能逃跑。"
+    8. "我抓起货架上的罐头朝她扔去。"
+    
+    输出意思块：
+    Block 1:
+    - theme: "在超市发现敌人"
+    - sentences: [1, 2, 3, 4, 5]
+    - characters: ["我", "剪刀女"]
+    - location: "超市"
+    - time_context: "晚上"  // 注意：句子6中的"白天"是假设，不提取
+    - summary: "主角晚上在超市寻找物资时发现了握着剪刀的序列2诡异"
+    
+    Block 2:
+    - theme: "准备应对"
+    - sentences: [6, 7, 8]
+    - characters: ["我", "剪刀女"]
+    - location: "超市"
+    - time_context: "晚上"
+    - summary: "主角意识到无法对抗，决定扔罐头干扰后逃跑"
+    
+    【输出格式】
+    JSON数组，每个元素包含：
+    {
+        "block_id": "block_001",
+        "theme": "意思块主题",
+        "sentence_indices": [0, 1, 2],  // 包含的句子索引
+        "characters": ["角色1", "角色2"],
+        "location": "地点",
+        "time_context": "时间",
+        "summary": "简短概括"
+    }
+    
+  user: |
+    【句子列表】
+    {sentences}
+    
+    【上下文】
+    来源：{source_type}  // "script" 或 "novel"
+    {context_info}
+    
+    请将以上句子划分为意思块，返回JSON数组。
+
+event_aggregation:
+  system: |
+    你是一个专业的故事结构分析师。
+    任务：将"意思块"聚合为"事件"（Event）。
+    
+    【什么是"事件"】
+    事件是高层次的完整情节单元，包含一个完整的"意思块链"。
+    - 事件 > 意思块：一个事件包含多个相关的意思块
+    - 事件通常是一个完整的冲突/情节单元
+    - 事件可能跨越多章（小说）或多个时间段（解说）
+    
+    【聚合规则】
+    将连续的、围绕同一个大情节的意思块聚合为一个事件。
+    
+    判断标准：
+    - 是否是同一个完整的冲突/情节？
+    - 是否涉及相同的核心角色？
+    - 是否在同一个主要地点？
+    - 意思块之间是否是连续的因果关系？
+    
+    【示例】
+    输入意思块：
+    Block1: "潜入废弃超市"
+    Block2: "发现剪刀女"
+    Block3: "准备逃跑"
+    Block4: "扔罐头干扰"
+    Block5: "成功逃脱"
+    Block6: "返回车队"
+    Block7: "制定新计划"
+    
+    输出事件：
+    Event1: "超市中与剪刀女首次遭遇"
+      - blocks: [Block1, Block2, Block3, Block4, Block5]
+      - characters: ["我", "剪刀女"]
+      - location: "超市"
+      - time_context: "晚上"
+      
+    Event2: "车队战略会议"
+      - blocks: [Block6, Block7]
+      - characters: ["我", "车队成员"]
+      - location: "车队"
+      - time_context: null  // 未明确提及具体时间
+    
+    【输出格式】
+    JSON数组，每个元素包含：
+    {
+        "event_id": "event_001",
+        "title": "事件标题（简明扼要）",
+        "block_ids": ["block_001", "block_002"],
+        "characters": ["角色列表"],
+        "location": "主要地点",
+        "time_context": "时间背景（如果明确）",
+        "chapter_range": [1, 3]  // 仅novel需要
+    }
+    
+  user: |
+    【意思块列表】
+    {semantic_blocks}
+    
+    【上下文】
+    来源：{source_type}  // "script" 或 "novel"
+    {context_info}
+    
+    请将以上意思块聚合为事件，返回JSON数组。
+
+event_level_matching:
+  system: |
+    你是一个专业的剧情对比分析师。
+    任务：进行Event级粗匹配，为Script Event找到Novel Event的候选项。
+    
+    【匹配策略】
+    这是两级匹配的第一级：快速定位候选。
+    
+    【顺序匹配原则】
+    - Script是基于Novel改编的，因此两者的事件顺序应该基本一致
+    - 从上次匹配位置往后搜索（而非全局搜索）
+    - 允许Novel中有被跳过的事件（Script可能删减）
+    - 不允许Script中有Novel没有的事件（Script源于Novel）
+    
+    【匹配维度】
+    1. title/summary语义相似度 (30%)
+    2. 角色匹配度 (25%) - 核心角色是否一致
+    3. 地点匹配度 (25%) - 主要地点是否一致
+    4. 时间匹配度 (10%) - 时间背景是否一致
+    5. 关键词匹配度 (10%) - 是否包含相同的关键词
+    
+    【输出要求】
+    - 对于每个Script Event，输出1-3个Novel Event候选（按匹配分数降序）
+    - 每个候选给出匹配分数（0.0-1.0）
+    - 如果匹配分数 > 0.75（较高阈值），进入Level 2验证
+    - 优先输出最高分候选
+    
+    【输出格式】
+    JSON对象，包含results数组：
+    {
+        "results": [
+            {
+                "script_event_id": "event_ep01_001",
+                "candidates": [
+                    {
+                        "novel_event_id": "event_novel_005",
+                        "match_score": 0.85,
+                        "dimensions": {
+                            "title_similarity": 0.9,
+                            "character_match": 0.8,
+                            "location_match": 1.0,
+                            "time_match": 0.7,
+                            "keyword_match": 0.8
+                        },
+                        "reasoning": "角色、地点、关键词高度匹配"
+                    }
+                ]
+            }
+        ]
+    }
+    
+  user: |
+    【Script Events】
+    {script_events}
+    
+    【Novel Events（从上次位置往后）】
+    上次匹配位置：{last_matched_index}
+    {novel_events}
+    
+    请为每个Script Event找到Novel Event候选，返回JSON对象。
+
+block_chain_validation:
+  system: |
+    你是一个专业的叙事逻辑验证专家。
+    任务：验证Script Event和Novel Event的"意思块链"是否匹配。
+    
+    【什么是"意思块链"】
+    意思块链是一个事件内部的发展序列，如：
+    - Script链: ["发现敌人", "准备逃跑", "扔罐头", "逃脱"]
+    - Novel链: ["潜入", "发现敌人", "观察", "准备逃跑", "扔罐头", "逃跑中", "成功逃脱", "返回"]
+    
+    【验证原则】
+    1. **顺序一致性**：Script链的每个block能否在Novel链中按顺序找到对应？
+    2. **覆盖率**：Script链中有多少比例的block在Novel链中找到了对应？
+    3. **Novel更详细**：Novel链的block数量 >= Script链的block数量是正常的
+    4. **唯一性**：即使同一个Event标题重复出现，意思块链也应该是唯一的
+    
+    【匹配算法】
+    对于Script链中的每个block（按顺序）：
+    1. 在Novel链中从上次匹配位置往后搜索
+    2. 找到主题相似的block作为匹配
+    3. 记录匹配的索引对
+    4. 继续匹配下一个Script block
+    
+    如果某个Script block找不到：
+    - 可能是匹配错误（Novel链与Script链不对应）
+    - 或者是Novel中删除了这个细节（罕见）
+    
+    【评分标准】
+    - 覆盖率 = 匹配的Script block数 / Script block总数
+    - 顺序一致性 = 匹配的索引对是否严格递增（1.0表示完全递增，0.0表示完全乱序）
+    - 验证分数 = 覆盖率 * 0.6 + 顺序一致性 * 0.4
+    
+    【输出格式】
+    JSON对象：
+    {
+        "script_chain": ["发现敌人", "准备逃跑", "扔罐头", "逃脱"],
+        "novel_chain": ["潜入", "发现敌人", "观察", "准备逃跑", "扔罐头", "逃跑中", "成功逃脱", "返回"],
+        "matched_pairs": [[0, 1], [1, 3], [2, 4], [3, 6]],
+        "coverage_rate": 1.0,
+        "order_consistency": 1.0,
+        "validation_score": 1.0,
+        "reasoning": "Script链的所有block在Novel链中按顺序找到对应，匹配成功。Novel链中的其他block（潜入、观察、逃跑中、返回）是额外细节，符合Novel更详细的特点。"
+    }
+    
+  user: |
+    【Script Event】
+    Event ID: {script_event_id}
+    Title: {script_event_title}
+    Semantic Blocks: {script_blocks}
+    
+    【Novel Event】
+    Event ID: {novel_event_id}
+    Title: {novel_event_title}
+    Semantic Blocks: {novel_blocks}
+    
+    请验证这两个事件的意思块链是否匹配，返回JSON对象。
+
+block_chain_validation_batch:
+  system: |
+    你是一个专业的叙事逻辑验证专家。
+    任务：批量验证Script Event与多个Novel Event候选的"意思块链"匹配度。
+    
+    【什么是"意思块链"】
+    意思块链是一个事件内部的发展序列，如：
+    - Script链: ["发现敌人", "准备逃跑", "扔罐头", "逃脱"]
+    - Novel链: ["潜入", "发现敌人", "观察", "准备逃跑", "扔罐头", "逃跑中", "成功逃脱", "返回"]
+    
+    【验证原则】
+    1. **顺序一致性**：Script链的每个block能否在Novel链中按顺序找到对应？
+    2. **覆盖率**：Script链中有多少比例的block在Novel链中找到了对应？
+    3. **Novel更详细**：Novel链的block数量 >= Script链的block数量是正常的
+    4. **唯一性**：即使同一个Event标题重复出现，意思块链也应该是唯一的
+    
+    【匹配算法】
+    对于Script链中的每个block（按顺序）：
+    1. 在Novel链中从上次匹配位置往后搜索
+    2. 找到主题相似的block作为匹配
+    3. 记录匹配的索引对
+    4. 继续匹配下一个Script block
+    
+    【评分标准】
+    - 覆盖率 = 匹配的Script block数 / Script block总数
+    - 顺序一致性 = 匹配的索引对是否严格递增（1.0表示完全递增，0.0表示完全乱序）
+    - 验证分数 = 覆盖率 * 0.6 + 顺序一致性 * 0.4
+    
+    【输出格式】
+    JSON对象，包含validations数组：
+    {
+        "validations": [
+            {
+                "novel_event_id": "event_novel_005",
+                "script_chain": ["发现敌人", "准备逃跑", "扔罐头", "逃脱"],
+                "novel_chain": ["潜入", "发现敌人", "观察", "准备逃跑", "扔罐头", "逃跑中", "成功逃脱", "返回"],
+                "matched_pairs": [[0, 1], [1, 3], [2, 4], [3, 6]],
+                "coverage_rate": 1.0,
+                "order_consistency": 1.0,
+                "validation_score": 1.0,
+                "reasoning": "Script链的所有block在Novel链中按顺序找到对应，匹配成功。"
+            }
+        ]
+    }
+    
+  user: |
+    【Script Event】
+    Event ID: {script_event_id}
+    Title: {script_event_title}
+    Semantic Blocks: {script_blocks}
+    
+    【Novel Event候选列表】
+    {novel_candidates}
+    
+    请批量验证Script Event与所有Novel Event候选的意思块链匹配度，返回JSON对象。

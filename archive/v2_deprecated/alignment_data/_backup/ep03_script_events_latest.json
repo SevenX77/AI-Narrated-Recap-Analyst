@@ -1,0 +1,383 @@
+[
+  {
+    "time": "00:00:00,000",
+    "events": [
+      {
+        "subject": "围着男子的人",
+        "action": "脸色一变，连滚带爬地跑",
+        "outcome": "往自己的车上跑",
+        "location": "男子周围",
+        "time_context": "异动发生时",
+        "method": "连滚带爬",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "有人",
+        "action": "喊道",
+        "outcome": "娜娜和铁狮怎么办",
+        "location": "男子周围",
+        "time_context": "慌乱中",
+        "method": "喊叫",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "男子",
+        "action": "怒吼",
+        "outcome": "放心他们会追上来的，快走别废话",
+        "location": "男子周围",
+        "time_context": "异动发生时",
+        "method": "怒吼",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "其他幸存者",
+        "action": "发现了",
+        "outcome": "这几辆车的异动",
+        "location": "周围",
+        "time_context": "很快",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:00:15,833",
+    "events": []
+  },
+  {
+    "time": "00:00:29,900",
+    "events": [
+      {
+        "subject": "越野车",
+        "action": "行驶",
+        "outcome": "速度快",
+        "location": "车队前方",
+        "time_context": "幸存者掉队时",
+        "method": "驾驶",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "没有车的幸存者",
+        "action": "掉队",
+        "outcome": "被越野车甩开",
+        "location": "车队末尾",
+        "time_context": "越野车速度快时",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "驾驶三轮车",
+        "outcome": "勉强不掉队",
+        "location": "车队中",
+        "time_context": "越野车速度快时",
+        "method": "使用省力装置",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "大巴车",
+        "action": "冲了出来",
+        "outcome": "从镇子出现",
+        "location": "镇子",
+        "time_context": "我驾驶三轮车时",
+        "method": "摇摇晃晃地行驶",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "大巴车",
+        "action": "属于",
+        "outcome": "车队",
+        "location": "车队中",
+        "time_context": "之前",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "大巴车",
+        "action": "载有",
+        "outcome": "满满当当的人",
+        "location": "车内",
+        "time_context": "之前",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:00:44,033",
+    "events": []
+  },
+  {
+    "time": "00:01:00,700",
+    "events": []
+  },
+  {
+    "time": "00:01:15,466",
+    "events": []
+  },
+  {
+    "time": "00:01:28,700",
+    "events": [
+      {
+        "subject": "我",
+        "action": "发现",
+        "outcome": "杀戮值有1,200",
+        "location": null,
+        "time_context": "此时",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "确定",
+        "outcome": "车队察觉到了危险",
+        "location": null,
+        "time_context": "经历了这次灾难后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "决定",
+        "outcome": "将力三轮车改成电力三轮车",
+        "location": null,
+        "time_context": "为了不再掉队",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "查看",
+        "outcome": "系统的升级方案",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "给了",
+        "outcome": "确定的答复",
+        "location": "在我的眼前",
+        "time_context": "很快",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:44,100",
+    "events": [
+      {
+        "subject": "我",
+        "action": "看到",
+        "outcome": "一个3D的立体效果",
+        "location": null,
+        "time_context": "很快",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "升级方案",
+        "action": "需要",
+        "outcome": "杀戮值1,200点",
+        "location": null,
+        "time_context": "目前",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "升级",
+        "action": "需要",
+        "outcome": "15个小时",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "我",
+        "action": "有",
+        "outcome": "杀戮值1,200多一点",
+        "location": null,
+        "time_context": "目前",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "我",
+        "action": "能接受",
+        "outcome": "15个小时",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "我",
+        "action": "准备点击",
+        "outcome": "确定",
+        "location": null,
+        "time_context": "就在我刚准备的时候",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "看到",
+        "outcome": "一辆废弃的摩托车停在路边",
+        "location": "路边",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "有了",
+        "outcome": "一个大胆的想法",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "time": "00:02:02,400",
+    "events": [
+      {
+        "subject": "我",
+        "action": "询问系统",
+        "outcome": "是否杀戮点可以减免",
+        "location": "null",
+        "time_context": "null",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "答复",
+        "outcome": "找到合适的配件可减免部分杀戮值",
+        "location": "null",
+        "time_context": "null",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "拖",
+        "outcome": "摩托车到三轮车边上",
+        "location": "路边",
+        "time_context": "null",
+        "method": "用手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "询问系统",
+        "outcome": "可否利用摩托车进行改造",
+        "location": "null",
+        "time_context": "null",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:20,600",
+    "events": [
+      {
+        "subject": "系统",
+        "action": "告知",
+        "outcome": "改造需要900点杀戮值，目前节省了300点",
+        "location": null,
+        "time_context": null,
+        "method": "通过对话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "建议",
+        "outcome": "拆卸摩托车零件并安装到三轮车可节省100点杀戮值",
+        "location": null,
+        "time_context": null,
+        "method": "通过对话",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "建议",
+        "outcome": "找到第三个轮胎可节省100点杀戮值",
+        "location": null,
+        "time_context": null,
+        "method": "通过对话",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:38,133",
+    "events": [
+      {
+        "subject": "我",
+        "action": "明白了",
+        "outcome": "升级目标完成度越高，能省的杀戮值越多",
+        "location": null,
+        "time_context": "天太黑",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "点击确认",
+        "outcome": "三轮车上多了一个沙漏",
+        "location": "系统之中",
+        "time_context": "天太黑",
+        "method": "在系统之中",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "沙漏",
+        "action": "倒计时",
+        "outcome": "升级完成需要6个小时",
+        "location": "三轮车上",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  }
+]

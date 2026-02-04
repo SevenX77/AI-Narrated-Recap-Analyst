@@ -5,6 +5,7 @@ import shutil
 import asyncio
 from src.agents.deepseek_analyst import DeepSeekAnalyst, get_llm_client
 from src.agents.deepseek_writer import DeepSeekWriter
+from src.workflows.ingestion_workflow import IngestionWorkflow
 from src.workflows.training_workflow import TrainingWorkflow
 from src.utils.logger import op_logger, logger
 from src.core.project_manager import project_manager
@@ -75,6 +76,12 @@ def run_production_pipeline(project_id):
 
     logger.info("\n✅ 生产流程完成！")
 
+def run_ingestion_pipeline(project_id):
+    logger.info(f"📥 启动数据摄入与对齐流程: {project_id}")
+    
+    workflow = IngestionWorkflow(project_id)
+    asyncio.run(workflow.run())
+
 def run_training_pipeline(project_id):
     logger.info(f"🧪 启动训练/验证流程: {project_id}")
     
@@ -84,6 +91,10 @@ def run_training_pipeline(project_id):
 def main():
     parser = argparse.ArgumentParser(description="AI Narrated Recap Analyst CLI")
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
+    
+    # Ingestion Command
+    ingest_parser = subparsers.add_parser("ingest", help="Run data ingestion and alignment workflow")
+    ingest_parser.add_argument("--id", required=True, help="Project ID (e.g. PROJ_001)")
     
     # Production Command
     prod_parser = subparsers.add_parser("generate", help="Generate recap script from novel")
@@ -98,7 +109,9 @@ def main():
 
     args = parser.parse_args()
     
-    if args.command == "generate":
+    if args.command == "ingest":
+        run_ingestion_pipeline(args.id)
+    elif args.command == "generate":
         run_production_pipeline(args.id)
     elif args.command == "train":
         run_training_pipeline(args.id)

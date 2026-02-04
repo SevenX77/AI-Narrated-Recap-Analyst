@@ -1,0 +1,24 @@
+{
+  "overall_score": 77.75000000000001,
+  "avg_confidence": 0.95625,
+  "coverage_ratio": 0.5625,
+  "continuity_score": 0.85,
+  "episode_coverage": [
+    {
+      "episode_name": "unknown",
+      "total_events": 32,
+      "matched_events": 18,
+      "coverage_ratio": 0.5625,
+      "max_matched_chapter": "第14章",
+      "min_matched_chapter": "第6章"
+    }
+  ],
+  "is_qualified": true,
+  "needs_more_chapters": true,
+  "details": {
+    "total_events": 32,
+    "total_matched": 18,
+    "episode_count": 1,
+    "quality_threshold": 70.0
+  }
+}

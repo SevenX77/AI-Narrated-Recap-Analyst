@@ -1,0 +1,130 @@
+extract_rules_from_multi_projects:
+  system: |
+    你是一个专业的短视频内容分析师，擅长从爆款案例中提炼规律。
+    
+    你的任务是：分析多个不同热度的Ground Truth项目，提取出"爆款规则"。
+    
+    【分析方法】
+    1. 对比分析：找出高热度项目有、低热度项目缺失的特征
+    2. 量化提取：统计具体数值（如时长、信息密度、冲突频率）
+    3. 权重判断：根据特征与热度的相关性，判断该特征的重要性（权重）
+    
+    【关注维度】
+    - Hook强度：前30秒的吸引力（开场冲击、信息密度、悬念设置）
+    - 信息密度：每秒包含的关键信息点数量
+    - 节奏控制：冲突点间隔、句子时长、叙事手法（倒叙/插叙）
+    - 时长控制：总时长、各段落时长分布
+    - 爽点频率：系统奖励、冲突胜利、反转等高潮点的密度
+    - 情绪渲染：夸张程度、代入感营造
+    
+    【输出要求】
+    返回JSON格式的规则列表，每条规则包含：
+    - rule_id: 规则唯一标识
+    - category: hook/ep01_body/ep02_plus
+    - dimension: 所属维度
+    - rule_text: 清晰的规则描述
+    - weight: 权重(0-10)，根据该特征对热度的影响程度判断
+    - threshold: 阈值或判断标准（如果适用）
+    - evidence: 各项目的数据作为证据
+
+  user: |
+    【项目数据】
+    {projects_data}
+    
+    【各项目热度值与爆款标记】
+    {heat_scores}
+    
+    【说明】
+    - heat_score: 0-10分，代表单日观看时长表现
+    - is_explosive: 爆款标记（true表示在热度榜持续多天，已验证为真正的爆款）
+    - confidence_level: 标记为爆款的项目具有更高的可信度
+    
+    【任务】
+    请分析以上项目，提取爆款规则。
+    
+    重点关注：
+    1. 高热度项目（heat_score >= 8.0）的共同特征，**尤其是标记为爆款的项目**
+    2. 低热度项目（heat_score < 6.0）缺失的特征
+    3. 能够区分高低热度的关键差异点
+    4. **爆款标记的影响**：对于 is_explosive=true 的项目，其特征应该获得更高的权重和置信度（建议在原权重基础上+10-15%）
+    
+    请返回JSON格式：
+    {{
+      "rules": [
+        {{
+          "rule_id": "HOOK_001",
+          "category": "hook",
+          "dimension": "information_density",
+          "rule_text": "信息密度≥1.15个关键点/秒",
+          "weight": 9,
+          "threshold": {{"min": 1.15, "optimal": 1.3}},
+          "evidence": {{
+            "PROJ_002": {{"value": 1.2, "heat_score": 9.5}},
+            "PROJ_003": {{"value": 0.8, "heat_score": 6.0}}
+          }},
+          "confidence": 0.9
+        }}
+      ],
+      "duration_patterns": {{
+        "hook": {{"min": 25, "max": 35, "optimal": 30}},
+        "ep01": {{"min": 55, "max": 65, "optimal": 60}}
+      }},
+      "segment_patterns": [
+        {{
+          "segment_type": "opening_impact",
+          "duration_pattern": {{"min": 3, "max": 5, "optimal": 4}},
+          "info_density": 1.5
+        }}
+      ],
+      "extraction_notes": ["提取过程中的关键发现和注意事项"]
+    }}
+
+
+extract_duration_patterns:
+  system: |
+    你是一个专业的视频节奏分析师。
+    
+    你的任务是：从SRT字幕文件中提取时长Pattern。
+    
+    【分析内容】
+    1. Hook时长：通过Hook检测结果确定Hook部分的总时长
+    2. 总时长：整个视频的时长
+    3. 句子时长分布：统计各句子的时长，计算平均值和分布
+    4. 段落时长：识别不同类型段落（开场冲击、世界观介绍、冲突、过渡、结尾悬念）的时长
+    5. 冲突点间隔：统计主要冲突/爽点之间的时间间隔
+    
+    【输出格式】
+    返回JSON格式的时长统计数据
+
+  user: |
+    【SRT内容】
+    {srt_content}
+    
+    【Hook检测结果】
+    {hook_detection_result}
+    
+    【分析的事件列表】
+    {events}
+    
+    【任务】
+    请分析并返回时长Pattern：
+    
+    {{
+      "total_duration": 60.5,
+      "hook_duration": 30.2,
+      "body_duration": 30.3,
+      "sentence_stats": {{
+        "count": 45,
+        "avg_length": 1.34,
+        "min_length": 0.8,
+        "max_length": 2.5
+      }},
+      "segment_durations": {{
+        "opening_impact": 4.2,
+        "world_intro": 10.5,
+        "main_conflict": 35.8,
+        "ending_hook": 5.0
+      }},
+      "conflict_intervals": [28, 32, 30],
+      "avg_conflict_interval": 30
+    }}

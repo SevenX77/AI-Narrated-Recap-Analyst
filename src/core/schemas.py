@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any, Tuple
 from pydantic import BaseModel, Field
 
 class Character(BaseModel):
@@ -60,3 +60,207 @@ class FeedbackReport(BaseModel):
     issues: List[str] = Field(..., description="发现的问题列表")
     suggestions: List[str] = Field(..., description="改进建议列表")
     methodology_update: str = Field(..., description="提炼出的方法论/策略更新建议")
+
+class EpisodeCoverage(BaseModel):
+    """
+    单集SRT的覆盖情况
+    """
+    episode_name: str = Field(..., description="集数名称，如 'ep01'")
+    total_events: int = Field(..., description="该集的总事件数")
+    matched_events: int = Field(..., description="成功匹配的事件数")
+    coverage_ratio: float = Field(..., description="覆盖率 (0.0-1.0)")
+    max_matched_chapter: Optional[str] = Field(None, description="匹配到的最大章节，如 '第10章'")
+    min_matched_chapter: Optional[str] = Field(None, description="匹配到的最小章节，如 '第1章'")
+
+class AlignmentQualityReport(BaseModel):
+    """
+    对齐质量评估报告
+    
+    用于评估当前对齐结果的质量，决定是否需要继续提取更多章节
+    """
+    overall_score: float = Field(..., description="整体质量得分 (0-100)")
+    avg_confidence: float = Field(..., description="平均置信度 (0.0-1.0)")
+    coverage_ratio: float = Field(..., description="整体覆盖率 (0.0-1.0)")
+    continuity_score: float = Field(..., description="章节连续性得分 (0.0-1.0)")
+    
+    episode_coverage: List[EpisodeCoverage] = Field(..., description="各集覆盖情况")
+    
+    is_qualified: bool = Field(..., description="是否达到合格标准")
+    needs_more_chapters: bool = Field(..., description="是否需要提取更多章节")
+    
+    details: Dict[str, Any] = Field(default_factory=dict, description="详细统计信息")
+
+
+# ==================== 新的三层数据模型 (v2) ====================
+
+class TimeRange(BaseModel):
+    """时间范围 (用于Script的SRT时间轴)"""
+    start: str = Field(..., description="开始时间，如 '00:00:14,000'")
+    end: str = Field(..., description="结束时间，如 '00:00:30,900'")
+
+
+class Sentence(BaseModel):
+    """
+    句子 - 最小文本单元
+    
+    从SRT碎片化文本或小说文本中还原出的完整句子
+    """
+    text: str = Field(..., description="完整句子文本")
+    time_range: Optional[TimeRange] = Field(None, description="SRT时间范围（仅Script有）")
+    index: int = Field(..., description="在原文中的位置索引")
+
+
+class SemanticBlock(BaseModel):
+    """
+    意思块 - 情节步骤级
+    
+    围绕单一主题的语义连贯段落，包含1-N个句子
+    是匹配的核心单元
+    """
+    block_id: str = Field(..., description="意思块唯一标识，如 'block_ep01_001'")
+    theme: str = Field(..., description="意思块的主题，如 '发现敌人'、'准备逃跑'")
+    sentences: List[Sentence] = Field(..., description="构成该意思块的句子列表")
+    
+    # 关键维度（用于匹配验证）
+    characters: List[str] = Field(default_factory=list, description="涉及的角色，如 ['我', '剪刀女']")
+    location: Optional[str] = Field(None, description="地点，如 '超市'。注意：只提取实际发生的地点，忽略假设性描述")
+    time_context: Optional[str] = Field(None, description="时间，如 '晚上'、'深夜'。注意：只提取实际发生的时间，忽略假设性描述（如'如果等到白天'）")
+    
+    # Script特有
+    time_range: Optional[TimeRange] = Field(None, description="SRT时间范围（仅Script有）")
+    
+    # 匹配用
+    summary: str = Field(..., description="对这个意思块的简短概括（50字以内）")
+
+
+class Event(BaseModel):
+    """
+    事件 - 完整情节单元
+    
+    高层次的故事情节单元，包含一个完整的"意思块链"
+    可能跨越多章（Novel）或多个时间段（Script）
+    """
+    event_id: str = Field(..., description="事件唯一标识，如 'event_ep01_001'")
+    title: str = Field(..., description="事件标题，如 '超市中与剪刀女战斗'")
+    semantic_blocks: List[SemanticBlock] = Field(..., description="包含的意思块列表（按顺序）")
+    
+    # Event级元信息
+    characters: List[str] = Field(default_factory=list, description="主要角色列表")
+    location: Optional[str] = Field(None, description="主要地点")
+    time_context: Optional[str] = Field(None, description="时间背景")
+    
+    # Novel特有
+    chapter_range: Optional[Tuple[int, int]] = Field(None, description="章节范围，如 (1, 3) 表示第1-3章")
+    
+    # Script特有
+    time_range: Optional[TimeRange] = Field(None, description="视频时间范围（仅Script有）")
+    episode: Optional[str] = Field(None, description="所属集数，如 'ep01'（仅Script有）")
+
+
+class BlockChainValidation(BaseModel):
+    """
+    意思块链验证结果
+    
+    用于验证Script Event和Novel Event的意思块链是否匹配
+    """
+    script_chain: List[str] = Field(..., description="Script的意思块主题链，如 ['发现敌人', '准备逃跑', '扔罐头', '逃脱']")
+    novel_chain: List[str] = Field(..., description="Novel的意思块主题链，如 ['潜入', '发现敌人', '观察', '准备逃跑', '扔罐头', '逃跑中', '成功逃脱', '返回']")
+    
+    matched_pairs: List[Tuple[int, int]] = Field(default_factory=list, description="匹配的索引对，如 [(0, 1), (1, 3), (2, 4), (3, 6)]")
+    coverage_rate: float = Field(..., description="Script链的覆盖率 (0.0-1.0)，即Script链中有多少比例的block在Novel链中找到了对应")
+    order_consistency: float = Field(..., description="顺序一致性 (0.0-1.0)，验证匹配的block是否按顺序出现")
+    validation_score: float = Field(..., description="综合验证分数 (0.0-1.0)")
+    
+    reasoning: str = Field(..., description="验证推理过程")
+
+
+class EventAlignment(BaseModel):
+    """
+    Event级对齐结果
+    
+    两级匹配的最终结果：Event级粗匹配 + SemanticBlock链细验证
+    """
+    script_event: Event = Field(..., description="Script的事件")
+    novel_event: Event = Field(..., description="Novel的事件")
+    
+    # Level 1: Event级匹配分数
+    event_match_score: float = Field(..., description="Event级匹配分数 (0.0-1.0)")
+    
+    # Level 2: SemanticBlock链验证结果
+    block_chain_validation: BlockChainValidation = Field(..., description="意思块链验证结果")
+    
+    # 最终结果
+    final_confidence: float = Field(..., description="最终置信度 (0.0-1.0)，综合Event级和Block链级的分数")
+    reasoning: str = Field(..., description="匹配推理过程")
+
+
+# ==================== Hook-Body分离架构的新Schema ====================
+
+class BodyStartDetection(BaseModel):
+    """
+    Body起点检测结果
+    """
+    has_hook: bool = Field(..., description="是否存在Hook")
+    body_start_time: str = Field(..., description="Body开始的时间戳，如 '00:00:30,900'")
+    hook_end_time: Optional[str] = Field(None, description="Hook结束的时间戳（如has_hook=True）")
+    confidence: float = Field(..., description="检测置信度 (0.0-1.0)")
+    reasoning: str = Field(..., description="判断理由")
+
+
+class LayeredNode(BaseModel):
+    """
+    分层节点（用于分层对齐模型）
+    """
+    node_type: str = Field(..., description="节点类型：world_building/game_mechanics/items_equipment/plot_events")
+    content: str = Field(..., description="原文内容")
+    summary: str = Field(..., description="简要概括（20字以内）")
+    source_time: Optional[str] = Field(None, description="来源时间戳（如果来自Script）")
+    source_chapter: Optional[str] = Field(None, description="来源章节（如果来自Novel）")
+
+
+class HookLayeredContent(BaseModel):
+    """
+    Hook的分层内容
+    """
+    time_range: str = Field(..., description="Hook的时间范围，如 '00:00:00,000 - 00:00:30,900'")
+    raw_text: str = Field(..., description="Hook的原始文本")
+    world_building: List[LayeredNode] = Field(default_factory=list, description="世界观设定节点")
+    game_mechanics: List[LayeredNode] = Field(default_factory=list, description="游戏机制节点")
+    items_equipment: List[LayeredNode] = Field(default_factory=list, description="道具装备节点")
+    plot_events: List[LayeredNode] = Field(default_factory=list, description="情节事件节点")
+
+
+class HookAnalysisResult(BaseModel):
+    """
+    Hook分析完整结果（Phase 1输出）
+    """
+    episode: str = Field(..., description="集数，如 'ep01'")
+    detection: BodyStartDetection = Field(..., description="Body起点检测结果")
+    hook_content: Optional[HookLayeredContent] = Field(None, description="Hook的分层内容（如has_hook=True）")
+    intro_similarity: float = Field(0.0, description="Hook与Novel简介的相似度 (0.0-1.0)")
+    source_analysis: Dict[str, Any] = Field(default_factory=dict, description="来源分析（简介/章节/独立内容）")
+    status: str = Field("completed", description="处理状态")
+    timestamp: str = Field(..., description="处理时间戳")
+
+
+class NovelPreprocessingResult(BaseModel):
+    """
+    Novel预处理结果
+    """
+    novel_path: str = Field(..., description="Novel原始文件路径")
+    introduction_length: int = Field(..., description="简介长度（字符数）")
+    chapter_1_line: int = Field(..., description="第1章起始行号")
+    total_chapters: int = Field(..., description="总章节数")
+    output_intro: str = Field(..., description="输出简介文件路径")
+    output_index: str = Field(..., description="输出章节索引文件路径")
+
+
+class ChapterInfo(BaseModel):
+    """
+    章节信息
+    """
+    chapter_number: int = Field(..., description="章节号")
+    chapter_title: str = Field(..., description="章节标题")
+    start_line: int = Field(..., description="起始行号")
+    end_line: int = Field(..., description="结束行号")
+    line_count: int = Field(..., description="行数")

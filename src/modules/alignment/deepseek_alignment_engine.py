@@ -1,6 +1,7 @@
 import json
-from typing import List, Dict, Tuple
-from src.core.schemas import AlignmentItem
+import re
+from typing import List, Dict, Tuple, Optional
+from src.core.schemas import AlignmentItem, AlignmentQualityReport, EpisodeCoverage
 from src.utils.logger import logger
 from src.utils.prompt_loader import load_prompts
 from .alignment_engine import AlignmentEngine
@@ -175,3 +176,174 @@ class DeepSeekAlignmentEngine(AlignmentEngine):
                 context_map[time_point] = "\n\n".join(full_text)
             
         return context_map
+    
+    def evaluate_alignment_quality(
+        self, 
+        alignment_results: List[AlignmentItem],
+        quality_threshold: float = 70.0
+    ) -> AlignmentQualityReport:
+        """
+        评估对齐结果的质量
+        
+        Args:
+            alignment_results: 对齐结果列表
+            quality_threshold: 合格阈值 (默认 70.0)
+            
+        Returns:
+            AlignmentQualityReport: 质量评估报告
+        """
+        if not alignment_results:
+            return AlignmentQualityReport(
+                overall_score=0.0,
+                avg_confidence=0.0,
+                coverage_ratio=0.0,
+                continuity_score=0.0,
+                episode_coverage=[],
+                is_qualified=False,
+                needs_more_chapters=True,
+                details={}
+            )
+        
+        # 1. 按集数分组
+        episodes_data = {}
+        for item in alignment_results:
+            # 从 script_time 提取 episode（假设格式：ep01/00:00:12）
+            episode_match = re.search(r'(ep\d+)', item.script_time)
+            if episode_match:
+                episode_name = episode_match.group(1)
+            else:
+                episode_name = "unknown"
+            
+            if episode_name not in episodes_data:
+                episodes_data[episode_name] = []
+            episodes_data[episode_name].append(item)
+        
+        # 2. 计算各集的覆盖情况
+        episode_coverages = []
+        total_confidence_sum = 0
+        total_matched = 0
+        total_events = 0
+        
+        confidence_map = {"高": 1.0, "中": 0.6, "低": 0.3}
+        
+        for episode_name, items in episodes_data.items():
+            matched_items = [
+                item for item in items 
+                if item.matched_novel_chapter not in ["None", "Hook/Flashback"]
+            ]
+            
+            matched_count = len(matched_items)
+            total_count = len(items)
+            coverage_ratio = matched_count / total_count if total_count > 0 else 0.0
+            
+            # 提取最小和最大章节
+            chapter_numbers = []
+            for item in matched_items:
+                chapter_match = re.search(r'第(\d+)章', item.matched_novel_chapter)
+                if chapter_match:
+                    chapter_numbers.append(int(chapter_match.group(1)))
+            
+            min_chapter = f"第{min(chapter_numbers)}章" if chapter_numbers else None
+            max_chapter = f"第{max(chapter_numbers)}章" if chapter_numbers else None
+            
+            episode_coverages.append(EpisodeCoverage(
+                episode_name=episode_name,
+                total_events=total_count,
+                matched_events=matched_count,
+                coverage_ratio=coverage_ratio,
+                min_matched_chapter=min_chapter,
+                max_matched_chapter=max_chapter
+            ))
+            
+            # 累计统计
+            total_events += total_count
+            total_matched += matched_count
+            total_confidence_sum += sum(
+                confidence_map.get(item.confidence, 0.3) for item in items
+            )
+        
+        # 3. 计算平均置信度
+        avg_confidence = total_confidence_sum / len(alignment_results) if alignment_results else 0.0
+        
+        # 4. 计算整体覆盖率
+        overall_coverage = total_matched / total_events if total_events > 0 else 0.0
+        
+        # 5. 计算章节连续性得分
+        continuity_score = self._calculate_continuity(alignment_results)
+        
+        # 6. 计算综合得分
+        overall_score = (
+            avg_confidence * 0.4 +
+            overall_coverage * 0.4 +
+            continuity_score * 0.2
+        ) * 100
+        
+        # 7. 判断是否合格和是否需要更多章节
+        is_qualified = overall_score >= quality_threshold
+        
+        # 需要更多章节的条件：
+        # - 整体覆盖率低于 80%
+        # - 或有任何一集的覆盖率低于 60%
+        needs_more_chapters = (
+            overall_coverage < 0.8 or
+            any(ep.coverage_ratio < 0.6 for ep in episode_coverages)
+        )
+        
+        return AlignmentQualityReport(
+            overall_score=overall_score,
+            avg_confidence=avg_confidence,
+            coverage_ratio=overall_coverage,
+            continuity_score=continuity_score,
+            episode_coverage=episode_coverages,
+            is_qualified=is_qualified,
+            needs_more_chapters=needs_more_chapters,
+            details={
+                "total_events": total_events,
+                "total_matched": total_matched,
+                "episode_count": len(episodes_data),
+                "quality_threshold": quality_threshold
+            }
+        )
+    
+    def _calculate_continuity(self, alignment_results: List[AlignmentItem]) -> float:
+        """
+        计算章节连续性得分
+        
+        连续性越好，得分越高。主要检测章节跳跃程度。
+        
+        Args:
+            alignment_results: 对齐结果列表
+            
+        Returns:
+            float: 连续性得分 (0.0-1.0)
+        """
+        # 提取所有有效匹配的章节编号
+        chapter_numbers = []
+        for item in alignment_results:
+            if item.matched_novel_chapter not in ["None", "Hook/Flashback"]:
+                match = re.search(r'第(\d+)章', item.matched_novel_chapter)
+                if match:
+                    chapter_numbers.append(int(match.group(1)))
+        
+        if len(chapter_numbers) < 2:
+            return 1.0  # 样本太少，默认连续
+        
+        # 计算章节跳跃
+        chapter_numbers_sorted = sorted(set(chapter_numbers))
+        jumps = []
+        for i in range(1, len(chapter_numbers_sorted)):
+            jump = chapter_numbers_sorted[i] - chapter_numbers_sorted[i-1]
+            if jump > 1:  # 跳过了章节
+                jumps.append(jump - 1)
+        
+        # 计算跳跃惩罚
+        if not jumps:
+            return 1.0  # 完全连续
+        
+        avg_jump = sum(jumps) / len(jumps)
+        
+        # 跳跃越大，得分越低
+        # avg_jump=1 -> 0.9, avg_jump=2 -> 0.8, avg_jump=5 -> 0.5
+        continuity_score = max(0.0, 1.0 - (avg_jump * 0.1))
+        
+        return continuity_score

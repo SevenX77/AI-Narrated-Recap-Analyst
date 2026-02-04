@@ -1,0 +1,243 @@
+[
+  {
+    "time": "00:00:00,033",
+    "events": [
+      {
+        "subject": "我",
+        "action": "问了问",
+        "outcome": "系统",
+        "location": null,
+        "time_context": "吃完晚饭之后",
+        "method": "试探性地",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "给了",
+        "outcome": "答复",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "突发奇想",
+        "outcome": "利用300点杀戮值",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:00:14,833",
+    "events": []
+  },
+  {
+    "time": "00:00:30,133",
+    "events": [
+      {
+        "subject": "眼尖的人",
+        "action": "发现",
+        "outcome": "自行车是三轮车改造的",
+        "location": null,
+        "time_context": "现在",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "所有人",
+        "action": "用忌惮的眼神看向",
+        "outcome": "我",
+        "location": null,
+        "time_context": "发现后",
+        "method": "眼神",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "持剑少女",
+        "action": "朝我走来",
+        "outcome": "我",
+        "location": null,
+        "time_context": "就在这时",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:00:46,333",
+    "events": []
+  },
+  {
+    "time": "00:01:00,066",
+    "events": [
+      {
+        "subject": "赤足青年",
+        "action": "得知",
+        "outcome": "我是一名序列超凡",
+        "location": "帐篷",
+        "time_context": "昨晚",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "赤足青年",
+        "action": "两眼放光",
+        "outcome": "欢迎觉醒序列超凡",
+        "location": "帐篷",
+        "time_context": "此时",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "我",
+        "action": "被请到",
+        "outcome": "帐篷之中",
+        "location": "帐篷",
+        "time_context": "此时",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "得知",
+        "outcome": "车队总共有3名序列超凡",
+        "location": "帐篷",
+        "time_context": "此时",
+        "method": "据我所知",
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:01:15,733",
+    "events": [
+      {
+        "subject": "楚彻",
+        "action": "是",
+        "outcome": "队长",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "楚彻",
+        "action": "名叫",
+        "outcome": "赤足青年",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "娜娜",
+        "action": "是",
+        "outcome": "领路人序列白发美女",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "娜娜",
+        "action": "属于",
+        "outcome": "剑仙序列",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "铁狮",
+        "action": "是",
+        "outcome": "大块头",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "铁狮",
+        "action": "属于",
+        "outcome": "泰坦序列",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "楚彻",
+        "action": "解释",
+        "outcome": "序列超凡有好几百种，每个序列超凡都有自己独特的能力",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:29,066",
+    "events": []
+  },
+  {
+    "time": "00:01:45,500",
+    "events": [
+      {
+        "subject": "楚彻",
+        "action": "伸出左手",
+        "outcome": "null",
+        "location": "null",
+        "time_context": "那一刻",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "楚彻",
+        "action": "认识到",
+        "outcome": "人类的序列超凡在诡异面前依旧太过弱小",
+        "location": "null",
+        "time_context": "那一刻",
+        "method": "null",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "楚彻",
+        "action": "说",
+        "outcome": "陈也是车队的第四位序列超凡，有了你我们就更有保障了",
+        "location": "null",
+        "time_context": "说到这里",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:59,433",
+    "events": []
+  }
+]

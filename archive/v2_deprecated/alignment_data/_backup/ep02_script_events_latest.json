@@ -1,0 +1,391 @@
+[
+  {
+    "time": "00:00:00,033",
+    "events": []
+  },
+  {
+    "time": "00:00:14,466",
+    "events": []
+  },
+  {
+    "time": "00:00:31,833",
+    "events": [
+      {
+        "subject": "我",
+        "action": "抬起手弩对准白衣剪刀女射击",
+        "outcome": "没有造成伤害，但白嫖了200杀戮点",
+        "location": null,
+        "time_context": null,
+        "method": "用手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "剪刀女",
+        "action": "怒吼一声冲向我",
+        "outcome": "冲向了我",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "一拳轰向白衣剪刀女的面门",
+        "outcome": "攻击了白衣剪刀女",
+        "location": null,
+        "time_context": null,
+        "method": "用拳头",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:00:46,300",
+    "events": [
+      {
+        "subject": "白衣剪刀女",
+        "action": "甩出",
+        "outcome": "魔鬼肌肉人",
+        "location": "货架区域",
+        "time_context": "在魔鬼肌肉人攻击后",
+        "method": "用力量",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "撞飞",
+        "outcome": "无数货架",
+        "location": "货架区域",
+        "time_context": "被甩出后",
+        "method": "用巨大的身体",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "跳出",
+        "outcome": "倒塌的货架",
+        "location": "货架区域",
+        "time_context": "撞飞货架后",
+        "method": "用身体",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "魔鬼肌肉人",
+        "action": "冲向",
+        "outcome": "白衣剪刀女",
+        "location": "货架区域",
+        "time_context": "跳出后",
+        "method": "用身体",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:03,300",
+    "events": [
+      {
+        "subject": "他",
+        "action": "没有跑",
+        "outcome": "null",
+        "location": "null",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "跑",
+        "outcome": "null",
+        "location": "null",
+        "time_context": "趁傻大个和白衣剪刀女大战的时候",
+        "method": "背起背包撒丫子狂奔",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "熟悉诡异的童音",
+        "action": "响起",
+        "outcome": "在我耳边",
+        "location": "null",
+        "time_context": "下一刻",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "看到",
+        "outcome": "一个苍白孩子",
+        "location": "null",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:23,400",
+    "events": []
+  },
+  {
+    "time": "00:01:39,000",
+    "events": []
+  },
+  {
+    "time": "00:01:55,400",
+    "events": [
+      {
+        "subject": "幸存者",
+        "action": "跑着",
+        "outcome": "被拉入黑暗之中",
+        "location": "杏花镇",
+        "time_context": "周围鬼影重重时",
+        "method": "被诡异的身影",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "杏花镇的诡异",
+        "action": "被吸引过来",
+        "outcome": "到人群",
+        "location": "杏花镇",
+        "time_context": "幸存者跑动时",
+        "method": "被人群吸引",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "我",
+        "action": "坐在",
+        "outcome": "车上",
+        "location": "车上",
+        "time_context": "将东西丢进车斗时",
+        "method": "一屁股",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "丢进了",
+        "outcome": "两包东西",
+        "location": "车斗",
+        "time_context": "坐在车上后",
+        "method": "顺手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "听到了",
+        "outcome": "一个很不友善的女声",
+        "location": "车上",
+        "time_context": "丢东西后",
+        "method": "突然听到",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:11,300",
+    "events": [
+      {
+        "subject": "我",
+        "action": "射杀",
+        "outcome": "强子",
+        "location": "不远处",
+        "time_context": null,
+        "method": "用手弩",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "获得",
+        "outcome": "杀戮值加1,000",
+        "location": "不远处",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:27,133",
+    "events": [
+      {
+        "subject": "我",
+        "action": "抬起手",
+        "outcome": "准备攻击米瑜伽裤女",
+        "location": "超市外",
+        "time_context": "杀人后",
+        "method": "用手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "米瑜伽裤女",
+        "action": "尖叫",
+        "outcome": "逃跑",
+        "location": "超市外",
+        "time_context": "我抬起手后",
+        "method": "尖叫",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "米瑜伽裤女",
+        "action": "跑",
+        "outcome": "返回超市",
+        "location": "超市外",
+        "time_context": "尖叫后",
+        "method": "跑",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:40,500",
+    "events": [
+      {
+        "subject": "衣衫褴褛的人影",
+        "action": "抓住",
+        "outcome": "女人的头发",
+        "location": "黑暗之中",
+        "time_context": "女人即将逃到阳光下面的时候",
+        "method": "一把",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "衣衫褴褛的人影",
+        "action": "拖回",
+        "outcome": "女人",
+        "location": "黑暗之中",
+        "time_context": "女人即将逃到阳光下面的时候",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "幸存者们",
+        "action": "放上",
+        "outcome": "物资",
+        "location": "自己的车",
+        "time_context": "此时",
+        "method": "慌乱地",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:55,466",
+    "events": [
+      {
+        "subject": "我",
+        "action": "站起来蹬着三轮车就跑",
+        "outcome": "逃命",
+        "location": "屋顶之下",
+        "time_context": "所有人争分夺秒逃命时",
+        "method": "蹬三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "捡起来丢进车里",
+        "outcome": "两个包裹",
+        "location": "三轮车旁",
+        "time_context": "走之前",
+        "method": "用手",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "卑贱的少女",
+        "action": "逆行而来",
+        "outcome": "朝着我相反的方向",
+        "location": "屋顶之上",
+        "time_context": "所有人争分夺秒逃命时",
+        "method": "像传说中的剑客一样",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:03:10,900",
+    "events": [
+      {
+        "subject": "我",
+        "action": "目标是",
+        "outcome": "身后打斗的商超",
+        "location": "null",
+        "time_context": "末世",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "冲过",
+        "outcome": "镇子口的门楼",
+        "location": "镇子口",
+        "time_context": "末世",
+        "method": "一口气",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "一大群人",
+        "action": "围了上来",
+        "outcome": "我",
+        "location": "镇子口",
+        "time_context": "末世",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "他们",
+        "action": "问东问西",
+        "outcome": "我",
+        "location": "镇子口",
+        "time_context": "末世",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "懒得搭理",
+        "outcome": "他们",
+        "location": "镇子口",
+        "time_context": "末世",
+        "method": "null",
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "time": "00:03:24,733",
+    "events": []
+  },
+  {
+    "time": "00:03:40,500",
+    "events": []
+  }
+]

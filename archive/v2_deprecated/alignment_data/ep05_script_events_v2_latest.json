@@ -1,0 +1,243 @@
+[
+  {
+    "event_id": "event_001",
+    "title": "与楚彻交涉汽油并了解交易会",
+    "semantic_blocks": [
+      {
+        "block_id": "block_001",
+        "theme": "与楚彻交涉汽油",
+        "sentences": "我伸出手与他握住，询问车队的汽油情况。。可楚彻态度明确，想要就得用物资去换，哪怕我已经觉醒了序列超凡，也别想白拿一滴。。",
+        "characters": [
+          "我",
+          "楚彻"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:00,033",
+          "end": "00:00:08,233"
+        },
+        "summary": "主角与楚彻握手并询问汽油，楚彻要求用物资交换，拒绝白给。"
+      },
+      {
+        "block_id": "block_002",
+        "theme": "反思超凡地位",
+        "sentences": "我原本以为超凡就能带来地位和福利，可现实却狠狠给了我一巴掌。。在这里既没有特权，也没有庇护，只有等价交换。。",
+        "characters": [
+          "我"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:08,233",
+          "end": "00:00:15,300"
+        },
+        "summary": "主角意识到超凡能力并未带来特权，只有等价交换的现实。"
+      },
+      {
+        "block_id": "block_003",
+        "theme": "楚彻告知交易会",
+        "sentences": "但楚彻又补上一句话，车队很快会举办一场内部交易会，只要肯付出代价，就能换到任何想要的东西。。",
+        "characters": [
+          "我",
+          "楚彻"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:15,300",
+          "end": "00:00:21,700"
+        },
+        "summary": "楚彻补充说车队将举办内部交易会，可用代价换取物品。"
+      }
+    ],
+    "characters": [
+      "我",
+      "楚彻"
+    ],
+    "location": "车队",
+    "time_context": "未指定",
+    "chapter_range": null,
+    "time_range": {
+      "start": "00:00:00,033",
+      "end": "00:00:21,700"
+    },
+    "episode": "ep05"
+  },
+  {
+    "event_id": "event_002",
+    "title": "观察车队车辆和人物",
+    "semantic_blocks": [
+      {
+        "block_id": "block_004",
+        "theme": "介绍车队车辆",
+        "sentences": "在这个车队之中，四个轮子的车一共有4辆，两辆改装越野车，大巴车是泰坦序列傻大哥的财产，至于剩下那辆小汽车，竟然是个女明星的财产。。",
+        "characters": [
+          "我",
+          "泰坦序列傻大哥",
+          "女明星"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:21,700",
+          "end": "00:00:31,200"
+        },
+        "summary": "描述车队中的四辆车，包括改装越野车、大巴车和小汽车的所有者。"
+      },
+      {
+        "block_id": "block_005",
+        "theme": "周兰的物资和摊位",
+        "sentences": "他的物资并不多，由于末世前的明星光环，摊位前总是围着一群眼神猥琐的男。。",
+        "characters": [
+          "周兰",
+          "男"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:31,200",
+          "end": "00:00:36,233"
+        },
+        "summary": "周兰物资不多，摊位前围着一群猥琐的男性。"
+      }
+    ],
+    "characters": [
+      "我",
+      "泰坦序列傻大哥",
+      "女明星",
+      "周兰",
+      "男"
+    ],
+    "location": "车队",
+    "time_context": "未指定",
+    "chapter_range": null,
+    "time_range": {
+      "start": "00:00:21,700",
+      "end": "00:00:36,233"
+    },
+    "episode": "ep05"
+  },
+  {
+    "event_id": "event_003",
+    "title": "与周兰交易汽油并遭遇反对",
+    "semantic_blocks": [
+      {
+        "block_id": "block_006",
+        "theme": "周兰提供汽油交易",
+        "sentences": "就在我犹豫先找谁换汽油时，他竟然从车里搬出一个铁桶。。陈先生，如果你需要，我这里还有一桶汽油，只需要8斤大米，比楚彻和娜娜的20斤便宜。。我一眼就看穿了他的算盘，他在用便宜的汽油换取我的庇护。。我直接挑明，你把油给我，以后遇到麻烦我会出手。。周兰眼睛死死盯着我，沉默了足足半分钟，他才咬牙成交。。",
+        "characters": [
+          "我",
+          "周兰"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:36,333",
+          "end": "00:00:57,400"
+        },
+        "summary": "周兰提供便宜汽油，主角看穿其意图，用庇护换取汽油，周兰同意。"
+      },
+      {
+        "block_id": "block_007",
+        "theme": "周兰弟弟反对交易",
+        "sentences": "当周兰把那桶汽油交给我的时候，他弟弟整个人都急了。。没有汽油，我们的车就成了废铁。。少年声音故意放大，吵嚷着要把油拿了回来。。有人幸灾乐祸的看我笑话，而周兰没有阻止，只是心虚的扭过了头。。",
+        "characters": [
+          "我",
+          "周兰",
+          "周兰弟弟",
+          "有人"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:00:57,400",
+          "end": "00:01:09,900"
+        },
+        "summary": "周兰弟弟急欲拿回汽油，有人幸灾乐祸，周兰心虚不阻止。"
+      }
+    ],
+    "characters": [
+      "我",
+      "周兰",
+      "周兰弟弟",
+      "有人"
+    ],
+    "location": "车队",
+    "time_context": "未指定",
+    "chapter_range": null,
+    "time_range": {
+      "start": "00:00:36,333",
+      "end": "00:01:09,900"
+    },
+    "episode": "ep05"
+  },
+  {
+    "event_id": "event_004",
+    "title": "与其他人物交易物资",
+    "semantic_blocks": [
+      {
+        "block_id": "block_008",
+        "theme": "主角与其他人物交易",
+        "sentences": "好在汽油不是只有他有，我径直走向楚彻，用黑狗血的消息换走了一桶汽油。。接着我又找到娜娜，换来了一把岛国品牌的户外柴刀。。",
+        "characters": [
+          "我",
+          "楚彻",
+          "娜娜"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:01:09,900",
+          "end": "00:01:17,900"
+        },
+        "summary": "主角用黑狗血消息从楚彻换汽油，从娜娜换柴刀。"
+      }
+    ],
+    "characters": [
+      "我",
+      "楚彻",
+      "娜娜"
+    ],
+    "location": "车队",
+    "time_context": "未指定",
+    "chapter_range": null,
+    "time_range": {
+      "start": "00:01:09,900",
+      "end": "00:01:17,900"
+    },
+    "episode": "ep05"
+  },
+  {
+    "event_id": "event_005",
+    "title": "车队出发及主角地位确立",
+    "semantic_blocks": [
+      {
+        "block_id": "block_009",
+        "theme": "车队出发和主角地位",
+        "sentences": "直到广播响起，车队开始出发，我跟在大巴车后面，已经成了整个车队的第4号人物。。",
+        "characters": [
+          "我"
+        ],
+        "location": "车队",
+        "time_context": "未指定",
+        "time_range": {
+          "start": "00:01:17,900",
+          "end": "00:01:23,266"
+        },
+        "summary": "广播响起车队出发，主角跟在大巴车后，成为车队第4号人物。"
+      }
+    ],
+    "characters": [
+      "我"
+    ],
+    "location": "车队",
+    "time_context": "未指定",
+    "chapter_range": null,
+    "time_range": {
+      "start": "00:01:17,900",
+      "end": "00:01:23,266"
+    },
+    "episode": "ep05"
+  }
+]

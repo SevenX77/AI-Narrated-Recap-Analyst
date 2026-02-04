@@ -1,0 +1,1009 @@
+[
+  {
+    "time": "00:00:00,000",
+    "events": []
+  },
+  {
+    "time": "00:00:14,000",
+    "events": [
+      {
+        "subject": "我",
+        "action": "打造出",
+        "outcome": "一座行走的钢铁堡垒",
+        "location": "车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "升级",
+        "outcome": "生锈的自行车为装甲战车",
+        "location": null,
+        "time_context": null,
+        "method": "在我手中",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "破烂的帐篷",
+        "action": "进化成",
+        "outcome": "流动的避难所",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "那些无法被杀死的诡异",
+        "action": "尾随",
+        "outcome": "我",
+        "location": "一路",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "望着",
+        "outcome": "远方翻滚的迷雾",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "time": "00:00:27,100",
+    "events": [
+      {
+        "subject": "我",
+        "action": "逃了出来",
+        "outcome": "从江城",
+        "location": "江城",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "组成",
+        "outcome": "车队",
+        "location": "null",
+        "time_context": "null",
+        "method": "和一群幸存者",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "车队",
+        "action": "打算前往",
+        "outcome": "上户的幸存者基地",
+        "location": "null",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "有人",
+        "action": "驾驶",
+        "outcome": "改装越野",
+        "location": "车队",
+        "time_context": "一路上",
+        "method": "null",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "有人",
+        "action": "开着",
+        "outcome": "大巴",
+        "location": "车队",
+        "time_context": "一路上",
+        "method": "null",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "我",
+        "action": "蹬着",
+        "outcome": "破旧的二八大杠",
+        "location": "车队",
+        "time_context": "一路上",
+        "method": "null",
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:00:40,500",
+    "events": [
+      {
+        "subject": "所有人",
+        "action": "谨记",
+        "outcome": "两条铁路规则",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "所有人",
+        "action": "寄托希望",
+        "outcome": "超级都市",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:00:54,700",
+    "events": []
+  },
+  {
+    "time": "00:01:10,800",
+    "events": [
+      {
+        "subject": "我",
+        "action": "深吸一口气",
+        "outcome": "把心底的紧张压下去",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "我",
+        "action": "点",
+        "outcome": "上最后一根烟",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "裹着",
+        "outcome": "毛毯",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "手触碰到",
+        "outcome": "毛毯",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:22,833",
+    "events": [
+      {
+        "subject": "我",
+        "action": "脑海中浮现",
+        "outcome": "升级毛毯需要消耗129点杀戮值",
+        "location": null,
+        "time_context": "几息后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "发现",
+        "outcome": "没有觉醒序列能力，而是获得升级系统",
+        "location": null,
+        "time_context": "几息后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "能升级",
+        "outcome": "任何接触的东西，包括卡式炉",
+        "location": null,
+        "time_context": null,
+        "method": "只要有杀戮点",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "被现实打醒",
+        "outcome": "喜悦没持续多久",
+        "location": null,
+        "time_context": "喜悦还没持续多久",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      }
+    ]
+  },
+  {
+    "time": "00:01:38,500",
+    "events": [
+      {
+        "subject": "系统",
+        "action": "提供",
+        "outcome": "可借贷杀戮点300",
+        "location": null,
+        "time_context": "首次使用本系统时",
+        "method": "鉴于宿主首次使用本系统",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "决定借贷",
+        "outcome": "杀戮点",
+        "location": null,
+        "time_context": "明天可能死在诡异口中时",
+        "method": "因为不借才是傻子",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:01:50,633",
+    "events": [
+      {
+        "subject": "我",
+        "action": "确认了借贷",
+        "outcome": "300点到手",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "看向",
+        "outcome": "那辆二八大杠车队",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "选择投入",
+        "outcome": "全部杀戮点",
+        "location": "二八大杠车队",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "二八大杠上方",
+        "action": "浮现出",
+        "outcome": "一个沙漏",
+        "location": "二八大杠上方",
+        "time_context": "下一刻",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:04,100",
+    "events": [
+      {
+        "subject": "系统",
+        "action": "提示响起",
+        "outcome": "升级完成",
+        "location": null,
+        "time_context": "天边泛白时",
+        "method": "通过提示",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "发现",
+        "outcome": "二八大杠蜕变成三轮车",
+        "location": null,
+        "time_context": "天边亮起微光时",
+        "method": "借着微光",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "系统",
+        "action": "加装",
+        "outcome": "省力装置",
+        "location": "车身",
+        "time_context": "升级完成后",
+        "method": "通过系统",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "车队里的人",
+        "action": "见到",
+        "outcome": "这一幕",
+        "location": null,
+        "time_context": "升级完成后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:20,400",
+    "events": []
+  },
+  {
+    "time": "00:02:34,266",
+    "events": [
+      {
+        "subject": "两辆车里的人",
+        "action": "坐着",
+        "outcome": "几个狠角色",
+        "location": "定行驶",
+        "time_context": "就在这时",
+        "method": "在车里",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "小丫头",
+        "action": "握着",
+        "outcome": "一柄长剑",
+        "location": "车里",
+        "time_context": "就在这时",
+        "method": "手里",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "身穿瑜伽裤的女人",
+        "action": "走了过来",
+        "outcome": "盯着三轮车",
+        "location": "定行驶",
+        "time_context": "就在这时",
+        "method": "目光死死",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:02:48,866",
+    "events": []
+  },
+  {
+    "time": "00:03:04,200",
+    "events": [
+      {
+        "subject": "某人",
+        "action": "建议",
+        "outcome": "强子抢我的三轮车",
+        "location": "车队",
+        "time_context": "今天",
+        "method": "口头建议",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "强子",
+        "action": "看了看",
+        "outcome": "我的手弩",
+        "location": "车队",
+        "time_context": "今天",
+        "method": "视觉观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "懒得理会",
+        "outcome": "他们",
+        "location": "车队",
+        "time_context": "今天",
+        "method": "忽略",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "车队",
+        "action": "行进速度比昨天快",
+        "outcome": "许多",
+        "location": "车队",
+        "time_context": "今天",
+        "method": "行进",
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:03:16,900",
+    "events": []
+  },
+  {
+    "time": "00:03:32,133",
+    "events": [
+      {
+        "subject": "从江城一路逃出来的人",
+        "action": "不想再面对",
+        "outcome": "那些恐怖的存在",
+        "location": "人口越密集的地方",
+        "time_context": "白天",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "带头的几辆越野车",
+        "action": "提速",
+        "outcome": "直冲小镇",
+        "location": "小镇",
+        "time_context": "白天",
+        "method": "拼死冲一把",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:03:49,100",
+    "events": []
+  },
+  {
+    "time": "00:04:04,400",
+    "events": [
+      {
+        "subject": "巨汉",
+        "action": "挤了出来",
+        "outcome": "从改装越野车",
+        "location": "改装越野车旁",
+        "time_context": "所有人犹豫踌躇的时候",
+        "method": "硬生生",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "巨汉",
+        "action": "踩到",
+        "outcome": "地上",
+        "location": "改装越野车旁",
+        "time_context": "挤出来后",
+        "method": "脚掌",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:04:20,466",
+    "events": []
+  },
+  {
+    "time": "00:04:33,433",
+    "events": [
+      {
+        "subject": "老头子",
+        "action": "发动了",
+        "outcome": "老年代步车",
+        "location": "街道",
+        "time_context": "广播后",
+        "method": "用老年代步车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "老头子",
+        "action": "喊着",
+        "outcome": "你们这些年轻人都不行 等老子出来 看我怎么吃香喝辣的",
+        "location": "街道",
+        "time_context": "广播后",
+        "method": "喊叫",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "所有人",
+        "action": "冲向",
+        "outcome": "商超",
+        "location": "街道",
+        "time_context": "老头子喊叫后",
+        "method": "跟风",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "盯上了",
+        "outcome": "街道两侧的商铺",
+        "location": "街道",
+        "time_context": "所有人冲向商超时",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:04:50,800",
+    "events": [
+      {
+        "subject": "我",
+        "action": "拎着背包冲到",
+        "outcome": "一家烟酒副食店门口",
+        "location": "烟酒副食店门口",
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "透过玻璃门看到",
+        "outcome": "里面琳琅满目的香烟美酒、成堆的零食饮料",
+        "location": "烟酒副食店门口",
+        "time_context": null,
+        "method": "透过玻璃门",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "扫进背包",
+        "outcome": "凡是能吃的能用的",
+        "location": "烟酒副食店",
+        "time_context": null,
+        "method": "一股脑",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:05:05,833",
+    "events": []
+  },
+  {
+    "time": "00:05:20,500",
+    "events": []
+  },
+  {
+    "time": "00:05:38,600",
+    "events": [
+      {
+        "subject": "强子",
+        "action": "逃离",
+        "outcome": "此地",
+        "location": "此地",
+        "time_context": null,
+        "method": "骑上三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "纸枯童",
+        "action": "缠上",
+        "outcome": "人",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:05:55,233",
+    "events": [
+      {
+        "subject": "我",
+        "action": "扣动母鸡",
+        "outcome": "箭矢穿过他的身体",
+        "location": "墓室",
+        "time_context": "下一秒",
+        "method": "用母鸡（可能指武器）",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "小小的身影",
+        "action": "裂开嘴角",
+        "outcome": "笑的更大更诡异",
+        "location": "墓室",
+        "time_context": "下一秒后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "童声",
+        "action": "响起",
+        "outcome": "在我背后",
+        "location": "墓室",
+        "time_context": "下一秒后",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "站在",
+        "outcome": "阳光照进来的位置",
+        "location": "墓室",
+        "time_context": "现在",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  },
+  {
+    "time": "00:06:12,633",
+    "events": [
+      {
+        "subject": "我",
+        "action": "扫视",
+        "outcome": "周围",
+        "location": "店内",
+        "time_context": "可如今",
+        "method": "用眼睛",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "踹向",
+        "outcome": "玻璃门",
+        "location": "店内",
+        "time_context": "再拖一会",
+        "method": "用脚",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:06:25,500",
+    "events": [
+      {
+        "subject": "我",
+        "action": "冲了出去",
+        "outcome": "玻璃门",
+        "location": "富士殿外",
+        "time_context": "下午4点多",
+        "method": "撞碎玻璃门",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "阳光",
+        "action": "洒在",
+        "outcome": "我身上",
+        "location": "外面",
+        "time_context": "下午4点多",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "我",
+        "action": "回头看去",
+        "outcome": "孩童",
+        "location": "富士殿的黑暗里",
+        "time_context": "那一瞬间",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:06:38,400",
+    "events": [
+      {
+        "subject": "强子和那瑜伽裤女",
+        "action": "开走",
+        "outcome": "三轮车",
+        "location": "大商超方向",
+        "time_context": null,
+        "method": "驾驶三轮车",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "追去",
+        "outcome": "强子和那瑜伽裤女",
+        "location": "大商超方向",
+        "time_context": null,
+        "method": "背起物资",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:06:51,400",
+    "events": [
+      {
+        "subject": "太阳",
+        "action": "落下",
+        "outcome": "往西",
+        "location": "街道",
+        "time_context": "傍晚",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "我",
+        "action": "感觉到",
+        "outcome": "无数双冰冷的眼睛盯着我",
+        "location": "阴影中",
+        "time_context": "傍晚",
+        "method": null,
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "杏花镇",
+        "action": "被惊醒",
+        "outcome": "某些东西",
+        "location": "杏花镇",
+        "time_context": "傍晚",
+        "method": "因为我们的到来",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "看见",
+        "outcome": "那辆熟悉的三轮车",
+        "location": "商场门口",
+        "time_context": "傍晚",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:07:05,600",
+    "events": [
+      {
+        "subject": "我",
+        "action": "腾空背包",
+        "outcome": "背包",
+        "location": "商超外",
+        "time_context": "此刻",
+        "method": "手动",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "靠近商超",
+        "outcome": "商超",
+        "location": "商超外",
+        "time_context": "此刻",
+        "method": "猫着腰慢慢",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "走进商超",
+        "outcome": "商超",
+        "location": "商超",
+        "time_context": "当真正走进去时",
+        "method": "步行",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "发现情况更糟",
+        "outcome": "情况",
+        "location": "商超",
+        "time_context": "当真正走进去时",
+        "method": "观察",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "货架",
+        "action": "是空的",
+        "outcome": "货架",
+        "location": "商超",
+        "time_context": "当真正走进去时",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "几道人影",
+        "action": "站着",
+        "outcome": "角落",
+        "location": "商超角落",
+        "time_context": "当真正走进去时",
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "他们",
+        "action": "看见我",
+        "outcome": "我",
+        "location": "商超",
+        "time_context": "当真正走进去时",
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:07:19,400",
+    "events": []
+  },
+  {
+    "time": "00:07:36,533",
+    "events": [
+      {
+        "subject": "我",
+        "action": "逃脱",
+        "outcome": "纸枯童",
+        "location": "null",
+        "time_context": "此刻",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "遇到",
+        "outcome": "白衣剪刀女",
+        "location": "null",
+        "time_context": "转眼",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "企图绕开",
+        "outcome": "他的视线",
+        "location": "null",
+        "time_context": "null",
+        "method": "转到另一边",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "我",
+        "action": "发现",
+        "outcome": "幸存者",
+        "location": "食品区",
+        "time_context": "就在这时",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "两米多的壮汉",
+        "action": "在",
+        "outcome": "食品区",
+        "location": "食品区",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "两米多的壮汉",
+        "action": "脸色紧张",
+        "outcome": "null",
+        "location": "null",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "emotion"
+      },
+      {
+        "subject": "剪刀女",
+        "action": "忽然",
+        "outcome": "null",
+        "location": "null",
+        "time_context": "null",
+        "method": "null",
+        "original_text": null,
+        "event_type": "plot"
+      }
+    ]
+  },
+  {
+    "time": "00:07:51,033",
+    "events": []
+  },
+  {
+    "time": "00:08:05,400",
+    "events": []
+  },
+  {
+    "time": "00:08:21,733",
+    "events": []
+  },
+  {
+    "time": "00:08:37,433",
+    "events": [
+      {
+        "subject": "那人",
+        "action": "化为",
+        "outcome": "3米距离",
+        "location": null,
+        "time_context": "一眨眼",
+        "method": "被瞬间充气",
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "那人",
+        "action": "肌肉虬结",
+        "outcome": "像铁疙瘩一样隆起",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      },
+      {
+        "subject": "那人",
+        "action": "和剪刀女对视",
+        "outcome": "气势丝毫不落下风",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "plot"
+      },
+      {
+        "subject": "那人",
+        "action": "是",
+        "outcome": "序列超凡",
+        "location": null,
+        "time_context": null,
+        "method": null,
+        "original_text": null,
+        "event_type": "setting"
+      }
+    ]
+  }
+]

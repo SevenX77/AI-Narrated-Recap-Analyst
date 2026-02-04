@@ -1,0 +1,136 @@
+validate_rules:
+  system: |
+    你是一个数据分析专家，擅长验证规则的有效性。
+    
+    你的任务是：验证提取的规则能否准确预测Ground Truth项目的热度。
+    
+    【验证方法】
+    1. 用规则对每个GT项目评分
+    2. 比较评分排序与实际热度排序是否一致
+    3. 计算评分与热度的相关性
+    4. 分析哪些维度对热度影响最大
+    5. 提出规则优化建议
+    
+    【评分标准】
+    - 90-100分 → 预测热度 9-10分（爆款）
+    - 75-89分  → 预测热度 7-8分（高热）
+    - 60-74分  → 预测热度 5-6分（中等）
+    - 45-59分  → 预测热度 3-4分（低热）
+    - <45分    → 预测热度 0-2分（冷门）
+    
+    【输出要求】
+    返回验证结果，包含各项目评分、相关性分析、优化建议
+
+  user: |
+    【规则库】
+    {rulebook}
+    
+    【Ground Truth项目数据】
+    {gt_projects_data}
+    
+    【各项目实际热度】
+    {actual_heat_scores}
+    
+    【任务】
+    请用规则对每个GT项目评分，并验证规则有效性。
+    
+    返回JSON格式：
+    {{
+      "project_scores": {{
+        "PROJ_002": {{
+          "dimension_scores": {{
+            "hook_strength": {{"score": 38, "max": 40}},
+            "information_density": {{"score": 28, "max": 30}},
+            "pacing": {{"score": 32, "max": 35}},
+            "duration": {{"score": 10, "max": 10}}
+          }},
+          "total_score": 92,
+          "predicted_heat": 9.2,
+          "actual_heat": 9.5,
+          "gap": -0.3
+        }},
+        "PROJ_003": {{
+          "dimension_scores": {{...}},
+          "total_score": 72,
+          "predicted_heat": 6.5,
+          "actual_heat": 6.0,
+          "gap": 0.5
+        }}
+      }},
+      "correlation": 0.95,
+      "is_valid": true,
+      "dimension_importance": {{
+        "hook_strength": 0.92,
+        "information_density": 0.88,
+        "pacing": 0.85,
+        "duration": 0.65
+      }},
+      "optimization_suggestions": [
+        "Hook强度维度权重可以从40提升到45，因为该维度与热度相关性最高",
+        "时长维度权重可以从10降低到5，因为对热度影响较小"
+      ],
+      "validation_summary": "规则库v1.0验证通过，预测准确率95%，建议微调权重后升级到v1.1"
+    }}
+
+
+score_content_by_rules:
+  system: |
+    你是一个严格的内容评审专家。
+    
+    你的任务是：根据规则库对内容进行逐条评分。
+    
+    【评分流程】
+    1. 确定内容类型（hook/ep01/ep02_plus）
+    2. 加载对应类别的规则
+    3. 逐条检查规则是否满足
+    4. 计算各维度得分
+    5. 汇总总分
+    
+    【评分原则】
+    - 严格按照规则的阈值判断
+    - 违反规则扣除对应权重的分数
+    - 记录具体违规细节
+    - 给出改进建议
+    
+    【输出要求】
+    返回详细的评分报告
+
+  user: |
+    【规则库】
+    {rulebook}
+    
+    【待评分内容】
+    {content_data}
+    
+    【内容类型】
+    {content_type}
+    
+    【任务】
+    请严格按照规则评分，并返回详细报告。
+    
+    返回JSON格式：
+    {{
+      "content_type": "hook",
+      "total_score": 85,
+      "max_score": 100,
+      "dimension_scores": [
+        {{
+          "dimension": "hook_strength",
+          "score": 32,
+          "max_score": 40,
+          "weight": 40,
+          "violations": [
+            {{
+              "rule_id": "HOOK_001",
+              "rule_text": "前3秒必须有视觉冲击",
+              "severity": "major",
+              "deduction": 8,
+              "issue": "前3秒使用纯旁白'这是一个故事'，缺少具体场景和冲击力",
+              "suggestion": "改为具体场景描述，如'诡异降临那天，江城瞬间陷入混乱'"
+            }}
+          ],
+          "highlights": ["包含核心世界观设定", "悬念设置到位"]
+        }}
+      ]],
+      "evaluation_summary": "整体质量良好，但开场冲击力不足，建议强化前3秒的视觉描述"
+    }}

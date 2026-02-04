@@ -1,5 +1,6 @@
 import os
 import json
+import asyncio
 from typing import List
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -63,6 +64,22 @@ class DeepSeekAnalyst(AnalystAgent):
         except Exception as e:
             logger.error(f"Error extracting events for {context_id}: {e}")
             return []
+    
+    async def extract_events_async(self, text: str, context_id: str = "") -> List[NarrativeEvent]:
+        """
+        使用 LLM 提取 SVO 事件流的异步版本
+        
+        此方法将同步的 LLM 调用包装为异步操作，以支持并发提取。
+        
+        Args:
+            text: 待分析文本
+            context_id: 上下文标识（如章节名）
+            
+        Returns:
+            List[NarrativeEvent]: 提取的事件列表
+        """
+        # 使用 asyncio.to_thread 在线程池中执行同步操作
+        return await asyncio.to_thread(self.extract_events, text, context_id)
 
     def analyze(self, text_chunk: str, previous_context: str = "") -> SceneAnalysis:
         system_prompt = self.prompts["analyze_scene"]["system"]
@@ -98,3 +115,16 @@ class DeepSeekAnalyst(AnalystAgent):
                 flashback_candidate=None,
                 protagonist_name="Unknown"
             )
+    
+    async def analyze_async(self, text_chunk: str, previous_context: str = "") -> SceneAnalysis:
+        """
+        场景分析的异步版本
+        
+        Args:
+            text_chunk: 待分析文本片段
+            previous_context: 前置上下文
+            
+        Returns:
+            SceneAnalysis: 场景分析结果
+        """
+        return await asyncio.to_thread(self.analyze, text_chunk, previous_context)

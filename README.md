@@ -39,3 +39,99 @@
 ### Phase 3: Feedback Engine (反馈引擎)
 - **Input**: 历史案例、人工修正记录、投放数据
 - **Process**: 自动评估生成质量，动态调整 Agent 的 System Prompt 和 Few-Shot Examples。
+
+## 🚀 核心特性
+
+### 1. 动态章节提取 (Adaptive Chapter Extraction)
+- **智能预估**: 根据SRT数量自动计算初始提取章节数
+- **质量驱动**: 实时评估对齐质量（置信度、覆盖率、连续性）
+- **自适应策略**: 根据评估结果动态决定是否继续提取
+- **安全缓冲**: 防止遗漏更好的匹配
+
+### 2. 并发优化 (Concurrent Processing)
+- **异步LLM调用**: 支持多章节/多chunk并发提取
+- **智能限流**: Semaphore控制并发数，避免API rate limit
+- **性能提升**: 理论加速10倍（10并发时）
+
+### 3. 质量评估系统 (Quality Evaluation)
+- **多维度评分**:
+  - 平均置信度 (40%)
+  - 整体覆盖率 (40%)
+  - 章节连续性 (20%)
+- **合格标准**: 综合得分 ≥ 70分
+- **详细报告**: 每集覆盖情况、匹配章节范围
+
+## 📖 使用指南
+
+### 安装依赖
+```bash
+pip install -r requirements.txt
+```
+
+### 配置API Key
+```bash
+export DEEPSEEK_API_KEY="your_api_key"
+# 或编辑 .env 文件
+```
+
+### 运行工作流
+
+#### 1. 数据摄入与对齐 (Ingestion Workflow)
+```bash
+# 使用动态章节提取
+python main.py ingest --id PROJ_002
+
+# 强制指定章节数
+python main.py ingest --id PROJ_002 --max-chapters 50
+```
+
+#### 2. 生产流程 (Production)
+```bash
+python main.py generate --id PROJ_002
+```
+
+### 配置调整
+
+编辑 `src/core/config.py`:
+```python
+@dataclass
+class IngestionConfig:
+    initial_chapter_multiplier: int = 2  # 初始章节倍数
+    batch_size: int = 10  # 每批提取数
+    safety_buffer_chapters: int = 10  # 安全缓冲
+    quality_threshold: float = 70.0  # 合格分数
+    max_concurrent_requests: int = 10  # 最大并发
+    enable_concurrent: bool = True  # 启用并发
+```
+
+## 📊 质量报告示例
+
+```
+📊 最终对齐质量报告
+============================================================
+   综合得分: 75.50/100
+   平均置信度: 82.30%
+   整体覆盖率: 85.20%
+   章节连续性: 92.00%
+   是否合格: ✅ 是
+
+   各集覆盖情况:
+     - ep01: 18/20 (90.0%) [第1章 - 第8章]
+     - ep02: 17/20 (85.0%) [第8章 - 第15章]
+     - ep03: 15/18 (83.3%) [第15章 - 第22章]
+============================================================
+```
+
+## 📚 文档索引
+
+### 核心文档
+- **项目结构**: `docs/PROJECT_STRUCTURE.md` - 项目文件组织与说明
+- **开发标准**: `docs/DEV_STANDARDS.md` - 代码规范与最佳实践
+- **架构文档**: `docs/architecture/logic_flows.md` - 系统架构与数据流
+
+### 功能优化文档
+- **摄入优化部署**: `docs/maintenance/ingestion_optimization_deployment.md` - 动态章节提取部署指南
+- **摄入优化进度**: `docs/maintenance/ingestion_optimization_progress.md` - 功能开发进度与使用说明
+
+### 示例代码
+- **使用示例**: `scripts/examples/` - 实际使用示例脚本

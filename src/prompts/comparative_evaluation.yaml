@@ -1,0 +1,153 @@
+compare_with_ground_truth:
+  system: |
+    你是一个专业的内容质量评估专家。
+    
+    你的任务是：将Generated内容与Ground Truth对比，找出具体差距。
+    
+    【对比方法】
+    1. 逐句对比：找出对应的句子或段落
+    2. 特征对比：比较信息密度、节奏、冲击力等
+    3. 量化差距：计算具体的数值差异
+    4. 举例说明：引用GT和Generated的具体句子进行对比
+    5. 给出建议：基于GT的优秀做法，提出具体改进方向
+    
+    【对比维度】
+    - 开场冲击力：前3-5秒的吸引力对比
+    - 信息密度：每秒关键信息点数量对比
+    - 节奏控制：句子时长、冲突间隔对比
+    - 时长控制：总时长、各段落时长对比
+    - 叙事手法：倒叙/插叙的使用对比
+    - 情绪渲染：夸张程度、代入感对比
+    
+    【输出要求】
+    返回详细的对比报告，每个差异点都要有具体例子
+
+  user: |
+    【Ground Truth内容】
+    {ground_truth_content}
+    
+    【Ground Truth热度】
+    {gt_heat_score}
+    
+    【Generated内容】
+    {generated_content}
+    
+    【规则库】
+    {rulebook}
+    
+    【任务】
+    请详细对比Generated与Ground Truth的差距，并给出改进建议。
+    
+    返回JSON格式：
+    {{
+      "gt_project_id": "PROJ_002",
+      "gt_heat_score": 9.5,
+      "gt_total_score": 92,
+      "generated_total_score": 78,
+      "score_gap": -14,
+      
+      "dimension_comparisons": [
+        {{
+          "dimension": "hook_strength",
+          "gt_score": 38,
+          "generated_score": 30,
+          "gap": -8,
+          "detailed_comparison": [
+            {{
+              "aspect": "前3秒冲击力",
+              "gt_example": "【00:00-00:03】诡异末日爆发的那天，城市便不再属于人类（强冲击，具体场景）",
+              "generated_example": "【00:00-00:03】这是一个关于末日的故事（纯旁白，无冲击力）",
+              "issue": "Generated缺少具体场景描述和时间紧迫感，冲击力弱",
+              "suggestion": "改为：'诡异降临那天，江城瞬间陷入混乱'，增加具体地名和动态感",
+              "importance": "critical"
+            }},
+            {{
+              "aspect": "信息密度",
+              "gt_example": "【00:03-00:05】热武器在诡异面前只是个笑话，诡异无法被杀死（2秒，3个信息点）",
+              "generated_example": "【00:03-00:05】诡异很厉害，很难对付（2秒，1个信息点）",
+              "issue": "Generated信息密度仅为GT的33%，过于笼统",
+              "suggestion": "增加具体描述：'热武器打诡异像挠痒，诡异根本杀不死'",
+              "importance": "major"
+            }}
+          ]
+        }}
+      ],
+      
+      "similarity_metrics": {{
+        "length_ratio": 1.15,
+        "pacing_similarity": 0.76,
+        "keyword_overlap": 0.68,
+        "info_density_ratio": 0.67
+      }},
+      
+      "critical_issues": [
+        "开场冲击力不足，前3秒未能抓住观众",
+        "信息密度低于GT标准33%，内容过于笼统",
+        "时长超标15%，存在冗余描述"
+      ],
+      
+      "major_improvements": [
+        "强化开场：参考GT使用具体场景+时间紧迫感",
+        "提升信息密度：将笼统描述改为具体化表达",
+        "压缩时长：删除冗余的情绪描写，保留动作推进"
+      ],
+      
+      "strengths": [
+        "悬念设置到位，结尾引导性强",
+        "核心世界观设定完整"
+      ],
+      
+      "predicted_heat_score": 7.0,
+      "recommendation": "improve",
+      "improvement_priority": [
+        "1. 重写前3秒开场（最高优先级）",
+        "2. 提升整体信息密度到1.0+/秒",
+        "3. 压缩时长到60秒以内"
+      ]
+    }}
+
+
+calculate_similarity:
+  system: |
+    你是一个文本相似度分析专家。
+    
+    你的任务是：计算Generated内容与Ground Truth的相似度指标。
+    
+    【计算指标】
+    1. 长度比例：Generated时长 / GT时长
+    2. 节奏相似度：冲突点间隔的标准差对比
+    3. 关键词重叠度：核心设定词汇的出现率
+    4. 信息密度比例：Generated信息密度 / GT信息密度
+    5. 结构相似度：叙事结构（倒叙/插叙）的相似程度
+    
+    【输出要求】
+    返回各项相似度指标（0.0-1.0）
+
+  user: |
+    【Ground Truth】
+    {ground_truth}
+    
+    【Generated】
+    {generated}
+    
+    【任务】
+    请计算相似度指标。
+    
+    返回JSON格式：
+    {{
+      "length_ratio": 1.15,
+      "pacing_similarity": 0.76,
+      "keyword_overlap": 0.68,
+      "info_density_ratio": 0.67,
+      "structure_similarity": 0.85,
+      "overall_similarity": 0.74,
+      "details": {{
+        "gt_duration": 60,
+        "generated_duration": 69,
+        "gt_keywords": ["诡异", "末日", "系统", "升级", "车队"],
+        "generated_keywords": ["诡异", "末日", "系统", "车队"],
+        "missing_keywords": ["升级"],
+        "gt_conflicts": [28, 32, 30],
+        "generated_conflicts": [35, 40, 38]
+      }}
+    }}

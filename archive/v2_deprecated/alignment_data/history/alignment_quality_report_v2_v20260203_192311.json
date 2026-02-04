@@ -1,0 +1,14 @@
+{
+  "overall_score": 62.440000000000005,
+  "avg_confidence": 0.6244000000000001,
+  "coverage_ratio": 1.0,
+  "continuity_score": 1.0,
+  "episode_coverage": [],
+  "is_qualified": false,
+  "needs_more_chapters": true,
+  "details": {
+    "total_alignments": 15,
+    "avg_event_match_score": 0.7959999999999999,
+    "avg_validation_score": 0.5100000000000001
+  }
+}
