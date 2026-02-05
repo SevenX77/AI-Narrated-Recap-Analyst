@@ -264,3 +264,137 @@ class ChapterInfo(BaseModel):
     start_line: int = Field(..., description="起始行号")
     end_line: int = Field(..., description="结束行号")
     line_count: int = Field(..., description="行数")
+
+
+# ==================== 自反馈优化系统 Schema ====================
+
+from datetime import datetime
+
+
+class AlignmentAnnotation(BaseModel):
+    """
+    对齐标注（用于标记错误和提供反馈）
+    """
+    annotation_id: str = Field(..., description="标注ID")
+    project_id: str = Field(..., description="项目ID")
+    episode: str = Field(..., description="集数")
+    layer: str = Field(..., description="层级（world_building/game_mechanics/items_equipment/plot_events）")
+    
+    # 对齐内容
+    script_node_id: str = Field(..., description="Script节点ID")
+    novel_node_id: str = Field(..., description="Novel节点ID")
+    script_content: str = Field(..., description="Script内容")
+    novel_content: str = Field(..., description="Novel内容")
+    
+    # 系统判断
+    system_similarity: float = Field(..., description="系统计算的相似度")
+    system_confidence: str = Field(..., description="系统置信度")
+    
+    # 人工标注
+    is_correct_match: bool = Field(..., description="是否正确匹配")
+    error_type: Optional[str] = Field(None, description="错误类型：missing/incomplete/wrong_match/similarity_wrong")
+    human_similarity: Optional[float] = Field(None, description="人类评估的相似度")
+    human_feedback: Optional[str] = Field(None, description="人类反馈说明")
+    correction: Optional[str] = Field(None, description="正确答案")
+    
+    # Heat分数（问题严重程度）
+    heat_score: float = Field(0.0, description="Heat分数（0-100），越高越严重")
+    
+    # 元数据
+    timestamp: datetime = Field(default_factory=datetime.now, description="标注时间")
+    annotator: Optional[str] = Field(None, description="标注人")
+
+
+class PromptVersion(BaseModel):
+    """
+    Prompt版本信息
+    """
+    version: str = Field(..., description="版本号（如v1.1）")
+    layer: str = Field(..., description="层级")
+    parent_version: Optional[str] = Field(None, description="父版本")
+    
+    # Prompt内容
+    prompt_content: str = Field(..., description="完整的Prompt内容")
+    
+    # 优化信息
+    change_summary: str = Field(..., description="变更摘要")
+    optimized_for: List[str] = Field(default_factory=list, description="针对的错误类型")
+    heat_addressed: List[float] = Field(default_factory=list, description="解决的Heat分数列表")
+    
+    # 性能指标
+    metrics: Optional[Dict[str, float]] = Field(None, description="性能指标")
+    
+    # 元数据
+    created_at: datetime = Field(default_factory=datetime.now)
+    created_by: str = Field(default="system", description="创建方式（system/manual）")
+
+
+class OptimizationRound(BaseModel):
+    """
+    优化轮次记录
+    """
+    round_number: int = Field(..., description="轮次编号")
+    project_id: str = Field(..., description="项目ID")
+    episode: str = Field(..., description="集数")
+    
+    # Prompt版本
+    prompt_versions: Dict[str, str] = Field(..., description="各层使用的Prompt版本")
+    
+    # 对齐结果
+    alignment_result_path: str = Field(..., description="对齐结果文件路径")
+    overall_score: float = Field(..., description="Overall Score")
+    layer_scores: Dict[str, float] = Field(..., description="各层得分")
+    
+    # 标注数据
+    annotations: List[AlignmentAnnotation] = Field(default_factory=list)
+    total_annotations: int = Field(0, description="标注总数")
+    error_count: int = Field(0, description="错误数量")
+    total_heat: float = Field(0.0, description="总Heat分数")
+    avg_heat: float = Field(0.0, description="平均Heat分数")
+    
+    # 决策
+    adopted: bool = Field(..., description="是否采用新Prompt")
+    adoption_reason: Optional[str] = Field(None, description="采用/拒绝理由")
+    
+    # 元数据
+    timestamp: datetime = Field(default_factory=datetime.now)
+    duration_seconds: Optional[float] = Field(None, description="耗时（秒）")
+
+
+class FinalOptimizationReport(BaseModel):
+    """
+    最终优化报告（5轮综合）
+    """
+    project_id: str = Field(..., description="项目ID")
+    episode: str = Field(..., description="集数")
+    
+    # 轮次汇总
+    rounds: List[OptimizationRound] = Field(..., description="所有轮次数据")
+    total_rounds: int = Field(..., description="总轮次数")
+    
+    # 改进轨迹
+    score_trajectory: List[float] = Field(..., description="Overall Score轨迹")
+    heat_trajectory: List[float] = Field(..., description="总Heat轨迹")
+    
+    # 最终结果
+    initial_score: float = Field(..., description="初始Overall Score")
+    final_score: float = Field(..., description="最终Overall Score")
+    improvement: float = Field(..., description="改进幅度")
+    improvement_percentage: float = Field(..., description="改进百分比")
+    
+    initial_heat: float = Field(..., description="初始总Heat")
+    final_heat: float = Field(..., description="最终总Heat")
+    heat_reduction: float = Field(..., description="Heat降低幅度")
+    heat_reduction_percentage: float = Field(..., description="Heat降低百分比")
+    
+    # LLM综合评估
+    llm_evaluation: Optional[str] = Field(None, description="LLM综合评估报告")
+    convergence_status: Optional[str] = Field(None, description="收敛状态（converged/improving/unstable）")
+    production_ready: Optional[bool] = Field(None, description="是否达到生产可用水平")
+    
+    # 建议
+    recommendations: List[str] = Field(default_factory=list, description="下一步建议")
+    
+    # 元数据
+    generated_at: datetime = Field(default_factory=datetime.now)
+    total_duration_seconds: Optional[float] = Field(None, description="总耗时")

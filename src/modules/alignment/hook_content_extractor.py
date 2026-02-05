@@ -119,7 +119,7 @@ class HookContentExtractor:
         layered_nodes["items_equipment"] = self._extract_layer(
             text=raw_text,
             layer_name="items_equipment",
-            prompt_key="extract_items_equipment"
+            prompt_key="extract_items"
         )
         
         # Layer 4: 情节事件

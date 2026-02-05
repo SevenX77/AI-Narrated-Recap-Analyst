@@ -13,6 +13,7 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 
 from src.utils.prompt_loader import load_prompts
+from src.modules.alignment.hybrid_similarity import HybridSimilarityEngine
 
 logger = logging.getLogger(__name__)
 
@@ -101,19 +102,31 @@ class LayeredAlignmentEngine:
         3. 评分：计算各层覆盖率和总体质量
     """
     
-    def __init__(self, llm_client, model_name: str = "deepseek-chat"):
+    def __init__(self, llm_client, model_name: str = "deepseek-chat", use_hybrid_similarity: bool = True):
         """
         初始化分层对齐引擎
         
         Args:
             llm_client: LLM客户端
             model_name: 模型名称
+            use_hybrid_similarity: 是否使用混合相似度引擎（三层策略）
         """
         self.llm_client = llm_client
         self.model_name = model_name
         self.prompts = self._load_prompts()
         
-        logger.info("✅ LayeredAlignmentEngine 初始化完成")
+        # 初始化相似度引擎
+        self.use_hybrid_similarity = use_hybrid_similarity
+        if use_hybrid_similarity:
+            self.similarity_engine = HybridSimilarityEngine(
+                llm_client=llm_client,
+                model_name=model_name,
+                use_embedding=True
+            )
+            logger.info("✅ LayeredAlignmentEngine 初始化完成 (混合相似度引擎已启用)")
+        else:
+            self.similarity_engine = None
+            logger.info("✅ LayeredAlignmentEngine 初始化完成 (使用简单相似度)")
     
     def _load_prompts(self) -> Dict:
         """加载Prompts"""
@@ -253,7 +266,7 @@ class LayeredAlignmentEngine:
         for layer, prompt_key in [
             ("world_building", "extract_world_building"),
             ("game_mechanics", "extract_game_mechanics"),
-            ("items_equipment", "extract_items_equipment"),
+            ("items_equipment", "extract_items"),
             ("plot_events", "extract_plot_events")
         ]:
             nodes = await self._extract_layer_nodes(
@@ -366,29 +379,51 @@ class LayeredAlignmentEngine:
             best_match = None
             best_score = 0.0
             best_index = -1
+            best_reasoning = None
             
             for i, novel_node in enumerate(novel_nodes):
                 if i in matched_novel_indices:
                     continue
                 
-                # 简单相似度：关键词匹配
-                score = self._calculate_simple_similarity(
-                    script_node.content,
-                    novel_node.content
-                )
+                # 使用混合相似度引擎（如果启用）
+                if self.use_hybrid_similarity and self.similarity_engine:
+                    similarity_result = await self.similarity_engine.calculate_similarity(
+                        script_node.content,
+                        novel_node.content,
+                        layer=layer
+                    )
+                    score = similarity_result.score
+                    reasoning = similarity_result.reasoning
+                else:
+                    # 降级：简单相似度
+                    score = self._calculate_simple_similarity(
+                        script_node.content,
+                        novel_node.content
+                    )
+                    reasoning = None
                 
                 if score > best_score:
                     best_score = score
                     best_match = novel_node
                     best_index = i
+                    best_reasoning = reasoning
             
-            if best_match and best_score > 0.3:  # 阈值
-                alignments.append({
+            # 对world_building层降低阈值（关键规则不能丢）
+            threshold = 0.2 if layer == "world_building" else 0.3
+            
+            if best_match and best_score > threshold:
+                alignment_item = {
                     "script_node": script_node.to_dict(),
                     "novel_node": best_match.to_dict(),
                     "similarity": best_score,
                     "confidence": "high" if best_score > 0.7 else "medium"
-                })
+                }
+                
+                # 如果有LLM reasoning，添加到结果中
+                if best_reasoning:
+                    alignment_item["reasoning"] = best_reasoning
+                
+                alignments.append(alignment_item)
                 matched_novel_indices.add(best_index)
         
         # 计算覆盖率
