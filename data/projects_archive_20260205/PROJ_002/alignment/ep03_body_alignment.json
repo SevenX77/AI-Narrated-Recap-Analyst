@@ -1,0 +1,454 @@
+{
+  "episode": "ep03",
+  "script_time_range": "00:00:00,000 - End",
+  "matched_novel_chapters": [
+    "第1章",
+    "第2章"
+  ],
+  "layered_alignment": {
+    "world_building": {
+      "layer": "world_building",
+      "script_node_count": 6,
+      "novel_node_count": 25,
+      "alignment_count": 2,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "world_building_script_1",
+            "layer": "world_building",
+            "content": "人类依靠车队在末日中迁徙",
+            "summary": "人类依靠车队在末日中迁徙",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_8",
+            "layer": "world_building",
+            "content": "人类依靠序列超凡不停迁徙",
+            "summary": "人类依靠序列超凡不停迁徙",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及人类在某种背景下依靠特定方式迁徙，核心结构相似（人类依靠...在...中迁徙）。但关键差异在于依赖对象：文本1是'车队'（具体交通工具），文本2是'序列超凡'（可能指超自然或序列化能力），这导致迁徙方式和背景设定有本质不同。文本1的'末日'与文本2的'不停'也暗示不同情境。因此属于部分相关，但核心语义不完全一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_2",
+            "layer": "world_building",
+            "content": "车队铁律：不要掉队（优先），必要时抛弃未归者",
+            "summary": "车队铁律：不要掉队（优先），必要时抛弃未",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_6",
+            "layer": "world_building",
+            "content": "车队铁律：不要掉队（优先），尽可能多储备物资",
+            "summary": "车队铁律：不要掉队（优先），尽可能多储备",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都围绕'车队铁律：不要掉队（优先）'这一核心规则，但后半部分语义有显著差异：文本1强调'必要时抛弃未归者'，涉及团队生存策略中的取舍；文本2强调'尽可能多储备物资'，涉及资源准备。两者都涉及车队生存策略，但具体措施不同，属于部分相关。"
+        }
+      ],
+      "coverage_score": 0.08
+    },
+    "game_mechanics": {
+      "layer": "game_mechanics",
+      "script_node_count": 10,
+      "novel_node_count": 20,
+      "alignment_count": 5,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_2",
+            "layer": "game_mechanics",
+            "content": "系统使用杀戮值作为资源",
+            "summary": "系统使用杀戮值作为资源",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_6",
+            "layer": "game_mechanics",
+            "content": "使用配件可减免杀戮点",
+            "summary": "使用配件可减免杀戮点",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及使用某种资源或点数系统，文本1提到'杀戮值作为资源'，文本2提到'使用配件可减免杀戮点'。核心概念都是'杀戮点/值'作为一种游戏或系统中的资源，但具体应用不同：文本1强调系统使用杀戮值作为资源，文本2强调配件可以减免杀戮点。这属于部分相关，细节有差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_3",
+            "layer": "game_mechanics",
+            "content": "系统提供升级方案",
+            "summary": "系统提供升级方案",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_5",
+            "layer": "game_mechanics",
+            "content": "可设计升级方案",
+            "summary": "可设计升级方案",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似，都涉及'升级方案'这一核心概念。文本1强调'系统提供'，文本2强调'可设计'，两者都指向升级方案的来源或方式，但侧重点略有不同：文本1更被动（系统主动提供），文本2更主动（可主动设计）。忽略修饰词差异后，核心语义基本一致，但表达方式有细微差别。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_4",
+            "layer": "game_mechanics",
+            "content": "升级需要消耗杀戮值和时间",
+            "summary": "升级需要消耗杀戮值和时间",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_4",
+            "layer": "game_mechanics",
+            "content": "升级需要消耗杀戮点",
+            "summary": "升级需要消耗杀戮点",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.9,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都表达升级需要消耗某种资源。文本1用'杀戮值'，文本2用'杀戮点'，两者是同义词，表达同一概念。文本1提到'和时间'，文本2未提及，但核心消耗资源（杀戮值/点）一致，细节略有差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_5",
+            "layer": "game_mechanics",
+            "content": "系统可减免杀戮值",
+            "summary": "系统可减免杀戮值",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_3",
+            "layer": "game_mechanics",
+            "content": "可借贷300杀戮点",
+            "summary": "可借贷300杀戮点",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'杀戮值/杀戮点'的概念，但核心语义不同：文本1讨论'减免'（减少或免除），文本2讨论'借贷'（借用或贷款）。虽然都与数值处理相关，但操作方向相反（减免是减少，借贷是增加或暂时获取），主题和意图存在明显差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_10",
+            "layer": "game_mechanics",
+            "content": "系统显示升级倒计时",
+            "summary": "系统显示升级倒计时",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_1",
+            "layer": "game_mechanics",
+            "content": "陈野觉醒了升级系统",
+            "summary": "陈野觉醒了升级系统",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'升级'和'系统'的概念，但核心语义不同。文本1描述系统显示升级倒计时，是一个具体的操作或界面提示；文本2描述陈野觉醒了升级系统，是一个角色获得系统能力的叙事事件。两者主题关联但不相同，前者更偏向技术或界面描述，后者更偏向角色发展和能力获取。"
+        }
+      ],
+      "coverage_score": 0.25
+    },
+    "items_equipment": {
+      "layer": "items_equipment",
+      "script_node_count": 12,
+      "novel_node_count": 21,
+      "alignment_count": 5,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_2",
+            "layer": "items_equipment",
+            "content": "车队拥有一辆大巴车",
+            "summary": "车队拥有一辆大巴车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_1",
+            "layer": "items_equipment",
+            "content": "陈野拥有一辆二八大杠自行车",
+            "summary": "陈野拥有一辆二八大杠自行车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'拥有交通工具'这一概念，但核心语义差异显著：文本1描述'车队'拥有'大巴车'（大型公共交通工具），文本2描述'陈野'拥有'二八大杠自行车'（个人小型交通工具）。虽然都围绕'拥有车辆'这一关联点，但主体（车队 vs 个人）、车辆类型（大巴车 vs 自行车）和用途（可能用于运输 vs 个人使用）完全不同，主题差异较大。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_3",
+            "layer": "items_equipment",
+            "content": "我拥有一辆三轮车",
+            "summary": "我拥有一辆三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_2",
+            "layer": "items_equipment",
+            "content": "二八大杠升级成三轮车",
+            "summary": "二八大杠升级成三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "文本1陈述'我拥有一辆三轮车'，文本2描述'二八大杠升级成三轮车'，两者都涉及三轮车，但核心语义不同：文本1强调拥有状态，文本2强调从二八大杠到三轮车的升级过程。部分相关，但主题和焦点有差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_4",
+            "layer": "items_equipment",
+            "content": "三轮车装有省力装置",
+            "summary": "三轮车装有省力装置",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_11",
+            "layer": "items_equipment",
+            "content": "三轮车升级为摩托三轮车",
+            "summary": "三轮车升级为摩托三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.65,
+          "confidence": "medium",
+          "reasoning": "文本1描述三轮车装有省力装置，文本2描述三轮车升级为摩托三轮车。两者都涉及三轮车的改进或升级，核心主题相关，但具体改进方式不同：省力装置可能指机械辅助（如齿轮、杠杆），而摩托三轮车则涉及动力系统升级（从人力到机动）。因此属于部分相关，符合0.6-0.7评分范围。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_7",
+            "layer": "items_equipment",
+            "content": "计划将三轮车升级为电力三轮车",
+            "summary": "计划将三轮车升级为电力三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_8",
+            "layer": "items_equipment",
+            "content": "毛毯可升级为魔毯",
+            "summary": "毛毯可升级为魔毯",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'升级'的概念，但主题完全不同：文本1是关于交通工具（三轮车升级为电力三轮车）的实际计划，文本2是关于幻想物品（毛毯升级为魔毯）的虚构描述。它们共享'升级'这一动作，但核心语义（现实交通工具改造 vs. 魔法物品幻想）差异显著，属于有关联但主题不同的情况。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_9",
+            "layer": "items_equipment",
+            "content": "计划利用摩托车配件升级三轮车",
+            "summary": "计划利用摩托车配件升级三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_18",
+            "layer": "items_equipment",
+            "content": "摩托三轮车加装遮阳棚",
+            "summary": "摩托三轮车加装遮阳棚",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及三轮车的改装，但核心意图不同。文本1的核心是升级三轮车的性能（利用摩托车配件），文本2的核心是增加舒适性功能（加装遮阳棚）。两者部分相关，都属于三轮车改装范畴，但具体目标和手段有差异。"
+        }
+      ],
+      "coverage_score": 0.23809523809523808
+    },
+    "plot_events": {
+      "layer": "plot_events",
+      "script_node_count": 21,
+      "novel_node_count": 40,
+      "alignment_count": 7,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "plot_events_script_3",
+            "layer": "plot_events",
+            "content": "车队异动被其他幸存者发现",
+            "summary": "车队异动被其他幸存者发现",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_20",
+            "layer": "plot_events",
+            "content": "车队遭遇新幸存者加入",
+            "summary": "车队遭遇新幸存者加入",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及车队和幸存者，核心主题相关。文本1描述车队异动被其他幸存者发现，文本2描述车队遭遇新幸存者加入。两者都围绕车队与幸存者的互动，但具体事件不同：一个是异动被发现，一个是新成员加入。这属于部分相关的情况，符合0.6-0.7的评分标准。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_6",
+            "layer": "plot_events",
+            "content": "我踩起三轮车跟上越野车",
+            "summary": "我踩起三轮车跟上越野车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_13",
+            "layer": "plot_events",
+            "content": "陈野追三轮车到商超",
+            "summary": "陈野追三轮车到商超",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.65,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及三轮车和追逐/跟随的动作，但主体和方向相反：文本1是'我'踩三轮车跟随越野车，文本2是'陈野'追三轮车到商超。核心语义部分相关（追逐/移动场景），但主体、目标和方向存在差异，属于部分相关的情况。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_7",
+            "layer": "plot_events",
+            "content": "无车幸存者很快掉队",
+            "summary": "无车幸存者很快掉队",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_36",
+            "layer": "plot_events",
+            "content": "幸存者逃出长寿村",
+            "summary": "幸存者逃出长寿村",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'幸存者'，但核心语义不同。文本1描述'无车幸存者很快掉队'，焦点在幸存者因缺乏交通工具而落后；文本2描述'幸存者逃出长寿村'，焦点在幸存者逃离某个地点。两者主题关联度较低：文本1强调生存困境中的掉队，文本2强调逃离行动。虽有'幸存者'这一共同元素，但事件和情境差异显著，因此评分在0.3-0.5范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_9",
+            "layer": "plot_events",
+            "content": "大巴车撞飞试图拦车的幸存者",
+            "summary": "大巴车撞飞试图拦车的幸存者",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_34",
+            "layer": "plot_events",
+            "content": "大柳树受伤，幸存者逃跑",
+            "summary": "大柳树受伤，幸存者逃跑",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及幸存者，但核心事件不同：文本1描述大巴车撞飞试图拦车的幸存者（主动撞击事件），文本2描述大柳树受伤和幸存者逃跑（被动受伤和逃跑事件）。主题关联但不相同，因此评分在0.3-0.5范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_12",
+            "layer": "plot_events",
+            "content": "徒步幸存者一个没见",
+            "summary": "徒步幸存者一个没见",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_30",
+            "layer": "plot_events",
+            "content": "尸傀复活攻击幸存者",
+            "summary": "尸傀复活攻击幸存者",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及幸存者，但核心语义不同。文本1描述徒步幸存者一个没见，暗示幸存者可能消失或未出现；文本2描述尸傀复活攻击幸存者，涉及超自然攻击事件。两者主题不同：文本1关注幸存者的缺席，文本2关注幸存者遭受攻击。关联在于都提及幸存者，但核心事件和语境差异显著。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_18",
+            "layer": "plot_events",
+            "content": "我决定将三轮车改成电力三轮车",
+            "summary": "我决定将三轮车改成电力三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_6",
+            "layer": "plot_events",
+            "content": "自行车升级完成变成三轮车",
+            "summary": "自行车升级完成变成三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及交通工具的改造，但核心语义不同。文本1描述将三轮车改装为电力三轮车，强调动力系统的改变（从非电力到电力）。文本2描述自行车升级为三轮车，强调车辆类型的改变（从两轮到三轮）。两者都涉及改造，但改造的对象和目的不同，主题关联但不一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_21",
+            "layer": "plot_events",
+            "content": "我在系统中点击确认升级",
+            "summary": "我在系统中点击确认升级",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_4",
+            "layer": "plot_events",
+            "content": "陈野觉醒升级系统",
+            "summary": "陈野觉醒升级系统",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'升级'概念，但核心语义不同。文本1描述用户在系统中执行'确认升级'的操作，是具体的用户交互行为。文本2描述角色'陈野'觉醒'升级系统'，是虚构故事中的系统激活或能力获得情节。两者主题关联度较低：文本1偏向操作指令，文本2偏向叙事设定。"
+        }
+      ],
+      "coverage_score": 0.175
+    }
+  },
+  "alignment_quality": {
+    "overall_score": 0.1773095238095238,
+    "layer_scores": {
+      "world_building": 0.08,
+      "game_mechanics": 0.25,
+      "items_equipment": 0.23809523809523808,
+      "plot_events": 0.175
+    }
+  }
+}

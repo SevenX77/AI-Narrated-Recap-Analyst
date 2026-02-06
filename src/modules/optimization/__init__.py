@@ -10,8 +10,10 @@
 
 from src.modules.optimization.heat_calculator import HeatCalculator
 from src.modules.optimization.annotator import AlignmentAnnotator
+from src.modules.optimization.ab_tester import ABTester
 
 __all__ = [
     "HeatCalculator",
     "AlignmentAnnotator",
+    "ABTester",
 ]

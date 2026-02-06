@@ -8,6 +8,9 @@ AI-Narrated-Recap-Analyst/
 ├── docs/                           # 📚 文档目录
 │   ├── PROJECT_STRUCTURE.md        # 项目结构说明（本文件）
 │   ├── DEV_STANDARDS.md            # 开发标准与规范
+│   ├── NOVEL_SEGMENTATION_METHODOLOGY.md  # 小说叙事分段分析方法论（完整版）
+│   ├── NOVEL_SEGMENTATION_QUICKREF.md     # 小说分段分析快速参考（速查表）
+│   ├── METHODOLOGY_SUMMARY.md             # 方法论实施总结
 │   ├── architecture/               # 架构设计文档
 │   │   └── logic_flows.md          # 系统架构与数据流
 │   └── maintenance/                # 维护性文档（功能优化、清理报告、变更记录等）
@@ -144,6 +147,8 @@ AI-Narrated-Recap-Analyst/
 | **系统架构** | `docs/architecture/logic_flows.md` |
 | **代码规范** | `docs/DEV_STANDARDS.md` |
 | **项目结构** | `docs/PROJECT_STRUCTURE.md` (本文件) |
+| **小说分段分析方法** | `docs/NOVEL_SEGMENTATION_METHODOLOGY.md` (完整版) |
+| **小说分段快速参考** | `docs/NOVEL_SEGMENTATION_QUICKREF.md` (速查表) |
 | **功能优化详情** | `docs/maintenance/` 目录下的相关文档 |
 
 ## 📝 命名规范
@@ -161,7 +166,7 @@ AI-Narrated-Recap-Analyst/
 
 | 文档类型 | 放置位置 | 示例 | 说明 |
 |---------|---------|------|------|
-| **核心文档** | `docs/` | DEV_STANDARDS.md, PROJECT_STRUCTURE.md | 永久性、全局性的文档 |
+| **核心文档** | `docs/` | DEV_STANDARDS.md, PROJECT_STRUCTURE.md, NOVEL_SEGMENTATION_METHODOLOGY.md | 永久性、全局性的文档 |
 | **架构设计** | `docs/architecture/` | logic_flows.md | 系统架构和设计文档 |
 | **功能优化** | `docs/maintenance/` | ingestion_optimization_*.md | 针对特定功能的优化文档 |
 | **维护记录** | `docs/maintenance/` | CLEANUP_SUMMARY.md | 清理报告、变更记录、迁移日志 |
@@ -208,5 +213,5 @@ Alignment Engine 对齐
 
 ---
 
-**最后更新**: 2026-02-03  
+**最后更新**: 2026-02-06  
 **维护者**: 开发团队

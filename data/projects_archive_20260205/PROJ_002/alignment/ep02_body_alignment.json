@@ -1,0 +1,454 @@
+{
+  "episode": "ep02",
+  "script_time_range": "00:00:00,000 - End",
+  "matched_novel_chapters": [
+    "第1章",
+    "第2章"
+  ],
+  "layered_alignment": {
+    "world_building": {
+      "layer": "world_building",
+      "script_node_count": 11,
+      "novel_node_count": 20,
+      "alignment_count": 5,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "world_building_script_1",
+            "layer": "world_building",
+            "content": "末日来袭，全球爆发诡异",
+            "summary": "末日来袭，全球爆发诡异",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_1",
+            "layer": "world_building",
+            "content": "全球诡异爆发，城市成为人类禁区",
+            "summary": "全球诡异爆发，城市成为人类禁区",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似，都描述全球范围内爆发诡异事件，导致人类生存环境恶化。文本1强调'末日来袭'，文本2强调'城市成为人类禁区'，细节略有差异但主题一致。'爆发'和'来袭'视为同义词，'全球'修饰词在文本1中省略但不影响核心语义。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_3",
+            "layer": "world_building",
+            "content": "诡异有超强力量，序列超凡难以抗衡",
+            "summary": "诡异有超强力量，序列超凡难以抗衡",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_2",
+            "layer": "world_building",
+            "content": "诡异无法被杀死，只有序列超凡才能杀死诡异",
+            "summary": "诡异无法被杀死，只有序列超凡才能杀死诡异",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "文本1强调诡异有超强力量，序列超凡难以抗衡；文本2强调诡异无法被杀死，只有序列超凡才能杀死诡异。两者都涉及诡异和序列超凡的关系，但核心意思不同：文本1侧重诡异的力量优势，文本2侧重诡异的不可杀性和序列超凡的克制作用。部分相关，但细节差异显著。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_4",
+            "layer": "world_building",
+            "content": "诡异无法被杀死，序列超凡像打不死的小强",
+            "summary": "诡异无法被杀死，序列超凡像打不死的小强",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_3",
+            "layer": "world_building",
+            "content": "人类只能不停迁徙，依靠序列超凡",
+            "summary": "人类只能不停迁徙，依靠序列超凡",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都提到了'序列超凡'，但核心语义不同。文本1强调'诡异无法被杀死'和'序列超凡像打不死的小强'，侧重于描述诡异和序列超凡的顽强特性。文本2强调'人类只能不停迁徙，依靠序列超凡'，侧重于描述人类的生存策略和对序列超凡的依赖。两者主题关联但不相同，前者是特性描述，后者是行为描述，因此评分在0.3-0.5范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_7",
+            "layer": "world_building",
+            "content": "诡异被人群吸引，鬼影重重",
+            "summary": "诡异被人群吸引，鬼影重重",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_8",
+            "layer": "world_building",
+            "content": "诡异会引诱人类前往救援",
+            "summary": "诡异会引诱人类前往救援",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'诡异'，但核心语义不同：文本1描述诡异被人群吸引，鬼影重重，强调诡异与人群的互动和氛围；文本2描述诡异会引诱人类前往救援，强调诡异的主动引诱行为。两者主题有关联（都涉及诡异与人类的关系），但具体行为和意图不同，因此属于有关联但主题不同的情况。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_11",
+            "layer": "world_building",
+            "content": "序列超凡可以和诡异抗衡",
+            "summary": "序列超凡可以和诡异抗衡",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_13",
+            "layer": "world_building",
+            "content": "每个序列超凡都有副作用",
+            "summary": "每个序列超凡都有副作用",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'序列超凡'这一概念，但核心语义不同：文本1讨论'序列超凡'与'诡异'的对抗关系，文本2讨论'序列超凡'的副作用。两者主题相关但焦点不同，属于有关联但主题不同的情况。"
+        }
+      ],
+      "coverage_score": 0.25
+    },
+    "game_mechanics": {
+      "layer": "game_mechanics",
+      "script_node_count": 8,
+      "novel_node_count": 19,
+      "alignment_count": 4,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_1",
+            "layer": "game_mechanics",
+            "content": "序列超凡是与诡异抗衡的人类能力体系",
+            "summary": "序列超凡是与诡异抗衡的人类能力体系",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_9",
+            "layer": "game_mechanics",
+            "content": "序列超凡可杀死诡异",
+            "summary": "序列超凡可杀死诡异",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "文本1描述'序列超凡'是与'诡异'抗衡的人类能力体系，文本2描述'序列超凡'可杀死'诡异'。两者都涉及'序列超凡'与'诡异'的关系，核心意思相关：文本1强调抗衡（对抗），文本2强调杀死（消灭），细节略有差异但主题一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_2",
+            "layer": "game_mechanics",
+            "content": "序列超凡拥有超强力量和防御能力",
+            "summary": "序列超凡拥有超强力量和防御能力",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_11",
+            "layer": "game_mechanics",
+            "content": "序列有数百种，能力不同",
+            "summary": "序列有数百种，能力不同",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'序列'概念，但核心语义不同。文本1描述'序列超凡'的具体能力（超强力量和防御），文本2则说明'序列'有数百种且能力不同，强调多样性和分类。两者主题相关（都讨论序列及其能力），但具体内容和焦点差异较大。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_4",
+            "layer": "game_mechanics",
+            "content": "攻击诡异可获得杀戮点",
+            "summary": "攻击诡异可获得杀戮点",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_15",
+            "layer": "game_mechanics",
+            "content": "杀戮点通过攻击或杀死敌人获得",
+            "summary": "杀戮点通过攻击或杀死敌人获得",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同：两段文本都表达'攻击敌人可获得杀戮点'。细节略有差异：文本1指定'攻击诡异'，文本2泛化为'攻击或杀死敌人'；文本1用'可获得'，文本2用'通过...获得'。这些差异不影响核心语义，但存在具体与泛化的区别。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_5",
+            "layer": "game_mechanics",
+            "content": "击杀敌人可获得杀戮值",
+            "summary": "击杀敌人可获得杀戮值",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_4",
+            "layer": "game_mechanics",
+            "content": "可借贷300杀戮点",
+            "summary": "可借贷300杀戮点",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'杀戮值/杀戮点'这一概念，表明它们共享一个主题元素。但核心语义不同：文本1描述的是'击杀敌人可获得杀戮值'，强调通过击杀敌人来获取杀戮值；文本2描述的是'可借贷300杀戮点'，强调可以借贷一定数量的杀戮点。前者是关于获取机制，后者是关于借贷功能，两者在核心意思上有关联但主题不同。"
+        }
+      ],
+      "coverage_score": 0.21052631578947367
+    },
+    "items_equipment": {
+      "layer": "items_equipment",
+      "script_node_count": 10,
+      "novel_node_count": 32,
+      "alignment_count": 3,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_1",
+            "layer": "items_equipment",
+            "content": "我用手弩攻击白衣剪刀女",
+            "summary": "我用手弩攻击白衣剪刀女",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_8",
+            "layer": "items_equipment",
+            "content": "陈野使用手弩攻击白衣剪刀女",
+            "summary": "陈野使用手弩攻击白衣剪刀女",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.95,
+          "confidence": "high",
+          "reasoning": "核心意思完全一致：两段文本都描述了使用手弩攻击白衣剪刀女的行为。主要差异在于主语：文本1使用第一人称'我'，文本2使用第三人称'陈野'。根据评分标准，忽略修饰词差异（如人称代词），关注核心语义（攻击动作、工具和目标），因此语义高度相似。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_7",
+            "layer": "items_equipment",
+            "content": "我用手弩射杀强子",
+            "summary": "我用手弩射杀强子",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_9",
+            "layer": "items_equipment",
+            "content": "陈野使用手弩射杀强子",
+            "summary": "陈野使用手弩射杀强子",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.95,
+          "confidence": "high",
+          "reasoning": "核心意思完全一致：两段文本都描述了使用手弩射杀强子的事件。文本1中的'我'和文本2中的'陈野'都指代执行动作的主体，在语义上属于同一角色（第一人称与第三人称的差异不影响核心事件）。动作'射杀'、工具'手弩'和目标'强子'完全相同。忽略人称差异后，两段文本表达的是完全相同的核心语义。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_9",
+            "layer": "items_equipment",
+            "content": "我蹬着三轮车逃跑",
+            "summary": "我蹬着三轮车逃跑",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_2",
+            "layer": "items_equipment",
+            "content": "二八大杠升级成三轮车",
+            "summary": "二八大杠升级成三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及三轮车，但核心语义不同。文本1描述'我蹬着三轮车逃跑'，强调逃跑动作和三轮车作为逃跑工具。文本2描述'二八大杠升级成三轮车'，强调从自行车升级到三轮车的变化过程。两者主题不同：文本1是逃跑场景，文本2是交通工具升级。虽有'三轮车'这一共同元素，但整体语义关联较弱。"
+        }
+      ],
+      "coverage_score": 0.09375
+    },
+    "plot_events": {
+      "layer": "plot_events",
+      "script_node_count": 31,
+      "novel_node_count": 46,
+      "alignment_count": 7,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "plot_events_script_2",
+            "layer": "plot_events",
+            "content": "黑暗中白衣剪刀女突然出现",
+            "summary": "黑暗中白衣剪刀女突然出现",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_14",
+            "layer": "plot_events",
+            "content": "陈野在商超遭遇白衣剪刀女",
+            "summary": "陈野在商超遭遇白衣剪刀女",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'白衣剪刀女'这一核心元素，但场景和动作描述有差异。文本1描述'黑暗中突然出现'，文本2描述'在商超遭遇'，两者都表示白衣剪刀女的出现或遭遇事件，但具体情境不同。核心语义部分相关，因此评分在0.6-0.7范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_3",
+            "layer": "plot_events",
+            "content": "序列壮汉破墙而出攻击白衣剪刀女",
+            "summary": "序列壮汉破墙而出攻击白衣剪刀女",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_15",
+            "layer": "plot_events",
+            "content": "铁狮变身序列超凡对抗剪刀女",
+            "summary": "铁狮变身序列超凡对抗剪刀女",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及序列、壮汉/铁狮、剪刀女等元素，核心是战斗对抗场景。文本1描述'壮汉破墙而出攻击白衣剪刀女'，文本2描述'铁狮变身序列超凡对抗剪刀女'，共享'序列'、'对抗剪刀女'等关键点，但主体（壮汉 vs 铁狮）、动作细节（破墙而出 vs 变身）和修饰（白衣）有差异。这些差异使语义部分相关，而非完全一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_13",
+            "layer": "plot_events",
+            "content": "幸存者哭喊逃跑",
+            "summary": "幸存者哭喊逃跑",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_16",
+            "layer": "plot_events",
+            "content": "陈野用糖引开纸哭童逃跑",
+            "summary": "陈野用糖引开纸哭童逃跑",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'逃跑'这一动作，但主体和情境不同。文本1描述'幸存者哭喊逃跑'，强调幸存者的恐惧和逃生；文本2描述'陈野用糖引开纸哭童逃跑'，涉及角色陈野的策略性行动和纸哭童的逃跑。两者在'逃跑'这一核心动作上有关联，但主体（幸存者 vs. 陈野/纸哭童）和情境（哭喊 vs. 用糖引开）差异显著，主题不完全一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_17",
+            "layer": "plot_events",
+            "content": "幸存者被诡异拉入黑暗",
+            "summary": "幸存者被诡异拉入黑暗",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_31",
+            "layer": "plot_events",
+            "content": "幸存者被大柳树吊死",
+            "summary": "幸存者被大柳树吊死",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.65,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'幸存者'遭遇不幸，但核心语义有差异：文本1描述幸存者被'诡异'拉入黑暗，暗示超自然或未知力量的威胁；文本2描述幸存者被'大柳树'吊死，是具体物理实体的致命行为。两者都表达幸存者面临危险或死亡，但威胁来源和方式不同，属于部分相关。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_18",
+            "layer": "plot_events",
+            "content": "诡异被人群吸引",
+            "summary": "诡异被人群吸引",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_18",
+            "layer": "plot_events",
+            "content": "瑜伽裤女被诡异拖走",
+            "summary": "瑜伽裤女被诡异拖走",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'诡异'这一元素，但核心语义不同。文本1描述'诡异被人群吸引'，强调诡异对人群的主动关注或吸引；文本2描述'瑜伽裤女被诡异拖走'，强调诡异对特定个体的暴力行为。两者主题关联但不相同，前者更偏向观察或吸引，后者更偏向攻击或拖拽。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_21",
+            "layer": "plot_events",
+            "content": "我用手弩射杀强子",
+            "summary": "我用手弩射杀强子",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_17",
+            "layer": "plot_events",
+            "content": "陈野射杀强子",
+            "summary": "陈野射杀强子",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都是描述射杀强子的事件。文本1指定了使用手弩作为工具，文本2未指定工具，这是细节差异。主体不同（文本1是'我'，文本2是'陈野'），但根据评分标准忽略修饰词差异，关注核心语义，因此核心事件一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_26",
+            "layer": "plot_events",
+            "content": "我蹬三轮车逃跑并捡包裹",
+            "summary": "我蹬三轮车逃跑并捡包裹",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_19",
+            "layer": "plot_events",
+            "content": "陈野骑三轮车逃离杏花镇",
+            "summary": "陈野骑三轮车逃离杏花镇",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同：两段文本都描述了一个人骑三轮车逃离某个地方。细节略有差异：文本1使用'我'作为主语，文本2使用'陈野'作为具体人物；文本1提到'捡包裹'，文本2未提及此细节；文本1未指定地点，文本2指定为'杏花镇'。这些差异不影响核心语义，因此评分在0.8-0.9范围内。"
+        }
+      ],
+      "coverage_score": 0.15217391304347827
+    }
+  },
+  "alignment_quality": {
+    "overall_score": 0.17756721967963388,
+    "layer_scores": {
+      "world_building": 0.25,
+      "game_mechanics": 0.21052631578947367,
+      "items_equipment": 0.09375,
+      "plot_events": 0.15217391304347827
+    }
+  }
+}

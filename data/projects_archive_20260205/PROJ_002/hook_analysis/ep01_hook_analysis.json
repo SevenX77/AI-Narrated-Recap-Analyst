@@ -1,0 +1,146 @@
+{
+  "episode": "ep01",
+  "detection": {
+    "has_hook": true,
+    "body_start_time": "00:00:30,900",
+    "hook_end_time": "00:00:30,900",
+    "confidence": 0.92,
+    "reasoning": "识别到'我从江城逃了出来'为明确的叙事模式转换点。在此之前（00:00:00,000-00:00:29,200）为Hook部分：采用概括性描述和预告式叙述，介绍诡异末日背景、系统觉醒、主角能力提升及最终成为人类希望的总结性陈述，句子间跳跃性强，无直接因果时序（如'诡异末日爆发'→'热武器是笑话'→'我觉醒系统'→'我成为希望'）。从00:00:30,900开始进入Body部分：叙事转为线性推进，以'我从江城逃了出来'为具体行动起点，随后按时间顺序描述组成车队、前往基地、车队规则、目的地沦陷、夜晚露营等事件，句子间连贯流畅，形成清晰的因果链（逃出→组成车队→前往基地→制定规则→得知沦陷→煮面→夜晚降临）。辅助特征如时间线明确化（'一路上'、'吃完晚饭后'、'抽完后'）和场景具象化（煮泡面、点烟、裹毛毯）进一步支持该判断。"
+  },
+  "hook_content": {
+    "time_range": "00:00:00,000 - 00:00:30,900",
+    "raw_text": "诡异末日爆发的那天 城市便不再属于人类 热武器在诡异面前只是个笑话 诡异无法被杀死 能活下来的人只能依靠序列超凡 不断迁徙 当我认定人类已经没有未来的时候 却意外觉醒了 万物升级系统 别人推着破车一路逃亡 而我 却在车队打造出一座行走的钢铁堡垒 生锈的自行车 在我手中升级为装甲战车 破烂的帐篷也能进化成流动的避难所 最离谱的是 那些无法被杀死的诡异 不再追着我撕咬 反而一路尾随 我望着远方翻滚的迷雾 忍不住苦笑 我明明只是想活下去 怎么就成了人类最后的希望 我从江城逃了出来",
+    "layered_extraction": {
+      "world_building": [
+        {
+          "node_type": "world_building",
+          "content": "诡异末日爆发，城市不再属于人类",
+          "summary": "诡异末日爆发，城市不再属于人类"
+        },
+        {
+          "node_type": "world_building",
+          "content": "诡异无法被杀死",
+          "summary": "诡异无法被杀死"
+        },
+        {
+          "node_type": "world_building",
+          "content": "热武器在诡异面前无效",
+          "summary": "热武器在诡异面前无效"
+        },
+        {
+          "node_type": "world_building",
+          "content": "人类依靠序列超凡不断迁徙",
+          "summary": "人类依靠序列超凡不断迁徙"
+        }
+      ],
+      "game_mechanics": [
+        {
+          "node_type": "game_mechanics",
+          "content": "人类依靠序列超凡生存",
+          "summary": "人类依靠序列超凡生存"
+        },
+        {
+          "node_type": "game_mechanics",
+          "content": "意外觉醒了万物升级系统",
+          "summary": "意外觉醒了万物升级系统"
+        },
+        {
+          "node_type": "game_mechanics",
+          "content": "升级物品，如自行车变战车",
+          "summary": "升级物品，如自行车变战车"
+        },
+        {
+          "node_type": "game_mechanics",
+          "content": "系统影响诡异行为",
+          "summary": "系统影响诡异行为"
+        }
+      ],
+      "items_equipment": [
+        {
+          "node_type": "items_equipment",
+          "content": "别人推着破车一路逃亡",
+          "summary": "别人推着破车一路逃亡"
+        },
+        {
+          "node_type": "items_equipment",
+          "content": "生锈的自行车升级为装甲战车",
+          "summary": "生锈的自行车升级为装甲战车"
+        },
+        {
+          "node_type": "items_equipment",
+          "content": "破烂的帐篷升级为流动的避难所",
+          "summary": "破烂的帐篷升级为流动的避难所"
+        },
+        {
+          "node_type": "items_equipment",
+          "content": "在车队打造出一座行走的钢铁堡垒",
+          "summary": "在车队打造出一座行走的钢铁堡垒"
+        }
+      ],
+      "plot_events": [
+        {
+          "node_type": "plot_events",
+          "content": "诡异末日爆发",
+          "summary": "诡异末日爆发"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "人类依靠序列超凡不断迁徙",
+          "summary": "人类依靠序列超凡不断迁徙"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我认定人类没有未来",
+          "summary": "我认定人类没有未来"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我意外觉醒",
+          "summary": "我意外觉醒"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "别人推着破车逃亡",
+          "summary": "别人推着破车逃亡"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我在车队打造钢铁堡垒",
+          "summary": "我在车队打造钢铁堡垒"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "诡异不再追着我撕咬，反而尾随",
+          "summary": "诡异不再追着我撕咬，反而尾随"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我望着远方迷雾苦笑",
+          "summary": "我望着远方迷雾苦笑"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我表达只想活下去",
+          "summary": "我表达只想活下去"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我成为人类最后的希望",
+          "summary": "我成为人类最后的希望"
+        },
+        {
+          "node_type": "plot_events",
+          "content": "我从江城逃了出来",
+          "summary": "我从江城逃了出来"
+        }
+      ]
+    }
+  },
+  "intro_similarity": 0.7284090909090909,
+  "source_analysis": {
+    "inferred_source": "简介",
+    "note": "Hook与简介相似度: 0.73"
+  },
+  "status": "completed",
+  "timestamp": "2026-02-05T12:52:15.657379"
+}

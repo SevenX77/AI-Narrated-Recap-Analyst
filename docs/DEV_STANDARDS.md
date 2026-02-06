@@ -76,6 +76,13 @@ root/
 - 输入输出必须强类型 (Type Hinting)。
 - **禁止** 在 Tool 内部直接调用 Agent。
 
+**现有工具**:
+- `NovelSegmentationTool`: 小说自然分段（LLM辅助）
+- `NovelChapterProcessor`: 小说章节拆分与简介提取
+- `MetadataExtractor`: 元数据提取与简介智能过滤
+- `IntroductionValidator`: 简介质量验证
+- `SrtScriptProcessor`: SRT字幕处理（支持有/无小说参考两种模式）
+
 ### 3.2 Agents (智能体)
 - 继承自 `src.core.interfaces.BaseAgent`。
 - 拥有 `context` (上下文)。
@@ -122,6 +129,13 @@ root/
 - **Prompt 分离**: 禁止将长 Prompt 字符串硬编码在 Python 函数内部。
 - **存储位置**: 将 Prompt 提取到 `src/prompts/` 目录下的 YAML/JSON 文件中。
 - **版本控制**: Prompt 的变更应视为代码变更，需进行版本管理。
+
+**现有Prompt配置**:
+- `introduction_extraction.yaml`: 小说简介智能过滤
+- `srt_script_processing_with_novel.yaml`: SRT处理（有小说参考）
+- `srt_script_processing_without_novel.yaml`: SRT处理（无小说参考，智能实体识别）
+- `layered_extraction.yaml`: 分层对齐的情节节点提取
+- 其他分析和对齐相关prompts...
 
 ## 7. 错误处理与日志 (Error Handling & Logging)
 
