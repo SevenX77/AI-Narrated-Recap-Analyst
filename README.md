@@ -1,5 +1,9 @@
 # AI-Narrated Recap Analyst (AI 爆款解说生成器)
 
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![Python](https://img.shields.io/badge/python-3.8+-green.svg)
+![License](https://img.shields.io/badge/license-MIT-orange.svg)
+
 ## 项目愿景
 本项目旨在构建一个**全自动化的爆款短视频解说生成系统**。
 我们的目标不仅仅是“转换文本”，而是**复刻并超越**人类金牌解说员的创作能力，通过严谨的工程架构和数据反馈机制，稳定产出具有高完播率、高互动率的解说视频文案与分镜。
