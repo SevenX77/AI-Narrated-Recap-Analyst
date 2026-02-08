@@ -1,0 +1,198 @@
+{
+  "episode": "ep02",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep02.md",
+  "stats": {
+    "original_chars": 1473,
+    "processed_chars": 1875,
+    "paragraphs": 11,
+    "srt_entries": 133,
+    "avg_paragraph_sentences": 4.0,
+    "processing_time_seconds": 60.17
+  },
+  "entity_standardization": {
+    "locations": {
+      "山洞": {
+        "variants": [
+          "山洞"
+        ],
+        "standard_form": "山洞",
+        "reasoning": "部落居住的主要地点，上下文一致。"
+      },
+      "洞口空地": {
+        "variants": [
+          "洞口的空地"
+        ],
+        "standard_form": "洞口空地",
+        "reasoning": "山洞外的特定区域，用于集会。"
+      },
+      "河里": {
+        "variants": [
+          "河里"
+        ],
+        "standard_form": "河里",
+        "reasoning": "捕鱼的地点。"
+      }
+    },
+    "characters": {
+      "你（主角）": {
+        "variants": [
+          "你"
+        ],
+        "standard_form": "你",
+        "reasoning": "故事的第一人称主角，贯穿全文。"
+      },
+      "长老": {
+        "variants": [
+          "长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "部落的领导者或年长者。"
+      },
+      "独耳": {
+        "variants": [
+          "独耳"
+        ],
+        "standard_form": "独耳",
+        "reasoning": "参与首领竞选的部落战士。"
+      },
+      "大力": {
+        "variants": [
+          "大力"
+        ],
+        "standard_form": "大力",
+        "reasoning": "参与首领竞选的部落最强战士，后成为主角对手。"
+      },
+      "瘸子": {
+        "variants": [
+          "瘸子"
+        ],
+        "standard_form": "瘸子",
+        "reasoning": "部落中行动不便的男性成员，被分配特殊任务。"
+      }
+    },
+    "items": {
+      "石盆": {
+        "variants": [
+          "石盆"
+        ],
+        "standard_form": "石盆",
+        "reasoning": "部落的储水容器，是重要道具。"
+      },
+      "背篓": {
+        "variants": [
+          "背篓"
+        ],
+        "standard_form": "背篓",
+        "reasoning": "主角教族人编织的采集工具。"
+      },
+      "鹿皮": {
+        "variants": [
+          "鹿皮"
+        ],
+        "standard_form": "鹿皮",
+        "reasoning": "主角制作的衣服材料。"
+      },
+      "蛇皮": {
+        "variants": [
+          "蛇皮"
+        ],
+        "standard_form": "蛇皮",
+        "reasoning": "主角用来束发的材料。"
+      },
+      "陶器": {
+        "variants": [
+          "陶器"
+        ],
+        "standard_form": "陶器",
+        "reasoning": "主角计划让瘸子负责烧制的容器。"
+      },
+      "棍子": {
+        "variants": [
+          "棍子"
+        ],
+        "standard_form": "棍子",
+        "reasoning": "分配给采集队妇女的自卫工具。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:10,700",
+      "sentence_count": 3,
+      "char_count": 73
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:10,700",
+      "end_time": "00:00:28,100",
+      "sentence_count": 4,
+      "char_count": 121
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:28,100",
+      "end_time": "00:00:55,233",
+      "sentence_count": 5,
+      "char_count": 192
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:55,233",
+      "end_time": "00:01:16,533",
+      "sentence_count": 6,
+      "char_count": 152
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:16,533",
+      "end_time": "00:01:36,300",
+      "sentence_count": 4,
+      "char_count": 141
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:36,300",
+      "end_time": "00:01:53,700",
+      "sentence_count": 3,
+      "char_count": 120
+    },
+    {
+      "index": 7,
+      "start_time": "00:01:53,700",
+      "end_time": "00:02:15,266",
+      "sentence_count": 4,
+      "char_count": 157
+    },
+    {
+      "index": 8,
+      "start_time": "00:02:15,266",
+      "end_time": "00:02:33,633",
+      "sentence_count": 2,
+      "char_count": 121
+    },
+    {
+      "index": 9,
+      "start_time": "00:02:33,633",
+      "end_time": "00:02:54,100",
+      "sentence_count": 4,
+      "char_count": 137
+    },
+    {
+      "index": 10,
+      "start_time": "00:02:54,100",
+      "end_time": "00:03:05,766",
+      "sentence_count": 7,
+      "char_count": 195
+    },
+    {
+      "index": 11,
+      "start_time": "00:00:00,000",
+      "end_time": "00:03:05,766",
+      "sentence_count": 2,
+      "char_count": 63
+    }
+  ]
+}

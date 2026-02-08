@@ -1,0 +1,23 @@
+{
+  "episode": "ep02",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/末世寒潮/script/ep02.md",
+  "stats": {
+    "original_chars": 564,
+    "processed_chars": 548,
+    "paragraphs": 1,
+    "srt_entries": 65,
+    "avg_paragraph_sentences": 5.0,
+    "processing_time_seconds": 1041.47
+  },
+  "entity_standardization": {},
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,066",
+      "end_time": "00:01:10,500",
+      "sentence_count": 5,
+      "char_count": 505
+    }
+  ]
+}

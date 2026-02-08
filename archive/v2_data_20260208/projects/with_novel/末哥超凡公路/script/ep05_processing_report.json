@@ -1,0 +1,205 @@
+{
+  "episode": "ep05",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/末哥超凡公路/script/ep05.md",
+  "stats": {
+    "original_chars": 579,
+    "processed_chars": 816,
+    "paragraphs": 6,
+    "srt_entries": 54,
+    "avg_paragraph_sentences": 3.1666666666666665,
+    "processing_time_seconds": 41.11
+  },
+  "entity_standardization": {
+    "locations": {},
+    "characters": {
+      "楚彻": {
+        "variants": [
+          "楚彻"
+        ],
+        "standard_form": "楚彻",
+        "reasoning": "车队管理者，名字在文中一致出现。"
+      },
+      "傻大哥": {
+        "variants": [
+          "傻大哥"
+        ],
+        "standard_form": "傻大哥",
+        "reasoning": "拥有大巴车的泰坦序列超凡者，绰号。"
+      },
+      "女明星": {
+        "variants": [
+          "女明星"
+        ],
+        "standard_form": "周兰",
+        "reasoning": "文中后续揭示其名为周兰，拥有小汽车。"
+      },
+      "周兰": {
+        "variants": [
+          "周兰"
+        ],
+        "standard_form": "周兰",
+        "reasoning": "前女明星，拥有小汽车和汽油，与主角交易。"
+      },
+      "周兰弟弟": {
+        "variants": [
+          "他弟弟",
+          "少年"
+        ],
+        "standard_form": "周兰弟弟",
+        "reasoning": "周兰的弟弟，反对汽油交易。"
+      },
+      "娜娜": {
+        "variants": [
+          "娜娜"
+        ],
+        "standard_form": "娜娜",
+        "reasoning": "车队成员，拥有汽油和户外柴刀用于交易。"
+      },
+      "主角": {
+        "variants": [
+          "我"
+        ],
+        "standard_form": "我",
+        "reasoning": "第一人称叙述者，已觉醒序列超凡。"
+      }
+    },
+    "items": {
+      "车队": {
+        "variants": [
+          "车队"
+        ],
+        "standard_form": "车队",
+        "reasoning": "故事发生的主要群体和组织。"
+      },
+      "汽油": {
+        "variants": [
+          "汽油"
+        ],
+        "standard_form": "汽油",
+        "reasoning": "关键交易物资。"
+      },
+      "铁桶": {
+        "variants": [
+          "铁桶"
+        ],
+        "standard_form": "铁桶",
+        "reasoning": "盛装汽油的容器。"
+      },
+      "大米": {
+        "variants": [
+          "大米"
+        ],
+        "standard_form": "大米",
+        "reasoning": "交易汽油的计价单位。"
+      },
+      "黑狗血": {
+        "variants": [
+          "黑狗血"
+        ],
+        "standard_form": "黑狗血",
+        "reasoning": "主角用于与楚彻交易的信息或物品。"
+      },
+      "户外柴刀": {
+        "variants": [
+          "户外柴刀"
+        ],
+        "standard_form": "户外柴刀",
+        "reasoning": "主角从娜娜处换得的武器，品牌为岛国。"
+      },
+      "大巴车": {
+        "variants": [
+          "大巴车"
+        ],
+        "standard_form": "大巴车",
+        "reasoning": "傻大哥的财产，车队重要车辆。"
+      },
+      "改装越野车": {
+        "variants": [
+          "改装越野车"
+        ],
+        "standard_form": "改装越野车",
+        "reasoning": "车队中四轮车辆的一种，有两辆。"
+      },
+      "小汽车": {
+        "variants": [
+          "小汽车"
+        ],
+        "standard_form": "小汽车",
+        "reasoning": "周兰的财产。"
+      },
+      "广播": {
+        "variants": [
+          "广播"
+        ],
+        "standard_form": "广播",
+        "reasoning": "发布车队出发指令的工具。"
+      },
+      "序列超凡": {
+        "variants": [
+          "序列超凡"
+        ],
+        "standard_form": "序列超凡",
+        "reasoning": "指代一种超凡能力体系或状态。"
+      },
+      "泰坦序列": {
+        "variants": [
+          "泰坦序列"
+        ],
+        "standard_form": "泰坦序列",
+        "reasoning": "傻大哥所属的超凡序列。"
+      },
+      "内部交易会": {
+        "variants": [
+          "内部交易会"
+        ],
+        "standard_form": "内部交易会",
+        "reasoning": "车队即将举办的活动。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:24,533",
+      "sentence_count": 5,
+      "char_count": 156
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:24,533",
+      "end_time": "00:00:41,700",
+      "sentence_count": 2,
+      "char_count": 102
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:41,733",
+      "end_time": "00:01:05,700",
+      "sentence_count": 5,
+      "char_count": 148
+    },
+    {
+      "index": 4,
+      "start_time": "00:01:05,700",
+      "end_time": "00:01:20,100",
+      "sentence_count": 4,
+      "char_count": 91
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:20,100",
+      "end_time": "00:01:23,266",
+      "sentence_count": 2,
+      "char_count": 58
+    },
+    {
+      "index": 6,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:23,266",
+      "sentence_count": 1,
+      "char_count": 38
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "episode": "ep06",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep06.md",
+  "stats": {
+    "original_chars": 471,
+    "processed_chars": 667,
+    "paragraphs": 5,
+    "srt_entries": 48,
+    "avg_paragraph_sentences": 4.4,
+    "processing_time_seconds": 24.68
+  },
+  "entity_standardization": {
+    "characters": {
+      "谢顶": {
+        "variants": [
+          "谢顶",
+          "蟹鼎",
+          "蟹顶"
+        ],
+        "standard_form": "谢顶",
+        "reasoning": "首次出现为“谢顶”，是交易一方的首领，后续“蟹鼎”、“蟹顶”为同音错字，应统一为“谢顶”。"
+      },
+      "长老": {
+        "variants": [
+          "长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "代表主角一方进行交易和演示的人物，名称一致。"
+      },
+      "石头": {
+        "variants": [
+          "石头"
+        ],
+        "standard_form": "石头",
+        "reasoning": "长老的随从，负责搬运物品。"
+      }
+    },
+    "items": {
+      "大石盆": {
+        "variants": [
+          "大食盆",
+          "大石盆",
+          "大缸"
+        ],
+        "standard_form": "大石盆",
+        "reasoning": "首次交易对象描述为“大食盆”，结合“石盆”的材质和“大缸”的同类指代，推断标准名称为“大石盆”。"
+      },
+      "陶锅": {
+        "variants": [
+          "陶锅"
+        ],
+        "standard_form": "陶锅",
+        "reasoning": "用于煮汤的陶制炊具，名称一致。"
+      },
+      "陶碗": {
+        "variants": [
+          "陶碗"
+        ],
+        "standard_form": "陶碗",
+        "reasoning": "盛放食物的陶制器皿，名称一致。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:13,300",
+      "sentence_count": 5,
+      "char_count": 88
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:13,300",
+      "end_time": "00:00:29,300",
+      "sentence_count": 4,
+      "char_count": 118
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:29,300",
+      "end_time": "00:00:42,733",
+      "sentence_count": 3,
+      "char_count": 92
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:42,733",
+      "end_time": "00:00:53,900",
+      "sentence_count": 3,
+      "char_count": 69
+    },
+    {
+      "index": 5,
+      "start_time": "00:00:53,900",
+      "end_time": "00:01:00,366",
+      "sentence_count": 7,
+      "char_count": 113
+    }
+  ]
+}

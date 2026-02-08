@@ -1,0 +1,182 @@
+{
+  "episode": "ep04",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep04.md",
+  "stats": {
+    "original_chars": 504,
+    "processed_chars": 692,
+    "paragraphs": 5,
+    "srt_entries": 47,
+    "avg_paragraph_sentences": 3.4,
+    "processing_time_seconds": 36.6
+  },
+  "entity_standardization": {
+    "characters": {
+      "瘸子": {
+        "variants": [
+          "瘸子"
+        ],
+        "standard_form": "瘸子",
+        "reasoning": "文中明确指代的人物角色。"
+      },
+      "你": {
+        "variants": [
+          "你"
+        ],
+        "standard_form": "你",
+        "reasoning": "叙述视角所指代的主角。"
+      },
+      "兽牙": {
+        "variants": [
+          "兽牙"
+        ],
+        "standard_form": "兽牙",
+        "reasoning": "文中明确指代的人物角色。"
+      },
+      "大力手": {
+        "variants": [
+          "大力手"
+        ],
+        "standard_form": "大力手",
+        "reasoning": "文中明确指代的人物角色。"
+      },
+      "长老": {
+        "variants": [
+          "长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "部落首领角色。"
+      },
+      "两个小伙伴": {
+        "variants": [
+          "昨天帮忙的两个小伙伴"
+        ],
+        "standard_form": "两个小伙伴",
+        "reasoning": "指代昨天帮忙的两位族人。"
+      },
+      "族人": {
+        "variants": [
+          "族人",
+          "部落里的大人小孩"
+        ],
+        "standard_form": "族人",
+        "reasoning": "指代部落成员的整体。"
+      }
+    },
+    "locations": {
+      "山洞": {
+        "variants": [
+          "山洞"
+        ],
+        "standard_form": "山洞",
+        "reasoning": "文中明确的地点。"
+      },
+      "河边": {
+        "variants": [
+          "河边"
+        ],
+        "standard_form": "河边",
+        "reasoning": "文中明确的地点。"
+      },
+      "部落": {
+        "variants": [
+          "部落"
+        ],
+        "standard_form": "部落",
+        "reasoning": "故事发生的核心地点。"
+      }
+    },
+    "items": {
+      "陶碗": {
+        "variants": [
+          "陶碗",
+          "碗"
+        ],
+        "standard_form": "陶碗",
+        "reasoning": "文中主要道具，指烧制的陶器碗。"
+      },
+      "陶器": {
+        "variants": [
+          "陶器",
+          "淘气（错字）"
+        ],
+        "standard_form": "陶器",
+        "reasoning": "指所有烧制的陶制品，'淘气'为明显错字，根据上下文修正。"
+      },
+      "砂锅": {
+        "variants": [
+          "砂锅"
+        ],
+        "standard_form": "砂锅",
+        "reasoning": "文中明确指代的陶制炊具。"
+      },
+      "小水缸": {
+        "variants": [
+          "小水缸",
+          "缸",
+          "水缸"
+        ],
+        "standard_form": "水缸",
+        "reasoning": "指盛水的陶制容器，'小水缸'和'缸'、'水缸'在上下文中指代同一类物品。"
+      },
+      "勺子": {
+        "variants": [
+          "勺子"
+        ],
+        "standard_form": "勺子",
+        "reasoning": "文中明确指代的陶制器具。"
+      },
+      "石盆": {
+        "variants": [
+          "石盆"
+        ],
+        "standard_form": "石盆",
+        "reasoning": "文中提到的传统盛水容器。"
+      },
+      "盐": {
+        "variants": [
+          "盐"
+        ],
+        "standard_form": "盐",
+        "reasoning": "主角希望交换的重要物资。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:16,100",
+      "sentence_count": 4,
+      "char_count": 113
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:16,100",
+      "end_time": "00:00:33,900",
+      "sentence_count": 5,
+      "char_count": 119
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:33,900",
+      "end_time": "00:00:47,100",
+      "sentence_count": 3,
+      "char_count": 92
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:47,100",
+      "end_time": "00:01:00,266",
+      "sentence_count": 2,
+      "char_count": 93
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:00,266",
+      "end_time": "00:01:03,400",
+      "sentence_count": 3,
+      "char_count": 88
+    }
+  ]
+}

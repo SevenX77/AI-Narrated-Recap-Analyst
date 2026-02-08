@@ -1,0 +1,555 @@
+{
+  "scope": "test_chapter_1",
+  "p0_skeleton": [
+    {
+      "segment_id": "seg_chpt_0001_002",
+      "chapter_id": "chpt_0001",
+      "content": "“这或许是本电台最后一次广播！”“上沪己经沦陷成为无人区！”“不要前往！不要前往！！！”“告所有幸存者同胞：不要直视红月超过三秒，不要和路灯下的影子打招呼，不要相信死去的亲人会活过来！”“人类火种……...",
+      "full_content": "“这或许是本电台最后一次广播！”“上沪己经沦陷成为无人区！”“不要前往！不要前往！！！”“告所有幸存者同胞：不要直视红月超过三秒，不要和路灯下的影子打招呼，不要相信死去的亲人会活过来！”“人类火种……永不熄灭！”",
+      "importance": "核心机制首次出现",
+      "must_include_reason": "必须保留，是核心世界观的首次集中展示和情节转折点。可适当精简措辞，但三条规则和上沪沦陷信息必须清晰。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "核心故事设定(首次)",
+          "关键信息"
+        ],
+        "structure": [
+          "钩子-悬念制造",
+          "重复强调"
+        ],
+        "character": []
+      },
+      "is_first_appearance": true,
+      "word_count": 73
+    },
+    {
+      "segment_id": "seg_chpt_0001_007",
+      "chapter_id": "chpt_0001",
+      "content": "几个月前，全球诡异爆发。只用了很短的时间，一些小的国家直接沦为人类禁区。人类的热武器在诡异面前只是个笑话。诡异无法被杀死，或者说很难被杀死。",
+      "full_content": "几个月前，全球诡异爆发。只用了很短的时间，一些小的国家直接沦为人类禁区。人类的热武器在诡异面前只是个笑话。诡异无法被杀死，或者说很难被杀死。",
+      "importance": "核心机制首次出现",
+      "must_include_reason": "必须保留，是核心世界观的背景补充，解释了末日的根源和人类的无力感。",
+      "tags": {
+        "narrative_function": [
+          "核心故事设定(首次)",
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": true,
+      "word_count": 48
+    },
+    {
+      "segment_id": "seg_chpt_0001_013",
+      "chapter_id": "chpt_0001",
+      "content": "在这个车队的人，必须谨记两条铁律！第一条：不要掉队！不要掉队！不要掉队！！！第二条：尽可能多的储备物资！！！第一条铁律优于第二条。没有物资还有办法活下去。",
+      "full_content": "在这个车队的人，必须谨记两条铁律！第一条：不要掉队！不要掉队！不要掉队！！！第二条：尽可能多的储备物资！！！第一条铁律优于第二条。没有物资还有办法活下去。",
+      "importance": "核心机制首次出现",
+      "must_include_reason": "必须保留，是本章标题“车队第一铁律”的核心内容，也是末日生存的重要规则。重复强调部分可酌情保留以增强语气。",
+      "tags": {
+        "narrative_function": [
+          "核心故事设定(首次)",
+          "关键信息"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": []
+      },
+      "is_first_appearance": true,
+      "word_count": 56
+    },
+    {
+      "segment_id": "seg_chpt_0001_023",
+      "chapter_id": "chpt_0001",
+      "content": "夜幕降临，车队露营。血月悄悄升上天空挂在树梢上，给天地之间撒上了一层血纱。诡异的气息瞬间弥漫大地，幸存者们压低了啜泣声，似乎是怕惊动黑暗深处的一些不可知诡异。夜晚，是诡异最为活跃的时候。",
+      "full_content": "夜幕降临，车队露营。血月悄悄升上天空挂在树梢上，给天地之间撒上了一层血纱。诡异的气息瞬间弥漫大地，幸存者们压低了啜泣声，似乎是怕惊动黑暗深处的一些不可知诡异。夜晚，是诡异最为活跃的时候。",
+      "importance": "核心机制首次出现",
+      "must_include_reason": "必须保留，时间推进到夜晚，首次正面描写“血月”和夜晚的诡异规则，为后续可能的事件铺垫。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "核心故事设定(首次)",
+          "背景交代"
+        ],
+        "structure": [
+          "伏笔"
+        ],
+        "character": []
+      },
+      "is_first_appearance": true,
+      "word_count": 58
+    }
+  ],
+  "p1_flesh": [
+    {
+      "segment_id": "seg_chpt_0001_001",
+      "chapter_id": "chpt_0001",
+      "content": "“滋滋……现在的时间是2030年10月13日上午10:23。”",
+      "full_content": "“滋滋……现在的时间是2030年10月13日上午10:23。”",
+      "importance": "重要内容",
+      "must_include_reason": "可简化为“收音机报时”或融入下一段，以精简时间信息。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 18
+    },
+    {
+      "segment_id": "seg_chpt_0001_004",
+      "chapter_id": "chpt_0001",
+      "content": "陈野听着收音机里的杂乱电流，只觉得浑身冰凉。",
+      "full_content": "陈野听着收音机里的杂乱电流，只觉得浑身冰凉。",
+      "importance": "情节推进",
+      "must_include_reason": "保留，展现主角对坏消息的反应，塑造其普通人的共情力。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "人物塑造-陈野"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ]
+      },
+      "is_first_appearance": true,
+      "word_count": 13
+    },
+    {
+      "segment_id": "seg_chpt_0001_006",
+      "chapter_id": "chpt_0001",
+      "content": "上沪作为全球数一数二的超级城市，现在却沦为人类禁区！！！……",
+      "full_content": "上沪作为全球数一数二的超级城市，现在却沦为人类禁区！！！……",
+      "importance": "重要内容",
+      "must_include_reason": "保留，强调上沪沦陷的严重性，但感叹号可精简。",
+      "tags": {
+        "narrative_function": [
+          "背景交代",
+          "关键信息"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 18
+    },
+    {
+      "segment_id": "seg_chpt_0001_008",
+      "chapter_id": "chpt_0001",
+      "content": "陈野从江城逃出来，和一众幸存者组成车队，打算前往上沪的幸存者基地。",
+      "full_content": "陈野从江城逃出来，和一众幸存者组成车队，打算前往上沪的幸存者基地。",
+      "importance": "情节推进",
+      "must_include_reason": "保留，交代主角的来历和当前目标。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ]
+      },
+      "is_first_appearance": false,
+      "word_count": 20
+    },
+    {
+      "segment_id": "seg_chpt_0001_009",
+      "chapter_id": "chpt_0001",
+      "content": "此时的陈野骑着一辆二八大杠在车队之中，车座后面有一个大大的包裹，里面装的是自己所有的家当。至于为什么都末日了，不换一辆小汽车作为载具，而只弄了一辆二八大扛？陈野曾经用石头砸碎了车窗户打开车门。奈何没有...",
+      "full_content": "此时的陈野骑着一辆二八大杠在车队之中，车座后面有一个大大的包裹，里面装的是自己所有的家当。至于为什么都末日了，不换一辆小汽车作为载具，而只弄了一辆二八大扛？陈野曾经用石头砸碎了车窗户打开车门。奈何没有钥匙，根本没办法启动这辆车。作为一个普通人，他根本就做不到像电影里那样，拽出两根线一搭就能把一辆车开走。",
+      "importance": "关键道具首次登场",
+      "must_include_reason": "保留，塑造主角“普通幸存者”的形象，并引出关键道具“二八大杠”。解释部分可适当精简。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "关键道具(首次)",
+          "人物塑造-陈野"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ]
+      },
+      "is_first_appearance": true,
+      "word_count": 103
+    },
+    {
+      "segment_id": "seg_chpt_0001_014",
+      "chapter_id": "chpt_0001",
+      "content": "因为总有一些善良的人会给你。又或者……",
+      "full_content": "因为总有一些善良的人会给你。又或者……",
+      "importance": "悬念制造点",
+      "must_include_reason": "保留，制造悬念并暗示末日下人性的复杂面。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [
+          "钩子-悬念制造"
+        ],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 12
+    },
+    {
+      "segment_id": "seg_chpt_0001_015",
+      "chapter_id": "chpt_0001",
+      "content": "如果你掉了队，迎接你的只有死亡。",
+      "full_content": "如果你掉了队，迎接你的只有死亡。",
+      "importance": "重要内容",
+      "must_include_reason": "保留，强化第一条铁律的严重性。",
+      "tags": {
+        "narrative_function": [
+          "关键信息"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 10
+    },
+    {
+      "segment_id": "seg_chpt_0001_017",
+      "chapter_id": "chpt_0001",
+      "content": "上沪作为全国数一数二的大城市，每个人都相信上沪肯定是有办法解决诡异。结果还没有到目的地，就听到收音机里的消息。上沪己经沦为无人区。",
+      "full_content": "上沪作为全国数一数二的大城市，每个人都相信上沪肯定是有办法解决诡异。结果还没有到目的地，就听到收音机里的消息。上沪己经沦为无人区。",
+      "importance": "情节推进",
+      "must_include_reason": "保留，解释车队绝望情绪的根源，并呼应开头的广播。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "关键信息"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 41
+    },
+    {
+      "segment_id": "seg_chpt_0001_024",
+      "chapter_id": "chpt_0001",
+      "content": "远处沦为人类禁区的城镇隐隐传来求救声，是在引诱人类前往救援。类似的手段在诡异之中屡",
+      "full_content": "远处沦为人类禁区的城镇隐隐传来求救声，是在引诱人类前往救援。类似的手段在诡异之中屡",
+      "importance": "核心机制首次出现",
+      "must_include_reason": "保留，揭示了诡异的一种具体威胁方式，并制造了环境悬念（声音会带来什么？）。句子不完整，但信息已足够。",
+      "tags": {
+        "narrative_function": [
+          "核心故事设定(首次)",
+          "关键信息",
+          "钩子-悬念制造"
+        ],
+        "structure": [
+          "伏笔"
+        ],
+        "character": []
+      },
+      "is_first_appearance": true,
+      "word_count": 30
+    }
+  ],
+  "p2_skin": [
+    {
+      "segment_id": "seg_chpt_0001_003",
+      "chapter_id": "chpt_0001",
+      "content": "“滋滋……”",
+      "full_content": "“滋滋……”",
+      "importance": "重要内容",
+      "must_include_reason": "可省略或与前后段落合并，以简化叙事节奏。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 5
+    },
+    {
+      "segment_id": "seg_chpt_0001_005",
+      "chapter_id": "chpt_0001",
+      "content": "整个车队弥漫一种绝望的窒息情绪。",
+      "full_content": "整个车队弥漫一种绝望的窒息情绪。",
+      "importance": "重要内容",
+      "must_include_reason": "可简化为“车队陷入绝望”或融入其他段落。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 9
+    },
+    {
+      "segment_id": "seg_chpt_0001_010",
+      "chapter_id": "chpt_0001",
+      "content": "没有钥匙的情况下，陈野很难拿到一辆车的使用权。谁也没有想到会突然末日，提前去学类似的技能。至于为什么没有弄到一辆小电驴或者摩托车……",
+      "full_content": "没有钥匙的情况下，陈野很难拿到一辆车的使用权。谁也没有想到会突然末日，提前去学类似的技能。至于为什么没有弄到一辆小电驴或者摩托车……",
+      "importance": "角色发展: 人物塑造-陈野",
+      "must_include_reason": "可大幅精简或删除，其信息已在前一段基本表达。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ]
+      },
+      "is_first_appearance": false,
+      "word_count": 38
+    },
+    {
+      "segment_id": "seg_chpt_0001_011",
+      "chapter_id": "chpt_0001",
+      "content": "原因同上。就算是这辆二八大杠也是车棚里仅剩的一辆。",
+      "full_content": "原因同上。就算是这辆二八大杠也是车棚里仅剩的一辆。",
+      "importance": "重要内容",
+      "must_include_reason": "可删除或合并到前一段关于二八大杠的描述中。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 14
+    },
+    {
+      "segment_id": "seg_chpt_0001_012",
+      "chapter_id": "chpt_0001",
+      "content": "这个车队组成很是杂乱。有开改装越野车的，大巴车的，骑摩托车的。甚至还有开老头乐和小电驴的。当然，骑自行车的也不少。毕竟自行车的迁徙能力和装载能力，再怎么也比两条腿强的太多。",
+      "full_content": "这个车队组成很是杂乱。有开改装越野车的，大巴车的，骑摩托车的。甚至还有开老头乐和小电驴的。当然，骑自行车的也不少。毕竟自行车的迁徙能力和装载能力，再怎么也比两条腿强的太多。",
+      "importance": "重要内容",
+      "must_include_reason": "可简化为“车队由各式各样的载具组成”以节省篇幅，细节可删减。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 58
+    },
+    {
+      "segment_id": "seg_chpt_0001_016",
+      "chapter_id": "chpt_0001",
+      "content": "车队里的人大都是由从江城逃出来的幸存者。打算前往上沪。",
+      "full_content": "车队里的人大都是由从江城逃出来的幸存者。打算前往上沪。",
+      "importance": "重要内容",
+      "must_include_reason": "信息与前文重复，可删除或合并。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 15
+    },
+    {
+      "segment_id": "seg_chpt_0001_018",
+      "chapter_id": "chpt_0001",
+      "content": "那可是全国数一数二的大城市，一个城市就有数千万人口。",
+      "full_content": "那可是全国数一数二的大城市，一个城市就有数千万人口。",
+      "importance": "重要内容",
+      "must_include_reason": "可删除，其强调作用已由前一段完成。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 16
+    },
+    {
+      "segment_id": "seg_chpt_0001_019",
+      "chapter_id": "chpt_0001",
+      "content": "而现在……",
+      "full_content": "而现在……",
+      "importance": "重要内容",
+      "must_include_reason": "可删除，是无效的停顿。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 3
+    },
+    {
+      "segment_id": "seg_chpt_0001_020",
+      "chapter_id": "chpt_0001",
+      "content": "听到这个消息，周围传来绝望的啜泣声。",
+      "full_content": "听到这个消息，周围传来绝望的啜泣声。",
+      "importance": "重要内容",
+      "must_include_reason": "可简化为“车队中响起啜泣声”或融入环境描写。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 9
+    },
+    {
+      "segment_id": "seg_chpt_0001_021",
+      "chapter_id": "chpt_0001",
+      "content": "之前眼神里还有希望的小火苗，现在都成了一片灰白的绝望。",
+      "full_content": "之前眼神里还有希望的小火苗，现在都成了一片灰白的绝望。",
+      "importance": "重要内容",
+      "must_include_reason": "可删除，是氛围渲染，前文已有类似表达。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 16
+    },
+    {
+      "segment_id": "seg_chpt_0001_022",
+      "chapter_id": "chpt_0001",
+      "content": "车队就这样在超低的氛围之中前进着。一种难以形容的气氛在车队之中弥漫。",
+      "full_content": "车队就这样在超低的氛围之中前进着。一种难以形容的气氛在车队之中弥漫。",
+      "importance": "重要内容",
+      "must_include_reason": "可简化为“车队在绝望中前行”。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": []
+      },
+      "is_first_appearance": false,
+      "word_count": 18
+    }
+  ],
+  "foreshadowing_map": {
+    "planted": [
+      {
+        "segment_id": "seg_chpt_0001_002",
+        "chapter_id": "chpt_0001",
+        "content": "红月、路灯下的影子、死去的亲人等诡异规则",
+        "context": "“这或许是本电台最后一次广播！”“上沪己经沦陷成为无人区！”“不要前往！不要前往！！！”“告所有幸存者同胞：不要直视红月超过三秒，不要和路灯下的影子打招呼，不要相信死去的亲人会活过来！”“人类火种……...",
+        "reference_id": null,
+        "resolution_chapter": null
+      },
+      {
+        "segment_id": "seg_chpt_0001_007",
+        "chapter_id": "chpt_0001",
+        "content": "诡异的强大与不可战胜性",
+        "context": "几个月前，全球诡异爆发。只用了很短的时间，一些小的国家直接沦为人类禁区。人类的热武器在诡异面前只是个笑话。诡异无法被杀死，或者说很难被杀死。...",
+        "reference_id": null,
+        "resolution_chapter": null
+      },
+      {
+        "segment_id": "seg_chpt_0001_009",
+        "chapter_id": "chpt_0001",
+        "content": "陈野的交通工具（二八大杠）及其局限性",
+        "context": "此时的陈野骑着一辆二八大杠在车队之中，车座后面有一个大大的包裹，里面装的是自己所有的家当。至于为什么都末日了，不换一辆小汽车作为载具，而只弄了一辆二八大扛？陈野曾经用石头砸碎了车窗户打开车门。奈何没有...",
+        "reference_id": null,
+        "resolution_chapter": null
+      },
+      {
+        "segment_id": "seg_chpt_0001_013",
+        "chapter_id": "chpt_0001",
+        "content": "掉队的危险",
+        "context": "在这个车队的人，必须谨记两条铁律！第一条：不要掉队！不要掉队！不要掉队！！！第二条：尽可能多的储备物资！！！第一条铁律优于第二条。没有物资还有办法活下去。...",
+        "reference_id": null,
+        "resolution_chapter": null
+      },
+      {
+        "segment_id": "seg_chpt_0001_014",
+        "chapter_id": "chpt_0001",
+        "content": "物资获取的另一种（可能黑暗的）方式",
+        "context": "因为总有一些善良的人会给你。又或者……...",
+        "reference_id": null,
+        "resolution_chapter": null
+      },
+      {
+        "segment_id": "seg_chpt_0001_023",
+        "chapter_id": "chpt_0001",
+        "content": "血月出现、夜晚的危险性",
+        "context": "夜幕降临，车队露营。血月悄悄升上天空挂在树梢上，给天地之间撒上了一层血纱。诡异的气息瞬间弥漫大地，幸存者们压低了啜泣声，似乎是怕惊动黑暗深处的一些不可知诡异。夜晚，是诡异最为活跃的时候。...",
+        "reference_id": null,
+        "resolution_chapter": null
+      },
+      {
+        "segment_id": "seg_chpt_0001_024",
+        "chapter_id": "chpt_0001",
+        "content": "诡异的引诱手段（虚假求救声）",
+        "context": "远处沦为人类禁区的城镇隐隐传来求救声，是在引诱人类前往救援。类似的手段在诡异之中屡...",
+        "reference_id": null,
+        "resolution_chapter": null
+      }
+    ],
+    "resolved": [],
+    "strengthened": [
+      {
+        "segment_id": "seg_chpt_0001_015",
+        "chapter_id": "chpt_0001",
+        "content": "掉队的危险",
+        "context": "如果你掉了队，迎接你的只有死亡。...",
+        "reference_id": null,
+        "resolution_chapter": null
+      }
+    ],
+    "responded": []
+  },
+  "character_arcs": {
+    "陈野": {
+      "initial_state": "陈野听着收音机里的杂乱电流，只觉得浑身冰凉。...",
+      "key_moments": [],
+      "relationships": [],
+      "personality_tags": [],
+      "appearance_count": 4
+    }
+  },
+  "condensation_guidelines": {
+    "must_retain": [
+      "所有P0-骨架内容",
+      "核心故事设定(首次)",
+      "关键道具(首次)",
+      "故事推进",
+      "钩子-悬念制造",
+      "伏笔"
+    ],
+    "can_simplify": [
+      "背景交代",
+      "关键信息",
+      "P1-血肉（重要细节，根据篇幅选择性保留）"
+    ],
+    "can_omit": [
+      "P2-皮肤（氛围渲染、心理描写）"
+    ]
+  }
+}

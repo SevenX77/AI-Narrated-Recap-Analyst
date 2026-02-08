@@ -1,0 +1,349 @@
+{
+  "episode": "ep01",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/末哥超凡公路/script/ep01.md",
+  "stats": {
+    "original_chars": 3656,
+    "processed_chars": 4667,
+    "paragraphs": 27,
+    "srt_entries": 357,
+    "avg_paragraph_sentences": 4.888888888888889,
+    "processing_time_seconds": 160.0
+  },
+  "entity_standardization": {
+    "locations": {
+      "江城": {
+        "variants": [
+          "江城"
+        ],
+        "standard_form": "江城",
+        "reasoning": "故事起始的逃亡城市，上下文一致。"
+      },
+      "上沪": {
+        "variants": [
+          "上户",
+          "上沪",
+          "上"
+        ],
+        "standard_form": "上沪",
+        "reasoning": "指代幸存者计划前往的目的地，是超级都市，'沪'为上海简称，'上户'为同音错字。"
+      },
+      "杏花镇": {
+        "variants": [
+          "杏花镇"
+        ],
+        "standard_form": "杏花镇",
+        "reasoning": "车队白天探索的小镇名称，上下文明确。"
+      }
+    },
+    "characters": {
+      "我（主角）": {
+        "variants": [
+          "我"
+        ],
+        "standard_form": "我",
+        "reasoning": "第一人称叙述者，系统觉醒者。"
+      },
+      "强子": {
+        "variants": [
+          "强子"
+        ],
+        "standard_form": "强子",
+        "reasoning": "末日前的健身教练，与瑜伽裤女人为伍。"
+      },
+      "瑜伽裤女人": {
+        "variants": [
+          "瑜伽裤女人",
+          "女人",
+          "贱人（主角视角）"
+        ],
+        "standard_form": "瑜伽裤女人",
+        "reasoning": "穿着瑜伽裤，对主角三轮车有贪念的女性角色。"
+      },
+      "两米巨汉": {
+        "variants": [
+          "巨汉",
+          "两米多高的巨汉",
+          "壮汉",
+          "两米高的壮汉"
+        ],
+        "standard_form": "两米巨汉",
+        "reasoning": "身材异常高大强壮的男性幸存者，疑似拥有序列能力。"
+      },
+      "持剑少女": {
+        "variants": [
+          "小丫头",
+          "年纪不大的小丫头"
+        ],
+        "standard_form": "持剑少女",
+        "reasoning": "车队中引人注目、手持长剑的年轻女性。"
+      },
+      "开老年代步车的老头": {
+        "variants": [
+          "老头子",
+          "老子（自称）"
+        ],
+        "standard_form": "开老年代步车的老头",
+        "reasoning": "驾驶老年代步车并叫嚣的老者。"
+      },
+      "纸枯童": {
+        "variants": [
+          "纸枯童",
+          "孩子",
+          "孩童",
+          "小小的身影"
+        ],
+        "standard_form": "纸枯童",
+        "reasoning": "在烟酒店遭遇的孩童模样诡异，文中明确其名。"
+      },
+      "白衣剪刀女": {
+        "variants": [
+          "白衣剪刀女",
+          "剪刀女",
+          "披头散发的少女",
+          "她"
+        ],
+        "standard_form": "白衣剪刀女",
+        "reasoning": "在商超中游荡的、手持巨大剪刀的高大女性诡异。"
+      }
+    },
+    "items": {
+      "万物升级系统": {
+        "variants": [
+          "万物升级系统",
+          "升级系统",
+          "系统"
+        ],
+        "standard_form": "万物升级系统",
+        "reasoning": "主角觉醒的核心金手指，可消耗杀戮点升级物品。"
+      },
+      "二八大杠/三轮车": {
+        "variants": [
+          "二八大杠",
+          "破旧的自行车",
+          "自行车",
+          "三轮车",
+          "我的三轮车"
+        ],
+        "standard_form": "二八大杠/三轮车",
+        "reasoning": "主角最初的交通工具，后升级为三轮车，是同一物品的两种形态。"
+      },
+      "手弩": {
+        "variants": [
+          "手弩",
+          "母鸡（错字）"
+        ],
+        "standard_form": "手弩",
+        "reasoning": "主角的武器，'母鸡'为'弩机'的同音错字。"
+      },
+      "序列超凡": {
+        "variants": [
+          "序列超凡",
+          "序列能力"
+        ],
+        "standard_form": "序列超凡",
+        "reasoning": "末世中人类赖以生存的超凡力量体系。"
+      },
+      "杀戮点": {
+        "variants": [
+          "杀戮点",
+          "杀戮值",
+          "点"
+        ],
+        "standard_form": "杀戮点",
+        "reasoning": "系统升级所需的点数，'值'与'点'在上下文中同义。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:35,666",
+      "sentence_count": 9,
+      "char_count": 227
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:35,666",
+      "end_time": "00:01:08,633",
+      "sentence_count": 6,
+      "char_count": 207
+    },
+    {
+      "index": 3,
+      "start_time": "00:01:08,633",
+      "end_time": "00:01:29,933",
+      "sentence_count": 5,
+      "char_count": 134
+    },
+    {
+      "index": 4,
+      "start_time": "00:01:29,933",
+      "end_time": "00:01:53,300",
+      "sentence_count": 5,
+      "char_count": 150
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:53,300",
+      "end_time": "00:02:19,033",
+      "sentence_count": 6,
+      "char_count": 158
+    },
+    {
+      "index": 6,
+      "start_time": "00:02:19,033",
+      "end_time": "00:02:38,333",
+      "sentence_count": 3,
+      "char_count": 121
+    },
+    {
+      "index": 7,
+      "start_time": "00:02:38,333",
+      "end_time": "00:03:04,200",
+      "sentence_count": 5,
+      "char_count": 162
+    },
+    {
+      "index": 8,
+      "start_time": "00:03:04,200",
+      "end_time": "00:03:38,100",
+      "sentence_count": 9,
+      "char_count": 211
+    },
+    {
+      "index": 9,
+      "start_time": "00:03:38,100",
+      "end_time": "00:03:50,800",
+      "sentence_count": 2,
+      "char_count": 80
+    },
+    {
+      "index": 10,
+      "start_time": "00:03:50,800",
+      "end_time": "00:04:18,533",
+      "sentence_count": 6,
+      "char_count": 171
+    },
+    {
+      "index": 11,
+      "start_time": "00:04:18,533",
+      "end_time": "00:04:43,300",
+      "sentence_count": 5,
+      "char_count": 151
+    },
+    {
+      "index": 12,
+      "start_time": "00:04:43,300",
+      "end_time": "00:05:09,833",
+      "sentence_count": 6,
+      "char_count": 163
+    },
+    {
+      "index": 13,
+      "start_time": "00:05:09,833",
+      "end_time": "00:05:25,100",
+      "sentence_count": 3,
+      "char_count": 98
+    },
+    {
+      "index": 14,
+      "start_time": "00:05:25,133",
+      "end_time": "00:05:38,600",
+      "sentence_count": 3,
+      "char_count": 84
+    },
+    {
+      "index": 15,
+      "start_time": "00:05:38,600",
+      "end_time": "00:06:09,400",
+      "sentence_count": 4,
+      "char_count": 140
+    },
+    {
+      "index": 16,
+      "start_time": "00:06:09,400",
+      "end_time": "00:06:40,666",
+      "sentence_count": 8,
+      "char_count": 201
+    },
+    {
+      "index": 17,
+      "start_time": "00:06:40,666",
+      "end_time": "00:07:00,733",
+      "sentence_count": 5,
+      "char_count": 122
+    },
+    {
+      "index": 18,
+      "start_time": "00:07:00,733",
+      "end_time": "00:07:22,100",
+      "sentence_count": 5,
+      "char_count": 135
+    },
+    {
+      "index": 19,
+      "start_time": "00:07:22,100",
+      "end_time": "00:07:43,100",
+      "sentence_count": 5,
+      "char_count": 119
+    },
+    {
+      "index": 20,
+      "start_time": "00:07:43,100",
+      "end_time": "00:08:06,733",
+      "sentence_count": 6,
+      "char_count": 141
+    },
+    {
+      "index": 21,
+      "start_time": "00:08:06,733",
+      "end_time": "00:08:19,233",
+      "sentence_count": 3,
+      "char_count": 73
+    },
+    {
+      "index": 22,
+      "start_time": "00:08:19,233",
+      "end_time": "00:08:47,066",
+      "sentence_count": 6,
+      "char_count": 166
+    },
+    {
+      "index": 23,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:47,066",
+      "sentence_count": 3,
+      "char_count": 94
+    },
+    {
+      "index": 24,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:47,066",
+      "sentence_count": 4,
+      "char_count": 101
+    },
+    {
+      "index": 25,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:47,066",
+      "sentence_count": 3,
+      "char_count": 112
+    },
+    {
+      "index": 26,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:47,066",
+      "sentence_count": 3,
+      "char_count": 75
+    },
+    {
+      "index": 27,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:47,066",
+      "sentence_count": 4,
+      "char_count": 92
+    }
+  ]
+}

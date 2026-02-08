@@ -1,0 +1,148 @@
+{
+  "episode": "ep05",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/天命桃花/script/ep05.md",
+  "stats": {
+    "original_chars": 541,
+    "processed_chars": 782,
+    "paragraphs": 6,
+    "srt_entries": 63,
+    "avg_paragraph_sentences": 4.166666666666667,
+    "processing_time_seconds": 37.03
+  },
+  "entity_standardization": {
+    "characters": {
+      "宗文帝": {
+        "variants": [
+          "宗文帝",
+          "皇上",
+          "朕",
+          "奴皇爹爹"
+        ],
+        "standard_form": "宗文帝",
+        "reasoning": "皇帝，在不同语境下使用不同称谓，但指向同一人。'奴皇爹爹'是女儿对他的昵称。"
+      },
+      "李聪": {
+        "variants": [
+          "李聪",
+          "李大人"
+        ],
+        "standard_form": "李聪",
+        "reasoning": "官员，青天间掌管气象，'李大人'是其尊称。"
+      },
+      "太监": {
+        "variants": [
+          "太监"
+        ],
+        "standard_form": "太监",
+        "reasoning": "侍奉皇帝的宦官。"
+      },
+      "官员": {
+        "variants": [
+          "官员"
+        ],
+        "standard_form": "官员",
+        "reasoning": "泛指在场的其他大臣。"
+      },
+      "女儿": {
+        "variants": [
+          "女儿",
+          "闺女",
+          "独女"
+        ],
+        "standard_form": "女儿",
+        "reasoning": "李聪的女儿，'闺女'是口语化称呼，'独女'强调其唯一性。"
+      },
+      "奶娘": {
+        "variants": [
+          "奶娘"
+        ],
+        "standard_form": "奶娘",
+        "reasoning": "照顾婴儿的妇人。"
+      }
+    },
+    "locations": {
+      "京城": {
+        "variants": [
+          "京城"
+        ],
+        "standard_form": "京城",
+        "reasoning": "故事发生的都城。"
+      },
+      "青天间": {
+        "variants": [
+          "青天间"
+        ],
+        "standard_form": "青天间",
+        "reasoning": "掌管气象的机构名称。"
+      }
+    },
+    "items": {
+      "圣旨": {
+        "variants": [
+          "圣旨"
+        ],
+        "standard_form": "圣旨",
+        "reasoning": "皇帝的命令文书。"
+      },
+      "棉布": {
+        "variants": [
+          "棉布"
+        ],
+        "standard_form": "棉布",
+        "reasoning": "吸水性强的布料。"
+      },
+      "宫宴": {
+        "variants": [
+          "宫宴"
+        ],
+        "standard_form": "宫宴",
+        "reasoning": "皇宫内的宴会场合。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:18,833",
+      "sentence_count": 5,
+      "char_count": 79
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:18,833",
+      "end_time": "00:00:38,600",
+      "sentence_count": 5,
+      "char_count": 120
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:38,600",
+      "end_time": "00:00:52,466",
+      "sentence_count": 3,
+      "char_count": 78
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:52,466",
+      "end_time": "00:01:11,833",
+      "sentence_count": 5,
+      "char_count": 120
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:11,833",
+      "end_time": "00:01:20,066",
+      "sentence_count": 5,
+      "char_count": 94
+    },
+    {
+      "index": 6,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:20,066",
+      "sentence_count": 2,
+      "char_count": 68
+    }
+  ]
+}

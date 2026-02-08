@@ -1,0 +1,240 @@
+{
+  "episode": "ep03",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/末哥超凡公路/script/ep03.md",
+  "stats": {
+    "original_chars": 1200,
+    "processed_chars": 1666,
+    "paragraphs": 12,
+    "srt_entries": 108,
+    "avg_paragraph_sentences": 4.083333333333333,
+    "processing_time_seconds": 77.75
+  },
+  "entity_standardization": {
+    "locations": {
+      "镇子": {
+        "variants": [
+          "镇子"
+        ],
+        "standard_form": "镇子",
+        "reasoning": "文中明确提到的地点，指代一个城镇或聚居点。"
+      }
+    },
+    "characters": {
+      "男子/壮汉": {
+        "variants": [
+          "男子",
+          "壮汉"
+        ],
+        "standard_form": "壮汉",
+        "reasoning": "上下文指代同一人物，先称‘男子’，后明确描述为‘壮汉’，‘壮汉’更具体且符合其形象。"
+      },
+      "娜娜": {
+        "variants": [
+          "娜娜"
+        ],
+        "standard_form": "娜娜",
+        "reasoning": "文中被提及的人物名称，无变体。"
+      },
+      "铁狮": {
+        "variants": [
+          "铁狮"
+        ],
+        "standard_form": "铁狮",
+        "reasoning": "文中被提及的人物或可能为代号/绰号，无变体。"
+      },
+      "少女": {
+        "variants": [
+          "少女",
+          "卑贱的少女"
+        ],
+        "standard_form": "少女",
+        "reasoning": "描述性称呼，指代站在壮汉身边的女性。"
+      },
+      "赤足男子": {
+        "variants": [
+          "赤足的男子"
+        ],
+        "standard_form": "赤足男子",
+        "reasoning": "描述性称呼，指代站在壮汉身边的另一人物。"
+      },
+      "主角/我": {
+        "variants": [
+          "我"
+        ],
+        "standard_form": "我",
+        "reasoning": "第一人称叙述者，即主角。"
+      }
+    },
+    "items": {
+      "车队": {
+        "variants": [
+          "车队",
+          "这几辆车",
+          "前面的车队",
+          "他们"
+        ],
+        "standard_form": "车队",
+        "reasoning": "指代由多辆车（越野车、大巴车等）组成的逃亡团体，是核心道具和集体称谓。"
+      },
+      "改装越野车": {
+        "variants": [
+          "改装越野车",
+          "越野车",
+          "前面的越野车"
+        ],
+        "standard_form": "改装越野车",
+        "reasoning": "车队中的领头或重要车辆，有明确特征。"
+      },
+      "三轮车": {
+        "variants": [
+          "三轮车",
+          "力三轮车",
+          "电力三轮车",
+          "我的三轮车"
+        ],
+        "standard_form": "三轮车",
+        "reasoning": "主角的交通工具，经历从人力到电力的升级计划。‘力三轮车’是‘人力三轮车’的缺字，根据上下文统一为‘三轮车’或根据语境补充。"
+      },
+      "大巴车": {
+        "variants": [
+          "大巴车",
+          "这辆大巴车"
+        ],
+        "standard_form": "大巴车",
+        "reasoning": "车队中的一辆车，有明确描述。"
+      },
+      "摩托车": {
+        "variants": [
+          "摩托车",
+          "废弃的摩托车",
+          "这辆摩托车"
+        ],
+        "standard_form": "摩托车",
+        "reasoning": "主角在路边发现的、用于为三轮车升级提供配件的道具。"
+      },
+      "系统": {
+        "variants": [
+          "系统"
+        ],
+        "standard_form": "系统",
+        "reasoning": "主角拥有的、提供升级方案和杀戮值管理功能的金手指或界面。"
+      },
+      "杀戮值": {
+        "variants": [
+          "杀戮值",
+          "杀戮点"
+        ],
+        "standard_form": "杀戮值",
+        "reasoning": "系统使用的计量单位，用于升级改造。‘点’是‘值’在口语化或特定上下文中的变体，统一为更正式的‘值’。"
+      },
+      "省力装置": {
+        "variants": [
+          "省力装置"
+        ],
+        "standard_form": "省力装置",
+        "reasoning": "三轮车上原有的设备。"
+      },
+      "帐篷": {
+        "variants": [
+          "帐篷"
+        ],
+        "standard_form": "帐篷",
+        "reasoning": "车队停下后搭建的物品。"
+      },
+      "沙漏": {
+        "variants": [
+          "沙漏"
+        ],
+        "standard_form": "沙漏",
+        "reasoning": "系统升级界面中显示的倒计时图标。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:20,033",
+      "sentence_count": 5,
+      "char_count": 113
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:20,033",
+      "end_time": "00:00:36,866",
+      "sentence_count": 5,
+      "char_count": 101
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:36,866",
+      "end_time": "00:00:54,500",
+      "sentence_count": 5,
+      "char_count": 114
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:54,500",
+      "end_time": "00:01:16,300",
+      "sentence_count": 5,
+      "char_count": 144
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:16,300",
+      "end_time": "00:01:26,300",
+      "sentence_count": 3,
+      "char_count": 64
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:26,300",
+      "end_time": "00:01:39,133",
+      "sentence_count": 3,
+      "char_count": 80
+    },
+    {
+      "index": 7,
+      "start_time": "00:01:39,133",
+      "end_time": "00:01:55,033",
+      "sentence_count": 3,
+      "char_count": 100
+    },
+    {
+      "index": 8,
+      "start_time": "00:01:55,033",
+      "end_time": "00:02:15,133",
+      "sentence_count": 4,
+      "char_count": 113
+    },
+    {
+      "index": 9,
+      "start_time": "00:02:15,133",
+      "end_time": "00:02:33,800",
+      "sentence_count": 3,
+      "char_count": 112
+    },
+    {
+      "index": 10,
+      "start_time": "00:02:33,833",
+      "end_time": "00:02:51,133",
+      "sentence_count": 6,
+      "char_count": 108
+    },
+    {
+      "index": 11,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:51,133",
+      "sentence_count": 6,
+      "char_count": 133
+    },
+    {
+      "index": 12,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:51,133",
+      "sentence_count": 1,
+      "char_count": 45
+    }
+  ]
+}

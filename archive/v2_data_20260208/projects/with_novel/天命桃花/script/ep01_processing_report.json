@@ -1,0 +1,405 @@
+{
+  "episode": "ep01",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/天命桃花/script/ep01.md",
+  "stats": {
+    "original_chars": 4057,
+    "processed_chars": 5440,
+    "paragraphs": 34,
+    "srt_entries": 489,
+    "avg_paragraph_sentences": 6.5588235294117645,
+    "processing_time_seconds": 178.44
+  },
+  "entity_standardization": {
+    "characters": {
+      "宗文帝": {
+        "variants": [
+          "宗文帝",
+          "皇帝",
+          "朕",
+          "皇爹爹",
+          "王爹爹",
+          "皇弟弟",
+          "文帝"
+        ],
+        "standard_form": "宗文帝",
+        "reasoning": "皇帝的谥号或庙号，是本文的核心人物，其他均为其在不同语境下的自称或他称。"
+      },
+      "我/小公主": {
+        "variants": [
+          "我",
+          "小公主",
+          "公主",
+          "小家伙",
+          "小闺女",
+          "闺女",
+          "孩子",
+          "婴儿",
+          "小人",
+          "小崽子"
+        ],
+        "standard_form": "我",
+        "reasoning": "第一人称叙述者，即新出生的公主，是故事主角。"
+      },
+      "淑妃": {
+        "variants": [
+          "淑妃",
+          "母妃"
+        ],
+        "standard_form": "淑妃",
+        "reasoning": "公主的生母，在公主出生时被吓晕。"
+      },
+      "严公公": {
+        "variants": [
+          "严公公",
+          "假太监"
+        ],
+        "standard_form": "严公公",
+        "reasoning": "皇帝身边的太监，实为假太监，与后宫嫔妃有染。"
+      },
+      "李治真": {
+        "variants": [
+          "李治真",
+          "李治",
+          "太医",
+          "李太医"
+        ],
+        "standard_form": "李治真",
+        "reasoning": "太医院的太医，为公主诊视并验毒。"
+      },
+      "喜公公": {
+        "variants": [
+          "喜公公"
+        ],
+        "standard_form": "喜公公",
+        "reasoning": "传旨的太监。"
+      },
+      "皇后": {
+        "variants": [
+          "皇后"
+        ],
+        "standard_form": "皇后",
+        "reasoning": "皇帝的皇后，太子生母。"
+      },
+      "何婉晴": {
+        "variants": [
+          "何婉晴"
+        ],
+        "standard_form": "何婉晴",
+        "reasoning": "户部尚书之女，在宫中掐了公主。"
+      },
+      "太子": {
+        "variants": [
+          "太子"
+        ],
+        "standard_form": "太子",
+        "reasoning": "皇后所生，已夭折。"
+      }
+    },
+    "locations": {
+      "皇宫": {
+        "variants": [
+          "皇宫",
+          "宫"
+        ],
+        "standard_form": "皇宫",
+        "reasoning": "故事主要发生地。"
+      },
+      "大漠": {
+        "variants": [
+          "大漠",
+          "沙漠",
+          "边疆"
+        ],
+        "standard_form": "大漠",
+        "reasoning": "皇帝最初打算流放公主的地方。"
+      },
+      "苦寒之地": {
+        "variants": [
+          "苦寒之地"
+        ],
+        "standard_form": "苦寒之地",
+        "reasoning": "皇室双生子中不被留用者的流放地。"
+      }
+    },
+    "items": {
+      "胎记": {
+        "variants": [
+          "胎记",
+          "胎记（青红）"
+        ],
+        "standard_form": "胎记",
+        "reasoning": "公主身上青红交加的印记，是其特殊能力的来源。"
+      },
+      "绿手": {
+        "variants": [
+          "绿手"
+        ],
+        "standard_form": "绿手",
+        "reasoning": "公主左手（或泛指有绿色胎记的手），触碰他人可知其功过。"
+      },
+      "夜明珠": {
+        "variants": [
+          "夜明珠"
+        ],
+        "standard_form": "夜明珠",
+        "reasoning": "东朝进贡的宝物，皇帝赐给公主当小夜灯。"
+      },
+      "长命锁": {
+        "variants": [
+          "长命锁"
+        ],
+        "standard_form": "长命锁",
+        "reasoning": "皇后送给公主的金锁。"
+      },
+      "红线/姻缘线": {
+        "variants": [
+          "红线",
+          "姻缘线"
+        ],
+        "standard_form": "红线",
+        "reasoning": "公主能看见的连接人与人之间关系的线，特指严公公与嫔妃的私情线。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,066",
+      "end_time": "00:00:14,000",
+      "sentence_count": 4,
+      "char_count": 99
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:14,000",
+      "end_time": "00:00:33,266",
+      "sentence_count": 7,
+      "char_count": 127
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:33,266",
+      "end_time": "00:00:49,533",
+      "sentence_count": 5,
+      "char_count": 109
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:49,533",
+      "end_time": "00:01:08,400",
+      "sentence_count": 6,
+      "char_count": 126
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:08,533",
+      "end_time": "00:01:38,666",
+      "sentence_count": 9,
+      "char_count": 172
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:38,666",
+      "end_time": "00:01:55,200",
+      "sentence_count": 6,
+      "char_count": 103
+    },
+    {
+      "index": 7,
+      "start_time": "00:01:55,200",
+      "end_time": "00:02:15,300",
+      "sentence_count": 6,
+      "char_count": 109
+    },
+    {
+      "index": 8,
+      "start_time": "00:02:15,300",
+      "end_time": "00:02:31,200",
+      "sentence_count": 7,
+      "char_count": 110
+    },
+    {
+      "index": 9,
+      "start_time": "00:02:31,200",
+      "end_time": "00:02:47,633",
+      "sentence_count": 8,
+      "char_count": 116
+    },
+    {
+      "index": 10,
+      "start_time": "00:02:47,633",
+      "end_time": "00:03:03,333",
+      "sentence_count": 4,
+      "char_count": 111
+    },
+    {
+      "index": 11,
+      "start_time": "00:03:03,333",
+      "end_time": "00:03:29,900",
+      "sentence_count": 7,
+      "char_count": 152
+    },
+    {
+      "index": 12,
+      "start_time": "00:03:29,900",
+      "end_time": "00:03:41,233",
+      "sentence_count": 3,
+      "char_count": 72
+    },
+    {
+      "index": 13,
+      "start_time": "00:03:41,233",
+      "end_time": "00:04:08,066",
+      "sentence_count": 7,
+      "char_count": 161
+    },
+    {
+      "index": 14,
+      "start_time": "00:04:08,066",
+      "end_time": "00:04:28,933",
+      "sentence_count": 8,
+      "char_count": 128
+    },
+    {
+      "index": 15,
+      "start_time": "00:04:28,933",
+      "end_time": "00:04:56,800",
+      "sentence_count": 11,
+      "char_count": 183
+    },
+    {
+      "index": 16,
+      "start_time": "00:04:56,800",
+      "end_time": "00:05:15,033",
+      "sentence_count": 9,
+      "char_count": 120
+    },
+    {
+      "index": 17,
+      "start_time": "00:05:15,033",
+      "end_time": "00:05:34,933",
+      "sentence_count": 4,
+      "char_count": 99
+    },
+    {
+      "index": 18,
+      "start_time": "00:05:34,933",
+      "end_time": "00:05:54,466",
+      "sentence_count": 5,
+      "char_count": 105
+    },
+    {
+      "index": 19,
+      "start_time": "00:05:54,466",
+      "end_time": "00:06:08,633",
+      "sentence_count": 4,
+      "char_count": 92
+    },
+    {
+      "index": 20,
+      "start_time": "00:06:08,633",
+      "end_time": "00:06:36,200",
+      "sentence_count": 6,
+      "char_count": 149
+    },
+    {
+      "index": 21,
+      "start_time": "00:06:36,200",
+      "end_time": "00:06:53,500",
+      "sentence_count": 8,
+      "char_count": 102
+    },
+    {
+      "index": 22,
+      "start_time": "00:06:53,666",
+      "end_time": "00:07:10,333",
+      "sentence_count": 8,
+      "char_count": 99
+    },
+    {
+      "index": 23,
+      "start_time": "00:07:10,333",
+      "end_time": "00:07:34,666",
+      "sentence_count": 10,
+      "char_count": 140
+    },
+    {
+      "index": 24,
+      "start_time": "00:07:34,800",
+      "end_time": "00:07:55,233",
+      "sentence_count": 6,
+      "char_count": 120
+    },
+    {
+      "index": 25,
+      "start_time": "00:07:55,233",
+      "end_time": "00:08:30,800",
+      "sentence_count": 10,
+      "char_count": 249
+    },
+    {
+      "index": 26,
+      "start_time": "00:08:30,800",
+      "end_time": "00:08:55,466",
+      "sentence_count": 10,
+      "char_count": 155
+    },
+    {
+      "index": 27,
+      "start_time": "00:08:55,466",
+      "end_time": "00:09:14,633",
+      "sentence_count": 8,
+      "char_count": 120
+    },
+    {
+      "index": 28,
+      "start_time": "00:09:14,633",
+      "end_time": "00:09:22,433",
+      "sentence_count": 3,
+      "char_count": 126
+    },
+    {
+      "index": 29,
+      "start_time": "00:00:00,000",
+      "end_time": "00:09:22,433",
+      "sentence_count": 4,
+      "char_count": 85
+    },
+    {
+      "index": 30,
+      "start_time": "00:00:00,000",
+      "end_time": "00:09:22,433",
+      "sentence_count": 6,
+      "char_count": 88
+    },
+    {
+      "index": 31,
+      "start_time": "00:00:00,000",
+      "end_time": "00:09:22,433",
+      "sentence_count": 6,
+      "char_count": 125
+    },
+    {
+      "index": 32,
+      "start_time": "00:00:00,000",
+      "end_time": "00:09:22,433",
+      "sentence_count": 10,
+      "char_count": 186
+    },
+    {
+      "index": 33,
+      "start_time": "00:00:00,000",
+      "end_time": "00:09:22,433",
+      "sentence_count": 6,
+      "char_count": 130
+    },
+    {
+      "index": 34,
+      "start_time": "00:00:00,000",
+      "end_time": "00:09:22,433",
+      "sentence_count": 2,
+      "char_count": 41
+    }
+  ]
+}

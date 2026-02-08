@@ -1,0 +1,28 @@
+{
+  "project_name": "永夜悔恨录",
+  "old_project_id": "PROJ_003",
+  "category": "with_novel",
+  "source_path": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/分析资料/有原小说/03_永夜悔恨录",
+  "migrated_at": "2026-02-06T03:30:57.284630",
+  "raw_novel_file": "无边悔恨.txt",
+  "novel": {
+    "title": "无边悔恨",
+    "author": "作手",
+    "tags": [],
+    "introduction": "我咬破手指，用鲜血救活被抛弃的女婴，又亲手挖掉自己的重瞳送给他。可未来女孩成为女帝后，却联合9位大帝将我镇杀。在这些大帝中，除了女孩，还有我的结拜兄弟，甚至我的妻子也加入了讨伐我的联盟中。",
+    "chapters": {
+      "total": 76,
+      "files": {
+        "chpt_0001-0010.md": "第1-10章",
+        "chpt_0011-0020.md": "第11-20章",
+        "chpt_0021-0030.md": "第21-30章",
+        "chpt_0031-0040.md": "第31-40章",
+        "chpt_0041-0050.md": "第41-50章",
+        "chpt_0051-0060.md": "第51-60章",
+        "chpt_0061-0070.md": "第61-70章",
+        "chpt_0071-0076.md": "第71-76章",
+        "chpt_0000.txt": "简介"
+      }
+    }
+  }
+}

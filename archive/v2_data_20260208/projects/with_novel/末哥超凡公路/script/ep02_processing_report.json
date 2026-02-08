@@ -1,0 +1,270 @@
+{
+  "episode": "ep02",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/末哥超凡公路/script/ep02.md",
+  "stats": {
+    "original_chars": 1593,
+    "processed_chars": 2124,
+    "paragraphs": 15,
+    "srt_entries": 146,
+    "avg_paragraph_sentences": 3.2,
+    "processing_time_seconds": 84.94
+  },
+  "entity_standardization": {
+    "locations": {
+      "杏花镇": {
+        "variants": [
+          "杏花镇"
+        ],
+        "standard_form": "杏花镇",
+        "reasoning": "故事发生的主要小镇地点。"
+      },
+      "商超": {
+        "variants": [
+          "商超",
+          "超市"
+        ],
+        "standard_form": "商超",
+        "reasoning": "指代故事中发生战斗和收集物资的商场/超市。"
+      }
+    },
+    "characters": {
+      "主角（我）": {
+        "variants": [
+          "我"
+        ],
+        "standard_form": "我",
+        "reasoning": "第一人称叙述者，幸存者之一。"
+      },
+      "白衣剪刀女": {
+        "variants": [
+          "白衣剪刀女",
+          "剪刀女",
+          "白衣女"
+        ],
+        "standard_form": "白衣剪刀女",
+        "reasoning": "主要诡异敌人，特征为白衣和使用剪刀（或剪刀般的能力）。"
+      },
+      "魔鬼肌肉人": {
+        "variants": [
+          "魔鬼肌肉人",
+          "序列壮汉",
+          "序列超人",
+          "序列超凡",
+          "傻大个"
+        ],
+        "standard_form": "魔鬼肌肉人",
+        "reasoning": "一个3米高、肌肉发达、与白衣剪刀女战斗的序列超凡者，上下文指代同一角色。"
+      },
+      "纸枯童": {
+        "variants": [
+          "纸枯童",
+          "枯童",
+          "苍白孩子"
+        ],
+        "standard_form": "纸枯童",
+        "reasoning": "一个脸色苍白、疑似由纸构成的诡异孩童，喜欢糖果。"
+      },
+      "佳佳（瑜伽裤女）": {
+        "variants": [
+          "瑜伽裤女佳佳",
+          "瑜伽裤女",
+          "佳佳",
+          "女人"
+        ],
+        "standard_form": "佳佳",
+        "reasoning": "身穿瑜伽裤的女性幸存者，与强子同行。"
+      },
+      "强子（健身教练）": {
+        "variants": [
+          "健身教练强子",
+          "强子"
+        ],
+        "standard_form": "强子",
+        "reasoning": "健身教练，男性幸存者，与佳佳同行。"
+      },
+      "衣衫褴褛的人影": {
+        "variants": [
+          "衣衫褴褛的人影"
+        ],
+        "standard_form": "衣衫褴褛的人影",
+        "reasoning": "在商超外拖走佳佳的诡异存在。"
+      },
+      "卑贱的少女/女剑客": {
+        "variants": [
+          "卑贱的少女",
+          "剑客"
+        ],
+        "standard_form": "女剑客",
+        "reasoning": "屋顶上出现的、像剑客一样逆行的少女，可能也是序列超凡者。"
+      },
+      "怪异男子（尝土者）": {
+        "variants": [
+          "男子",
+          "怪异男子"
+        ],
+        "standard_form": "怪异男子",
+        "reasoning": "从改装越野车下来，通过尝土判断危险的神秘男子。"
+      }
+    },
+    "items": {
+      "手弩": {
+        "variants": [
+          "手弩"
+        ],
+        "standard_form": "手弩",
+        "reasoning": "主角使用的远程武器。"
+      },
+      "杀戮点/杀戮值": {
+        "variants": [
+          "杀戮点",
+          "杀戮值"
+        ],
+        "standard_form": "杀戮点",
+        "reasoning": "击败或击杀敌人后获得的点数，上下文指代同一系统。"
+      },
+      "糖果": {
+        "variants": [
+          "糖果",
+          "糖"
+        ],
+        "standard_form": "糖果",
+        "reasoning": "用于暂时安抚纸枯童的道具。"
+      },
+      "包裹/物资": {
+        "variants": [
+          "包裹",
+          "物资",
+          "东西",
+          "两包东西"
+        ],
+        "standard_form": "物资",
+        "reasoning": "幸存者们收集和争夺的生存资源。"
+      },
+      "三轮车": {
+        "variants": [
+          "三轮车",
+          "车",
+          "车子",
+          "车斗"
+        ],
+        "standard_form": "三轮车",
+        "reasoning": "主角的主要交通工具。"
+      },
+      "改装越野车": {
+        "variants": [
+          "改装越野车"
+        ],
+        "standard_form": "改装越野车",
+        "reasoning": "怪异男子所乘坐的车辆。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:19,600",
+      "sentence_count": 4,
+      "char_count": 121
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:19,600",
+      "end_time": "00:00:35,633",
+      "sentence_count": 3,
+      "char_count": 105
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:35,633",
+      "end_time": "00:00:51,733",
+      "sentence_count": 4,
+      "char_count": 108
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:51,733",
+      "end_time": "00:01:13,533",
+      "sentence_count": 3,
+      "char_count": 140
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:13,533",
+      "end_time": "00:01:33,233",
+      "sentence_count": 3,
+      "char_count": 87
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:33,266",
+      "end_time": "00:01:52,600",
+      "sentence_count": 4,
+      "char_count": 114
+    },
+    {
+      "index": 7,
+      "start_time": "00:01:52,600",
+      "end_time": "00:02:05,833",
+      "sentence_count": 2,
+      "char_count": 85
+    },
+    {
+      "index": 8,
+      "start_time": "00:02:05,833",
+      "end_time": "00:02:20,200",
+      "sentence_count": 2,
+      "char_count": 82
+    },
+    {
+      "index": 9,
+      "start_time": "00:02:20,200",
+      "end_time": "00:02:35,400",
+      "sentence_count": 4,
+      "char_count": 93
+    },
+    {
+      "index": 10,
+      "start_time": "00:02:35,400",
+      "end_time": "00:02:53,333",
+      "sentence_count": 5,
+      "char_count": 121
+    },
+    {
+      "index": 11,
+      "start_time": "00:02:53,366",
+      "end_time": "00:03:09,133",
+      "sentence_count": 3,
+      "char_count": 100
+    },
+    {
+      "index": 12,
+      "start_time": "00:03:09,133",
+      "end_time": "00:03:21,266",
+      "sentence_count": 2,
+      "char_count": 75
+    },
+    {
+      "index": 13,
+      "start_time": "00:03:21,266",
+      "end_time": "00:03:41,900",
+      "sentence_count": 3,
+      "char_count": 125
+    },
+    {
+      "index": 14,
+      "start_time": "00:03:42,033",
+      "end_time": "00:03:49,800",
+      "sentence_count": 2,
+      "char_count": 113
+    },
+    {
+      "index": 15,
+      "start_time": "00:00:00,000",
+      "end_time": "00:03:49,800",
+      "sentence_count": 4,
+      "char_count": 108
+    }
+  ]
+}

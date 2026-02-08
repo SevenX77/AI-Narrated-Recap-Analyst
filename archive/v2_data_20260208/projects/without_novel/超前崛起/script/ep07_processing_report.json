@@ -1,0 +1,158 @@
+{
+  "episode": "ep07",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep07.md",
+  "stats": {
+    "original_chars": 484,
+    "processed_chars": 677,
+    "paragraphs": 5,
+    "srt_entries": 45,
+    "avg_paragraph_sentences": 3.0,
+    "processing_time_seconds": 31.74
+  },
+  "entity_standardization": {
+    "locations": {
+      "汉部落": {
+        "variants": [
+          "汉部落"
+        ],
+        "standard_form": "汉部落",
+        "reasoning": "故事发生的主要地点，是一个部落的名称。"
+      }
+    },
+    "characters": {
+      "谢顶": {
+        "variants": [
+          "谢顶"
+        ],
+        "standard_form": "谢顶",
+        "reasoning": "文中出现的人物名，应为部落成员或交易对象。"
+      },
+      "大力": {
+        "variants": [
+          "大力"
+        ],
+        "standard_form": "大力",
+        "reasoning": "文中出现的人物名，拥有背篓，应为部落成员。"
+      },
+      "长老": {
+        "variants": [
+          "长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "部落的领导者，多次出现。"
+      },
+      "瘸子": {
+        "variants": [
+          "瘸子"
+        ],
+        "standard_form": "瘸子",
+        "reasoning": "负责烧制陶器（水缸、锅、碗）的部落成员。"
+      },
+      "你": {
+        "variants": [
+          "你"
+        ],
+        "standard_form": "你",
+        "reasoning": "叙述视角的接收者，部落的决策者或首领。"
+      }
+    },
+    "items": {
+      "背篓": {
+        "variants": [
+          "背篓"
+        ],
+        "standard_form": "背篓",
+        "reasoning": "大力使用的容器，用于装载闲食。"
+      },
+      "闲食": {
+        "variants": [
+          "闲食"
+        ],
+        "standard_form": "闲食",
+        "reasoning": "谢顶给出的食物，可能指零食或非主食。"
+      },
+      "水缸": {
+        "variants": [
+          "水缸"
+        ],
+        "standard_form": "水缸",
+        "reasoning": "瘸子烧制的陶制容器。"
+      },
+      "锅": {
+        "variants": [
+          "锅"
+        ],
+        "standard_form": "锅",
+        "reasoning": "瘸子烧制的炊具。"
+      },
+      "碗": {
+        "variants": [
+          "碗"
+        ],
+        "standard_form": "碗",
+        "reasoning": "瘸子烧制的餐具。"
+      },
+      "石盆": {
+        "variants": [
+          "石盆"
+        ],
+        "standard_form": "石盆",
+        "reasoning": "文中提到的交易物品，价值不菲。"
+      },
+      "肉": {
+        "variants": [
+          "肉",
+          "肉食"
+        ],
+        "standard_form": "肉",
+        "reasoning": "指代食物，特别是风干的鱼。"
+      },
+      "鱼": {
+        "variants": [
+          "大鱼",
+          "鱼"
+        ],
+        "standard_form": "鱼",
+        "reasoning": "部落风干的食物来源。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:18,100",
+      "sentence_count": 4,
+      "char_count": 118
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:18,133",
+      "end_time": "00:00:33,933",
+      "sentence_count": 4,
+      "char_count": 107
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:33,933",
+      "end_time": "00:00:52,066",
+      "sentence_count": 3,
+      "char_count": 135
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:52,066",
+      "end_time": "00:01:00,566",
+      "sentence_count": 3,
+      "char_count": 89
+    },
+    {
+      "index": 5,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:00,566",
+      "sentence_count": 1,
+      "char_count": 41
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "episode": "ep03",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep03.md",
+  "stats": {
+    "original_chars": 1111,
+    "processed_chars": 1433,
+    "paragraphs": 9,
+    "srt_entries": 98,
+    "avg_paragraph_sentences": 2.7777777777777777,
+    "processing_time_seconds": 54.4
+  },
+  "entity_standardization": {
+    "locations": {
+      "部落": {
+        "variants": [
+          "部落"
+        ],
+        "standard_form": "部落",
+        "reasoning": "指代主角和族人们生活的聚居地，上下文一致。"
+      },
+      "山洞": {
+        "variants": [
+          "山洞"
+        ],
+        "standard_form": "山洞",
+        "reasoning": "指代部落居住或使用的洞穴，上下文一致。"
+      },
+      "河边": {
+        "variants": [
+          "河边"
+        ],
+        "standard_form": "河边",
+        "reasoning": "指代主角挑选黏土的地点，上下文一致。"
+      }
+    },
+    "characters": {
+      "主角（你）": {
+        "variants": [
+          "你",
+          "新首领"
+        ],
+        "standard_form": "你",
+        "reasoning": "文本以第二人称叙述，指代故事的核心人物，即部落的新首领。"
+      },
+      "瘸子": {
+        "variants": [
+          "瘸子"
+        ],
+        "standard_form": "瘸子",
+        "reasoning": "指代部落中一名腿部有残疾的成员，名称在上下文中统一。"
+      },
+      "长老": {
+        "variants": [
+          "长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "指代部落中的年长或权威人物，上下文一致。"
+      },
+      "两个小伙伴": {
+        "variants": [
+          "昨天抓鱼的那俩小伙伴",
+          "两个小伙伴"
+        ],
+        "standard_form": "两个小伙伴",
+        "reasoning": "指代昨天一起捕鱼的两位年轻族人，上下文指代同一组人。"
+      },
+      "族人们": {
+        "variants": [
+          "族人们",
+          "女人们",
+          "男人们",
+          "采集队",
+          "孩子们"
+        ],
+        "standard_form": "族人们",
+        "reasoning": "泛指部落的所有成员，根据上下文具体化为女人、男人、采集队、孩子等群体，但都指向部落成员这一整体实体。"
+      }
+    },
+    "items": {
+      "陶器": {
+        "variants": [
+          "陶器",
+          "土盆",
+          "陶碗",
+          "双耳砂锅",
+          "小型餐具",
+          "这些东西"
+        ],
+        "standard_form": "陶器",
+        "reasoning": "泛指主角烧制的所有黏土制品，包括水缸、砂锅、碗等，是文本的核心道具。"
+      },
+      "窑": {
+        "variants": [
+          "窑",
+          "火窑"
+        ],
+        "standard_form": "窑",
+        "reasoning": "指代主角搭建的用于烧制陶器的设施，上下文一致。"
+      },
+      "黏土": {
+        "variants": [
+          "黏土"
+        ],
+        "standard_form": "黏土",
+        "reasoning": "制作陶器的原材料，上下文一致。"
+      },
+      "背篓": {
+        "variants": [
+          "背篓"
+        ],
+        "standard_form": "背篓",
+        "reasoning": "部落使用的采集和运输工具，上下文一致。"
+      },
+      "叫花鸡": {
+        "variants": [
+          "叫花鸡"
+        ],
+        "standard_form": "叫花鸡",
+        "reasoning": "主角用大鸟制作的一道食物，名称明确。"
+      },
+      "粗盐": {
+        "variants": [
+          "粗盐",
+          "盐"
+        ],
+        "standard_form": "粗盐",
+        "reasoning": "指代部落拥有的、用于调味和保存食物的盐，上下文强调其粗糙和珍贵。"
+      },
+      "兽皮": {
+        "variants": [
+          "兽皮",
+          "被子（指代物）"
+        ],
+        "standard_form": "兽皮",
+        "reasoning": "指代动物皮毛，用于分发保暖，上下文一致。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:16,833",
+      "sentence_count": 3,
+      "char_count": 126
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:16,833",
+      "end_time": "00:00:33,433",
+      "sentence_count": 3,
+      "char_count": 111
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:33,433",
+      "end_time": "00:00:57,633",
+      "sentence_count": 2,
+      "char_count": 164
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:57,633",
+      "end_time": "00:01:13,466",
+      "sentence_count": 3,
+      "char_count": 107
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:13,466",
+      "end_time": "00:01:36,600",
+      "sentence_count": 3,
+      "char_count": 166
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:36,600",
+      "end_time": "00:01:55,633",
+      "sentence_count": 3,
+      "char_count": 129
+    },
+    {
+      "index": 7,
+      "start_time": "00:01:55,633",
+      "end_time": "00:02:08,433",
+      "sentence_count": 3,
+      "char_count": 83
+    },
+    {
+      "index": 8,
+      "start_time": "00:02:08,433",
+      "end_time": "00:02:19,466",
+      "sentence_count": 2,
+      "char_count": 89
+    },
+    {
+      "index": 9,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:19,466",
+      "sentence_count": 3,
+      "char_count": 127
+    }
+  ]
+}

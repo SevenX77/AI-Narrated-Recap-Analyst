@@ -1,0 +1,282 @@
+{
+  "episode": "ep04",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/末哥超凡公路/script/ep04.md",
+  "stats": {
+    "original_chars": 822,
+    "processed_chars": 1085,
+    "paragraphs": 7,
+    "srt_entries": 81,
+    "avg_paragraph_sentences": 3.5714285714285716,
+    "processing_time_seconds": 56.4
+  },
+  "entity_standardization": {
+    "locations": {
+      "杏花镇": {
+        "variants": [
+          "杏花镇"
+        ],
+        "standard_form": "杏花镇",
+        "reasoning": "文中提到的地名，是诡异事件发生的地点之一。"
+      },
+      "夏国": {
+        "variants": [
+          "夏国"
+        ],
+        "standard_form": "夏国",
+        "reasoning": "文中提到的国家名称，拥有特有序列。"
+      },
+      "岛国": {
+        "variants": [
+          "岛国"
+        ],
+        "standard_form": "岛国",
+        "reasoning": "文中提到的国家名称，拥有特有序列。"
+      }
+    },
+    "characters": {
+      "主角（陈也）": {
+        "variants": [
+          "我",
+          "陈也"
+        ],
+        "standard_form": "陈也",
+        "reasoning": "第一人称叙述者，在文末被楚彻称呼为‘陈也’，推断为姓名。"
+      },
+      "楚彻": {
+        "variants": [
+          "楚彻",
+          "赤足青年",
+          "队长"
+        ],
+        "standard_form": "楚彻",
+        "reasoning": "车队队长，赤足青年，在文中被明确命名。"
+      },
+      "娜娜": {
+        "variants": [
+          "娜娜",
+          "白发美女",
+          "持剑少女",
+          "领路人序列白发美女"
+        ],
+        "standard_form": "娜娜",
+        "reasoning": "白发美女，剑仙序列，在文中被明确命名。"
+      },
+      "铁狮": {
+        "variants": [
+          "铁狮",
+          "大块头铁狮"
+        ],
+        "standard_form": "铁狮",
+        "reasoning": "车队成员，泰坦序列，在文中被明确命名。"
+      }
+    },
+    "items": {
+      "系统": {
+        "variants": [
+          "系统"
+        ],
+        "standard_form": "系统",
+        "reasoning": "主角对话和获取信息的对象。"
+      },
+      "序列真迹": {
+        "variants": [
+          "序列真迹"
+        ],
+        "standard_form": "序列真迹",
+        "reasoning": "觉醒序列超凡的途径之一。"
+      },
+      "杀戮点": {
+        "variants": [
+          "杀戮点",
+          "杀戮值"
+        ],
+        "standard_form": "杀戮点",
+        "reasoning": "系统内的货币或点数单位，‘杀戮值’在兑换时使用，应视为同一概念的不同表述，统一为更常用的‘杀戮点’。"
+      },
+      "黑狗血": {
+        "variants": [
+          "黑狗血"
+        ],
+        "standard_form": "黑狗血",
+        "reasoning": "兑换得到的对付诡异的道具。"
+      },
+      "摩托三轮车": {
+        "variants": [
+          "三轮自行车",
+          "摩托三轮车",
+          "摩托车",
+          "三轮车"
+        ],
+        "standard_form": "摩托三轮车",
+        "reasoning": "主角的载具，由三轮自行车升级改造而成，文中‘摩托车’是其简称或部分指代，统一为描述最准确的‘摩托三轮车’。"
+      },
+      "车队": {
+        "variants": [
+          "车队"
+        ],
+        "standard_form": "车队",
+        "reasoning": "楚彻、娜娜、铁狮和主角所在的组织。"
+      },
+      "帐篷": {
+        "variants": [
+          "帐篷"
+        ],
+        "standard_form": "帐篷",
+        "reasoning": "车队聚集或会议的地点。"
+      },
+      "纸骷髅": {
+        "variants": [
+          "纸骷髅"
+        ],
+        "standard_form": "纸骷髅",
+        "reasoning": "文中提到的诡异之一。"
+      },
+      "白衣剪刀女": {
+        "variants": [
+          "白衣剪刀女"
+        ],
+        "standard_form": "白衣剪刀女",
+        "reasoning": "文中提到的诡异之一。"
+      }
+    },
+    "concepts": {
+      "序列超凡": {
+        "variants": [
+          "序列超凡",
+          "觉醒序列超凡"
+        ],
+        "standard_form": "序列超凡",
+        "reasoning": "核心概念，指拥有特殊能力的人类。"
+      },
+      "机械师序列": {
+        "variants": [
+          "机械师序列"
+        ],
+        "standard_form": "机械师序列",
+        "reasoning": "主角谎称自己觉醒的序列。"
+      },
+      "领路人序列": {
+        "variants": [
+          "领路人序列"
+        ],
+        "standard_form": "领路人序列",
+        "reasoning": "娜娜所属的序列类型。"
+      },
+      "剑仙序列": {
+        "variants": [
+          "剑仙序列"
+        ],
+        "standard_form": "剑仙序列",
+        "reasoning": "娜娜所属的序列类型，也是夏国特有序列。"
+      },
+      "泰坦序列": {
+        "variants": [
+          "泰坦序列"
+        ],
+        "standard_form": "泰坦序列",
+        "reasoning": "铁狮所属的序列类型。"
+      },
+      "天师序列": {
+        "variants": [
+          "天师序列"
+        ],
+        "standard_form": "天师序列",
+        "reasoning": "夏国特有序列之一。"
+      },
+      "忍者序列": {
+        "variants": [
+          "忍者序列"
+        ],
+        "standard_form": "忍者序列",
+        "reasoning": "岛国特有序列之一。"
+      },
+      "弑神序列": {
+        "variants": [
+          "弑神序列"
+        ],
+        "standard_form": "弑神序列",
+        "reasoning": "岛国特有序列之一。"
+      },
+      "战斗序列": {
+        "variants": [
+          "战斗序列"
+        ],
+        "standard_form": "战斗序列",
+        "reasoning": "序列超凡的分类之一。"
+      },
+      "辅助序列": {
+        "variants": [
+          "辅助序列"
+        ],
+        "standard_form": "辅助序列",
+        "reasoning": "序列超凡的分类之一。"
+      },
+      "超自然序列": {
+        "variants": [
+          "超自然序列"
+        ],
+        "standard_form": "超自然序列",
+        "reasoning": "序列超凡的分类之一。"
+      },
+      "诡异": {
+        "variants": [
+          "诡异"
+        ],
+        "standard_form": "诡异",
+        "reasoning": "故事中的敌对超自然存在。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:25,233",
+      "sentence_count": 5,
+      "char_count": 156
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:25,233",
+      "end_time": "00:00:50,866",
+      "sentence_count": 6,
+      "char_count": 152
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:51,000",
+      "end_time": "00:01:06,633",
+      "sentence_count": 4,
+      "char_count": 97
+    },
+    {
+      "index": 4,
+      "start_time": "00:01:06,633",
+      "end_time": "00:01:25,266",
+      "sentence_count": 3,
+      "char_count": 108
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:25,266",
+      "end_time": "00:01:53,033",
+      "sentence_count": 3,
+      "char_count": 168
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:53,033",
+      "end_time": "00:02:00,300",
+      "sentence_count": 3,
+      "char_count": 93
+    },
+    {
+      "index": 7,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:00,300",
+      "sentence_count": 1,
+      "char_count": 52
+    }
+  ]
+}

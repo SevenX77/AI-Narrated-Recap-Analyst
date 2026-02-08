@@ -1,0 +1,447 @@
+{
+  "episode": "ep01",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep01.md",
+  "stats": {
+    "original_chars": 3908,
+    "processed_chars": 5170,
+    "paragraphs": 36,
+    "srt_entries": 358,
+    "avg_paragraph_sentences": 2.8055555555555554,
+    "processing_time_seconds": 147.47
+  },
+  "entity_standardization": {
+    "locations": {
+      "山洞": {
+        "variants": [
+          "山洞",
+          "洞"
+        ],
+        "standard_form": "山洞",
+        "reasoning": "部落的主要居住地，上下文一致指代同一地点。"
+      },
+      "小河": {
+        "variants": [
+          "小河",
+          "河"
+        ],
+        "standard_form": "小河",
+        "reasoning": "距离部落不到千米的河流，是捕鱼地点。"
+      },
+      "丛林": {
+        "variants": [
+          "丛林"
+        ],
+        "standard_form": "丛林",
+        "reasoning": "部落周边的森林环境。"
+      }
+    },
+    "characters": {
+      "主角（你）": {
+        "variants": [
+          "你"
+        ],
+        "standard_form": "你",
+        "reasoning": "穿越者，第一人称叙述视角，全文统一。"
+      },
+      "大胡子首领": {
+        "variants": [
+          "大胡子首领",
+          "首领"
+        ],
+        "standard_form": "大胡子首领",
+        "reasoning": "部落原首领，在事件中死亡。"
+      },
+      "长老（羊角老头）": {
+        "variants": [
+          "头上顶着两根羊角的老头",
+          "长老",
+          "顶着羊角的长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "部落中最年长、被认为最聪明的人，负责仪式。"
+      },
+      "六指": {
+        "variants": [
+          "手上长了6指的男人",
+          "六指",
+          "6指"
+        ],
+        "standard_form": "六指",
+        "reasoning": "一个使用木棒、疑似近亲繁殖的部落成员。"
+      },
+      "羽毛（项链男）": {
+        "variants": [
+          "脖子上挂着羽毛项链的家伙",
+          "羽毛"
+        ],
+        "standard_form": "羽毛",
+        "reasoning": "机灵、使用木棒的部落成员，以羽毛项链为特征。"
+      },
+      "石头（骨头项链男）": {
+        "variants": [
+          "带着骨头项链的石头",
+          "石头"
+        ],
+        "standard_form": "石头",
+        "reasoning": "使用石头作为武器的部落成员，以骨头项链为特征。"
+      },
+      "独耳（疤脸少年）": {
+        "variants": [
+          "只有一只右耳，脸上还有4条疤痕的少年",
+          "独耳",
+          "15岁的少年"
+        ],
+        "standard_form": "独耳",
+        "reasoning": "使用骨制管叉的15岁少年，脸上有疤，是部落顶尖战力之一。"
+      },
+      "兽牙（前首领之子）": {
+        "variants": [
+          "17岁的兽牙",
+          "兽牙"
+        ],
+        "standard_form": "兽牙",
+        "reasoning": "17岁，前首领之子，使用剑齿虎牙武器，是部落顶尖战力之一。"
+      },
+      "大力（壮汉）": {
+        "variants": [
+          "全部落最高的大力身强力壮",
+          "大力"
+        ],
+        "standard_form": "大力",
+        "reasoning": "身材最高大强壮的部落成员，使用大腿骨武器，是部落顶尖战力之一。"
+      },
+      "瘸子（石器爱好者）": {
+        "variants": [
+          "拄着木杖的瘸子"
+        ],
+        "standard_form": "瘸子",
+        "reasoning": "跟随采集队，负责开路警戒，喜欢打磨石器。"
+      },
+      "两个小伙伴/男孩": {
+        "variants": [
+          "几个小伙伴",
+          "两个小伙伴",
+          "两个男孩",
+          "小迷弟"
+        ],
+        "standard_form": "两个男孩",
+        "reasoning": "最初围观主角，后成为其追随者的两个年轻部落成员。"
+      },
+      "成年女人（跟随者）": {
+        "variants": [
+          "那个女人",
+          "成年女人",
+          "一个成年女人"
+        ],
+        "standard_form": "成年女人",
+        "reasoning": "在河边跟随主角，并学习捕鱼技术的部落女性。"
+      },
+      "两个成年男人（幸存者）": {
+        "variants": [
+          "两个男人",
+          "两个成年人",
+          "躲在树上的那两个成年男人"
+        ],
+        "standard_form": "两个成年男人",
+        "reasoning": "最初与大胡子首领一起逃跑，后幸存并目睹主角捕杀恐鸟的部落成员。"
+      }
+    },
+    "items": {
+      "恐鸟": {
+        "variants": [
+          "恐鸟",
+          "孔鸟"
+        ],
+        "standard_form": "恐鸟",
+        "reasoning": "文中描述的3米多高、攻击性强的史前巨鸟。‘孔鸟’为同音错字，根据生物常识和上下文‘恐鸟’更合理。"
+      },
+      "投石索": {
+        "variants": [
+          "投石索",
+          "简易投石索"
+        ],
+        "standard_form": "投石索",
+        "reasoning": "主角用石头和蛇皮制作的远程武器。"
+      },
+      "蛇皮": {
+        "variants": [
+          "蛇皮"
+        ],
+        "standard_form": "蛇皮",
+        "reasoning": "主角缠在腰间的材料，用于制作投石索和捆绑。"
+      },
+      "箩筐/背篓": {
+        "variants": [
+          "筐",
+          "箩筐",
+          "背篓"
+        ],
+        "standard_form": "背篓",
+        "reasoning": "主角用藤蔓编织的容器，后改进为带绳的背篓。"
+      },
+      "鹿皮": {
+        "variants": [
+          "鹿皮",
+          "兽皮（特指鹿皮时）"
+        ],
+        "standard_form": "鹿皮",
+        "reasoning": "女人们送给主角的谢礼，用于制作衣服。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:22,666",
+      "sentence_count": 2,
+      "char_count": 159
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:22,666",
+      "end_time": "00:00:36,466",
+      "sentence_count": 2,
+      "char_count": 96
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:36,466",
+      "end_time": "00:00:57,700",
+      "sentence_count": 3,
+      "char_count": 151
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:57,700",
+      "end_time": "00:01:13,533",
+      "sentence_count": 3,
+      "char_count": 103
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:13,533",
+      "end_time": "00:01:27,700",
+      "sentence_count": 4,
+      "char_count": 101
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:27,700",
+      "end_time": "00:01:44,633",
+      "sentence_count": 2,
+      "char_count": 110
+    },
+    {
+      "index": 7,
+      "start_time": "00:01:44,633",
+      "end_time": "00:01:58,400",
+      "sentence_count": 3,
+      "char_count": 97
+    },
+    {
+      "index": 8,
+      "start_time": "00:01:58,400",
+      "end_time": "00:02:13,600",
+      "sentence_count": 3,
+      "char_count": 108
+    },
+    {
+      "index": 9,
+      "start_time": "00:02:13,600",
+      "end_time": "00:02:29,666",
+      "sentence_count": 3,
+      "char_count": 103
+    },
+    {
+      "index": 10,
+      "start_time": "00:02:29,666",
+      "end_time": "00:02:42,700",
+      "sentence_count": 3,
+      "char_count": 94
+    },
+    {
+      "index": 11,
+      "start_time": "00:02:42,700",
+      "end_time": "00:02:58,433",
+      "sentence_count": 3,
+      "char_count": 110
+    },
+    {
+      "index": 12,
+      "start_time": "00:02:58,433",
+      "end_time": "00:03:16,100",
+      "sentence_count": 3,
+      "char_count": 121
+    },
+    {
+      "index": 13,
+      "start_time": "00:03:16,100",
+      "end_time": "00:03:30,633",
+      "sentence_count": 2,
+      "char_count": 96
+    },
+    {
+      "index": 14,
+      "start_time": "00:03:30,633",
+      "end_time": "00:03:44,233",
+      "sentence_count": 3,
+      "char_count": 102
+    },
+    {
+      "index": 15,
+      "start_time": "00:03:44,233",
+      "end_time": "00:03:58,633",
+      "sentence_count": 4,
+      "char_count": 97
+    },
+    {
+      "index": 16,
+      "start_time": "00:03:58,633",
+      "end_time": "00:04:14,633",
+      "sentence_count": 3,
+      "char_count": 116
+    },
+    {
+      "index": 17,
+      "start_time": "00:04:14,633",
+      "end_time": "00:04:28,733",
+      "sentence_count": 4,
+      "char_count": 92
+    },
+    {
+      "index": 18,
+      "start_time": "00:04:28,733",
+      "end_time": "00:04:42,500",
+      "sentence_count": 3,
+      "char_count": 93
+    },
+    {
+      "index": 19,
+      "start_time": "00:04:42,500",
+      "end_time": "00:04:56,166",
+      "sentence_count": 2,
+      "char_count": 100
+    },
+    {
+      "index": 20,
+      "start_time": "00:04:56,166",
+      "end_time": "00:05:09,400",
+      "sentence_count": 3,
+      "char_count": 101
+    },
+    {
+      "index": 21,
+      "start_time": "00:05:09,400",
+      "end_time": "00:05:25,866",
+      "sentence_count": 2,
+      "char_count": 115
+    },
+    {
+      "index": 22,
+      "start_time": "00:05:25,866",
+      "end_time": "00:05:43,433",
+      "sentence_count": 3,
+      "char_count": 131
+    },
+    {
+      "index": 23,
+      "start_time": "00:05:43,433",
+      "end_time": "00:05:57,766",
+      "sentence_count": 3,
+      "char_count": 98
+    },
+    {
+      "index": 24,
+      "start_time": "00:05:57,766",
+      "end_time": "00:06:12,533",
+      "sentence_count": 3,
+      "char_count": 98
+    },
+    {
+      "index": 25,
+      "start_time": "00:06:12,533",
+      "end_time": "00:06:32,600",
+      "sentence_count": 3,
+      "char_count": 143
+    },
+    {
+      "index": 26,
+      "start_time": "00:06:32,600",
+      "end_time": "00:06:45,000",
+      "sentence_count": 3,
+      "char_count": 87
+    },
+    {
+      "index": 27,
+      "start_time": "00:06:45,000",
+      "end_time": "00:06:56,500",
+      "sentence_count": 2,
+      "char_count": 75
+    },
+    {
+      "index": 28,
+      "start_time": "00:06:56,500",
+      "end_time": "00:07:12,933",
+      "sentence_count": 2,
+      "char_count": 108
+    },
+    {
+      "index": 29,
+      "start_time": "00:07:12,933",
+      "end_time": "00:07:30,400",
+      "sentence_count": 3,
+      "char_count": 121
+    },
+    {
+      "index": 30,
+      "start_time": "00:07:30,400",
+      "end_time": "00:07:48,933",
+      "sentence_count": 3,
+      "char_count": 134
+    },
+    {
+      "index": 31,
+      "start_time": "00:07:48,933",
+      "end_time": "00:08:02,433",
+      "sentence_count": 2,
+      "char_count": 97
+    },
+    {
+      "index": 32,
+      "start_time": "00:08:02,433",
+      "end_time": "00:08:09,166",
+      "sentence_count": 4,
+      "char_count": 99
+    },
+    {
+      "index": 33,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:09,166",
+      "sentence_count": 2,
+      "char_count": 70
+    },
+    {
+      "index": 34,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:09,166",
+      "sentence_count": 2,
+      "char_count": 99
+    },
+    {
+      "index": 35,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:09,166",
+      "sentence_count": 3,
+      "char_count": 100
+    },
+    {
+      "index": 36,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:09,166",
+      "sentence_count": 3,
+      "char_count": 142
+    }
+  ]
+}
