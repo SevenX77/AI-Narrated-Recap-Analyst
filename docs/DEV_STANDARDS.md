@@ -149,14 +149,18 @@ result = tool.execute(input_data)
 - **禁止** 在 Tool 内部直接调用 Agent。
 
 **现有工具**:
-- `NovelChapterProcessor`: 小说章节拆分与简介提取
-- `IntroductionValidator`: 简介质量验证
-- `SrtScriptProcessor`: SRT字幕处理（支持有/无小说参考两种模式）
-- `NovelChapterAnalyzer`: 小说章节功能段分析（100% LLM，功能段级别）⭐ **推荐使用**
-- `NovelSegmentationAnalyzer`: 小说分段深度分析（自然段级别，用于精确对齐）
-- `ScriptSegmentAligner`: Script-Novel精确对齐与改编分析
-- `KeyInfoExtractor`: 关键信息提取与汇总
-- ~~`NovelSegmentationTool`~~: 已废弃（规则分段，质量不达标）→ 归档到 `archive/v2_deprecated/old_novel_processing/`
+- `NovelImporter`: 小说导入与规范化（编码检测、格式清理）
+- `NovelMetadataExtractor`: 元数据提取（标题、作者、标签、简介）**[支持双LLM]** 默认 DeepSeek
+- `NovelChapterDetector`: 章节边界检测与信息提取
+- `NovelSegmenter`: 小说叙事功能分段分析（纯LLM驱动）**[支持双LLM]** 默认 Claude ⭐ **推荐使用**
+- *(归档)* `NovelChapterProcessor`: 小说章节拆分与简介提取
+- *(归档)* `IntroductionValidator`: 简介质量验证
+- *(归档)* `SrtScriptProcessor`: SRT字幕处理（支持有/无小说参考两种模式）
+- *(归档)* `NovelChapterAnalyzer`: 小说章节功能段分析（功能段级别）
+- *(归档)* `NovelSegmentationAnalyzer`: 小说分段深度分析（自然段级别）
+- *(归档)* `ScriptSegmentAligner`: Script-Novel精确对齐与改编分析
+- *(归档)* `KeyInfoExtractor`: 关键信息提取与汇总
+- ~~`NovelSegmentationTool`~~: 已废弃（规则分段，质量不达标）→ 归档到 `archive/v2_deprecated/`
 
 ### 3.2 Agents (智能体)
 - 继承自 `src.core.interfaces.BaseAgent`。
@@ -181,7 +185,18 @@ result = tool.execute(input_data)
     - **Interfaces**: 抽象基类 (Base Classes)。
     - **Config**: 配置定义与加载。
     - **Schemas**: Pydantic 数据模型。
+    - **Managers**: 资源管理器（如 LLMClientManager, ArtifactManager）。
 - **禁止** 包含具体的业务逻辑实现。
+
+**核心管理器**:
+- `LLMClientManager`: LLM 客户端统一管理
+    - 支持多 Provider（Claude、DeepSeek）
+    - 单例模式管理客户端实例
+    - 自动记录使用统计（Token 消耗、调用次数）
+    - 位置：`src/core/llm_client_manager.py`
+    - 文档：`docs/core/DUAL_LLM_SETUP.md`
+- `ArtifactManager`: 工件版本管理（已有）
+- `ProjectManager`: 项目数据管理（已有）
 
 ### 3.6 Utils (工具库)
 - 存放于 `src/utils/`。
@@ -198,6 +213,39 @@ result = tool.execute(input_data)
 - **单一数据源**: 所有配置（API Keys, Model Names, Paths）必须通过 `src/core/config.py` 统一管理，禁止在业务代码中硬编码默认值。
 - **环境变量**: 敏感信息必须通过 `.env` 文件加载，使用 `pydantic-settings` 或 `os.environ` 读取。
 - **禁止提交**: `.env` 文件必须包含在 `.gitignore` 中。
+
+### 5.1 LLM Provider 配置
+
+项目支持多个 LLM Provider 同时使用，通过 `LLMClientManager` 统一管理。
+
+**环境变量配置**：
+```bash
+# Claude 配置
+CLAUDE_API_KEY=sk-xxx
+CLAUDE_BASE_URL=https://api.anthropic.com
+CLAUDE_MODEL_NAME=claude-sonnet-4-5-20250929
+
+# DeepSeek 配置
+DEEPSEEK_API_KEY=sk-xxx
+DEEPSEEK_BASE_URL=https://api.deepseek.com
+DEEPSEEK_MODEL_NAME=deepseek-chat
+```
+
+**使用方式**：
+```python
+from src.core.llm_client_manager import get_llm_client, get_model_name
+
+# 在工具初始化时指定 Provider
+client = get_llm_client("claude")  # 或 "deepseek"
+model = get_model_name("claude")
+```
+
+**功能分工策略**：
+- **简单任务**（元数据提取、格式处理）→ DeepSeek（速度快、成本低）
+- **复杂任务**（小说分段、改编分析）→ Claude（质量高、理解强）
+- **推理任务**（规则提取、逻辑分析）→ DeepSeek R1（专用推理模型）
+
+详细配置：参见 `docs/core/DUAL_LLM_SETUP.md`
 
 ## 6. Prompt 工程规范 (Prompt Engineering)
 
