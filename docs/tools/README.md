@@ -57,7 +57,7 @@ docs/tools/
 
 ## 📊 工具开发路线图
 
-详见：[TOOLS_ROADMAP.md](../TOOLS_ROADMAP.md)
+详见：[ROADMAP.md](ROADMAP.md)
 
 ### Phase I: 素材标准化（12个工具）
 - **Novel处理**: 6个工具
@@ -187,13 +187,13 @@ result = tool.execute(input_data)
 - `archive/v2_tools_20260208/srt_processor.py`
 
 ### 相关文档
-- [TOOLS_ROADMAP.md](../TOOLS_ROADMAP.md) - 工具路线图
+- [ROADMAP.md](ROADMAP.md) - 工具路线图
 - [DEV_STANDARDS.md](../DEV_STANDARDS.md) - 开发规范
 - [interfaces.md](../core/interfaces.md) - 接口定义
 
 ## 📈 进度追踪
 
-查看 [TOOLS_ROADMAP.md](../TOOLS_ROADMAP.md) 了解：
+查看 [ROADMAP.md](ROADMAP.md) 了解：
 - 已完成工具列表
 - 进行中的工具
 - 待开发工具
