@@ -1,6 +1,8 @@
-# Tools模块文档
+# Tools模块技术参考
 
 Tools模块包含所有无状态、原子性的功能工具。每个工具专注做好一件事。
+
+**本文档目的**: 技术参考，用于查找工具接口、理解实现逻辑、便于代码调用。
 
 ## 📁 文档组织
 
@@ -67,117 +69,115 @@ docs/tools/
 - **语义分析**: 2个工具
 - **对齐匹配**: 2个工具
 
-## 🔧 工具接口规范
+## 📋 工具技术规范
 
-所有工具必须继承`BaseTool`：
+### 接口定义
+所有工具必须继承 `BaseTool` (定义于 `src/core/interfaces.py`)
 
+**基类接口**:
+```python
+class BaseTool(ABC):
+    @abstractmethod
+    def execute(self, input_data: Any) -> Any:
+        """执行工具核心功能"""
+        pass
+```
+
+### 实现规范
 ```python
 from src.core.interfaces import BaseTool
 from typing import Any
 
 class MyTool(BaseTool):
     """
-    工具简介
+    [工具名称]
     
-    职责：
-        - 职责1
-        - 职责2
+    职责 (Responsibility):
+        单一职责描述
     
-    输入：
-        input_type: 输入描述
+    接口 (Interface):
+        输入: Type - 说明
+        输出: Type - 说明
     
-    输出：
-        output_type: 输出描述
+    依赖 (Dependencies):
+        - Schema: 使用的数据模型
+        - Tools: 依赖的其他工具
+        - Config: 需要的配置项
     
-    依赖：
-        - DependencyTool1
-        - DependencyTool2
+    实现逻辑 (Logic):
+        1. 步骤1
+        2. 步骤2
+        3. 步骤3
     """
     
     def __init__(self, config_param: Any = None):
-        """初始化工具"""
         super().__init__()
         self.config_param = config_param
     
     def execute(self, input_data: Any) -> Any:
-        """
-        执行工具的核心功能
-        
-        Args:
-            input_data: 输入数据
-            
-        Returns:
-            处理后的数据
-            
-        Raises:
-            ValueError: 输入数据无效
-            RuntimeError: 处理失败
-        """
-        # 实现工具逻辑
+        """核心执行逻辑"""
+        # 实现
         return result
 ```
 
 ## 📝 工具文档模板
 
-每个工具的文档应包含：
+每个工具文档 (`docs/tools/{phase}/{tool_name}.md`) 必须包含：
 
-### 1. 基本信息
-- 工具名称
-- 职责描述
+### 1. 职责定义
+- 单一职责描述
 - 所属Phase
-- 优先级
+- 在工具链中的位置
 
-### 2. 接口说明
-- 输入参数
-- 输出格式
-- 异常处理
+### 2. 接口定义
+```python
+# 函数签名
+def execute(self, input: InputType) -> OutputType
+```
+- 输入参数: 类型、格式、约束
+- 输出结果: 类型、结构、字段说明
+- 异常: 可能抛出的异常类型
 
-### 3. 依赖关系
-- 依赖的工具
-- 依赖的Schema
-- 依赖的配置
+### 3. 实现逻辑
+- 核心算法步骤
+- 调用的子工具/函数
+- 关键决策逻辑
 
-### 4. 使用示例
-- 基本用法
-- 高级用法
-- 错误处理
+### 4. 依赖关系
+- Schema: `src/core/schemas.py` 中使用的模型
+- Tools: 依赖的其他工具（文件路径）
+- Config: `src/core/config.py` 中需要的配置项
 
-### 5. 测试方法
-- 测试脚本位置
-- 测试数据准备
-- 预期结果
+### 5. 代码示例
+```python
+# 仅展示接口调用，不是完整流程
+tool = ToolName(config)
+result = tool.execute(input_data)
+# result.field1, result.field2
+```
 
-## 🚀 开发新工具流程
+## 🔧 开发新工具流程
 
-### Step 1: 设计
-1. 明确工具职责（单一职责）
-2. 定义输入输出
-3. 确定依赖关系
-4. 编写文档（在`docs/tools/`对应目录）
+### Step 1: 设计与文档
+1. 在 `docs/tools/{phase}/` 创建工具文档
+2. 定义：职责、接口、实现逻辑、依赖
+3. 确认设计无误后开始编码
 
-### Step 2: 实现
-1. 创建工具文件（在`src/tools/`）
-2. 继承`BaseTool`
-3. 实现`execute()`方法
-4. 添加完整的docstring
+### Step 2: 实现代码
+1. 在 `src/tools/` 创建工具文件
+2. 继承 `BaseTool`，实现 `execute()`
+3. Docstring 必须与文档一致
+4. 添加类型注解
 
-### Step 3: 测试
-1. 创建测试脚本（在`scripts/test/`）
-2. 准备测试数据
-3. 验证功能正确性
-4. 测试边界情况
+### Step 3: 验证
+1. 创建测试脚本 `scripts/test/{tool_name}_test.py`
+2. 验证功能正确性和边界情况
+3. 记录测试结果
 
-### Step 4: 文档
-1. 更新工具文档
-2. 添加使用示例
-3. 记录已知问题
-4. 更新本README
-
-### Step 5: 集成
-1. 提交代码审查
-2. 运行CI测试
-3. 合并到主分支
-4. 标记版本
+### Step 4: 集成
+1. 更新 `docs/tools/README.md` 工具列表
+2. 如有新Schema，更新 `docs/core/schemas.md`
+3. 提交代码和文档
 
 ## 📚 开发参考
 

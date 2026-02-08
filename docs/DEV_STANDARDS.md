@@ -57,16 +57,88 @@ root/
 
 | 文档类型 | 必须放置位置 | 示例 | 说明 |
 |---------|------------|------|------|
-| 核心文档 | `docs/` | DEV_STANDARDS.md, PROJECT_STRUCTURE.md | 永久性、全局性的文档 |
-| 架构设计 | `docs/architecture/` | logic_flows.md | 系统架构和设计文档 |
-| 功能优化 | `docs/maintenance/` | ingestion_optimization_*.md | 针对特定功能的优化/部署文档 |
-| 维护记录 | `docs/maintenance/` | CLEANUP_SUMMARY.md | 清理报告、变更日志、迁移记录 |
-| 示例脚本 | `scripts/examples/` | generate_ep01_recap.py | 使用示例代码 |
+| 核心文档 | `docs/` 根目录 | DEV_STANDARDS.md, PROJECT_STRUCTURE.md | 永久性、全局性的文档 |
+| 版本变更 | `CHANGELOG.md`（根目录） | - | 版本发布记录，遵循 Keep a Changelog 规范 |
+| 模块文档 | `docs/{module}/` | docs/core/README.md | 各模块的技术参考文档 |
+| 归档文档 | `archive/docs/` | archive/docs/v2_architecture/ | 旧版本文档归档 |
 
 **❌ 严格禁止**：
-- 在 `docs/` 根目录创建针对特定功能的文档（应放在 `maintenance/` 下）
-- 在项目根目录创建任何 `.md` 或 `.txt` 文档文件
-- 在根目录创建临时测试文件
+- ❌ 在根目录创建过程性/总结性文档（如 PROJECT_RESET_SUMMARY.md, MIGRATION_SUMMARY.md）
+- ❌ 在根目录创建任何除 CHANGELOG.md 外的 `.md` 或 `.txt` 文档
+- ❌ 在 `docs/` 创建"使用教程"类文档
+- ❌ 在根目录创建临时测试文件
+
+### 📝 文档内容规范
+
+**文档目的**: 文档是代码的技术参考，不是使用教程。
+
+**必须包含**：
+1. **接口定义**: 输入输出参数、类型、格式
+2. **实现逻辑**: 核心算法、处理流程、设计思路
+3. **依赖关系**: 调用了哪些工具/模块/Agent
+4. **数据模型**: 使用的Schema定义
+
+**禁止包含**：
+- ❌ "如何使用"教程式内容
+- ❌ "运行步骤"操作指南
+- ❌ 过程性记录（"我做了什么"）
+- ❌ 总结性报告
+
+**文档示例结构**：
+```markdown
+# ToolName
+
+## 职责 (Responsibility)
+简述该工具的单一职责
+
+## 接口 (Interface)
+### 输入 (Input)
+- 参数1: 类型, 说明
+- 参数2: 类型, 说明
+
+### 输出 (Output)
+返回值类型和结构说明
+
+## 实现逻辑 (Implementation Logic)
+1. 步骤1: 做什么，为什么
+2. 步骤2: 调用哪个工具/函数
+3. 步骤3: 如何处理结果
+
+## 依赖 (Dependencies)
+- Schema: 使用的数据模型
+- Tools: 依赖的其他工具
+- Config: 需要的配置项
+
+## 示例代码 (Code Example)
+```python
+# 仅展示接口调用，不是完整使用流程
+tool = ToolName(config)
+result = tool.execute(input_data)
+```
+```
+
+### 📋 CHANGELOG 管理规范
+
+**格式**: 遵循 [Keep a Changelog](https://keepachangelog.com/) 规范
+
+**何时更新**:
+- ✅ 发布新版本时（必须）
+- ✅ 新增重要功能（Added）
+- ✅ 修改破坏性接口（Changed）
+- ✅ 废弃功能（Deprecated）
+- ✅ 移除功能（Removed）
+- ✅ 修复Bug（Fixed）
+
+**版本号规则**: 遵循 [Semantic Versioning](https://semver.org/)
+- 主版本号: 不兼容的 API 修改
+- 次版本号: 向下兼容的功能新增
+- 修订号: 向下兼容的Bug修复
+
+**不应记录**:
+- ❌ 每次代码提交
+- ❌ 内部重构（除非影响API）
+- ❌ 文档更新（除非是重大文档结构变更）
+- ❌ 配置调整
 
 ## 3. 模块定义规范 (Module Specifications)
 
