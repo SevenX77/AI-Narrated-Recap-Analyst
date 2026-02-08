@@ -1,0 +1,462 @@
+{
+  "episode": "ep01",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/永夜悔恨录/script/ep01.md",
+  "stats": {
+    "original_chars": 5037,
+    "processed_chars": 4792,
+    "paragraphs": 29,
+    "srt_entries": 573,
+    "avg_paragraph_sentences": 5.275862068965517,
+    "processing_time_seconds": 163.18
+  },
+  "entity_standardization": {
+    "characters": {
+      "主角（天帝/我）": {
+        "variants": [
+          "我",
+          "天帝",
+          "幼年的我",
+          "大哥"
+        ],
+        "standard_form": "天帝",
+        "reasoning": "故事核心人物，身份为天帝，转世前为‘我’，幼年时期称‘幼年的我’，结拜兄弟称其为‘大哥’"
+      },
+      "柳如烟": {
+        "variants": [
+          "妹妹",
+          "如烟",
+          "小如烟",
+          "女婴",
+          "如烟女帝",
+          "柳如烟女帝",
+          "女帝"
+        ],
+        "standard_form": "柳如烟",
+        "reasoning": "十大女帝之一，天帝的妹妹，幼年称小如烟，名字由天帝所取"
+      },
+      "王腾": {
+        "variants": [
+          "王腾"
+        ],
+        "standard_form": "王腾",
+        "reasoning": "讨伐天帝的领头人"
+      },
+      "林逍遥": {
+        "variants": [
+          "少年",
+          "林逍遥",
+          "凌逍遥"
+        ],
+        "standard_form": "林逍遥",
+        "reasoning": "被天帝所救、后被挖走至尊骨的大帝，‘凌逍遥’为同音错字"
+      },
+      "剑灵女帝": {
+        "variants": [
+          "剑灵女帝"
+        ],
+        "standard_form": "剑灵女帝",
+        "reasoning": "十大女帝之一，因全族被屠而恨天帝"
+      },
+      "帝后": {
+        "variants": [
+          "妻子",
+          "帝后",
+          "我那位帝后"
+        ],
+        "standard_form": "帝后",
+        "reasoning": "天帝的妻子，在讨伐中站在对立面"
+      },
+      "白眉修士": {
+        "variants": [
+          "白眉修士",
+          "邪修",
+          "和道境邪修",
+          "河道修士"
+        ],
+        "standard_form": "白眉修士",
+        "reasoning": "抽走童女魂魄的邪修，‘和道境’与‘河道’为同音错字，指其境界"
+      },
+      "父亲": {
+        "variants": [
+          "父亲",
+          "爹",
+          "爹爹"
+        ],
+        "standard_form": "父亲",
+        "reasoning": "天帝的养父"
+      },
+      "母亲": {
+        "variants": [
+          "母亲",
+          "娘"
+        ],
+        "standard_form": "母亲",
+        "reasoning": "天帝的养母"
+      },
+      "村长": {
+        "variants": [
+          "村长"
+        ],
+        "standard_form": "村长",
+        "reasoning": "小山村的村长"
+      },
+      "妇人": {
+        "variants": [
+          "妇人",
+          "奶娘",
+          "刚生产的妇人"
+        ],
+        "standard_form": "妇人",
+        "reasoning": "为小如烟喂奶的妇人"
+      },
+      "男人/女人（弃婴父母）": {
+        "variants": [
+          "男人",
+          "女人",
+          "两人",
+          "爹娘（指弃婴父母）"
+        ],
+        "standard_form": "弃婴父母",
+        "reasoning": "抛弃女婴（柳如烟）的亲生父母"
+      }
+    },
+    "locations": {
+      "小渔村": {
+        "variants": [
+          "小渔村",
+          "村里",
+          "村子"
+        ],
+        "standard_form": "小渔村",
+        "reasoning": "天帝幼年生活的村庄，后被灭村"
+      },
+      "镇子": {
+        "variants": [
+          "镇上",
+          "镇子",
+          "城镇"
+        ],
+        "standard_form": "镇子",
+        "reasoning": "靠近小渔村的城镇"
+      },
+      "小山村": {
+        "variants": [
+          "小山村"
+        ],
+        "standard_form": "小山村",
+        "reasoning": "天帝找到村长并遇见弃婴父母的村庄"
+      },
+      "大山深处": {
+        "variants": [
+          "深山里",
+          "大山深处",
+          "山里",
+          "山上"
+        ],
+        "standard_form": "大山深处",
+        "reasoning": "天帝逃亡和打猎的山区"
+      },
+      "无上帝宫": {
+        "variants": [
+          "无上帝宫",
+          "天地宫",
+          "大殿"
+        ],
+        "standard_form": "无上帝宫",
+        "reasoning": "故事主要发生地，天帝的宫殿，已成废墟，‘天地宫’为口语化或错误变体"
+      },
+      "轮回井": {
+        "variants": [
+          "轮回井"
+        ],
+        "standard_form": "轮回井",
+        "reasoning": "天帝最初被封印的地点"
+      }
+    },
+    "items": {
+      "轮回镜": {
+        "variants": [
+          "轮回镜",
+          "轮回井（可能混淆）",
+          "上古神器轮回镜",
+          "镜子",
+          "后宫镜子"
+        ],
+        "standard_form": "轮回镜",
+        "reasoning": "封印并炼化天帝的上古神器，‘轮回井’是另一处封印地，需区分"
+      },
+      "重瞳": {
+        "variants": [
+          "重瞳",
+          "重头（错字）",
+          "虫虫（同音错字）"
+        ],
+        "standard_form": "重瞳",
+        "reasoning": "一种强大的瞳术天赋，‘虫虫’为开篇同音幽默表述，‘重头’为错字"
+      },
+      "至尊骨": {
+        "variants": [
+          "至尊骨",
+          "一根骨头"
+        ],
+        "standard_form": "至尊骨",
+        "reasoning": "林逍遥拥有的、后被天帝挖走的奇异骨头"
+      },
+      "功法": {
+        "variants": [
+          "功法",
+          "入门法门",
+          "垃圾功法",
+          "基础功法",
+          "最低级的入门法门"
+        ],
+        "standard_form": "功法",
+        "reasoning": "林逍遥给天帝的修炼法门"
+      },
+      "魂殿": {
+        "variants": [
+          "魂殿"
+        ],
+        "standard_form": "魂殿",
+        "reasoning": "父亲临终前提及的势力，疑似灭村元凶"
+      },
+      "白虎": {
+        "variants": [
+          "白虎",
+          "猛兽",
+          "老虎"
+        ],
+        "standard_form": "白虎",
+        "reasoning": "天帝在深山中遭遇并杀死的巨兽"
+      },
+      "虎皮": {
+        "variants": [
+          "虎皮"
+        ],
+        "standard_form": "虎皮",
+        "reasoning": "用白虎皮毛制成的衣服"
+      },
+      "柴刀/猎刀": {
+        "variants": [
+          "柴刀",
+          "猎刀"
+        ],
+        "standard_form": "柴刀",
+        "reasoning": "天帝的主要武器和工具"
+      },
+      "弓箭": {
+        "variants": [
+          "弓箭"
+        ],
+        "standard_form": "弓箭",
+        "reasoning": "天帝父亲的遗物，用于打猎和战斗"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:20,700",
+      "sentence_count": 4,
+      "char_count": 144
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:20,700",
+      "end_time": "00:00:43,800",
+      "sentence_count": 5,
+      "char_count": 154
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:43,800",
+      "end_time": "00:01:02,800",
+      "sentence_count": 4,
+      "char_count": 112
+    },
+    {
+      "index": 4,
+      "start_time": "00:01:03,033",
+      "end_time": "00:01:20,100",
+      "sentence_count": 3,
+      "char_count": 110
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:20,100",
+      "end_time": "00:01:44,933",
+      "sentence_count": 7,
+      "char_count": 167
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:44,933",
+      "end_time": "00:02:10,133",
+      "sentence_count": 6,
+      "char_count": 144
+    },
+    {
+      "index": 7,
+      "start_time": "00:02:10,133",
+      "end_time": "00:02:30,600",
+      "sentence_count": 5,
+      "char_count": 121
+    },
+    {
+      "index": 8,
+      "start_time": "00:02:30,633",
+      "end_time": "00:02:54,233",
+      "sentence_count": 5,
+      "char_count": 140
+    },
+    {
+      "index": 9,
+      "start_time": "00:02:54,233",
+      "end_time": "00:03:14,333",
+      "sentence_count": 4,
+      "char_count": 124
+    },
+    {
+      "index": 10,
+      "start_time": "00:03:14,333",
+      "end_time": "00:03:31,733",
+      "sentence_count": 3,
+      "char_count": 112
+    },
+    {
+      "index": 11,
+      "start_time": "00:03:31,733",
+      "end_time": "00:03:49,466",
+      "sentence_count": 3,
+      "char_count": 105
+    },
+    {
+      "index": 12,
+      "start_time": "00:03:49,466",
+      "end_time": "00:04:07,500",
+      "sentence_count": 4,
+      "char_count": 110
+    },
+    {
+      "index": 13,
+      "start_time": "00:04:07,500",
+      "end_time": "00:04:24,200",
+      "sentence_count": 3,
+      "char_count": 104
+    },
+    {
+      "index": 14,
+      "start_time": "00:04:24,200",
+      "end_time": "00:04:44,400",
+      "sentence_count": 4,
+      "char_count": 126
+    },
+    {
+      "index": 15,
+      "start_time": "00:04:44,400",
+      "end_time": "00:05:02,200",
+      "sentence_count": 6,
+      "char_count": 98
+    },
+    {
+      "index": 16,
+      "start_time": "00:05:02,200",
+      "end_time": "00:05:29,866",
+      "sentence_count": 7,
+      "char_count": 142
+    },
+    {
+      "index": 17,
+      "start_time": "00:05:29,866",
+      "end_time": "00:05:56,533",
+      "sentence_count": 8,
+      "char_count": 159
+    },
+    {
+      "index": 18,
+      "start_time": "00:05:56,533",
+      "end_time": "00:06:18,733",
+      "sentence_count": 8,
+      "char_count": 130
+    },
+    {
+      "index": 19,
+      "start_time": "00:06:18,733",
+      "end_time": "00:06:48,466",
+      "sentence_count": 9,
+      "char_count": 175
+    },
+    {
+      "index": 20,
+      "start_time": "00:06:48,500",
+      "end_time": "00:07:08,800",
+      "sentence_count": 7,
+      "char_count": 129
+    },
+    {
+      "index": 21,
+      "start_time": "00:07:08,800",
+      "end_time": "00:07:24,200",
+      "sentence_count": 4,
+      "char_count": 89
+    },
+    {
+      "index": 22,
+      "start_time": "00:07:24,200",
+      "end_time": "00:07:47,266",
+      "sentence_count": 5,
+      "char_count": 134
+    },
+    {
+      "index": 23,
+      "start_time": "00:07:47,266",
+      "end_time": "00:08:09,066",
+      "sentence_count": 6,
+      "char_count": 143
+    },
+    {
+      "index": 24,
+      "start_time": "00:08:09,066",
+      "end_time": "00:08:25,733",
+      "sentence_count": 5,
+      "char_count": 97
+    },
+    {
+      "index": 25,
+      "start_time": "00:08:25,733",
+      "end_time": "00:08:45,800",
+      "sentence_count": 5,
+      "char_count": 106
+    },
+    {
+      "index": 26,
+      "start_time": "00:08:45,800",
+      "end_time": "00:09:08,533",
+      "sentence_count": 6,
+      "char_count": 131
+    },
+    {
+      "index": 27,
+      "start_time": "00:09:08,533",
+      "end_time": "00:09:32,633",
+      "sentence_count": 6,
+      "char_count": 144
+    },
+    {
+      "index": 28,
+      "start_time": "00:09:32,633",
+      "end_time": "00:09:54,833",
+      "sentence_count": 5,
+      "char_count": 133
+    },
+    {
+      "index": 29,
+      "start_time": "00:09:54,833",
+      "end_time": "00:10:19,666",
+      "sentence_count": 6,
+      "char_count": 158
+    }
+  ]
+}

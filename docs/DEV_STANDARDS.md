@@ -77,11 +77,14 @@ root/
 - **禁止** 在 Tool 内部直接调用 Agent。
 
 **现有工具**:
-- `NovelSegmentationTool`: 小说自然分段（LLM辅助）
 - `NovelChapterProcessor`: 小说章节拆分与简介提取
-- `MetadataExtractor`: 元数据提取与简介智能过滤
 - `IntroductionValidator`: 简介质量验证
 - `SrtScriptProcessor`: SRT字幕处理（支持有/无小说参考两种模式）
+- `NovelChapterAnalyzer`: 小说章节功能段分析（100% LLM，功能段级别）⭐ **推荐使用**
+- `NovelSegmentationAnalyzer`: 小说分段深度分析（自然段级别，用于精确对齐）
+- `ScriptSegmentAligner`: Script-Novel精确对齐与改编分析
+- `KeyInfoExtractor`: 关键信息提取与汇总
+- ~~`NovelSegmentationTool`~~: 已废弃（规则分段，质量不达标）→ 归档到 `archive/v2_deprecated/old_novel_processing/`
 
 ### 3.2 Agents (智能体)
 - 继承自 `src.core.interfaces.BaseAgent`。
@@ -135,6 +138,9 @@ root/
 - `srt_script_processing_with_novel.yaml`: SRT处理（有小说参考）
 - `srt_script_processing_without_novel.yaml`: SRT处理（无小说参考，智能实体识别）
 - `layered_extraction.yaml`: 分层对齐的情节节点提取
+- `novel_chapter_functional_analysis.yaml`: 小说章节功能段分析（叙事功能级别）⭐ **推荐使用**
+- `novel_segmentation_analysis.yaml`: 小说分段深度分析（自然段级别）
+- `script_alignment_analysis.yaml`: Script-Novel对齐与改编分析
 - 其他分析和对齐相关prompts...
 
 ## 7. 错误处理与日志 (Error Handling & Logging)

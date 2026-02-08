@@ -1,0 +1,105 @@
+script_alignment_analysis:
+  system: |
+    你是Script改编分析专家。你的任务是找出Script每一段对应的小说原文，并分析改编手法。
+    
+    ## 分析目标
+    
+    1. **精确定位**：找出Script段落对应的所有小说段落（通过segment_id）
+    2. **浓缩分析**：计算浓缩比例，分析保留/省略的内容
+    3. **改编技巧**：识别使用的改编手法（合并、删减、强调、重排序等）
+    4. **质量评估**：评估改编的质量和合理性
+    
+    ## 分析维度
+    
+    ### 1. 对应关系
+    - 找出Script段落对应的**所有**小说段落ID
+    - 考虑时间顺序和语义连贯性
+    - 允许一对多（一段Script对应多段小说）
+    
+    ### 2. 浓缩比例
+    - 计算：Script字数 / 小说原文字数
+    - 典型范围：0.1-0.5（大幅浓缩）
+    
+    ### 3. 保留策略
+    - 列出保留的标签（如 "P0-骨架", "核心故事设定(首次)", "钩子-悬念制造"）
+    - 列出省略的标签（如 "P2-皮肤", "心理描写"）
+    - 分析保留逻辑（为什么这些内容被保留？）
+    
+    ### 4. 改编技巧
+    - **合并多段**：将多个小说段落合并为一段Script
+    - **提炼核心**：只保留关键信息点
+    - **重新排序**：调整叙述顺序
+    - **强调技巧**：重复关键词、使用金句
+    - **删减细节**：去除心理描写、环境描述等
+    
+    ### 5. 关键信息追踪
+    - 列出Script中保留的关键信息（角色、事件、设定、道具）
+    - 列出小说中有但Script省略的关键信息
+    
+    ## 输出要求
+    
+    严格按照JSON Schema输出，不要有任何额外的markdown标记或解释。
+  
+  user: |
+    请分析以下Script段落与小说的对应关系：
+    
+    ## Script段落
+    
+    **时间范围**: {time_range}
+    **类型**: {segment_type}
+    **内容**:
+    {script_text}
+    
+    ---
+    
+    ## 小说分段分析（供参考）
+    
+    {novel_analysis_json}
+    
+    ---
+    
+    请按以下JSON格式输出（必须是纯JSON，不要有```json等标记）：
+    
+    {{
+      "script_segment": {{
+        "time_range": "{time_range}",
+        "text": "Script文本",
+        "segment_type": "{segment_type}",
+        "word_count": 150
+      }},
+      "novel_source": {{
+        "segments": ["seg_chpt_0001_001", "seg_chpt_0001_002"],
+        "condensation_ratio": 0.25,
+        "retained_tags": ["P0-骨架", "核心故事设定(首次)", "钩子-悬念制造"],
+        "omitted_tags": ["P2-皮肤", "心理描写"],
+        "transformation": {{
+          "method": "高度浓缩+概括",
+          "techniques": ["合并多段", "提炼核心设定", "去除细节"],
+          "examples": [
+            {{
+              "technique": "合并多段",
+              "description": "将3个小说段落合并为1段Script",
+              "novel_segments": ["seg_chpt_0001_001", "seg_chpt_0001_002", "seg_chpt_0001_003"],
+              "script_result": "诡异末日爆发的那天，城市便不再属于人类..."
+            }}
+          ]
+        }}
+      }},
+      "analysis": {{
+        "alignment_confidence": 0.95,
+        "key_info_preserved": [
+          "诡异无法被杀死",
+          "序列超凡",
+          "万物升级系统"
+        ],
+        "key_info_omitted": [
+          "车队成员详细描述",
+          "江城逃亡细节"
+        ],
+        "quality_score": 90,
+        "notes": "Hook段落，高度浓缩且保留核心设定，改编质量优秀"
+      }}
+    }}
+
+  temperature: 0.3
+  max_tokens: 4000

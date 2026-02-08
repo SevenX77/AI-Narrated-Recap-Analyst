@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-02-07T21:26:26.413909",
+  "total_chapters": 50,
+  "processed_chapters": 10,
+  "success_count": 10,
+  "failed_chapters": [],
+  "version": "v3",
+  "model_config": {
+    "primary_model": "deepseek-chat",
+    "fallback_model": "deepseek-reasoner",
+    "enable_fallback": true
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-02-07T19:17:27.446063",
+  "total_chapters": 10,
+  "success_count": 9,
+  "results": [
+    {
+      "chapter": 1,
+      "title": "车队第一铁律",
+      "total_segments": 11,
+      "p0_count": 7,
+      "p1_count": 3,
+      "p2_count": 1,
+      "segment_1_word_count": 480,
+      "md_file": "第1章完整分段分析.md",
+      "json_file": "chpt_0001_functional_analysis.json"
+    },
+    {
+      "chapter": 2,
+      "title": "自行车变三轮车",
+      "total_segments": 9,
+      "p0_count": 5,
+      "p1_count": 3,
+      "p2_count": 1,
+      "segment_1_word_count": 185,
+      "md_file": "第2章完整分段分析.md",
+      "json_file": "chpt_0002_functional_analysis.json"
+    },
+    {
+      "chapter": 3,
+      "title": "搜集物资",
+      "total_segments": 10,
+      "p0_count": 5,
+      "p1_count": 4,
+      "p2_count": 1,
+      "segment_1_word_count": 240,
+      "md_file": "第3章完整分段分析.md",
+      "json_file": "chpt_0003_functional_analysis.json"
+    },
+    {
+      "chapter": 4,
+      "title": "他能拿我咋的？",
+      "total_segments": 11,
+      "p0_count": 3,
+      "p1_count": 7,
+      "p2_count": 1,
+      "segment_1_word_count": 185,
+      "md_file": "第4章完整分段分析.md",
+      "json_file": "chpt_0004_functional_analysis.json"
+    },
+    {
+      "chapter": 5,
+      "title": "这是序列超凡",
+      "total_segments": 10,
+      "p0_count": 6,
+      "p1_count": 4,
+      "p2_count": 0,
+      "segment_1_word_count": 220,
+      "md_file": "第5章完整分段分析.md",
+      "json_file": "chpt_0005_functional_analysis.json"
+    },
+    {
+      "chapter": 6,
+      "title": "心狠手辣",
+      "total_segments": 11,
+      "p0_count": 6,
+      "p1_count": 5,
+      "p2_count": 0,
+      "segment_1_word_count": 156,
+      "md_file": "第6章完整分段分析.md",
+      "json_file": "chpt_0006_functional_analysis.json"
+    },
+    {
+      "chapter": 7,
+      "title": "逃亡",
+      "total_segments": 11,
+      "p0_count": 4,
+      "p1_count": 6,
+      "p2_count": 1,
+      "segment_1_word_count": 138,
+      "md_file": "第7章完整分段分析.md",
+      "json_file": "chpt_0007_functional_analysis.json"
+    },
+    {
+      "chapter": 8,
+      "title": "升级电动三轮车",
+      "total_segments": 11,
+      "p0_count": 5,
+      "p1_count": 5,
+      "p2_count": 1,
+      "segment_1_word_count": 185,
+      "md_file": "第8章完整分段分析.md",
+      "json_file": "chpt_0008_functional_analysis.json"
+    },
+    {
+      "chapter": 9,
+      "title": "觉醒序列超凡的法子",
+      "total_segments": 7,
+      "p0_count": 3,
+      "p1_count": 4,
+      "p2_count": 0,
+      "segment_1_word_count": 380,
+      "md_file": "第9章完整分段分析.md",
+      "json_file": "chpt_0009_functional_analysis.json"
+    },
+    {
+      "chapter": 10,
+      "title": "机械师序列",
+      "error": "Result parsing failed: Invalid JSON output from LLM: Invalid control character at: line 117 column 51 (char 4585)"
+    }
+  ]
+}

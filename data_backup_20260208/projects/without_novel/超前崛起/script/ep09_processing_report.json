@@ -1,0 +1,23 @@
+{
+  "episode": "ep09",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep09.md",
+  "stats": {
+    "original_chars": 472,
+    "processed_chars": 474,
+    "paragraphs": 1,
+    "srt_entries": 46,
+    "avg_paragraph_sentences": 4.0,
+    "processing_time_seconds": 12811.49
+  },
+  "entity_standardization": {},
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:59,633",
+      "sentence_count": 4,
+      "char_count": 431
+    }
+  ]
+}

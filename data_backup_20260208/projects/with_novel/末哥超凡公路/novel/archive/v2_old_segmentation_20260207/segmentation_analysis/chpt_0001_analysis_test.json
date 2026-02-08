@@ -1,0 +1,616 @@
+{
+  "chapter_id": "chpt_0001",
+  "chapter_title": "第一章",
+  "segments": [
+    {
+      "segment_id": "seg_chpt_0001_001",
+      "text": "“滋滋……现在的时间是2030年10月13日上午10:23。”",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P1-血肉",
+        "location": "车队",
+        "time": "2030年10月13日上午10:23"
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可简化为“收音机报时”或融入下一段，以精简时间信息。",
+        "word_count": 18
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_002",
+      "text": "“这或许是本电台最后一次广播！”“上沪己经沦陷成为无人区！”“不要前往！不要前往！！！”“告所有幸存者同胞：不要直视红月超过三秒，不要和路灯下的影子打招呼，不要相信死去的亲人会活过来！”“人类火种……永不熄灭！”",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "核心故事设定(首次)",
+          "关键信息"
+        ],
+        "structure": [
+          "钩子-悬念制造",
+          "重复强调"
+        ],
+        "character": [],
+        "priority": "P0-骨架",
+        "location": "车队",
+        "time": "2030年10月13日上午10:23"
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 2,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "红月、路灯下的影子、死去的亲人等诡异规则",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "必须保留，是核心世界观的首次集中展示和情节转折点。可适当精简措辞，但三条规则和上沪沦陷信息必须清晰。",
+        "word_count": 73
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_003",
+      "text": "“滋滋……”",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": "车队",
+        "time": "2030年10月13日上午10:23"
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可省略或与前后段落合并，以简化叙事节奏。",
+        "word_count": 5
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_004",
+      "text": "陈野听着收音机里的杂乱电流，只觉得浑身冰凉。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "人物塑造-陈野"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ],
+        "priority": "P1-血肉",
+        "location": "车队",
+        "time": "2030年10月13日上午10:23"
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "保留，展现主角对坏消息的反应，塑造其普通人的共情力。",
+        "word_count": 13
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_005",
+      "text": "整个车队弥漫一种绝望的窒息情绪。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": "车队",
+        "time": "2030年10月13日上午10:23"
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可简化为“车队陷入绝望”或融入其他段落。",
+        "word_count": 9
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_006",
+      "text": "上沪作为全球数一数二的超级城市，现在却沦为人类禁区！！！……",
+      "tags": {
+        "narrative_function": [
+          "背景交代",
+          "关键信息"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": [],
+        "priority": "P1-血肉",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 1,
+        "foreshadowing": null,
+        "condensation_suggestion": "保留，强调上沪沦陷的严重性，但感叹号可精简。",
+        "word_count": 18
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_007",
+      "text": "几个月前，全球诡异爆发。只用了很短的时间，一些小的国家直接沦为人类禁区。人类的热武器在诡异面前只是个笑话。诡异无法被杀死，或者说很难被杀死。",
+      "tags": {
+        "narrative_function": [
+          "核心故事设定(首次)",
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P0-骨架",
+        "location": null,
+        "time": "几个月前"
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 0,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "诡异的强大与不可战胜性",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "必须保留，是核心世界观的背景补充，解释了末日的根源和人类的无力感。",
+        "word_count": 48
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_008",
+      "text": "陈野从江城逃出来，和一众幸存者组成车队，打算前往上沪的幸存者基地。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ],
+        "priority": "P1-血肉",
+        "location": "从江城到上沪的路上",
+        "time": "末日爆发后数月"
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "保留，交代主角的来历和当前目标。",
+        "word_count": 20
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_009",
+      "text": "此时的陈野骑着一辆二八大杠在车队之中，车座后面有一个大大的包裹，里面装的是自己所有的家当。至于为什么都末日了，不换一辆小汽车作为载具，而只弄了一辆二八大扛？陈野曾经用石头砸碎了车窗户打开车门。奈何没有钥匙，根本没办法启动这辆车。作为一个普通人，他根本就做不到像电影里那样，拽出两根线一搭就能把一辆车开走。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "关键道具(首次)",
+          "人物塑造-陈野"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ],
+        "priority": "P1-血肉",
+        "location": "车队",
+        "time": "2030年10月13日白天"
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 0,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "陈野的交通工具（二八大杠）及其局限性",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "保留，塑造主角“普通幸存者”的形象，并引出关键道具“二八大杠”。解释部分可适当精简。",
+        "word_count": 103
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_010",
+      "text": "没有钥匙的情况下，陈野很难拿到一辆车的使用权。谁也没有想到会突然末日，提前去学类似的技能。至于为什么没有弄到一辆小电驴或者摩托车……",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [
+          "人物塑造-陈野"
+        ],
+        "priority": "P2-皮肤",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可大幅精简或删除，其信息已在前一段基本表达。",
+        "word_count": 38
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_011",
+      "text": "原因同上。就算是这辆二八大杠也是车棚里仅剩的一辆。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可删除或合并到前一段关于二八大杠的描述中。",
+        "word_count": 14
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_012",
+      "text": "这个车队组成很是杂乱。有开改装越野车的，大巴车的，骑摩托车的。甚至还有开老头乐和小电驴的。当然，骑自行车的也不少。毕竟自行车的迁徙能力和装载能力，再怎么也比两条腿强的太多。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": "车队",
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可简化为“车队由各式各样的载具组成”以节省篇幅，细节可删减。",
+        "word_count": 58
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_013",
+      "text": "在这个车队的人，必须谨记两条铁律！第一条：不要掉队！不要掉队！不要掉队！！！第二条：尽可能多的储备物资！！！第一条铁律优于第二条。没有物资还有办法活下去。",
+      "tags": {
+        "narrative_function": [
+          "核心故事设定(首次)",
+          "关键信息"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": [],
+        "priority": "P0-骨架",
+        "location": "车队",
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 3,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "掉队的危险",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "必须保留，是本章标题“车队第一铁律”的核心内容，也是末日生存的重要规则。重复强调部分可酌情保留以增强语气。",
+        "word_count": 56
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_014",
+      "text": "因为总有一些善良的人会给你。又或者……",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [
+          "钩子-悬念制造"
+        ],
+        "character": [],
+        "priority": "P1-血肉",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "物资获取的另一种（可能黑暗的）方式",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "保留，制造悬念并暗示末日下人性的复杂面。",
+        "word_count": 12
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_015",
+      "text": "如果你掉了队，迎接你的只有死亡。",
+      "tags": {
+        "narrative_function": [
+          "关键信息"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": [],
+        "priority": "P1-血肉",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": {
+          "type": "强化",
+          "content": "掉队的危险",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "保留，强化第一条铁律的严重性。",
+        "word_count": 10
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_016",
+      "text": "车队里的人大都是由从江城逃出来的幸存者。打算前往上沪。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": "车队",
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "信息与前文重复，可删除或合并。",
+        "word_count": 15
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_017",
+      "text": "上沪作为全国数一数二的大城市，每个人都相信上沪肯定是有办法解决诡异。结果还没有到目的地，就听到收音机里的消息。上沪己经沦为无人区。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "关键信息"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P1-血肉",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "保留，解释车队绝望情绪的根源，并呼应开头的广播。",
+        "word_count": 41
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_018",
+      "text": "那可是全国数一数二的大城市，一个城市就有数千万人口。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [
+          "重复强调"
+        ],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可删除，其强调作用已由前一段完成。",
+        "word_count": 16
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_019",
+      "text": "而现在……",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可删除，是无效的停顿。",
+        "word_count": 3
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_020",
+      "text": "听到这个消息，周围传来绝望的啜泣声。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": "车队",
+        "time": "2030年10月13日上午10:23后"
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可简化为“车队中响起啜泣声”或融入环境描写。",
+        "word_count": 9
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_021",
+      "text": "之前眼神里还有希望的小火苗，现在都成了一片灰白的绝望。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": null,
+        "time": null
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可删除，是氛围渲染，前文已有类似表达。",
+        "word_count": 16
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_022",
+      "text": "车队就这样在超低的氛围之中前进着。一种难以形容的气氛在车队之中弥漫。",
+      "tags": {
+        "narrative_function": [
+          "背景交代"
+        ],
+        "structure": [],
+        "character": [],
+        "priority": "P2-皮肤",
+        "location": "车队",
+        "time": "2030年10月13日白天"
+      },
+      "metadata": {
+        "is_first_appearance": false,
+        "repetition_count": 0,
+        "foreshadowing": null,
+        "condensation_suggestion": "可简化为“车队在绝望中前行”。",
+        "word_count": 18
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_023",
+      "text": "夜幕降临，车队露营。血月悄悄升上天空挂在树梢上，给天地之间撒上了一层血纱。诡异的气息瞬间弥漫大地，幸存者们压低了啜泣声，似乎是怕惊动黑暗深处的一些不可知诡异。夜晚，是诡异最为活跃的时候。",
+      "tags": {
+        "narrative_function": [
+          "故事推进",
+          "核心故事设定(首次)",
+          "背景交代"
+        ],
+        "structure": [
+          "伏笔"
+        ],
+        "character": [],
+        "priority": "P0-骨架",
+        "location": "野外露营地",
+        "time": "2030年10月13日夜晚"
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 0,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "血月出现、夜晚的危险性",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "必须保留，时间推进到夜晚，首次正面描写“血月”和夜晚的诡异规则，为后续可能的事件铺垫。",
+        "word_count": 58
+      }
+    },
+    {
+      "segment_id": "seg_chpt_0001_024",
+      "text": "远处沦为人类禁区的城镇隐隐传来求救声，是在引诱人类前往救援。类似的手段在诡异之中屡",
+      "tags": {
+        "narrative_function": [
+          "核心故事设定(首次)",
+          "关键信息",
+          "钩子-悬念制造"
+        ],
+        "structure": [
+          "伏笔"
+        ],
+        "character": [],
+        "priority": "P1-血肉",
+        "location": "野外露营地",
+        "time": "2030年10月13日夜晚"
+      },
+      "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 0,
+        "foreshadowing": {
+          "type": "埋设",
+          "content": "诡异的引诱手段（虚假求救声）",
+          "reference_id": null,
+          "resolution_chapter": null
+        },
+        "condensation_suggestion": "保留，揭示了诡异的一种具体威胁方式，并制造了环境悬念（声音会带来什么？）。句子不完整，但信息已足够。",
+        "word_count": 30
+      }
+    }
+  ],
+  "chapter_summary": {
+    "total_segments": 24,
+    "p0_count": 5,
+    "p1_count": 8,
+    "p2_count": 11,
+    "key_events": [
+      "收音机广播上沪沦陷及三条生存规则",
+      "陈野在绝望的车队中骑行",
+      "车队确立“不掉队”为首要铁律",
+      "夜幕降临，血月出现，诡异活跃"
+    ],
+    "foreshadowing_planted": [
+      "红月、影子、亡亲的诡异规则",
+      "诡异的强大与难杀",
+      "掉队的致命危险",
+      "物资获取的黑暗可能",
+      "血月与夜晚的危险",
+      "诡异的引诱手段（求救声）"
+    ],
+    "foreshadowing_resolved": [],
+    "characters_introduced": [
+      "陈野"
+    ],
+    "condensed_version": "2030年10月13日，陈野所在的幸存者车队在前往上沪的途中，收听到最后一次广播：上沪已沦为无人区，并公布了“不要直视红月”等三条生存铁律。车队陷入绝望。陈野骑着仅有的二八大杠，作为普通人生存。车队有两条铁律：首要的是“不要掉队”，其次是储备物资。夜幕降临，血月当空，诡异气息弥漫，远处禁区传来可疑的求救声。"
+  },
+  "version": "20260207_002848",
+  "analyzed_at": "2026-02-07T00:28:48.356690"
+}

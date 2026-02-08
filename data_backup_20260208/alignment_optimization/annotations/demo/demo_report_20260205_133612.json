@@ -1,0 +1,17 @@
+{
+  "project_id": "PROJ_002",
+  "episode": "ep01",
+  "annotation_count": 3,
+  "error_count": 1,
+  "total_heat": 105.5,
+  "avg_heat": 35.17,
+  "high_heat_count": 1,
+  "error_breakdown": {
+    "wrong_match": 1
+  },
+  "recommendations": [
+    "优化world_building Prompt以提高规则匹配准确性",
+    "降低items_equipment层的对齐阈值",
+    "增强LLM相似度判断的上下文理解"
+  ]
+}

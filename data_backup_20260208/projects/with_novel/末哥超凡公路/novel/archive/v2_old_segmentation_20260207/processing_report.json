@@ -1,0 +1,26 @@
+{
+  "total_chapters": 50,
+  "introduction_file": "chpt_0000.md",
+  "chapter_files": [
+    "chpt_0001-0010.md",
+    "chpt_0011-0020.md",
+    "chpt_0021-0030.md",
+    "chpt_0031-0040.md",
+    "chpt_0041-0050.md"
+  ],
+  "chapters_per_file": 10,
+  "metadata": {
+    "title": "序列公路求生：我在末日升级物资",
+    "author": "山海呼啸",
+    "tags": [
+      "题材新颖",
+      "非无脑爽文",
+      "非无敌",
+      "序列魔药",
+      "诡异",
+      "公路求生",
+      "升级物资",
+      "心狠手辣"
+    ]
+  }
+}

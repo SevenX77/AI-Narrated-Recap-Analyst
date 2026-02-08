@@ -1,0 +1,136 @@
+{
+  "episode": "ep04",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/天命桃花/script/ep04.md",
+  "stats": {
+    "original_chars": 508,
+    "processed_chars": 834,
+    "paragraphs": 7,
+    "srt_entries": 63,
+    "avg_paragraph_sentences": 3.857142857142857,
+    "processing_time_seconds": 35.41
+  },
+  "entity_standardization": {
+    "characters": {
+      "皇上": {
+        "variants": [
+          "皇上",
+          "朕"
+        ],
+        "standard_form": "皇上",
+        "reasoning": "对话中皇帝的自称和他人对其的尊称，指向同一人。"
+      },
+      "老丞相/吴德": {
+        "variants": [
+          "老丞相",
+          "吴德",
+          "老臣"
+        ],
+        "standard_form": "吴德",
+        "reasoning": "“老丞相”是官职，“吴德”是其姓名，“老臣”是其自称，上下文指向同一人物。"
+      },
+      "年轻男子/吴德之子": {
+        "variants": [
+          "年轻男子",
+          "儿子",
+          "孽畜",
+          "他"
+        ],
+        "standard_form": "吴德之子",
+        "reasoning": "文中未给出其具体姓名，但明确是吴德的儿子，是主要人物之一。"
+      },
+      "小公主": {
+        "variants": [
+          "小公主",
+          "公主",
+          "闺女"
+        ],
+        "standard_form": "小公主",
+        "reasoning": "皇帝的女儿，文中多次提及，指向同一人。"
+      },
+      "淑妃": {
+        "variants": [
+          "淑妃"
+        ],
+        "standard_form": "淑妃",
+        "reasoning": "小公主的母亲，后宫妃嫔。"
+      },
+      "皇后": {
+        "variants": [
+          "皇后"
+        ],
+        "standard_form": "皇后",
+        "reasoning": "文中提及的皇帝正妻。"
+      }
+    },
+    "locations": {
+      "楚华宫": {
+        "variants": [
+          "楚华宫"
+        ],
+        "standard_form": "楚华宫",
+        "reasoning": "文中明确提到的宫殿名称，是小公主的居所。"
+      }
+    },
+    "items": {
+      "红线": {
+        "variants": [
+          "红线"
+        ],
+        "standard_form": "红线",
+        "reasoning": "皇上自称能看到的一种象征姻缘的特殊事物。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:15,433",
+      "sentence_count": 4,
+      "char_count": 89
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:15,433",
+      "end_time": "00:00:28,633",
+      "sentence_count": 3,
+      "char_count": 80
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:28,733",
+      "end_time": "00:00:52,300",
+      "sentence_count": 6,
+      "char_count": 146
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:52,333",
+      "end_time": "00:01:07,500",
+      "sentence_count": 4,
+      "char_count": 87
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:07,500",
+      "end_time": "00:01:12,300",
+      "sentence_count": 6,
+      "char_count": 109
+    },
+    {
+      "index": 6,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:12,300",
+      "sentence_count": 3,
+      "char_count": 51
+    },
+    {
+      "index": 7,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:12,300",
+      "sentence_count": 1,
+      "char_count": 13
+    }
+  ]
+}

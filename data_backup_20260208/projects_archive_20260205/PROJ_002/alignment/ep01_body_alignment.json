@@ -1,0 +1,790 @@
+{
+  "episode": "ep01",
+  "script_time_range": "00:00:30,900 - End",
+  "matched_novel_chapters": [
+    "第1章",
+    "第2章"
+  ],
+  "layered_alignment": {
+    "world_building": {
+      "layer": "world_building",
+      "script_node_count": 10,
+      "novel_node_count": 28,
+      "alignment_count": 5,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "world_building_script_1",
+            "layer": "world_building",
+            "content": "诡异降临，大部分城镇成为禁区",
+            "summary": "诡异降临，大部分城镇成为禁区",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_1",
+            "layer": "world_building",
+            "content": "全球诡异爆发，城市沦为人类禁区",
+            "summary": "全球诡异爆发，城市沦为人类禁区",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.9,
+          "confidence": "high",
+          "reasoning": "核心意思相同：两段文本都描述了诡异事件导致人类区域成为禁区。Script用'降临'，Novel用'爆发'，是同义词表达同一事件。Script省略'全球'修饰，Novel明确'全球'，但核心语义一致。Script用'城镇'，Novel用'城市'，略有差异但不影响主题。细节上，Script的'大部分城镇'与Novel的'城市沦为人类禁区'在范围上稍有不同，但整体语义高度相似。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_4",
+            "layer": "world_building",
+            "content": "车队铁律：不要掉队（优先），尽可能储备物资",
+            "summary": "车队铁律：不要掉队（优先），尽可能储备物",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_5",
+            "layer": "world_building",
+            "content": "车队铁律：不要掉队（优先），尽可能多储备物资",
+            "summary": "车队铁律：不要掉队（优先），尽可能多储备",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.95,
+          "confidence": "high",
+          "reasoning": "核心意思完全一致，两段文本都强调车队铁律：不要掉队（优先）和储备物资。文本2在'储备物资'前加了'多'字，这只是一个轻微的修饰词差异，不影响核心语义。根据评分标准，这属于核心意思相同、细节略有差异的情况，因此给予高分。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_5",
+            "layer": "world_building",
+            "content": "诡异无法被杀死，普通人遇上即秒杀",
+            "summary": "诡异无法被杀死，普通人遇上即秒杀",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_2",
+            "layer": "world_building",
+            "content": "诡异无法被杀死（除非序列超凡）",
+            "summary": "诡异无法被杀死（除非序列超凡）",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度一致：两段文本都强调'诡异无法被杀死'这一核心观点。差异在于文本2补充了'除非序列超凡'这一例外条件，而文本1未提及任何例外。根据评分标准，这属于'核心意思相同，细节略有差异'的情况，因此评分在0.8-0.9范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_7",
+            "layer": "world_building",
+            "content": "阳光能驱散诡异，站在阳光下诡异无法追击",
+            "summary": "阳光能驱散诡异，站在阳光下诡异无法追击",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_9",
+            "layer": "world_building",
+            "content": "逃到有阳光的地方，诡异会停止追杀",
+            "summary": "逃到有阳光的地方，诡异会停止追杀",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.9,
+          "confidence": "high",
+          "reasoning": "核心意思相同：两段文本都表达了在阳光下诡异会停止追击或无法追击。文本1强调'阳光能驱散诡异'和'站在阳光下诡异无法追击'，文本2说'逃到有阳光的地方，诡异会停止追杀'。细节略有差异：文本1更强调阳光的主动作用（驱散），文本2更强调逃到阳光下的结果（停止追杀），但本质都是阳光阻止诡异追击。"
+        },
+        {
+          "script_node": {
+            "node_id": "world_building_script_9",
+            "layer": "world_building",
+            "content": "存在序列超凡者，能对抗诡异",
+            "summary": "存在序列超凡者，能对抗诡异",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "world_building_novel_10",
+            "layer": "world_building",
+            "content": "人类只能不停迁徙，依靠序列超凡",
+            "summary": "人类只能不停迁徙，依靠序列超凡",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'序列超凡'这一核心概念，文本1强调序列超凡者能对抗诡异，文本2强调人类依靠序列超凡来迁徙。核心语义部分相关：都围绕序列超凡的作用，但具体情境和目的不同（对抗诡异 vs 迁徙生存），属于部分相关的范畴。"
+        }
+      ],
+      "coverage_score": 0.17857142857142858
+    },
+    "game_mechanics": {
+      "layer": "game_mechanics",
+      "script_node_count": 8,
+      "novel_node_count": 16,
+      "alignment_count": 7,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_1",
+            "layer": "game_mechanics",
+            "content": "获得升级系统，可升级物品",
+            "summary": "获得升级系统，可升级物品",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_1",
+            "layer": "game_mechanics",
+            "content": "陈野觉醒了升级系统",
+            "summary": "陈野觉醒了升级系统",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相关，都围绕'升级系统'这一概念。文本1描述系统功能（可升级物品），文本2描述角色觉醒该系统。细节略有差异：文本1是系统描述，文本2是叙事场景，但核心语义都涉及升级系统的存在或获得。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_2",
+            "layer": "game_mechanics",
+            "content": "需要杀戮点升级接触的东西",
+            "summary": "需要杀戮点升级接触的东西",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_2",
+            "layer": "game_mechanics",
+            "content": "可升级任何接触到的物品",
+            "summary": "可升级任何接触到的物品",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似，都涉及'升级接触的东西/物品'这一核心概念。文本1强调'需要杀戮点'作为升级条件，文本2则泛化为'可升级'，未指定条件。两者都围绕'升级接触物'这一核心语义，但条件细节略有差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_3",
+            "layer": "game_mechanics",
+            "content": "首次使用可借贷300杀戮点",
+            "summary": "首次使用可借贷300杀戮点",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_3",
+            "layer": "game_mechanics",
+            "content": "可借贷300杀戮点",
+            "summary": "可借贷300杀戮点",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.9,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都表达可借贷300杀戮点。文本1添加了'首次使用'这一条件修饰，文本2则直接陈述可借贷300杀戮点。根据评分标准，核心意思相同但细节略有差异，应得0.8-0.9分。此处取0.9分，因为差异仅在于文本1多了一个条件限制，不影响核心借贷功能。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_4",
+            "layer": "game_mechanics",
+            "content": "升级物品需要消耗杀戮点",
+            "summary": "升级物品需要消耗杀戮点",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_4",
+            "layer": "game_mechanics",
+            "content": "升级需要消耗杀戮点",
+            "summary": "升级需要消耗杀戮点",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.95,
+          "confidence": "high",
+          "reasoning": "核心意思完全一致，两段文本都表达'升级需要消耗杀戮点'这一核心语义。文本1中'物品'是具体说明升级的对象，文本2省略了该修饰词，但根据评分标准应忽略修饰词的差异，不影响核心语义。两段文本的核心动作和消耗资源完全相同。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_5",
+            "layer": "game_mechanics",
+            "content": "升级物品有倒计时",
+            "summary": "升级物品有倒计时",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_5",
+            "layer": "game_mechanics",
+            "content": "可设计升级方案",
+            "summary": "可设计升级方案",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "文本1讨论升级物品有倒计时，聚焦于时间限制；文本2讨论可设计升级方案，聚焦于方案设计。两者都与升级相关，但主题不同：一个强调时间约束，一个强调方案制定。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_7",
+            "layer": "game_mechanics",
+            "content": "存在序列超凡能力",
+            "summary": "存在序列超凡能力",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_8",
+            "layer": "game_mechanics",
+            "content": "序列超凡可对抗诡异",
+            "summary": "序列超凡可对抗诡异",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'序列超凡'这一核心概念，文本1提到'存在序列超凡能力'，文本2提到'序列超凡可对抗诡异'。两者共享'序列超凡'这一主题，但文本1侧重于描述其存在或特性，文本2则强调其功能（对抗诡异），核心语义部分相关但焦点不同。"
+        },
+        {
+          "script_node": {
+            "node_id": "game_mechanics_script_8",
+            "layer": "game_mechanics",
+            "content": "序列能力可改变身体形态",
+            "summary": "序列能力可改变身体形态",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "game_mechanics_novel_10",
+            "layer": "game_mechanics",
+            "content": "序列有数百种，能力不同",
+            "summary": "序列有数百种，能力不同",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'序列'和'能力'的概念，但核心语义不同。文本1强调序列能力可以改变身体形态，聚焦于能力的应用效果；文本2说明序列有数百种且能力不同，聚焦于序列的多样性和差异性。两者主题相关但表达的核心意思不同，属于有关联但主题不同的情况。"
+        }
+      ],
+      "coverage_score": 0.4375
+    },
+    "items_equipment": {
+      "layer": "items_equipment",
+      "script_node_count": 16,
+      "novel_node_count": 16,
+      "alignment_count": 9,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_1",
+            "layer": "items_equipment",
+            "content": "我拥有一辆破旧的二八大杠",
+            "summary": "我拥有一辆破旧的二八大杠",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_1",
+            "layer": "items_equipment",
+            "content": "陈野拥有一辆二八大杠自行车",
+            "summary": "陈野拥有一辆二八大杠自行车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都表达拥有二八大杠自行车。文本1强调'破旧的'，文本2指定所有者'陈野'，细节略有差异但不影响核心语义。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_4",
+            "layer": "items_equipment",
+            "content": "我裹着毛毯",
+            "summary": "我裹着毛毯",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_7",
+            "layer": "items_equipment",
+            "content": "陈野拥有毛毯",
+            "summary": "陈野拥有毛毯",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及毛毯，但核心语义不同。文本1描述'我裹着毛毯'，强调动作和状态；文本2描述'陈野拥有毛毯'，强调所有权。两者主题相关（毛毯），但表达的意思有差异：一个是使用毛毯，一个是拥有毛毯。根据评分标准，这属于'有关联但主题不同'的范畴。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_5",
+            "layer": "items_equipment",
+            "content": "毛毯可升级，需要消耗129点杀戮值",
+            "summary": "毛毯可升级，需要消耗129点杀戮值",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_8",
+            "layer": "items_equipment",
+            "content": "毛毯可升级",
+            "summary": "毛毯可升级",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都表达'毛毯可升级'这一核心信息。文本1提供了额外细节'需要消耗129点杀戮值'，而文本2省略了这些细节，但核心语义一致。根据评分标准，核心意思相同但细节略有差异，应在0.8-0.9范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_6",
+            "layer": "items_equipment",
+            "content": "卡式炉也能进化",
+            "summary": "卡式炉也能进化",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_3",
+            "layer": "items_equipment",
+            "content": "陈野拥有卡式炉",
+            "summary": "陈野拥有卡式炉",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'卡式炉'这一共同元素，但核心语义不同：文本1强调卡式炉的'进化'（可能指发展或改进），文本2则陈述陈野拥有卡式炉这一事实。两者主题关联较弱，文本1更抽象（进化概念），文本2更具体（所有权），因此评分在0.3-0.5范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_7",
+            "layer": "items_equipment",
+            "content": "二八大杠升级成三轮车",
+            "summary": "二八大杠升级成三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_2",
+            "layer": "items_equipment",
+            "content": "二八大杠升级成三轮车",
+            "summary": "二八大杠升级成三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 1.0,
+          "confidence": "high",
+          "reasoning": "两段文本完全相同，都是'二八大杠升级成三轮车'，意思完全一致，符合评分标准中的1.0分标准。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_8",
+            "layer": "items_equipment",
+            "content": "三轮车有省力装置，骑行轻松",
+            "summary": "三轮车有省力装置，骑行轻松",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_13",
+            "layer": "items_equipment",
+            "content": "摩托三轮车加装遮阳棚",
+            "summary": "摩托三轮车加装遮阳棚",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及三轮车，但核心语义不同。文本1强调三轮车的省力装置和骑行轻松，关注车辆的功能特性；文本2描述摩托三轮车加装遮阳棚，关注车辆的改装或附加设施。两者主题相关（三轮车），但具体内容指向不同方面，关联性较弱。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_12",
+            "layer": "items_equipment",
+            "content": "我拥有手弩",
+            "summary": "我拥有手弩",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_4",
+            "layer": "items_equipment",
+            "content": "陈野拥有一把手弩",
+            "summary": "陈野拥有一把手弩",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.9,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都表达'拥有手弩'这一事实。文本1是'我拥有手弩'，文本2是'陈野拥有一把手弩'，主语不同（'我'与'陈野'），但'拥有手弩'这一核心语义一致。忽略主语差异和'一把'这一修饰词，不影响核心意思。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_13",
+            "layer": "items_equipment",
+            "content": "我扣动手弩射箭",
+            "summary": "我扣动手弩射箭",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_10",
+            "layer": "items_equipment",
+            "content": "陈野用手弩射杀强子",
+            "summary": "陈野用手弩射杀强子",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似，都涉及使用手弩进行射击动作。文本1是'我扣动手弩射箭'，文本2是'陈野用手弩射杀强子'，核心动作'用手弩射击'一致。差异在于：文本1是'射箭'（射击动作），文本2是'射杀强子'（射击并杀死特定目标），目标对象和结果略有不同，但核心语义（使用手弩射击）相同。"
+        },
+        {
+          "script_node": {
+            "node_id": "items_equipment_script_14",
+            "layer": "items_equipment",
+            "content": "强子和瑜伽裤女开走了我的三轮车",
+            "summary": "强子和瑜伽裤女开走了我的三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "items_equipment_novel_9",
+            "layer": "items_equipment",
+            "content": "三轮车被强子和佳佳抢走",
+            "summary": "三轮车被强子和佳佳抢走",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似：两段文本都描述了强子（同一个人物）和另一人（瑜伽裤女/佳佳）开走/抢走三轮车的事件。主要差异在于：1. 动作描述略有不同（'开走' vs '抢走'），但都表示三轮车被取走；2. 另一人物名称不同（'瑜伽裤女' vs '佳佳'），但都是指代强子的同伴。这些细节差异不影响核心语义，因此评分在0.8-0.9范围内。"
+        }
+      ],
+      "coverage_score": 0.5625
+    },
+    "plot_events": {
+      "layer": "plot_events",
+      "script_node_count": 23,
+      "novel_node_count": 31,
+      "alignment_count": 14,
+      "alignments": [
+        {
+          "script_node": {
+            "node_id": "plot_events_script_2",
+            "layer": "plot_events",
+            "content": "车队得知上户已沦为无人区",
+            "summary": "车队得知上户已沦为无人区",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_1",
+            "layer": "plot_events",
+            "content": "车队通过广播得知上沪沦陷",
+            "summary": "车队通过广播得知上沪沦陷",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似：两段文本都描述车队得知上户/上沪地区发生重大变故（沦为无人区/沦陷），且信息获取方式相似（得知/通过广播得知）。主要差异在于：1. 地名略有不同（上户 vs 上沪），可能为同音或笔误；2. 事件具体描述不同（沦为无人区 vs 沦陷），但都指向该地区遭受严重破坏或失去正常功能。这些细节差异不影响核心语义的相似性，因此评分在0.8-0.9范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_3",
+            "layer": "plot_events",
+            "content": "我煮泡面",
+            "summary": "我煮泡面",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_3",
+            "layer": "plot_events",
+            "content": "陈野煮泡面",
+            "summary": "陈野煮泡面",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同，都描述煮泡面这一行为。文本1是'我煮泡面'，文本2是'陈野煮泡面'，主语从第一人称'我'变为第三人称'陈野'，但动作'煮泡面'完全一致。根据评分标准，核心意思相同但细节略有差异（主语不同），应得0.8-0.9分。考虑到主语变化不影响核心语义（煮泡面），但仍是细节差异，故取中间值0.85。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_4",
+            "layer": "plot_events",
+            "content": "夜幕降临，车队露营",
+            "summary": "夜幕降临，车队露营",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_2",
+            "layer": "plot_events",
+            "content": "夜幕降临，车队露营",
+            "summary": "夜幕降临，车队露营",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 1.0,
+          "confidence": "high",
+          "reasoning": "两段文本完全相同，都是'夜幕降临，车队露营'，意思完全一致，符合评分标准中的1.0分标准。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_6",
+            "layer": "plot_events",
+            "content": "我获得升级系统，借贷300杀戮点",
+            "summary": "我获得升级系统，借贷300杀戮点",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_5",
+            "layer": "plot_events",
+            "content": "陈借贷杀戮点升级自行车",
+            "summary": "陈借贷杀戮点升级自行车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'借贷杀戮点'和'升级'的核心概念，但具体对象和语境不同：文本1是'升级系统'，文本2是'升级自行车'。这属于部分相关，核心动作相似但应用场景有差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_8",
+            "layer": "plot_events",
+            "content": "二八大杠升级完成，变成三轮车",
+            "summary": "二八大杠升级完成，变成三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_6",
+            "layer": "plot_events",
+            "content": "自行车升级完成变成三轮车",
+            "summary": "自行车升级完成变成三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.95,
+          "confidence": "high",
+          "reasoning": "核心意思完全一致，都描述了自行车升级变成三轮车的过程。文本1中的'二八大杠'是'自行车'的一种具体类型（老式自行车），属于同义词替换，不影响核心语义。两段文本的核心动作'升级完成'和结果'变成三轮车'完全相同，仅存在具体名词的差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_9",
+            "layer": "plot_events",
+            "content": "瑜伽裤女人盯上我的三轮车，我拒绝",
+            "summary": "瑜伽裤女人盯上我的三轮车，我拒绝",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_7",
+            "layer": "plot_events",
+            "content": "瑜伽裤女请求坐车被陈野拒绝",
+            "summary": "瑜伽裤女请求坐车被陈野拒绝",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同：都描述了一个穿瑜伽裤的女性请求坐车（三轮车）被拒绝的事件。细节略有差异：文本1使用'盯上'和'我'，文本2使用'请求'和'陈野'，但'盯上'和'请求'在上下文中都暗示请求行为，'我'和'陈野'都指代拒绝者。忽略修饰词差异（如人称代词），核心语义一致。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_10",
+            "layer": "plot_events",
+            "content": "强子邀请女人坐自行车，女人建议抢三轮车",
+            "summary": "强子邀请女人坐自行车，女人建议抢三轮车",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_11",
+            "layer": "plot_events",
+            "content": "强子和瑜伽裤女锁门偷走三轮车",
+            "summary": "强子和瑜伽裤女锁门偷走三轮车",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及强子、女人和三轮车，核心事件都与获取三轮车有关。文本1中强子邀请女人坐自行车，女人建议抢三轮车；文本2中强子和瑜伽裤女直接锁门偷走三轮车。两者在具体行动方式（邀请/建议抢 vs 直接偷）和细节（女人 vs 瑜伽裤女）上存在差异，但主题和核心对象（三轮车）相同，属于部分相关。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_11",
+            "layer": "plot_events",
+            "content": "车队发现一排房子，决定冲进小镇",
+            "summary": "车队发现一排房子，决定冲进小镇",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_8",
+            "layer": "plot_events",
+            "content": "车队发现杏花镇",
+            "summary": "车队发现杏花镇",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "文本1描述车队发现一排房子并决定冲进小镇，文本2仅描述车队发现杏花镇。两者都涉及车队发现一个地点，但文本1包含更多行动细节（冲进小镇），而文本2仅提及发现。核心语义部分相关，但细节差异较大。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_13",
+            "layer": "plot_events",
+            "content": "我进入烟酒副食店搜刮物资",
+            "summary": "我进入烟酒副食店搜刮物资",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_9",
+            "layer": "plot_events",
+            "content": "车队进入杏花镇搜集物资",
+            "summary": "车队进入杏花镇搜集物资",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相似：两段文本都描述了进入某个地点搜集物资的行为。主要差异在于：文本1是'我'（个人）进入'烟酒副食店'，文本2是'车队'（集体）进入'杏花镇'。地点类型不同（商店 vs 城镇），但'搜集物资'这一核心动作一致。根据评分标准，核心意思相同但细节有差异，因此评分在0.8-0.9范围内。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_15",
+            "layer": "plot_events",
+            "content": "强子和女人偷走三轮车逃离",
+            "summary": "强子和女人偷走三轮车逃离",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_19",
+            "layer": "plot_events",
+            "content": "陈野骑三轮车逃离杏花镇",
+            "summary": "陈野骑三轮车逃离杏花镇",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.4,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'三轮车逃离'这一动作，这是主要关联点。但核心语义不同：文本1描述'强子和女人偷走三轮车逃离'，强调偷窃行为；文本2描述'陈野骑三轮车逃离杏花镇'，强调逃离地点。人物、行为动机和细节均不同，主题差异明显。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_17",
+            "layer": "plot_events",
+            "content": "我踹碎玻璃门逃出店铺",
+            "summary": "我踹碎玻璃门逃出店铺",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_12",
+            "layer": "plot_events",
+            "content": "陈野踹门逃出副食店",
+            "summary": "陈野踹门逃出副食店",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思相同：两段文本都描述了一个人通过破坏门的方式逃离店铺。细节略有差异：文本1使用'踹碎玻璃门'，文本2使用'踹门'，但'踹碎玻璃门'是'踹门'的一种具体方式；文本1未指定店铺类型，文本2指定为'副食店'，但都属于店铺范畴；文本1未指定人物，文本2指定为'陈野'。这些差异不影响核心语义。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_18",
+            "layer": "plot_events",
+            "content": "我背物资追向商超",
+            "summary": "我背物资追向商超",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_13",
+            "layer": "plot_events",
+            "content": "陈野追三轮车到商超",
+            "summary": "陈野追三轮车到商超",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.7,
+          "confidence": "medium",
+          "reasoning": "两段文本都涉及'追'和'商超'，核心动作和目的地相同。文本1是'背物资追向商超'，文本2是'追三轮车到商超'，细节上略有差异：文本1强调携带物资，文本2强调追三轮车。虽然主题相关，但具体对象和方式不同，属于部分相关。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_20",
+            "layer": "plot_events",
+            "content": "商超内幸存者示意噤声，白衣剪刀女出现",
+            "summary": "商超内幸存者示意噤声，白衣剪刀女出现",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_14",
+            "layer": "plot_events",
+            "content": "商超内遭遇白衣剪刀女和纸哭童",
+            "summary": "商超内遭遇白衣剪刀女和纸哭童",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "两段文本都描述了在商超内遭遇白衣剪刀女的事件，这是核心语义。文本1提到幸存者示意噤声，文本2提到纸哭童，这些是细节差异，但不影响核心事件的一致性。因此，核心意思相同，细节略有差异。"
+        },
+        {
+          "script_node": {
+            "node_id": "plot_events_script_23",
+            "layer": "plot_events",
+            "content": "巨汉变身对抗剪刀女",
+            "summary": "巨汉变身对抗剪刀女",
+            "source_type": "script",
+            "source_ref": ""
+          },
+          "novel_node": {
+            "node_id": "plot_events_novel_15",
+            "layer": "plot_events",
+            "content": "铁狮变身序列超凡对抗剪刀女",
+            "summary": "铁狮变身序列超凡对抗剪刀女",
+            "source_type": "novel",
+            "source_ref": ""
+          },
+          "similarity": 0.85,
+          "confidence": "high",
+          "reasoning": "核心意思高度相似：两段文本都描述'变身'对抗'剪刀女'的主题。差异在于：文本1的'巨汉'与文本2的'铁狮变身序列超凡'，后者包含更多细节（'铁狮'、'序列超凡'），但核心对抗关系和'变身'概念一致。忽略修饰词差异后，语义核心匹配。"
+        }
+      ],
+      "coverage_score": 0.45161290322580644
+    }
+  },
+  "alignment_quality": {
+    "overall_score": 0.40527073732718893,
+    "layer_scores": {
+      "world_building": 0.17857142857142858,
+      "game_mechanics": 0.4375,
+      "items_equipment": 0.5625,
+      "plot_events": 0.45161290322580644
+    }
+  }
+}

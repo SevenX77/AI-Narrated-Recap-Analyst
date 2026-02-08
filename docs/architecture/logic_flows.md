@@ -23,17 +23,23 @@ This document serves as the single source of truth for the system's logic and da
 ### 2. Data Processing Pipeline
 
 #### 2.1 Novel Processing (with_novel projects)
-- **Tool**: `NovelSegmentationTool` + `NovelChapterProcessor`
+- **Tools**: `NovelChapterProcessor` (简介拆分) + `NovelChapterAnalyzer` (功能段分析)
 - **Input**: Raw novel text from `分析资料/`
 - **Process**:
-  1. Natural paragraph segmentation (LLM-assisted)
-  2. Metadata extraction (title, author, tags)
-  3. Introduction filtering (LLM-based, removes marketing content)
-  4. Chapter splitting (10 chapters per file)
+  1. **简介拆分** (`NovelChapterProcessor`):
+     - Metadata extraction (title, author, tags)
+     - Introduction filtering (LLM-based, removes marketing content)
+     - Chapter splitting (10 chapters per file)
+  2. **功能段分析** (`NovelChapterAnalyzer`):
+     - 100% LLM驱动的叙事功能段分析
+     - 多维度标签（叙事功能、结构、角色、优先级）
+     - 浓缩建议与章节结构洞察
 - **Output**: 
   - `raw/novel.txt`: Original text
-  - `novel/chpt_0000.txt`: Filtered introduction
-  - `novel/chpt_0001-0010.txt, chpt_0011-0020.txt, ...`: Chapter groups
+  - `novel/chpt_0000.md`: Filtered introduction
+  - `novel/functional_analysis/第X章完整分段分析.md`: 功能段分析（Markdown）
+  - `novel/functional_analysis/chpt_XXXX_functional_analysis.json`: 功能段分析（JSON）
+- **Note**: 旧的 `NovelSegmentationTool` (规则分段) 已废弃，归档到 `archive/v2_deprecated/old_novel_processing/`
 
 #### 2.2 SRT Processing (all projects)
 - **Tool**: `SrtScriptProcessor`
@@ -1054,4 +1060,1059 @@ git tag -a v2.1.0 -m "Project Structure Optimization v2.1"
 ```
 
 ---
-*Last Updated: 2026-02-05 (v2.1)*
+
+## 十二、番茄小说自动下载系统 (Fanqie Novel Auto-Download System)
+
+### 概述
+
+**日期**: 2026-02-07  
+**版本**: v1.0  
+**目标**: 自动化爬取番茄小说榜单并批量下载小说内容，为 AI 分析提供素材
+
+### 1. 系统架构
+
+```
+┌─────────────────────────────────────────────┐
+│  Tools (工具层) - 原子操作                   │
+├─────────────────────────────────────────────┤
+│  • FanqieTextDecoder        文字解密        │
+│  • FanqieBrowserController  浏览器控制      │
+│  • FanqiePageScraper        页面元素提取    │
+│  • FanqieNovelDownloader    小说下载        │
+└─────────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────────┐
+│  Workflows (工作流层) - 业务编排             │
+├─────────────────────────────────────────────┤
+│  • RankingCrawlWorkflow     榜单爬取        │
+│  • BatchNovelDownloadWorkflow 批量下载     │
+└─────────────────────────────────────────────┘
+```
+
+### 2. 核心技术原理
+
+#### 2.1 文字解密机制
+
+番茄小说使用 **Unicode 私有区域字符映射** 来混淆文本内容，防止爬虫直接抓取。
+
+**技术细节**:
+- **混淆范围**: Unicode 58344-58715 (U+E408 - U+E57B)
+- **映射表长度**: 372 个字符
+- **映射内容**: 常用汉字和字母
+
+**解密算法**:
+```python
+def decode_char(char_code):
+    if 58344 <= char_code <= 58715:
+        bias = char_code - 58344
+        return CHARSET[bias]
+    return chr(char_code)
+```
+
+**示例**:
+```
+混淆前: \uE408\uE409\uE40A  (Unicode 私有区域)
+解密后: "D在主"              (正常文字)
+```
+
+#### 2.2 浏览器自动化策略
+
+使用 **Playwright MCP 工具** 进行浏览器控制，而非传统的 Selenium。
+
+**优势**:
+- ✅ 更快的页面加载速度
+- ✅ 更好的反检测能力
+- ✅ 支持无头模式
+- ✅ 更稳定的元素定位
+
+**反检测措施**:
+- 随机 User-Agent（Chrome/Edge/Firefox/Safari）
+- 随机延迟（1-3 秒）
+- 模拟人类滚动行为
+- 禁用 WebDriver 标识
+
+### 3. 数据模型
+
+定义在 `src/core/schemas.py`:
+
+#### 3.1 RankingNovelItem (榜单小说条目)
+
+```python
+{
+    "novel_id": str,              # 小说唯一标识
+    "title": str,                 # 小说标题
+    "author": str,                # 作者
+    "url": str,                   # 小说链接
+    "rank": int,                  # 排名
+    "ranking_type": str,          # 榜单类型（热销榜/完本榜等）
+    "cover_url": str,             # 封面图链接
+    "intro_snippet": str,         # 简介片段
+    "crawled_at": str             # 爬取时间
+}
+```
+
+#### 3.2 RankingData (榜单完整数据)
+
+```python
+{
+    "ranking_type": str,          # 榜单类型
+    "ranking_url": str,           # 榜单链接
+    "crawled_at": str,            # 爬取时间
+    "novels": [RankingNovelItem], # 小说列表
+    "total_count": int            # 总数量
+}
+```
+
+#### 3.3 FanqieChapter (章节信息)
+
+```python
+{
+    "chapter_id": str,            # 章节 ID
+    "chapter_num": int,           # 章节序号
+    "title": str,                 # 章节标题
+    "url": str,                   # 章节链接
+    "is_vip": bool                # 是否付费章节
+}
+```
+
+#### 3.4 FanqieNovelMetadata (小说元数据)
+
+```python
+{
+    "novel_id": str,              # 小说 ID
+    "title": str,                 # 标题
+    "author": str,                # 作者
+    "intro": str,                 # 简介
+    "cover_url": str,             # 封面
+    "total_chapters": int,        # 总章节数
+    "chapters": [FanqieChapter],  # 章节列表
+    "tags": [str]                 # 标签
+}
+```
+
+#### 3.5 FanqieDownloadResult (下载结果)
+
+```python
+{
+    "novel_id": str,              # 小说 ID
+    "title": str,                 # 标题
+    "success": bool,              # 是否成功
+    "downloaded_chapters": int,   # 已下载章节数
+    "failed_chapters": [int],     # 失败的章节列表
+    "output_path": str,           # 输出文件路径
+    "error_message": str          # 错误信息（如果有）
+}
+```
+
+### 4. 工作流详解
+
+#### Workflow 1: RankingCrawlWorkflow (榜单爬取)
+
+**执行流程**:
+
+```
+阶段 1: 浏览器初始化
+  ├─> 启动 Playwright 浏览器
+  ├─> 配置反检测参数
+  └─> 准备榜单 URL 列表
+
+阶段 2: 榜单页面遍历
+  For each 榜单:
+    ├─> 导航到榜单页面
+    ├─> 等待页面加载完成
+    ├─> 识别小说列表元素
+    │   ├─> 使用 CSS Selector 定位
+    │   └─> 多候选策略（容错）
+    ├─> 处理分页/滚动加载
+    │   ├─> 检测页面类型（分页/无限滚动）
+    │   ├─> 自动翻页或滚动
+    │   └─> 等待新内容加载
+    ├─> 提取小说元信息
+    │   ├─> 标题、作者、封面
+    │   ├─> 小说链接
+    │   └─> 排名信息
+    └─> 保存榜单数据
+        └─> rankings/{榜单名称}_{时间戳}.json
+
+阶段 3: 数据汇总与去重
+  ├─> 合并所有榜单数据
+  ├─> 按 novel_id 去重
+  │   └─> 保留排名最高的记录
+  ├─> 生成下载队列
+  │   └─> download_queue.json
+  └─> 关闭浏览器
+```
+
+**输出文件**:
+- `data/fanqie/rankings/热销榜_20260207_143000.json` - 热销榜原始数据
+- `data/fanqie/rankings/完本榜_20260207_143500.json` - 完本榜原始数据
+- `data/fanqie/download_queue.json` - 合并去重后的下载队列
+
+**关键配置** (`src/core/config.py`):
+```python
+FANQIE_RANKINGS = {
+    "热销榜": {
+        "url": "https://fanqienovel.com/ranking/hot",
+        "selector": ".ranking-item",
+        "type": "paginated"
+    },
+    "完本榜": {
+        "url": "https://fanqienovel.com/ranking/finished",
+        "selector": ".book-card",
+        "type": "infinite_scroll"
+    }
+    # ... 更多榜单
+}
+```
+
+#### Workflow 2: BatchNovelDownloadWorkflow (批量下载)
+
+**执行流程**:
+
+```
+阶段 1: 加载下载队列
+  ├─> 读取 download_queue.json
+  ├─> 检查已下载记录（断点续传）
+  └─> 过滤已存在的小说
+
+阶段 2: 并行下载
+  使用异步任务池（最大并发: 3）
+  
+  For each novel (并行):
+    ├─> 步骤 2.1: 获取章节列表
+    │   ├─> 访问小说主页
+    │   ├─> 解析章节列表
+    │   └─> 识别 VIP 章节
+    │
+    ├─> 步骤 2.2: 下载章节内容
+    │   For each chapter:
+    │     ├─> 发送 HTTP 请求
+    │     ├─> 解析 HTML 内容
+    │     ├─> 调用 FanqieTextDecoder 解密
+    │     ├─> 提取图片链接（如果有）
+    │     ├─> 保存到内存缓冲区
+    │     └─> 延迟 0.5-2 秒（防封禁）
+    │
+    ├─> 步骤 2.3: 保存为文件
+    │   ├─> 格式: TXT / Markdown / EPUB
+    │   ├─> 路径: data/fanqie/novels/{榜单类型}/{书名}.txt
+    │   └─> 包含元数据（标题、作者、简介）
+    │
+    └─> 步骤 2.4: 记录操作日志
+        └─> output/operation_history.jsonl
+
+阶段 3: 生成下载报告
+  ├─> 统计总数、成功、失败、耗时
+  ├─> 列出失败的小说和错误原因
+  └─> 生成 Markdown 报告
+      └─> data/fanqie/download_report_{时间戳}.md
+```
+
+**输出文件**:
+- `data/fanqie/novels/热销榜/诡秘之主.txt` - 下载的小说
+- `data/fanqie/download_report_20260207.md` - 下载报告
+- `output/operation_history.jsonl` - 操作日志
+
+**错误处理策略**:
+
+| 错误类型 | 处理策略 |
+|---------|---------|
+| 网络超时 | 重试 3 次（指数退避：1s, 2s, 4s） |
+| 验证码检测 | 暂停 5 分钟，记录日志，跳过该小说 |
+| 元素未找到 | 尝试备用 Selector，失败则跳过 |
+| VIP 章节 | 标记为"付费内容"，记录章节号，继续下载免费部分 |
+| 单章失败 | 记录失败章节，继续下载其他章节 |
+| 解密失败 | 保留原始混淆文本，标记警告 |
+
+### 5. 工具层实现
+
+#### Tool 1: FanqieTextDecoder (文字解密)
+
+**职责**: 将混淆文字还原为正常文字
+
+**接口**:
+```python
+class FanqieTextDecoder(BaseTool):
+    name = "fanqie_text_decoder"
+    
+    def execute(self, text: str) -> str:
+        """
+        Args:
+            text: 混淆的文本
+        Returns:
+            解密后的文本
+        """
+```
+
+**实现要点**:
+- charset 映射表从配置文件加载
+- 支持动态更新映射表
+- 处理未知字符（保持原样）
+
+#### Tool 2: FanqieBrowserController (浏览器控制)
+
+**职责**: 封装 Playwright MCP 工具调用
+
+**接口**:
+```python
+class FanqieBrowserController(BaseTool):
+    name = "fanqie_browser_controller"
+    
+    def execute(self, action: str, **kwargs) -> Any:
+        """
+        Args:
+            action: 操作类型（navigate/snapshot/click/scroll/extract）
+            **kwargs: 操作参数
+        Returns:
+            操作结果
+        """
+```
+
+**支持的操作**:
+- `navigate`: 导航到 URL
+- `snapshot`: 获取页面快照
+- `click`: 点击元素
+- `scroll`: 滚动页面
+- `extract`: 提取元素信息
+
+#### Tool 3: FanqiePageScraper (页面元素提取)
+
+**职责**: 从页面中提取小说信息
+
+**接口**:
+```python
+class FanqiePageScraper(BaseTool):
+    name = "fanqie_page_scraper"
+    
+    def execute(self, page_snapshot: str, selector: str) -> List[Dict]:
+        """
+        Args:
+            page_snapshot: 页面快照（HTML 或结构化数据）
+            selector: CSS 选择器
+        Returns:
+            提取的元素列表
+        """
+```
+
+**提取逻辑**:
+- 支持多候选 Selector（容错）
+- 智能识别元素类型（标题/作者/链接）
+- 数据清洗和标准化
+
+#### Tool 4: FanqieNovelDownloader (小说下载)
+
+**职责**: 下载单本小说的完整内容
+
+**接口**:
+```python
+class FanqieNovelDownloader(BaseTool):
+    name = "fanqie_novel_downloader"
+    
+    def __init__(self):
+        self.decoder = FanqieTextDecoder()
+    
+    def execute(self, 
+                novel_url: str,
+                output_dir: Path,
+                format: str = "txt",
+                start_chapter: int = 1,
+                end_chapter: Optional[int] = None) -> FanqieDownloadResult:
+        """
+        Args:
+            novel_url: 小说 URL
+            output_dir: 输出目录
+            format: 保存格式 (txt/md/epub)
+            start_chapter: 起始章节（支持断点续传）
+            end_chapter: 结束章节（None = 全部）
+        Returns:
+            下载结果对象
+        """
+```
+
+**关键特性**:
+- ✅ 断点续传（检查已下载章节）
+- ✅ VIP 章节识别（跳过付费内容）
+- ✅ 图片下载（可选）
+- ✅ 多格式输出（TXT/MD/EPUB）
+- ✅ 速率限制（防封禁）
+
+### 6. 配置管理
+
+定义在 `src/core/config.py`:
+
+```python
+@dataclass
+class FanqieConfig:
+    """番茄小说下载配置"""
+    
+    # 字符解密
+    charset: List[str] = field(default_factory=lambda: FANQIE_CHARSET)
+    code_start: int = 58344
+    code_end: int = 58715
+    
+    # 网络配置
+    request_timeout: int = 30
+    retry_times: int = 3
+    rate_limit_delay: Tuple[float, float] = (0.5, 2.0)
+    
+    # 浏览器配置
+    browser_headless: bool = True
+    browser_timeout: int = 30
+    
+    # 榜单配置
+    rankings: Dict[str, Dict] = field(default_factory=lambda: FANQIE_RANKINGS)
+    max_novels_per_ranking: int = 100
+    
+    # 下载配置
+    max_concurrent_downloads: int = 3
+    download_format: str = "txt"
+    save_images: bool = False
+    
+    # Cookie（可选）
+    cookies: Optional[Dict[str, str]] = None
+
+# 全局配置实例
+config.fanqie = FanqieConfig()
+```
+
+### 7. 使用示例
+
+#### 场景 1: 爬取单个榜单并下载
+
+```python
+from src.workflows.ranking_crawl_workflow import RankingCrawlWorkflow
+from src.workflows.batch_novel_download_workflow import BatchNovelDownloadWorkflow
+
+# 步骤 1: 爬取榜单
+crawl_wf = RankingCrawlWorkflow()
+queue = await crawl_wf.run(
+    ranking_types=["热销榜"],
+    max_per_ranking=50
+)
+
+# 步骤 2: 批量下载
+download_wf = BatchNovelDownloadWorkflow()
+result = await download_wf.run(
+    queue_file="data/fanqie/download_queue.json",
+    output_dir=Path("data/fanqie/novels"),
+    format="txt"
+)
+
+print(f"成功下载: {result['success']} / {result['total']}")
+```
+
+#### 场景 2: 爬取所有榜单（自动下载）
+
+```python
+crawl_wf = RankingCrawlWorkflow()
+result = await crawl_wf.run(
+    ranking_types=["热销榜", "完本榜", "新书榜", "免费榜"],
+    auto_download=True,        # 爬取后自动下载
+    max_per_ranking=30,        # 每个榜单最多 30 本
+    deduplicate=True           # 去重
+)
+```
+
+#### 场景 3: 断点续传
+
+```python
+# 如果之前下载中断，可以继续
+download_wf = BatchNovelDownloadWorkflow()
+result = await download_wf.run(
+    queue_file="data/fanqie/download_queue.json",
+    resume=True  # 自动检测已下载的小说
+)
+```
+
+### 8. 数据存储结构
+
+```
+data/fanqie/
+├── rankings/                           # 榜单原始数据
+│   ├── 热销榜_20260207_143000.json
+│   ├── 完本榜_20260207_143500.json
+│   └── 新书榜_20260207_144000.json
+│
+├── novels/                            # 下载的小说
+│   ├── 热销榜/
+│   │   ├── 诡秘之主.txt
+│   │   ├── 诡秘之主_metadata.json
+│   │   └── ...
+│   ├── 完本榜/
+│   └── 新书榜/
+│
+├── download_queue.json                # 下载队列
+├── download_queue_completed.json      # 已完成队列
+└── download_report_20260207.md        # 下载报告
+```
+
+### 9. 性能与合规
+
+#### 性能指标
+
+| 指标 | 估算值 |
+|------|-------|
+| 单本小说下载时间 | 5-15 分钟 |
+| 批量下载 10 本 | 30-60 分钟（并发 3） |
+| 榜单爬取时间 | 2-5 分钟/榜单 |
+| 平均小说大小 | 2-10 MB |
+| 并发下载数 | 3（可配置） |
+
+#### 合规说明
+
+⚠️ **重要提醒**:
+- 此工具**仅供学习研究使用**
+- 下载的内容受**版权保护**
+- 不应用于**商业用途**或**大规模传播**
+- 请遵守番茄小说的**服务条款**
+- 建议控制下载频率，避免对服务器造成压力
+
+### 10. 故障排查
+
+#### 常见问题与解决方案
+
+| 问题 | 可能原因 | 解决方案 |
+|------|---------|---------|
+| 解密后文字乱码 | charset 映射表过期 | 更新 `FANQIE_CHARSET` 配置 |
+| 浏览器启动失败 | Playwright 未安装 | 运行 `playwright install` |
+| 元素未找到 | 页面结构变化 | 更新 CSS Selector |
+| 下载速度慢 | 网络延迟或速率限制 | 调整 `rate_limit_delay` |
+| 验证码频繁出现 | 请求过于频繁 | 降低并发数，增加延迟 |
+| VIP 章节无法下载 | 需要付费 | 自动跳过，记录在 `failed_chapters` |
+
+### 11. 维护与更新
+
+#### 定期维护任务
+
+- [ ] **每月检查** charset 映射表是否需要更新
+- [ ] **每季度更新** 榜单配置（URL 和 Selector）
+- [ ] **监控下载成功率**，低于 90% 需要检查
+- [ ] **清理旧数据**，超过 3 个月的榜单数据可以归档
+
+#### 版本更新记录
+
+- **v1.0 (2026-02-07)**: 初始版本，支持榜单爬取和批量下载
+
+---
+
+## 十三、版本控制建议（更新）
+
+### v3.0 版本提交
+
+```bash
+git add .
+git commit -m "feat: 添加番茄小说自动下载系统 v1.0
+
+- 实现榜单自动爬取（热销榜/完本榜/新书榜等）
+- 实现文字解密算法（Unicode 私有区域映射）
+- 实现批量下载工作流（支持并发和断点续传）
+- 集成 Playwright MCP 浏览器控制
+- 新增 4 个 Tools（Decoder/BrowserController/Scraper/Downloader）
+- 新增 2 个 Workflows（RankingCrawl/BatchDownload）
+- 新增数据模型（RankingNovelItem/FanqieChapter/FanqieDownloadResult等）
+- 新增配置管理（FanqieConfig）
+
+See: docs/architecture/logic_flows.md - Section 十二"
+
+git tag -a v3.0.0 -m "Fanqie Novel Auto-Download System v1.0"
+```
+
+---
+
+## 十三、Novel-to-Script 智能改编系统 (Novel-to-Script Intelligent Adaptation System)
+
+### 概述
+
+**日期**: 2026-02-07  
+**版本**: v1.0  
+**目标**: 构建模块化、可迭代的小说到解说Script的智能改编系统，支持训练和生产并存
+
+### 1. 系统架构
+
+```
+📦 原子工具层 (Atomic Tools)
+├── NovelSegmentationAnalyzer    小说分段深度分析（LLM驱动，多维度标签）
+├── ScriptSegmentAligner          Script-Novel精确对齐与改编分析
+└── KeyInfoExtractor              关键信息提取与汇总
+
+         ↓ 调用
+
+🤖 智能Agent层 (Intelligent Agents)
+├── NovelAnalysisAgent            协调小说分析流程
+├── AlignmentAnalysisAgent        执行Script-Novel精确对齐
+├── PatternLearningAgent          从GT项目学习改编规律
+├── EnhancedWriterAgent           融合式Script生成（模板+学习+迭代）
+└── FeedbackLoopAgent             管理评估-改写循环
+
+         ↓ 编排
+
+🔄 工作流层 (Workflows)
+├── NovelAnalysisWorkflow         小说分析流程（分段+标签+关键信息）
+├── AlignmentWorkflow             对齐流程（GT项目Script-Novel对应关系）
+├── TrainingWorkflow              训练流程（提取爆款规律+验证）
+├── ProductionWorkflow            生产流程（为新小说生成Script）
+└── ContinuousImprovementWorkflow 持续改进（生产→评估→反馈→训练闭环）
+
+         ↓ 持续迭代
+
+📊 版本化数据 (Versioned Data)
+└── 所有中间产物都有版本号 + latest指针
+```
+
+### 2. 核心数据模型
+
+定义在 `src/core/schemas_segmentation.py`:
+
+#### 2.1 小说分段分析
+
+**NovelSegment** (小说段落)
+```python
+{
+    "segment_id": "seg_chpt_0001_001",
+    "text": "段落原文",
+    "tags": {
+        "narrative_function": ["故事推进", "核心故事设定(首次)"],
+        "structure": ["钩子-悬念制造"],
+        "character": ["人物塑造-陈野"],
+        "priority": "P0-骨架",  # P0-骨架 | P1-血肉 | P2-皮肤
+        "location": "江城车队",
+        "time": "末日爆发后数月"
+    },
+    "metadata": {
+        "is_first_appearance": true,
+        "repetition_count": 0,
+        "foreshadowing": {
+            "type": "埋设",
+            "content": "升级系统",
+            "resolution_chapter": "chpt_0003"
+        },
+        "condensation_suggestion": "必须保留，核心设定首次出现",
+        "word_count": 150
+    }
+}
+```
+
+**ChapterAnalysis** (章节完整分析)
+```python
+{
+    "chapter_id": "chpt_0001",
+    "segments": [NovelSegment, ...],
+    "chapter_summary": {
+        "total_segments": 11,
+        "p0_count": 5,
+        "p1_count": 4,
+        "p2_count": 2,
+        "key_events": ["觉醒系统", "升级自行车"],
+        "foreshadowing_planted": ["升级系统", "杀戮点债务"],
+        "condensed_version": "500字浓缩版"
+    }
+}
+```
+
+#### 2.2 Script-Novel对齐
+
+**ScriptToNovelAlignment** (对齐关系)
+```python
+{
+    "script_segment": {
+        "time_range": "00:00:00,000 - 00:00:35,666",
+        "text": "Script文本",
+        "segment_type": "Hook"
+    },
+    "novel_source": {
+        "segments": ["seg_chpt_0001_001", "seg_chpt_0001_002"],
+        "condensation_ratio": 0.25,
+        "retained_tags": ["P0-骨架", "核心故事设定(首次)"],
+        "omitted_tags": ["P2-皮肤", "心理描写"],
+        "transformation": {
+            "method": "高度浓缩+概括",
+            "techniques": ["合并多段", "提炼核心设定"]
+        }
+    },
+    "analysis": {
+        "alignment_confidence": 0.95,
+        "key_info_preserved": ["诡异无法被杀死", "序列超凡"],
+        "quality_score": 90
+    }
+}
+```
+
+**AlignmentResult** (完整对齐结果)
+```python
+{
+    "episode_id": "ep01",
+    "alignments": [ScriptToNovelAlignment, ...],
+    "overall_stats": {
+        "total_script_segments": 15,
+        "total_novel_segments": 45,
+        "condensation_ratio": 0.33,
+        "p0_retention_rate": 1.0,   # P0内容100%保留
+        "p1_retention_rate": 0.6,
+        "p2_retention_rate": 0.1
+    }
+}
+```
+
+#### 2.3 改编规律库
+
+**PatternLibrary** (爆款规律库)
+```python
+{
+    "patterns": {
+        "hook": [AdaptationPattern, ...],
+        "condensation": [AdaptationPattern, ...],
+        "rhythm": [AdaptationPattern, ...],
+        "language": [AdaptationPattern, ...]
+    },
+    "success_factors": ["Hook强度高", "节奏紧凑", "爽点密集"],
+    "source_projects": ["PROJ_002", "PROJ_003"],
+    "validated": true,
+    "correlation": 0.92
+}
+```
+
+### 3. 多维度标签体系
+
+#### 3.1 叙事功能标签
+- `故事推进`: 推动情节发展
+- `核心故事设定(首次)`: 世界观规则首次出现
+- `关键道具(首次)`: 重要物品初次登场
+- `关键信息`: 重要线索、事实
+- `背景交代`: 补充说明
+
+#### 3.2 叙事结构标签
+- `钩子-悬念制造`: 引起期待但不给答案
+- `钩子-悬念释放`: 回应之前的悬念
+- `伏笔`: 埋设未来情节线索
+- `回应伏笔`: 回收之前的伏笔
+- `重复强调`: 重要信息反复强调
+
+#### 3.3 浓缩优先级标签
+- `P0-骨架`: 核心情节，必须保留
+- `P1-血肉`: 重要细节，选择性保留
+- `P2-皮肤`: 氛围渲染，可大量删减
+
+### 4. 工作流详解
+
+#### Workflow 1: NovelAnalysisWorkflow (小说分析)
+
+**目的**: 分析小说章节，输出结构化的多维度标签
+
+**流程**:
+```
+Step 1: 章节分段分析
+  └─> NovelSegmentationAnalyzer Tool
+      ├─ 输入: 章节原文
+      ├─ LLM分析: 语义理解+标签提取
+      └─ 输出: ChapterAnalysis (版本化JSON)
+
+Step 2: 关键信息汇总
+  └─> KeyInfoExtractor Tool
+      ├─ 输入: 所有章节分析
+      ├─ 提取: P0/P1/P2分级+伏笔追踪+角色弧光
+      └─ 输出: NovelKeyInfo
+
+Step 3: 版本化存储
+  └─> data/projects/{project}/novel/segmentation_analysis/
+      ├─ chpt_0001_analysis_v20260207_120000.json
+      └─ chpt_0001_analysis_latest.json (指针)
+```
+
+#### Workflow 2: AlignmentWorkflow (对齐分析)
+
+**目的**: 分析GT项目的Script如何改编自小说
+
+**流程**:
+```
+Step 1: 加载小说分析
+  └─> 读取 segmentation_analysis/*.json
+
+Step 2: 精确对齐
+  └─> ScriptSegmentAligner Tool
+      ├─ 逐段分析Script
+      ├─ 找出对应的小说段落（segment_id）
+      ├─ 计算浓缩比例
+      └─ 识别改编技巧
+
+Step 3: 输出对应关系
+  └─> data/projects/{project}/script/alignment_to_novel/
+      ├─ ep01_mapping_v20260207_120000.json
+      └─ ep01_mapping_latest.json
+```
+
+#### Workflow 3: TrainingWorkflow (训练)
+
+**目的**: 从多个GT项目提取爆款规律
+
+**流程**:
+```
+Step 1: 验证GT数据完整性
+  └─> 确保所有GT项目已完成分析和对齐
+
+Step 2: 提取跨项目规律
+  └─> PatternLearningAgent
+      ├─ 分析多个GT的对齐结果
+      ├─ 提取Hook模式、浓缩策略、节奏控制
+      └─ 输出: PatternLibrary
+
+Step 3: 验证规律有效性
+  └─> 复用 training_workflow_v2.py
+      ├─ 用规则对GT项目评分
+      ├─ 计算与实际热度的相关性
+      └─ 如果相关性 < 0.85，优化权重并重新训练
+
+Step 4: 版本化存储
+  └─> data/rule_books/
+      ├─ pattern_library_v20260207_120000.json
+      └─ pattern_library_latest.json
+```
+
+#### Workflow 4: ProductionWorkflow (生产)
+
+**目的**: 为新小说生成高质量Script
+
+**流程**:
+```
+Step 1: 分析新小说
+  └─> NovelAnalysisWorkflow
+
+Step 2: 加载规律库
+  └─> pattern_library_latest.json
+
+Step 3: 选择GT参考（可选）
+  └─> 基于题材、风格匹配相似GT项目
+
+Step 4: 生成Script（融合模式）
+  └─> EnhancedWriterAgent
+      ├─ 模式1: 基于模板（使用Pattern Library规则）
+      ├─ 模式2: 对比学习（参考GT改编手法）
+      └─> 输出初版Script
+
+Step 5: 迭代优化
+  └─> FeedbackLoopAgent
+      ├─ Evaluator评分
+      ├─ 如果 < 目标分数，提取改进建议
+      ├─ Writer根据建议重写
+      └─> 重复直到达标（最多3轮）
+
+Step 6: 版本化输出
+  └─> data/projects/{project}/production/scripts/
+      ├─ ep01_v20260207_120000.md
+      └─> ep01_latest.md
+```
+
+#### Workflow 5: ContinuousImprovementWorkflow (持续改进)
+
+**目的**: 生产→评估→反馈→训练的闭环
+
+**流程**:
+```
+后台持续运行:
+  ├─ 检查新生产的Script
+  ├─ 自动评估质量
+  ├─ 如果达到爆款标准（score > 90）
+  │   ├─ 用户确认后晋升为GT
+  │   └─ 重新训练PatternLibrary
+  └─> 循环迭代
+```
+
+### 5. 核心工具详解
+
+#### Tool 1: NovelSegmentationAnalyzer
+
+**功能**: 使用LLM对小说章节进行深度分析
+
+**特点**:
+- ✅ 全程LLM语义理解，无硬规则
+- ✅ 多维度标签（叙事功能+结构+角色+优先级）
+- ✅ 识别首次出现、重复强调、伏笔
+- ✅ 提供浓缩建议
+
+**Prompt**: `src/prompts/novel_segmentation_analysis.yaml`
+
+**输出**: `ChapterAnalysis` (JSON)
+
+#### Tool 2: ScriptSegmentAligner
+
+**功能**: 将Script段落精确对齐到小说分段分析
+
+**特点**:
+- ✅ 逐段对齐分析
+- ✅ 识别改编技巧（合并、删减、强调）
+- ✅ 计算浓缩比例和保留率
+- ✅ 质量评分
+
+**Prompt**: `src/prompts/script_alignment_analysis.yaml`
+
+**输出**: `AlignmentResult` (JSON)
+
+#### Tool 3: KeyInfoExtractor
+
+**功能**: 从章节分析中提取关键信息汇总
+
+**特点**:
+- ✅ P0/P1/P2分级信息提取
+- ✅ 伏笔映射表构建
+- ✅ 角色弧光追踪
+- ✅ 浓缩指导原则生成
+
+**输出**: `NovelKeyInfo` (JSON)
+
+### 6. 数据存储结构
+
+```
+data/projects/with_novel/{project}/
+├── novel/
+│   ├── chpt_0001-0010.md              # 原始章节
+│   └── segmentation_analysis/         # 🆕 分段分析结果
+│       ├── chpt_0001_analysis_v20260207_120000.json
+│       ├── chpt_0001_analysis_latest.json  # 指针
+│       └── ...
+│
+├── script/
+│   ├── ep01.md                        # 原始Script
+│   └── alignment_to_novel/            # 🆕 Script-Novel对应关系
+│       ├── ep01_mapping_v20260207_120000.json
+│       ├── ep01_mapping_latest.json
+│       └── ...
+│
+├── analysis/                          # 🆕 综合分析
+│   ├── key_info_v20260207_120000.json    # P0/P1/P2信息汇总
+│   ├── key_info_latest.json
+│   ├── foreshadowing_tracking.json       # 伏笔追踪
+│   └── condensation_guidelines.json      # 浓缩指导
+│
+├── training/
+│   └── writer_context/                # 🆕 Writer改写上下文
+│       ├── ep01_writing_context_v20260207_120000.json
+│       └── ep01_writing_context_latest.json
+│
+└── production/
+    └── scripts/
+        ├── ep01_v20260207_120000.md
+        └── ep01_latest.md
+```
+
+### 7. 与现有系统的关系
+
+#### 7.1 归档的旧方法
+- ✅ 旧的粗粒度对齐（v2 Event级对齐）已归档至 `archive/v2_deprecated/`
+- ✅ 现在使用细粒度分段分析（段落级+多维度标签）
+
+#### 7.2 保留的系统
+- ✅ **LayeredAlignmentEngine v4.0**: 保留用于特定场景的分层对齐
+- ✅ **Training Workflow v2**: 热度驱动训练系统，整合到新的TrainingWorkflow中
+
+#### 7.3 新增的组件
+- 🆕 3个新Tools（Analyzer, Aligner, Extractor）
+- 🆕 5个新Agents（分析、对齐、学习、增强Writer、反馈循环）
+- 🆕 5个新Workflows（分析、对齐、训练、生产、持续改进）
+- 🆕 1个新Schema文件（schemas_segmentation.py）
+- 🆕 2个新Prompt文件（分段分析、对齐分析）
+
+### 8. 关键设计亮点
+
+1. **模块化**: Tools独立可测试，Agents可组合，Workflows灵活编排
+2. **版本管理**: 所有中间产物都有版本号+latest指针
+3. **融合模式**: Writer同时使用模板、学习、迭代三种策略
+4. **闭环优化**: 生产→评估→反馈→训练的自动化循环
+5. **LLM驱动**: 分段分析全部使用语义理解，而非硬规则
+6. **训练生产并存**: 支持持续训练和生产，不断优化
+
+### 9. 使用示例
+
+#### 分析新小说（训练模式）
+```python
+from src.workflows.novel_analysis_workflow import NovelAnalysisWorkflow
+
+workflow = NovelAnalysisWorkflow()
+result = await workflow.run(
+    project_id="PROJ_002",
+    chapters=["chpt_0001-0010"]
+)
+```
+
+#### 对齐GT项目
+```python
+from src.workflows.alignment_workflow import AlignmentWorkflow
+
+workflow = AlignmentWorkflow()
+result = await workflow.run(
+    project_id="PROJ_002",
+    episode_id="ep01"
+)
+```
+
+#### 训练规律库
+```python
+from src.workflows.training_workflow import TrainingWorkflow
+
+workflow = TrainingWorkflow()
+pattern_library = await workflow.run(
+    gt_project_ids=["PROJ_002", "PROJ_003", "PROJ_005"]
+)
+```
+
+#### 生产新Script
+```python
+from src.workflows.production_workflow import ProductionWorkflow
+
+workflow = ProductionWorkflow()
+result = await workflow.run(
+    novel_path="data/projects/with_novel/新小说/novel/",
+    target_episodes=1
+)
+```
+
+### 10. 实施状态
+
+**Phase 1: 基础工具开发** ✅ (已完成)
+- [x] NovelSegmentationAnalyzer Tool
+- [x] ScriptSegmentAligner Tool
+- [x] KeyInfoExtractor Tool
+- [x] Schemas定义
+- [x] Prompt文件
+
+**Phase 2: Agent开发** (待实施)
+- [ ] NovelAnalysisAgent
+- [ ] AlignmentAnalysisAgent
+- [ ] PatternLearningAgent
+- [ ] EnhancedWriterAgent
+- [ ] FeedbackLoopAgent
+
+**Phase 3: Workflow编排** (待实施)
+- [ ] NovelAnalysisWorkflow
+- [ ] AlignmentWorkflow
+- [ ] TrainingWorkflow
+- [ ] ProductionWorkflow
+
+**Phase 4: 验证与优化** (待实施)
+- [ ] 用GT项目测试完整流程
+- [ ] 验证改进效果
+- [ ] 性能优化
+
+**Phase 5: 持续改进** (待实施)
+- [ ] ContinuousImprovementWorkflow
+- [ ] 监控面板
+
+### 11. 版本控制建议
+
+```bash
+git add .
+git commit -m "feat: Novel-to-Script智能改编系统 Phase 1 - 基础工具开发
+
+- 新增 schemas_segmentation.py（数据模型）
+- 新增 NovelSegmentationAnalyzer Tool（LLM驱动分段分析）
+- 新增 ScriptSegmentAligner Tool（精确对齐与改编分析）
+- 新增 KeyInfoExtractor Tool（关键信息汇总）
+- 新增 2个Prompt配置（分段分析、对齐分析）
+- 归档旧方法到 archive/（v1_legacy_workflows, v3_maintenance_docs）
+- 更新文档（DEV_STANDARDS.md, logic_flows.md）
+
+See: docs/architecture/logic_flows.md - Section 十三"
+
+git tag -a v3.1.0 -m "Novel-to-Script System Phase 1"
+```
+
+---
+*Last Updated: 2026-02-07 (v3.1)*

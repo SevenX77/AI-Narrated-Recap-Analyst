@@ -1,0 +1,151 @@
+{
+  "episode": "ep08",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep08.md",
+  "stats": {
+    "original_chars": 519,
+    "processed_chars": 778,
+    "paragraphs": 7,
+    "srt_entries": 48,
+    "avg_paragraph_sentences": 2.142857142857143,
+    "processing_time_seconds": 30.27
+  },
+  "entity_standardization": {
+    "locations": {
+      "山洞": {
+        "variants": [
+          "山洞"
+        ],
+        "standard_form": "山洞",
+        "reasoning": "故事发生的主要地点之一，用于躲避和取暖。"
+      }
+    },
+    "characters": {
+      "你": {
+        "variants": [
+          "你"
+        ],
+        "standard_form": "你",
+        "reasoning": "故事叙述的第二人称主角，负责救助。"
+      },
+      "女人": {
+        "variants": [
+          "那个女人",
+          "抱孩子的女人",
+          "女人",
+          "她",
+          "他（错字）"
+        ],
+        "standard_form": "女人",
+        "reasoning": "被救助的孩子的母亲，文中多次出现，指代明确。‘他’在上下文中明显为‘她’的错字。"
+      },
+      "孩子": {
+        "variants": [
+          "孩子",
+          "小孩",
+          "她（指孩子）"
+        ],
+        "standard_form": "孩子",
+        "reasoning": "被救助的婴儿，是故事的核心。"
+      },
+      "之前的首领": {
+        "variants": [
+          "之前的首领"
+        ],
+        "standard_form": "之前的首领",
+        "reasoning": "文中提及的对比人物，未直接出场。"
+      }
+    },
+    "items": {
+      "小火炉": {
+        "variants": [
+          "小火炉"
+        ],
+        "standard_form": "小火炉",
+        "reasoning": "比喻火塘的温度。"
+      },
+      "兽皮": {
+        "variants": [
+          "兽皮"
+        ],
+        "standard_form": "兽皮",
+        "reasoning": "用于包裹保暖的道具。"
+      },
+      "火塘": {
+        "variants": [
+          "火塘"
+        ],
+        "standard_form": "火塘",
+        "reasoning": "取暖和烹饪的热源地点。"
+      },
+      "清炖鱼汤": {
+        "variants": [
+          "清炖鱼汤",
+          "鱼汤"
+        ],
+        "standard_form": "鱼汤",
+        "reasoning": "为病人准备的食物，‘清炖’是烹饪方式，核心实体是‘鱼汤’。"
+      },
+      "孔鸟的大嘴": {
+        "variants": [
+          "孔鸟的大嘴",
+          "鸟嘴碎片",
+          "骨片"
+        ],
+        "standard_form": "骨片",
+        "reasoning": "从‘孔鸟的大嘴’上获取的，用于刮痧的工具。文中后续称为‘骨片’，作为工具名更统一。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:10,433",
+      "sentence_count": 3,
+      "char_count": 74
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:10,433",
+      "end_time": "00:00:21,800",
+      "sentence_count": 3,
+      "char_count": 79
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:21,800",
+      "end_time": "00:00:30,133",
+      "sentence_count": 1,
+      "char_count": 59
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:30,133",
+      "end_time": "00:00:41,733",
+      "sentence_count": 2,
+      "char_count": 81
+    },
+    {
+      "index": 5,
+      "start_time": "00:00:41,733",
+      "end_time": "00:00:57,900",
+      "sentence_count": 3,
+      "char_count": 107
+    },
+    {
+      "index": 6,
+      "start_time": "00:00:57,900",
+      "end_time": "00:01:04,600",
+      "sentence_count": 1,
+      "char_count": 40
+    },
+    {
+      "index": 7,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:04,600",
+      "sentence_count": 2,
+      "char_count": 79
+    }
+  ]
+}

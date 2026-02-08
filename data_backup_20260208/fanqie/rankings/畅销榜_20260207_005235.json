@@ -1,0 +1,118 @@
+{
+  "ranking_type": "畅销榜",
+  "ranking_url": "https://fanqienovel.com/page/rank/bestseller",
+  "crawled_at": "2026-02-07T00:52:35.991426",
+  "novels": [
+    {
+      "novel_id": "novel_000001",
+      "title": "示例小说 1",
+      "author": "作者 1",
+      "url": "https://fanqienovel.com/page/000001",
+      "rank": 1,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 1 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991406"
+    },
+    {
+      "novel_id": "novel_000002",
+      "title": "示例小说 2",
+      "author": "作者 2",
+      "url": "https://fanqienovel.com/page/000002",
+      "rank": 2,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 2 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991409"
+    },
+    {
+      "novel_id": "novel_000003",
+      "title": "示例小说 3",
+      "author": "作者 3",
+      "url": "https://fanqienovel.com/page/000003",
+      "rank": 3,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 3 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991411"
+    },
+    {
+      "novel_id": "novel_000004",
+      "title": "示例小说 4",
+      "author": "作者 4",
+      "url": "https://fanqienovel.com/page/000004",
+      "rank": 4,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 4 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991412"
+    },
+    {
+      "novel_id": "novel_000005",
+      "title": "示例小说 5",
+      "author": "作者 5",
+      "url": "https://fanqienovel.com/page/000005",
+      "rank": 5,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 5 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991414"
+    },
+    {
+      "novel_id": "novel_000006",
+      "title": "示例小说 6",
+      "author": "作者 6",
+      "url": "https://fanqienovel.com/page/000006",
+      "rank": 6,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 6 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991416"
+    },
+    {
+      "novel_id": "novel_000007",
+      "title": "示例小说 7",
+      "author": "作者 7",
+      "url": "https://fanqienovel.com/page/000007",
+      "rank": 7,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 7 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991418"
+    },
+    {
+      "novel_id": "novel_000008",
+      "title": "示例小说 8",
+      "author": "作者 8",
+      "url": "https://fanqienovel.com/page/000008",
+      "rank": 8,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 8 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991419"
+    },
+    {
+      "novel_id": "novel_000009",
+      "title": "示例小说 9",
+      "author": "作者 9",
+      "url": "https://fanqienovel.com/page/000009",
+      "rank": 9,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 9 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991421"
+    },
+    {
+      "novel_id": "novel_000010",
+      "title": "示例小说 10",
+      "author": "作者 10",
+      "url": "https://fanqienovel.com/page/000010",
+      "rank": 10,
+      "ranking_type": "畅销榜",
+      "cover_url": null,
+      "intro_snippet": "这是第 10 本小说的简介...",
+      "crawled_at": "2026-02-07T00:52:35.991425"
+    }
+  ],
+  "total_count": 10
+}

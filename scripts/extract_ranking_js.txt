@@ -1,0 +1,84 @@
+// 番茄小说榜单提取通用JavaScript脚本
+// 使用方法: 在browser_evaluate中调用，替换RANKING_NAME和CATEGORY
+
+() => {
+  const novels = [];
+  const processedUrls = new Set();
+  
+  const novelLinks = document.querySelectorAll('a[href*="/page/7"]');
+  
+  novelLinks.forEach((link) => {
+    try {
+      const url = link.href;
+      if (processedUrls.has(url)) return;
+      processedUrls.add(url);
+      
+      const title = link.textContent.trim();
+      if (!title || title.length < 2) return;
+      
+      let container = link;
+      for (let i = 0; i < 10; i++) {
+        container = container.parentElement;
+        if (!container) break;
+        
+        const hasAuthor = container.querySelector('a[href*="/author-page/"]');
+        const hasImage = container.querySelector('img');
+        if (hasAuthor || hasImage) break;
+      }
+      
+      if (!container) return;
+      
+      const authorLink = container.querySelector('a[href*="/author-page/"]');
+      const author = authorLink ? authorLink.textContent.trim() : '';
+      
+      const rankElem = container.querySelector('h1');
+      let rank = novels.length + 1;
+      if (rankElem) {
+        const rankText = rankElem.textContent.trim();
+        const rankMatch = rankText.match(/\d+/);
+        if (rankMatch) rank = parseInt(rankMatch[0]);
+      }
+      
+      const allText = container.textContent;
+      
+      let status = '';
+      if (allText.includes('已完结')) status = '已完结';
+      else if (allText.includes('连载中')) status = '连载中';
+      
+      const readersMatch = allText.match(/在读[：:]\s*([\d.]+万?)/);
+      const readers = readersMatch ? readersMatch[1] : '';
+      
+      const chapterMatch = allText.match(/最近更新[：:]\s*([^\n]+)/);
+      const latestChapter = chapterMatch ? chapterMatch[1].substring(0, 50) : '';
+      
+      const dateMatch = allText.match(/(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2})/);
+      const lastUpdated = dateMatch ? dateMatch[1] : '';
+      
+      novels.push({
+        rank: rank,
+        title: title,
+        author: author,
+        url: url,
+        status: status,
+        readers: readers,
+        latest_chapter: latestChapter,
+        last_updated: lastUpdated
+      });
+      
+    } catch (e) {
+      console.error('处理失败:', e);
+    }
+  });
+  
+  novels.sort((a, b) => a.rank - b.rank);
+  
+  return {
+    success: true,
+    ranking_name: 'RANKING_NAME',
+    category: 'CATEGORY',
+    url: window.location.href,
+    crawled_at: new Date().toISOString(),
+    total: novels.length,
+    novels: novels
+  };
+}

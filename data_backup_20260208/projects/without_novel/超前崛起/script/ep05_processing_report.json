@@ -1,0 +1,177 @@
+{
+  "episode": "ep05",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/without_novel/超前崛起/script/ep05.md",
+  "stats": {
+    "original_chars": 502,
+    "processed_chars": 694,
+    "paragraphs": 5,
+    "srt_entries": 47,
+    "avg_paragraph_sentences": 3.2,
+    "processing_time_seconds": 37.47
+  },
+  "entity_standardization": {
+    "locations": {
+      "部落西边": {
+        "variants": [
+          "部落西边"
+        ],
+        "standard_form": "部落西边",
+        "reasoning": "指主角部落西边的方位，用于描述交易对象的位置。"
+      },
+      "山谷": {
+        "variants": [
+          "山谷"
+        ],
+        "standard_form": "山谷",
+        "reasoning": "指代地理特征，是前往交易部落需要跨越的地形。"
+      }
+    },
+    "characters": {
+      "你（主角/部落首领）": {
+        "variants": [
+          "你"
+        ],
+        "standard_form": "你",
+        "reasoning": "文本以第二人称叙述，指代部落的决策者和首领。"
+      },
+      "长老": {
+        "variants": [
+          "长老"
+        ],
+        "standard_form": "长老",
+        "reasoning": "部落中的重要成员，负责执行交易任务。"
+      },
+      "狩猎队7人": {
+        "variants": [
+          "狩猎队7人"
+        ],
+        "standard_form": "狩猎队",
+        "reasoning": "指由七人组成的狩猎队伍，是部落的武装或劳动力。"
+      },
+      "谢顶（对方部落首领）": {
+        "variants": [
+          "谢顶首领",
+          "谢顶"
+        ],
+        "standard_form": "谢顶",
+        "reasoning": "对方部落的首领，特征或名字为‘谢顶’，是交易的另一方。"
+      },
+      "大力": {
+        "variants": [
+          "大力"
+        ],
+        "standard_form": "大力",
+        "reasoning": "主角部落的成员，负责搬运水缸。"
+      }
+    },
+    "items": {
+      "容器": {
+        "variants": [
+          "容器"
+        ],
+        "standard_form": "容器",
+        "reasoning": "泛指用于储存的器皿，是交易的宏观目标。"
+      },
+      "水缸": {
+        "variants": [
+          "水缸",
+          "石盆（对方称呼）"
+        ],
+        "standard_form": "水缸",
+        "reasoning": "主角部落用于交易的主要陶制容器，对方误称为‘石盆’，实为同一物品。"
+      },
+      "砂锅": {
+        "variants": [
+          "砂锅"
+        ],
+        "standard_form": "砂锅",
+        "reasoning": "用于烹饪的陶器，交易物品之一。"
+      },
+      "陶碗": {
+        "variants": [
+          "陶碗"
+        ],
+        "standard_form": "陶碗",
+        "reasoning": "小型的陶制餐具，用于交换盐或女孩。"
+      },
+      "盐": {
+        "variants": [
+          "盐",
+          "闲时（错字）"
+        ],
+        "standard_form": "盐",
+        "reasoning": "重要的生活物资，‘闲时’为明显的同音错字，根据上下文‘换盐’、‘一小包盐’可推断。"
+      },
+      "背篓": {
+        "variants": [
+          "背篓"
+        ],
+        "standard_form": "背篓",
+        "reasoning": "用于携带物品的竹编或藤编容器。"
+      },
+      "石盆": {
+        "variants": [
+          "石盆"
+        ],
+        "standard_form": "石盆",
+        "reasoning": "对方部落使用的石器，文中用于对比凸显陶制水缸的轻便。"
+      }
+    },
+    "groups": {
+      "汉部落": {
+        "variants": [
+          "汉部落",
+          "你的部落"
+        ],
+        "standard_form": "汉部落",
+        "reasoning": "主角所属的部落名称，文中明确给出。"
+      },
+      "对方部落": {
+        "variants": [
+          "部落西边的一个部落",
+          "这个部落"
+        ],
+        "standard_form": "对方部落",
+        "reasoning": "指与汉部落进行交易的另一方部落，文中未给出具体名称。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:13,666",
+      "sentence_count": 4,
+      "char_count": 96
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:13,666",
+      "end_time": "00:00:33,000",
+      "sentence_count": 3,
+      "char_count": 132
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:33,000",
+      "end_time": "00:00:44,233",
+      "sentence_count": 2,
+      "char_count": 80
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:44,233",
+      "end_time": "00:01:00,900",
+      "sentence_count": 3,
+      "char_count": 112
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:00,900",
+      "end_time": "00:01:04,700",
+      "sentence_count": 4,
+      "char_count": 87
+    }
+  ]
+}

@@ -72,10 +72,47 @@
 pip install -r requirements.txt
 ```
 
-### 配置API Key
+### 配置 LLM Provider
+
+系统支持多个 LLM 提供商（DeepSeek、Claude 等），通过环境变量切换：
+
+#### 方式 1: 创建 .env 文件（推荐）
+
+在项目根目录创建 `.env` 文件：
+
 ```bash
+# 选择 LLM Provider: deepseek | claude
+LLM_PROVIDER=deepseek
+
+# DeepSeek 配置（默认）
+DEEPSEEK_API_KEY=your_deepseek_api_key
+DEEPSEEK_BASE_URL=https://api.deepseek.com
+DEEPSEEK_MODEL_NAME=deepseek-chat
+
+# Claude 配置（可选）
+CLAUDE_API_KEY=your_claude_api_key
+CLAUDE_BASE_URL=https://vip.apiyi.com/v1
+CLAUDE_MODEL_NAME=claude-sonnet-4-5-20250929
+```
+
+#### 方式 2: 使用环境变量
+
+```bash
+export LLM_PROVIDER=deepseek
 export DEEPSEEK_API_KEY="your_api_key"
-# 或编辑 .env 文件
+```
+
+#### Claude Sonnet 4.5 配置指南
+
+详细配置说明请参考：**[Claude 配置指南](docs/CLAUDE_SETUP_GUIDE.md)**
+
+快速测试 Claude 配置：
+```bash
+# 安装 Claude SDK
+pip install anthropic
+
+# 运行测试脚本
+python scripts/test_claude_api.py
 ```
 
 ### 运行工作流
@@ -132,6 +169,9 @@ class IngestionConfig:
 - **项目结构**: `docs/PROJECT_STRUCTURE.md` - 项目文件组织与说明
 - **开发标准**: `docs/DEV_STANDARDS.md` - 代码规范与最佳实践
 - **架构文档**: `docs/architecture/logic_flows.md` - 系统架构与数据流
+
+### 配置指南
+- **Claude 配置**: `docs/CLAUDE_SETUP_GUIDE.md` - Claude Sonnet 4.5 配置与测试指南 ⭐ NEW
 
 ### 功能优化文档
 - **摄入优化部署**: `docs/maintenance/ingestion_optimization_deployment.md` - 动态章节提取部署指南

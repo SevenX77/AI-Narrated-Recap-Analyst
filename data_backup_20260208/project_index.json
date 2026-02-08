@@ -1,0 +1,262 @@
+{
+  "version": "2.0",
+  "updated_at": "2026-02-06T07:39:41.288811",
+  "projects": {
+    "with_novel": {
+      "末哥超凡公路": {
+        "id": "PROJ_002",
+        "name": "末哥超凡公路",
+        "category": "with_novel",
+        "purpose": "alignment_writer_training",
+        "source_path": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/分析资料/有原小说/01_末哥超凡公路",
+        "created_at": "2026-02-06T07:39:41.289454",
+        "migrated_at": "2026-02-06T07:39:41.289459",
+        "status": "migrated",
+        "is_ground_truth": true,
+        "is_explosive": false,
+        "heat_score": null,
+        "episodes": [
+          "ep01",
+          "ep02",
+          "ep03",
+          "ep04",
+          "ep05"
+        ],
+        "notes": "",
+        "novel_processing": {
+          "method": "rule_llm_hybrid",
+          "processed_at": "2026-02-06T07:39:41.289468",
+          "stats": {
+            "original_lines": 5507,
+            "total_paragraphs": 1643,
+            "avg_paragraph_length": 3.34,
+            "min_paragraph_length": 1,
+            "max_paragraph_length": 7,
+            "rule_processed": 1643,
+            "llm_refined": 0,
+            "llm_calls": 0,
+            "chapters": {
+              "total_chapters": 50,
+              "introduction_file": "chpt_0000.md",
+              "chapter_files": [
+                "chpt_0001-0010.md",
+                "chpt_0011-0020.md",
+                "chpt_0021-0030.md",
+                "chpt_0031-0040.md",
+                "chpt_0041-0050.md"
+              ],
+              "chapters_per_file": 10,
+              "metadata": {
+                "title": "序列公路求生：我在末日升级物资",
+                "author": "山海呼啸",
+                "tags": [
+                  "题材新颖",
+                  "非无脑爽文",
+                  "非无敌",
+                  "序列魔药",
+                  "诡异",
+                  "公路求生",
+                  "升级物资",
+                  "心狠手辣"
+                ]
+              }
+            },
+            "validation": {
+              "is_valid": false,
+              "quality_score": 65.0,
+              "issues_count": 3,
+              "critical_issues": 1,
+              "rule_suggestions": [
+                "添加规则过滤以下模式：'【题材新颖+非无脑爽文+非无敌+序列魔药+诡异+公路求生+升级物资+心狠手辣】' 类型的元信息"
+              ]
+            }
+          }
+        }
+      },
+      "天命桃花": {
+        "id": "PROJ_004",
+        "name": "天命桃花",
+        "category": "with_novel",
+        "purpose": "alignment_writer_training",
+        "source_path": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/分析资料/有原小说/02_天命桃花",
+        "created_at": "2026-02-06T07:39:41.289878",
+        "migrated_at": "2026-02-06T07:39:41.289883",
+        "status": "migrated",
+        "is_ground_truth": false,
+        "is_explosive": false,
+        "heat_score": null,
+        "episodes": [
+          "ep01",
+          "ep02",
+          "ep03",
+          "ep04",
+          "ep05"
+        ],
+        "notes": "",
+        "novel_processing": {
+          "method": "rule_llm_hybrid",
+          "processed_at": "2026-02-06T07:39:41.289887",
+          "stats": {
+            "original_lines": 14394,
+            "total_paragraphs": 3423,
+            "avg_paragraph_length": 4.2,
+            "min_paragraph_length": 1,
+            "max_paragraph_length": 9,
+            "rule_processed": 3423,
+            "llm_refined": 0,
+            "llm_calls": 0,
+            "chapters": {
+              "total_chapters": 155,
+              "introduction_file": "chpt_0000.md",
+              "chapter_files": [
+                "chpt_0001-0010.md",
+                "chpt_0011-0020.md",
+                "chpt_0021-0030.md",
+                "chpt_0031-0040.md",
+                "chpt_0041-0050.md",
+                "chpt_0051-0060.md",
+                "chpt_0061-0070.md",
+                "chpt_0071-0080.md",
+                "chpt_0081-0090.md",
+                "chpt_0091-0100.md",
+                "chpt_0101-0110.md",
+                "chpt_0111-0120.md",
+                "chpt_0121-0130.md",
+                "chpt_0131-0140.md",
+                "chpt_0141-0150.md",
+                "chpt_0151-0155.md"
+              ],
+              "chapters_per_file": 10,
+              "metadata": {
+                "title": "读心术，小公主给满朝文武发对像",
+                "author": "大白最可爱",
+                "tags": [
+                  "有缘人读心＋金手指＋摇人＋大佬＋牵红线＋爽文"
+                ]
+              }
+            },
+            "validation": {
+              "is_valid": false,
+              "quality_score": 20.0,
+              "issues_count": 5,
+              "critical_issues": 3,
+              "rule_suggestions": [
+                "添加规则过滤以下模式：配对标签（含 ＊ 或 × 符号）, '......' 类型的元信息, 装饰性分隔符, '古代大直男＊变装大佬。\n女财迷＊神医钱串子。\n大将军的白月光。' 类型的元信息"
+              ]
+            }
+          }
+        }
+      },
+      "永夜悔恨录": {
+        "id": "PROJ_003",
+        "name": "永夜悔恨录",
+        "category": "with_novel",
+        "purpose": "alignment_writer_training",
+        "source_path": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/分析资料/有原小说/03_永夜悔恨录",
+        "created_at": "2026-02-06T07:39:41.290447",
+        "migrated_at": "2026-02-06T07:39:41.290453",
+        "status": "migrated",
+        "is_ground_truth": false,
+        "is_explosive": false,
+        "heat_score": null,
+        "episodes": [
+          "ep01"
+        ],
+        "notes": "",
+        "novel_processing": {
+          "method": "rule_llm_hybrid",
+          "processed_at": "2026-02-06T07:39:41.290459",
+          "stats": {
+            "original_lines": 3047,
+            "total_paragraphs": 979,
+            "avg_paragraph_length": 3.11,
+            "min_paragraph_length": 1,
+            "max_paragraph_length": 6,
+            "rule_processed": 979,
+            "llm_refined": 0,
+            "llm_calls": 0,
+            "chapters": {
+              "total_chapters": 76,
+              "introduction_file": "chpt_0000.md",
+              "chapter_files": [
+                "chpt_0001-0010.md",
+                "chpt_0011-0020.md",
+                "chpt_0021-0030.md",
+                "chpt_0031-0040.md",
+                "chpt_0041-0050.md",
+                "chpt_0051-0060.md",
+                "chpt_0061-0070.md",
+                "chpt_0071-0076.md"
+              ],
+              "chapters_per_file": 10,
+              "metadata": {
+                "title": "无边悔恨",
+                "author": "作手",
+                "tags": []
+              }
+            },
+            "validation": {
+              "is_valid": true,
+              "quality_score": 100.0,
+              "issues_count": 0,
+              "critical_issues": 0,
+              "rule_suggestions": []
+            }
+          }
+        }
+      }
+    },
+    "without_novel": {
+      "超前崛起": {
+        "id": "PROJ_001",
+        "name": "超前崛起",
+        "category": "without_novel",
+        "purpose": "script_analysis_hit_pattern",
+        "source_path": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/分析资料/没有原小说/04_超前崛起",
+        "created_at": "2026-02-06T07:39:41.290674",
+        "migrated_at": "2026-02-06T07:39:41.290677",
+        "status": "migrated",
+        "is_ground_truth": false,
+        "is_explosive": false,
+        "heat_score": null,
+        "episodes": [
+          "ep01",
+          "ep02",
+          "ep03",
+          "ep04",
+          "ep05",
+          "ep06",
+          "ep07",
+          "ep08",
+          "ep09"
+        ],
+        "notes": ""
+      },
+      "末世寒潮": {
+        "id": "PROJ_005",
+        "name": "末世寒潮",
+        "category": "without_novel",
+        "purpose": "script_analysis_hit_pattern",
+        "source_path": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/分析资料/没有原小说/05_末世寒潮",
+        "created_at": "2026-02-06T07:39:41.290790",
+        "migrated_at": "2026-02-06T07:39:41.290792",
+        "status": "migrated",
+        "is_ground_truth": false,
+        "is_explosive": false,
+        "heat_score": null,
+        "episodes": [
+          "ep01",
+          "ep02"
+        ],
+        "notes": ""
+      }
+    }
+  },
+  "migration_history": {
+    "v1_to_v2": {
+      "date": "2026-02-06",
+      "archived_to": "data/projects_archive_20260205",
+      "reason": "重构项目结构，分离有无原小说项目，实现小说自然分段处理"
+    }
+  }
+}

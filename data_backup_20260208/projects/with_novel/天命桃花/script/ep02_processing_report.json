@@ -1,0 +1,143 @@
+{
+  "episode": "ep02",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/天命桃花/script/ep02.md",
+  "stats": {
+    "original_chars": 550,
+    "processed_chars": 769,
+    "paragraphs": 6,
+    "srt_entries": 63,
+    "avg_paragraph_sentences": 3.0,
+    "processing_time_seconds": 36.33
+  },
+  "entity_standardization": {
+    "characters": {
+      "皇后": {
+        "variants": [
+          "皇后"
+        ],
+        "standard_form": "皇后",
+        "reasoning": "后宫之主，皇帝的妻子，是本文的核心反派角色。"
+      },
+      "宗文帝": {
+        "variants": [
+          "宗文帝",
+          "皇爹爹",
+          "皇上",
+          "朕"
+        ],
+        "standard_form": "宗文帝",
+        "reasoning": "皇帝的年号/称谓，'皇爹爹'是公主对其的称呼，'皇上'和'朕'是其自称或他称，上下文指向同一人。"
+      },
+      "喜公公": {
+        "variants": [
+          "喜公公"
+        ],
+        "standard_form": "喜公公",
+        "reasoning": "皇帝身边的太监。"
+      },
+      "公主": {
+        "variants": [
+          "我",
+          "公主",
+          "这孩子"
+        ],
+        "standard_form": "公主",
+        "reasoning": "叙述者视角，是皇帝的女儿，刚出生一天。'我'是其自称，'这孩子'是他人指代。"
+      },
+      "贵妃/嫔妃们": {
+        "variants": [
+          "贵妃们",
+          "嫔妃们",
+          "她们"
+        ],
+        "standard_form": "嫔妃们",
+        "reasoning": "指代后宫的其他妃子，'贵妃们'是其中位份较高者，'嫔妃们'是更通用的总称，上下文指向同一群体。"
+      },
+      "太子": {
+        "variants": [
+          "太子"
+        ],
+        "standard_form": "太子",
+        "reasoning": "已故的皇子，皇位的继承人。"
+      }
+    },
+    "locations": {
+      "景仁宫": {
+        "variants": [
+          "景仁宫"
+        ],
+        "standard_form": "景仁宫",
+        "reasoning": "皇后被禁足的宫殿。"
+      },
+      "大殿": {
+        "variants": [
+          "大殿",
+          "台上"
+        ],
+        "standard_form": "大殿",
+        "reasoning": "事件发生的主要场所，'台上'指大殿内的某个高台或区域。"
+      },
+      "隔间": {
+        "variants": [
+          "隔间"
+        ],
+        "standard_form": "隔间",
+        "reasoning": "大殿旁供公主换衣服的房间。"
+      }
+    },
+    "items": {
+      "红线": {
+        "variants": [
+          "红线"
+        ],
+        "standard_form": "红线",
+        "reasoning": "连接雅太监与皇后的线索或象征物。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,033",
+      "end_time": "00:00:19,400",
+      "sentence_count": 4,
+      "char_count": 109
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:19,400",
+      "end_time": "00:00:35,400",
+      "sentence_count": 3,
+      "char_count": 87
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:35,400",
+      "end_time": "00:00:53,066",
+      "sentence_count": 4,
+      "char_count": 117
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:53,066",
+      "end_time": "00:01:00,233",
+      "sentence_count": 2,
+      "char_count": 48
+    },
+    {
+      "index": 5,
+      "start_time": "00:01:00,233",
+      "end_time": "00:01:15,600",
+      "sentence_count": 3,
+      "char_count": 109
+    },
+    {
+      "index": 6,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:15,600",
+      "sentence_count": 2,
+      "char_count": 76
+    }
+  ]
+}

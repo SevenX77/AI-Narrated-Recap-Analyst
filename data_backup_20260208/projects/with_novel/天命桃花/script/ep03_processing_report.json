@@ -1,0 +1,123 @@
+{
+  "episode": "ep03",
+  "processing_mode": "without_novel",
+  "output_file": "/Users/sevenx/Documents/coding/AI-Narrated Recap Analyst/data/projects/with_novel/天命桃花/script/ep03.md",
+  "stats": {
+    "original_chars": 521,
+    "processed_chars": 779,
+    "paragraphs": 7,
+    "srt_entries": 63,
+    "avg_paragraph_sentences": 3.0,
+    "processing_time_seconds": 30.51
+  },
+  "entity_standardization": {
+    "characters": {
+      "宗文帝": {
+        "variants": [
+          "宗文帝",
+          "皇上",
+          "朕"
+        ],
+        "standard_form": "宗文帝",
+        "reasoning": "皇帝，本文核心人物，\"皇上\"、\"朕\"是其在不同语境下的称谓。"
+      },
+      "皇后": {
+        "variants": [
+          "皇后",
+          "他的发妻"
+        ],
+        "standard_form": "皇后",
+        "reasoning": "宗文帝的妻子，太子的母亲。"
+      },
+      "太子": {
+        "variants": [
+          "太子",
+          "自己孩子",
+          "他儿子",
+          "他第一个孩子"
+        ],
+        "standard_form": "太子",
+        "reasoning": "宗文帝与皇后的儿子，已故。"
+      },
+      "萧子义": {
+        "variants": [
+          "皇后他爹萧子义",
+          "萧子义",
+          "皇后亲爹",
+          "太子外祖"
+        ],
+        "standard_form": "萧子义",
+        "reasoning": "皇后的父亲，太子的外祖父，官职辅军大将军。"
+      }
+    },
+    "locations": {
+      "楚华宫": {
+        "variants": [
+          "楚华宫"
+        ],
+        "standard_form": "楚华宫",
+        "reasoning": "宫殿名称，是妃嫔的居所。"
+      }
+    },
+    "items": {
+      "兵权": {
+        "variants": [
+          "兵权"
+        ],
+        "standard_form": "兵权",
+        "reasoning": "军队的指挥权，是本文的核心矛盾点。"
+      }
+    }
+  },
+  "paragraphs_info": [
+    {
+      "index": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:14,266",
+      "sentence_count": 3,
+      "char_count": 91
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:14,266",
+      "end_time": "00:00:26,066",
+      "sentence_count": 3,
+      "char_count": 63
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:26,066",
+      "end_time": "00:00:44,466",
+      "sentence_count": 4,
+      "char_count": 113
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:44,466",
+      "end_time": "00:00:59,266",
+      "sentence_count": 5,
+      "char_count": 90
+    },
+    {
+      "index": 5,
+      "start_time": "00:00:59,266",
+      "end_time": "00:01:06,300",
+      "sentence_count": 2,
+      "char_count": 42
+    },
+    {
+      "index": 6,
+      "start_time": "00:01:06,300",
+      "end_time": "00:01:11,133",
+      "sentence_count": 3,
+      "char_count": 76
+    },
+    {
+      "index": 7,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:11,133",
+      "sentence_count": 1,
+      "char_count": 45
+    }
+  ]
+}
