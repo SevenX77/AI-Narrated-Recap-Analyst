@@ -1,326 +1,392 @@
 """
-Novel Segmenter Tool
-小说章节叙事分段分析工具
+NovelSegmenter - 小说章节分段工具（v3, Two-Pass）
 
-职责：
-1. 读取指定章节内容
-2. 使用LLM进行叙事分段分析
-3. 生成详细的Markdown分析报告
-4. 保存到项目analysis目录
+基于A/B/C原则对小说章节进行叙事分段，输出JSON格式结果。
+
+- A类-设定：跳脱时间线的设定信息（世界观、规则）
+- B类-事件：现实时间线的事件（动作、场景）
+- C类-系统：次元空间事件（系统觉醒、系统交互）
+
+实现方式：
+1. Two-Pass LLM调用（Pass 1初步分段 + Pass 2校验修正）
+2. 代码解析LLM输出（结构化文本 → 段落边界）
+3. 在原文中定位段落位置，切分原文
+4. 生成JSON输出（可完全还原原文）
 """
 
 import logging
 import re
+import time
 from pathlib import Path
-from typing import Union, Optional
-from datetime import datetime
-from openai import OpenAI
+from typing import Optional, Dict, Any, List, Tuple
 
 from src.core.interfaces import BaseTool
-from src.core.config import config
+from src.core.schemas_novel import ParagraphSegment, ParagraphSegmentationResult
+from src.core.llm_client_manager import get_llm_client, get_model_name
 from src.utils.prompt_loader import load_prompts
-from src.tools.novel_chapter_detector import NovelChapterDetector
-from src.tools.novel_metadata_extractor import NovelMetadataExtractor
 
 logger = logging.getLogger(__name__)
 
 
 class NovelSegmenter(BaseTool):
     """
-    小说章节叙事分段分析工具
+    小说章节分段工具
     
-    功能：
-    - 使用LLM对小说章节进行叙事功能分段
-    - 标注每个段落的叙事特征（功能、类型、优先级等）
-    - 生成详细的Markdown分析报告
+    使用Two-Pass策略对章节进行A/B/C分段，输出JSON格式结果。
     
-    Example:
-        >>> segmenter = NovelSegmenter()
-        >>> report_path = segmenter.execute(
-        ...     novel_file="data/projects/xxx/raw/novel.txt",
-        ...     chapter_number=1
-        ... )
-        >>> print(f"Analysis saved to: {report_path}")
+    Args:
+        provider: LLM Provider（默认："claude"）
+        model: 模型名称（可选，默认使用provider的默认模型）
+    
+    Returns:
+        ParagraphSegmentationResult: 分段结果（JSON格式，可完全还原原文）
     """
     
-    name = "novel_segmenter"
-    description = "Perform narrative segmentation analysis on novel chapters using LLM"
-    
-    def __init__(self, provider: str = "claude"):
-        """
-        初始化工具
-        
-        Args:
-            provider: LLM Provider ("claude" | "deepseek")
-                     默认使用 Claude（小说分段是复杂任务，需要高质量理解）
-        """
-        from src.core.llm_client_manager import get_llm_client, get_model_name
-        
+    def __init__(self, provider: str = "claude", model: Optional[str] = None):
+        """初始化分段工具"""
         self.provider = provider
+        self.model = model or get_model_name(provider)
         self.llm_client = get_llm_client(provider)
-        self.model_name = get_model_name(provider)
         
-        # 加载prompt配置
-        self.prompt_config = load_prompts("novel_chapter_segmentation")
-        
-        # 初始化依赖工具
-        self.chapter_detector = NovelChapterDetector()
-        self.metadata_extractor = NovelMetadataExtractor(use_llm=False)
-        
-        logger.info(f"✅ NovelSegmenter initialized (provider: {provider})")
+        logger.info(f"NovelSegmenter initialized with {provider}/{self.model}")
     
     def execute(
         self,
-        novel_file: Union[str, Path],
-        chapter_number: int,
-        output_dir: Optional[Path] = None,
-        model: Optional[str] = None
-    ) -> Path:
-        """
-        执行章节分段分析
-        
-        Args:
-            novel_file: 小说文件路径（data/projects/xxx/raw/novel.txt）
-            chapter_number: 章节号（从1开始）
-            output_dir: 输出目录（可选），默认为 data/projects/xxx/analysis/
-            model: LLM模型名称（可选），默认使用配置文件中的模型
-        
-        Returns:
-            Path: 生成的Markdown分析报告路径
-        
-        Raises:
-            FileNotFoundError: 小说文件不存在
-            ValueError: 章节不存在或LLM调用失败
-        """
-        novel_file = Path(novel_file)
-        
-        logger.info(f"Starting chapter segmentation analysis")
-        logger.info(f"Novel file: {novel_file}")
-        logger.info(f"Chapter: {chapter_number}")
-        
-        # Step 1: 获取章节信息
-        chapter_info = self._get_chapter_info(novel_file, chapter_number)
-        logger.info(f"Chapter title: {chapter_info['title']}")
-        
-        # Step 2: 提取章节内容
-        chapter_content = self._extract_chapter_content(novel_file, chapter_info)
-        logger.info(f"Chapter content: {len(chapter_content)} chars")
-        
-        # Step 3: 获取小说元数据
-        metadata = self._get_novel_metadata(novel_file)
-        logger.info(f"Novel title: {metadata['title']}, Author: {metadata['author']}")
-        
-        # Step 4: 调用LLM进行分析
-        logger.info("Calling LLM for segmentation analysis...")
-        analysis_markdown = self._analyze_with_llm(
-            chapter_content=chapter_content,
-            chapter_number=chapter_number,
-            chapter_title=chapter_info['title'],
-            novel_title=metadata['title'],
-            author=metadata['author'],
-            model=model
-        )
-        logger.info(f"LLM analysis complete: {len(analysis_markdown)} chars")
-        
-        # Step 5: 保存Markdown报告
-        output_path = self._save_analysis(
-            markdown_content=analysis_markdown,
-            chapter_number=chapter_number,
-            novel_file=novel_file,
-            output_dir=output_dir
-        )
-        logger.info(f"Analysis saved to: {output_path}")
-        
-        return output_path
-    
-    def _get_chapter_info(self, novel_file: Path, chapter_number: int) -> dict:
-        """
-        获取章节信息
-        
-        Args:
-            novel_file: 小说文件路径
-            chapter_number: 章节号
-        
-        Returns:
-            dict: 章节信息 {'title': str, 'start_line': int, 'end_line': int}
-        
-        Raises:
-            ValueError: 章节不存在
-        """
-        # 使用 NovelChapterDetector 获取章节索引
-        chapters = self.chapter_detector.execute(
-            novel_file=novel_file,
-            validate_continuity=False
-        )
-        
-        # 查找指定章节
-        target_chapter = None
-        for chapter in chapters:
-            if chapter.number == chapter_number:
-                target_chapter = chapter
-                break
-        
-        if not target_chapter:
-            raise ValueError(
-                f"Chapter {chapter_number} not found. "
-                f"Available chapters: {[ch.number for ch in chapters]}"
-            )
-        
-        return {
-            'title': target_chapter.title,
-            'start_line': target_chapter.start_line,
-            'end_line': target_chapter.end_line
-        }
-    
-    def _extract_chapter_content(self, novel_file: Path, chapter_info: dict) -> str:
-        """
-        提取章节内容
-        
-        Args:
-            novel_file: 小说文件路径
-            chapter_info: 章节信息
-        
-        Returns:
-            str: 章节文本内容
-        """
-        with open(novel_file, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-        
-        # 提取章节内容（包含标题行）
-        start_line = chapter_info['start_line']
-        end_line = chapter_info['end_line']
-        
-        chapter_lines = lines[start_line:end_line]
-        chapter_content = ''.join(chapter_lines)
-        
-        return chapter_content.strip()
-    
-    def _get_novel_metadata(self, novel_file: Path) -> dict:
-        """
-        获取小说元数据
-        
-        Args:
-            novel_file: 小说文件路径
-        
-        Returns:
-            dict: {'title': str, 'author': str}
-        """
-        metadata = self.metadata_extractor.execute(
-            novel_file=novel_file,
-            use_llm=False
-        )
-        
-        return {
-            'title': metadata.title,
-            'author': metadata.author
-        }
-    
-    def _analyze_with_llm(
-        self,
         chapter_content: str,
         chapter_number: int,
-        chapter_title: str,
-        novel_title: str,
-        author: str,
-        model: Optional[str] = None
+        **kwargs
+    ) -> ParagraphSegmentationResult:
+        """
+        执行章节分段
+        
+        Args:
+            chapter_content: 章节文本内容（不包含章节标题行）
+            chapter_number: 章节序号
+            **kwargs: 其他参数
+        
+        Returns:
+            ParagraphSegmentationResult: 分段结果
+        """
+        logger.info(f"Starting segmentation for chapter {chapter_number}")
+        logger.info(f"Chapter content length: {len(chapter_content)} chars")
+        
+        start_time = time.time()
+        
+        # Step 1: Two-Pass LLM调用
+        logger.info("Step 1: Two-Pass LLM segmentation")
+        llm_result_pass2 = self._twopass_llm_segmentation(chapter_content, chapter_number)
+        
+        # Step 2: 解析LLM输出，提取段落边界
+        logger.info("Step 2: Parsing LLM output")
+        parsed_paragraphs = self._parse_llm_output(llm_result_pass2)
+        
+        # Step 3: 在原文中定位段落位置，切分原文
+        logger.info("Step 3: Locating paragraph boundaries in original text")
+        paragraphs = self._extract_paragraph_contents(
+            chapter_content, 
+            parsed_paragraphs
+        )
+        
+        # Step 4: 验证原文还原
+        logger.info("Step 4: Validating text restoration")
+        self._validate_text_restoration(chapter_content, paragraphs)
+        
+        processing_time = time.time() - start_time
+        
+        # Step 5: 生成结果
+        result = ParagraphSegmentationResult(
+            chapter_number=chapter_number,
+            total_paragraphs=len(paragraphs),
+            paragraphs=paragraphs,
+            metadata={
+                "type_distribution": self._calculate_type_distribution(paragraphs),
+                "processing_time": round(processing_time, 2),
+                "model_used": self.model,
+                "provider": self.provider
+            }
+        )
+        
+        logger.info(f"Segmentation complete: {len(paragraphs)} paragraphs, {processing_time:.2f}s")
+        logger.info(f"Type distribution: {result.metadata['type_distribution']}")
+        
+        return result
+    
+    def _twopass_llm_segmentation(
+        self, 
+        chapter_content: str, 
+        chapter_number: int
     ) -> str:
         """
-        使用LLM进行章节分段分析
+        Two-Pass LLM分段
         
         Args:
             chapter_content: 章节内容
-            chapter_number: 章节号
-            chapter_title: 章节标题
-            novel_title: 小说标题
-            author: 作者
-            model: LLM模型名称（可选）
+            chapter_number: 章节序号
         
         Returns:
-            str: Markdown格式的分析报告
-        
-        Raises:
-            ValueError: LLM调用失败
+            str: Pass 2的修正结果（结构化文本）
         """
-        # 获取当前日期
-        current_date = datetime.now().strftime("%Y-%m-%d")
-        
-        # 构建user prompt
-        user_prompt = self.prompt_config["user_template"].format(
-            chapter_content=chapter_content,
-            novel_title=novel_title,
-            author=author,
-            chapter_number=chapter_number,
-            chapter_title=chapter_title,
-            date=current_date
+        # 为章节内容添加行号
+        chapter_lines = chapter_content.split('\n')
+        chapter_with_line_numbers = '\n'.join(
+            [f"{i+1:4d}| {line}" for i, line in enumerate(chapter_lines)]
         )
         
-        # 确定使用的模型（优先使用初始化时指定的 provider 对应的模型）
-        model_name = model or self.model_name
-        temperature = self.prompt_config.get("settings", {}).get("temperature", 0.3)
-        max_tokens = self.prompt_config.get("settings", {}).get("max_tokens", 16000)
+        # Pass 1: 初步分段
+        logger.info("Pass 1: Initial segmentation")
+        prompt_pass1 = load_prompts("novel_chapter_segmentation_pass1")
         
-        logger.info(f"LLM settings: model={model_name}, temperature={temperature}, max_tokens={max_tokens}")
+        user_prompt_pass1 = prompt_pass1["user_template"].format(
+            chapter_content_with_line_numbers=chapter_with_line_numbers,
+            chapter_number=chapter_number
+        )
         
-        try:
-            response = self.llm_client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {"role": "system", "content": self.prompt_config["system"]},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=temperature,
-                max_tokens=max_tokens
-            )
+        pass1_start = time.time()
+        response_pass1 = self.llm_client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": prompt_pass1["system"]},
+                {"role": "user", "content": user_prompt_pass1}
+            ],
+            temperature=0.3,
+            max_tokens=4000
+        )
+        pass1_time = time.time() - pass1_start
+        
+        pass1_result = response_pass1.choices[0].message.content.strip()
+        logger.info(f"Pass 1 complete: {pass1_time:.2f}s")
+        
+        # Pass 2: 校验修正
+        logger.info("Pass 2: Validation and correction")
+        prompt_pass2 = load_prompts("novel_chapter_segmentation_pass2")
+        
+        user_prompt_pass2 = prompt_pass2["user_template"].format(
+            chapter_content=chapter_content,
+            pass1_result=pass1_result,
+            chapter_number=chapter_number
+        )
+        
+        pass2_start = time.time()
+        response_pass2 = self.llm_client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": prompt_pass2["system"]},
+                {"role": "user", "content": user_prompt_pass2}
+            ],
+            temperature=0.3,
+            max_tokens=4000
+        )
+        pass2_time = time.time() - pass2_start
+        
+        pass2_result = response_pass2.choices[0].message.content.strip()
+        logger.info(f"Pass 2 complete: {pass2_time:.2f}s")
+        
+        # 保存LLM输出用于调试（临时）
+        import tempfile
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='_pass2.md', encoding='utf-8') as f:
+            f.write(pass2_result)
+            logger.info(f"DEBUG: Pass 2 output saved to {f.name}")
+        
+        # 判断是否修正
+        if "✅ 分段正确，无需修改" in pass2_result or "分段正确" in pass2_result:
+            logger.info("Pass 2: No correction needed")
             
-            markdown_content = response.choices[0].message.content.strip()
+            # 保存Pass 1输出用于调试
+            with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='_pass1.md', encoding='utf-8') as f:
+                f.write(pass1_result)
+                logger.info(f"DEBUG: Pass 1 output saved to {f.name}")
             
-            # 清理可能的markdown代码块标记
-            if markdown_content.startswith('```markdown'):
-                markdown_content = markdown_content[len('```markdown'):].strip()
-            if markdown_content.startswith('```'):
-                markdown_content = markdown_content[3:].strip()
-            if markdown_content.endswith('```'):
-                markdown_content = markdown_content[:-3].strip()
-            
-            return markdown_content
-            
-        except Exception as e:
-            logger.error(f"LLM analysis failed: {e}")
-            raise ValueError(f"LLM analysis failed: {e}")
+            return pass1_result
+        else:
+            logger.info("Pass 2: Corrections applied")
+            return pass2_result
     
-    def _save_analysis(
-        self,
-        markdown_content: str,
-        chapter_number: int,
-        novel_file: Path,
-        output_dir: Optional[Path] = None
-    ) -> Path:
+    def _parse_llm_output(self, llm_output: str) -> List[Dict[str, Any]]:
         """
-        保存分析报告
+        解析LLM输出，提取段落行号范围
+        
+        LLM输出格式示例：
+        - **段落1（B类-事件）**：收音机播报上沪沦陷
+          行号：1-5
         
         Args:
-            markdown_content: Markdown内容
-            chapter_number: 章节号
-            novel_file: 小说文件路径
-            output_dir: 输出目录（可选）
+            llm_output: LLM输出的结构化文本
         
         Returns:
-            Path: 保存的文件路径
+            List[Dict]: 解析后的段落列表
+                [
+                    {
+                        "index": 1,
+                        "type": "B",
+                        "description": "收音机播报上沪沦陷",
+                        "start_line": 1,
+                        "end_line": 5
+                    },
+                    ...
+                ]
         """
-        # 确定输出目录
-        if output_dir is None:
-            # 默认：data/projects/{project_name}/analysis/
-            project_dir = novel_file.parent.parent  # raw/ -> project/
-            output_dir = project_dir / "analysis"
+        paragraphs = []
         
-        output_dir.mkdir(parents=True, exist_ok=True)
+        # 正则匹配段落头部
+        # 匹配: - **段落1（B类-事件）**：收音机播报上沪沦陷
+        paragraph_pattern = r'^\- \*\*段落(\d+)（([ABC])类.*?）\*\*：(.+?)$'
         
-        # 生成文件名
-        filename = f"第{chapter_number}章完整分段分析.md"
-        output_path = output_dir / filename
+        # 匹配: 行号：1-5
+        line_range_pattern = r'^\s*行号[：:]\s*(\d+)-(\d+)'
         
-        # 保存文件
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(markdown_content)
+        lines = llm_output.split('\n')
+        current_paragraph = None
         
-        return output_path
+        for line in lines:
+            line_stripped = line.strip()
+            
+            # 匹配段落头部
+            para_match = re.match(paragraph_pattern, line_stripped)
+            if para_match:
+                # 保存上一个段落
+                if current_paragraph:
+                    paragraphs.append(current_paragraph)
+                
+                # 创建新段落
+                current_paragraph = {
+                    "index": int(para_match.group(1)),
+                    "type": para_match.group(2),
+                    "description": para_match.group(3).strip(),
+                    "start_line": None,
+                    "end_line": None
+                }
+                continue
+            
+            # 匹配行号范围
+            range_match = re.match(line_range_pattern, line_stripped)
+            if range_match and current_paragraph:
+                current_paragraph["start_line"] = int(range_match.group(1))
+                current_paragraph["end_line"] = int(range_match.group(2))
+                continue
+        
+        # 保存最后一个段落
+        if current_paragraph:
+            paragraphs.append(current_paragraph)
+        
+        logger.info(f"Parsed {len(paragraphs)} paragraphs from LLM output")
+        
+        # 验证解析结果
+        for para in paragraphs:
+            if para.get("start_line") is None or para.get("end_line") is None:
+                logger.warning(f"Paragraph {para['index']} missing line range")
+            else:
+                logger.debug(f"Paragraph {para['index']}: lines {para['start_line']}-{para['end_line']}")
+        
+        return paragraphs
+    
+    def _extract_paragraph_contents(
+        self,
+        chapter_content: str,
+        parsed_paragraphs: List[Dict[str, Any]]
+    ) -> List[ParagraphSegment]:
+        """
+        根据行号从原文中提取段落内容
+        
+        策略：
+        1. 使用LLM输出的行号范围
+        2. 从原文中按行号切分段落
+        3. 计算字符位置
+        
+        Args:
+            chapter_content: 章节原文
+            parsed_paragraphs: 解析后的段落列表（包含行号范围）
+        
+        Returns:
+            List[ParagraphSegment]: 包含完整内容的段落列表
+        """
+        segments = []
+        chapter_lines = chapter_content.split('\n')
+        
+        for para in parsed_paragraphs:
+            start_line = para.get("start_line")
+            end_line = para.get("end_line")
+            
+            if start_line is None or end_line is None:
+                raise ValueError(f"Paragraph {para['index']} missing line range")
+            
+            # 行号从1开始，转换为0-based索引
+            start_idx = start_line - 1
+            end_idx = end_line  # end_line是inclusive，所以不-1
+            
+            # 验证行号范围
+            if start_idx < 0 or end_idx > len(chapter_lines):
+                raise ValueError(
+                    f"Paragraph {para['index']} line range out of bounds: "
+                    f"{start_line}-{end_line} (total lines: {len(chapter_lines)})"
+                )
+            
+            # 提取段落内容
+            paragraph_lines = chapter_lines[start_idx:end_idx]
+            content = '\n'.join(paragraph_lines)
+            
+            # 计算字符位置
+            start_char = sum(len(line) + 1 for line in chapter_lines[:start_idx])  # +1 for \n
+            end_char = start_char + len(content)
+            
+            # 创建ParagraphSegment
+            segment = ParagraphSegment(
+                index=para["index"],
+                type=para["type"],
+                content=content,
+                start_char=start_char,
+                end_char=end_char,
+                start_line=start_idx,
+                end_line=end_idx
+            )
+            
+            segments.append(segment)
+            
+            logger.debug(f"Paragraph {para['index']} ({para['type']}): "
+                        f"lines [{start_line}, {end_line}], "
+                        f"chars [{start_char}, {end_char}), "
+                        f"length {len(content)}")
+        
+        return segments
+    
+    def _validate_text_restoration(
+        self,
+        original_text: str,
+        paragraphs: List[ParagraphSegment]
+    ):
+        """
+        验证段落拼接是否能还原原文
+        
+        Args:
+            original_text: 原始章节文本
+            paragraphs: 段落列表
+        
+        Raises:
+            ValueError: 如果无法还原原文
+        """
+        # 拼接所有段落内容
+        restored_text = ''.join([p.content for p in paragraphs])
+        
+        # 去除尾部空白后比较
+        original_stripped = original_text.rstrip()
+        restored_stripped = restored_text.rstrip()
+        
+        if original_stripped == restored_stripped:
+            logger.info("✅ Text restoration validation passed")
+        else:
+            # 计算差异
+            diff_ratio = len(set(original_stripped) - set(restored_stripped)) / max(len(original_stripped), 1)
+            logger.warning(f"⚠️ Text restoration mismatch: {diff_ratio:.2%} difference")
+            logger.warning(f"Original length: {len(original_stripped)}, Restored length: {len(restored_stripped)}")
+            
+            if diff_ratio > 0.05:  # 差异超过5%
+                raise ValueError("Text restoration validation failed: significant difference detected")
+    
+    def _calculate_type_distribution(
+        self,
+        paragraphs: List[ParagraphSegment]
+    ) -> Dict[str, int]:
+        """计算段落类型分布"""
+        distribution = {"A": 0, "B": 0, "C": 0}
+        for para in paragraphs:
+            distribution[para.type] += 1
+        return distribution

@@ -9,80 +9,27 @@ load_dotenv()
 @dataclass
 class LLMConfig:
     """
-    LLM配置类，支持多个LLM提供商（DeepSeek、Claude等）
-    通过环境变量 LLM_PROVIDER 控制当前使用的提供商
-    """
-    # LLM 提供商选择: deepseek | claude
-    provider: str = os.getenv("LLM_PROVIDER", "deepseek")
+    LLM 配置类，支持多个 LLM 提供商（Claude、DeepSeek）
     
+    注意：
+    - 不再使用全局 LLM_PROVIDER 切换，工具层面按需选择 Provider
+    - Temperature 等参数应在工具调用时设置，不做全局配置
+    """
     # DeepSeek 配置
     deepseek_api_key: Optional[str] = os.getenv("DEEPSEEK_API_KEY")
     deepseek_base_url: str = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
-    deepseek_model_name: str = os.getenv("DEEPSEEK_MODEL_NAME", "deepseek-chat")
+    
+    # DeepSeek 多模型支持
+    deepseek_v32_model: str = os.getenv("DEEPSEEK_V32_MODEL", "deepseek-chat")  # v3.2 标准模型
+    deepseek_v32_thinking_model: str = os.getenv("DEEPSEEK_V32_THINKING_MODEL", "deepseek-reasoner")  # v3.2 思维链模型
+    deepseek_model_name: str = os.getenv("DEEPSEEK_MODEL_NAME", "deepseek-chat")  # 默认使用 v3.2
     
     # Claude 配置
     claude_api_key: Optional[str] = os.getenv("CLAUDE_API_KEY")
-    claude_base_url: str = os.getenv("CLAUDE_BASE_URL", "https://api.anthropic.com")
+    # 默认使用 OneChats 通用线路（全球加速、非流6000s超时）
+    claude_base_url: str = os.getenv("CLAUDE_BASE_URL", "https://chatapi.onechats.ai/v1/")
     claude_model_name: str = os.getenv("CLAUDE_MODEL_NAME", "claude-sonnet-4-5-20250929")
     claude_max_tokens: int = int(os.getenv("CLAUDE_MAX_TOKENS", "4096"))
-    claude_temperature: float = float(os.getenv("CLAUDE_TEMPERATURE", "1.0"))
-    
-    # 双模型支持（DeepSeek）：R1为主（阅读理解优先），V3 Fallback
-    primary_model: str = "deepseek-reasoner"  # DeepSeek R1（主模型，用于阅读理解任务）
-    fallback_model: str = "deepseek-chat"  # DeepSeek V3（备用，当R1不可用时）
-    enable_fallback: bool = True  # 启用自动回退
-    
-    # Fallback 触发条件
-    fallback_on_error: bool = True  # 遇到错误时回退
-    fallback_on_validation_fail: bool = True  # 验证失败时回退
-    
-    @property
-    def api_key(self) -> Optional[str]:
-        """根据当前provider返回对应的API Key"""
-        if self.provider == "claude":
-            return self.claude_api_key
-        return self.deepseek_api_key
-    
-    @property
-    def base_url(self) -> str:
-        """根据当前provider返回对应的Base URL"""
-        if self.provider == "claude":
-            return self.claude_base_url
-        return self.deepseek_base_url
-    
-    @property
-    def model_name(self) -> str:
-        """根据当前provider返回对应的模型名称"""
-        if self.provider == "claude":
-            return self.claude_model_name
-        return self.deepseek_model_name
-    
-    @property
-    def model(self) -> str:
-        """Alias for model_name for backward compatibility"""
-        return self.model_name
-    
-    def get_provider_config(self) -> dict:
-        """获取当前provider的完整配置"""
-        if self.provider == "claude":
-            return {
-                "provider": "claude",
-                "api_key": self.claude_api_key,
-                "base_url": self.claude_base_url,
-                "model_name": self.claude_model_name,
-                "max_tokens": self.claude_max_tokens,
-                "temperature": self.claude_temperature,
-            }
-        else:  # deepseek
-            return {
-                "provider": "deepseek",
-                "api_key": self.deepseek_api_key,
-                "base_url": self.deepseek_base_url,
-                "model_name": self.deepseek_model_name,
-                "primary_model": self.primary_model,
-                "fallback_model": self.fallback_model,
-                "enable_fallback": self.enable_fallback,
-            }
 
 @dataclass
 class IngestionConfig:

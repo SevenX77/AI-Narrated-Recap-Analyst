@@ -116,12 +116,15 @@ class LLMClientManager:
         return client
     
     @classmethod
-    def get_model_name(cls, provider: ProviderType) -> str:
+    def get_model_name(cls, provider: ProviderType, model_type: Optional[str] = None) -> str:
         """
-        获取指定 Provider 的默认模型名称
+        获取指定 Provider 的模型名称
         
         Args:
             provider: LLM Provider 名称
+            model_type: 模型类型（可选）
+                - DeepSeek: "v32" | "v32-thinking" | None（默认）
+                - Claude: 忽略此参数
         
         Returns:
             模型名称字符串
@@ -129,7 +132,13 @@ class LLMClientManager:
         if provider == "claude":
             return config.llm.claude_model_name
         elif provider == "deepseek":
-            return config.llm.deepseek_model_name
+            if model_type == "v32":
+                return config.llm.deepseek_v32_model
+            elif model_type == "v32-thinking":
+                return config.llm.deepseek_v32_thinking_model
+            else:
+                # 默认使用 v3.2 标准模型
+                return config.llm.deepseek_model_name
         else:
             raise ValueError(f"Unknown provider: {provider}")
     
@@ -217,22 +226,35 @@ def get_llm_client(provider: ProviderType) -> OpenAI:
     return LLMClientManager.get_client(provider)
 
 
-def get_model_name(provider: ProviderType) -> str:
+def get_model_name(provider: ProviderType, model_type: Optional[str] = None) -> str:
     """
-    获取指定 Provider 的默认模型名称
+    获取指定 Provider 的模型名称
     
     Args:
         provider: "claude" | "deepseek"
+        model_type: 模型类型（可选）
+            - DeepSeek: "v32" | "v32-thinking" | None（默认）
+            - Claude: 忽略此参数
     
     Returns:
         模型名称
     
     Example:
         >>> from src.core.llm_client_manager import get_model_name
+        >>> 
+        >>> # Claude 模型
         >>> model = get_model_name("claude")
         >>> print(model)  # "claude-sonnet-4-5-20250929"
+        >>> 
+        >>> # DeepSeek v3.2 标准模型
+        >>> model = get_model_name("deepseek", model_type="v32")
+        >>> print(model)  # "deepseek-chat"
+        >>> 
+        >>> # DeepSeek v3.2 思维链模型
+        >>> model = get_model_name("deepseek", model_type="v32-thinking")
+        >>> print(model)  # "deepseek-reasoner"
     """
-    return LLMClientManager.get_model_name(provider)
+    return LLMClientManager.get_model_name(provider, model_type)
 
 
 def record_llm_usage(

@@ -12,13 +12,22 @@ from .writer import WriterAgent
 logger = logging.getLogger(__name__)
 
 class DeepSeekWriter(WriterAgent):
-    def __init__(self, client=None):
+    def __init__(self, client=None, provider: str = "deepseek"):
+        """
+        DeepSeek Writer Agent
+        
+        Args:
+            client: OpenAI 客户端（可选，不提供则自动创建）
+            provider: LLM Provider ("claude" | "deepseek")，默认使用 DeepSeek
+        """
         if not client:
-            client = OpenAI(
-                api_key=config.llm.api_key,
-                base_url=config.llm.base_url
-            )
-        super().__init__(client=client, model_name=config.llm.model_name)
+            from src.core.llm_client_manager import get_llm_client, get_model_name
+            client = get_llm_client(provider)
+            model_name = get_model_name(provider)
+        else:
+            model_name = config.llm.deepseek_model_name  # 向后兼容
+        
+        super().__init__(client=client, model_name=model_name)
         self.prompts = load_prompts("writer")
 
     def generate_script(self, analysis: SceneAnalysis, style: str = "first_person") -> Script:
