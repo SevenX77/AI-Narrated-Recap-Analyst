@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### ✨ ScriptSegmenter重构为Two-Pass + JSON输出（2026-02-09）
+
+#### 重大变更
+- **旧ScriptSegmenter归档**：`src/tools/script_segmenter.py` → `archive/v4_tools_20260209/`
+- **新ScriptSegmenter创建**：基于Two-Pass策略，输出JSON格式
+  - 使用句子序号定位段落边界（避免LLM改写文本）
+  - 代码解析生成JSON（LLM不直接输出JSON）
+  - 匹配SRT时间戳（基于字符位置比例）
+
+#### Two-Pass Prompt
+- **Pass 1**: `script_segmentation_pass1.yaml`（初步分段）
+  - 输入：带句子序号的脚本文本
+  - 输出：段落序号范围（句子1-3, 4-7...）
+  - 原则：场景转换、情节转折、对话切换、因果独立
+- **Pass 2**: `script_segmentation_pass2.yaml`（校验修正）
+  - 检查：过度分段、欠分段、因果关系破坏
+  - 输出：修正后的分段 或 "无需修改"
+
+#### 输出格式
+- **JSON结构**：`ScriptSegmentationResult`
+  - `segments`: List[ScriptSegment]
+  - `total_segments`: int
+  - `avg_sentence_count`: float
+  - `segmentation_mode`: "two_pass"
+  - `processing_time`: float
+
+#### 待测试
+- 实际脚本数据测试（需要用户提供）
+- Claude vs DeepSeek性能对比（决定默认Provider）
+
+---
+
 ### ✨ NovelSegmenter重构为Two-Pass + JSON输出（2026-02-09）
 
 #### 重大变更

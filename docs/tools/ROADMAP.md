@@ -134,21 +134,22 @@
 
 ---
 
-#### `ScriptSegmenter` - 脚本分段工具 🚧
+#### `ScriptSegmenter` - 脚本分段工具 ✅⭐
 **职责**: 使用Two-Pass LLM将脚本按语义分段
-- **Two-Pass策略**：Pass 1初步分段 + Pass 2校验修正（待实现）
+- **Two-Pass策略**：Pass 1初步分段 + Pass 2校验修正
+- **句子序号定位**：LLM输出句子序号范围，代码提取内容
 - 按叙事逻辑分段（场景转换/情节转折/对话切换）
-- 识别对话片段和旁白片段
-- 保持时间戳关联
-- **JSON输出**：结构化输出（待改造）
+- 保持SRT时间戳关联
+- **JSON输出**：结构化输出
 
-**输入**: 纯文本 + 时间戳映射  
-**输出**: `ScriptSegmentationResult` (JSON格式，待改造)  
+**输入**: 纯文本 + SRT条目列表  
+**输出**: `ScriptSegmentationResult` (JSON格式)  
 **依赖**: `SrtTextExtractor`
 
-**实现状态**: 🚧 已有初版，**需要Two-Pass改造**  
-**LLM配置**: DeepSeek v3.2 (当前) → 待测试是否需要切换到Claude  
-**Prompt文件**: 待创建 `script_segmentation_pass1.yaml` + `pass2.yaml`
+**实现状态**: ✅ v2完成 (2026-02-09) - Two-Pass + JSON + 句子序号定位  
+**LLM配置**: DeepSeek v3.2 (默认) → 待实际测试性能  
+**Prompt文件**: `script_segmentation_pass1.yaml` + `pass2.yaml`  
+**归档**: `archive/v4_tools_20260209/script_segmenter.py` (v1单Pass)
 
 ---
 
