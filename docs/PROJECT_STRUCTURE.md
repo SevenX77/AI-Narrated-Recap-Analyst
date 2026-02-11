@@ -8,115 +8,327 @@ AI-Narrated-Recap-Analyst/
 ├── docs/                           # 📚 文档目录
 │   ├── PROJECT_STRUCTURE.md        # 项目结构说明（本文件）
 │   ├── DEV_STANDARDS.md            # 开发标准与规范
-│   ├── NOVEL_SEGMENTATION_METHODOLOGY.md  # 小说叙事分段分析方法论（完整版）
-│   ├── NOVEL_SEGMENTATION_QUICKREF.md     # 小说分段分析快速参考（速查表）
-│   ├── METHODOLOGY_SUMMARY.md             # 方法论实施总结
+│   ├── FILE_PATH_MAPPING.md        # 文件路径映射说明
+│   ├── FRONTEND_INTEGRATION_COMPLETE.md  # 前端集成完成文档
+│   ├── README.md                   # 文档索引
+│   │
 │   ├── architecture/               # 架构设计文档
-│   │   └── logic_flows.md          # 系统架构与数据流
-│   └── maintenance/                # 维护性文档（功能优化、清理报告、变更记录等）
-│       ├── ingestion_optimization_deployment.md   # 摄入优化部署指南
-│       ├── ingestion_optimization_progress.md     # 摄入优化实施进度
-│       ├── CLEANUP_SUMMARY.md                     # 项目整理总结
-│       └── PROJECT_CLEANUP_REPORT.txt             # 整理完成报告
+│   │   ├── AUTO_PREPROCESS_IMPLEMENTATION.md  # 自动预处理实现
+│   │   ├── DATA_STORAGE_REDESIGN.md          # 数据存储重新设计
+│   │   └── REDESIGN_PROGRESS.md              # 重新设计进度
+│   │
+│   ├── core/                       # Core模块文档
+│   │   ├── README.md
+│   │   ├── DUAL_LLM_SETUP.md       # 双LLM配置说明
+│   │   ├── LLM_INTEGRATION_GUIDE.md
+│   │   ├── LLM_RATE_LIMIT_SYSTEM.md
+│   │   ├── LLM_SYSTEM_COMPLETE.md
+│   │   └── README_LLM_SYSTEM.md
+│   │
+│   ├── tools/                      # Tools模块文档
+│   │   ├── README.md
+│   │   ├── ROADMAP.md              # 工具路线图
+│   │   ├── functional_tags.md
+│   │   ├── FUNCTIONAL_TAGS_UPDATE.md
+│   │   ├── novel_*.md              # 小说相关工具文档
+│   │   ├── script_*.md             # 脚本相关工具文档
+│   │   ├── srt_*.md                # SRT相关工具文档
+│   │   ├── hook_*.md               # Hook相关工具文档
+│   │   └── system_*.md             # 系统相关文档
+│   │
+│   ├── workflows/                  # Workflows模块文档
+│   │   ├── README.md
+│   │   ├── ROADMAP.md
+│   │   ├── novel_processing_workflow.md
+│   │   ├── script_processing_workflow.md
+│   │   ├── QUALITY_STANDARDS.md
+│   │   ├── RETRY_MECHANISM.md
+│   │   ├── BUGFIX_SUMMARY.md
+│   │   └── LLM_ASYNC_FIX.md
+│   │
+│   ├── ui/                         # 前端UI文档
+│   │   ├── README.md
+│   │   ├── UI_ARCHITECTURE.md
+│   │   ├── UI_DESIGN_GEEK_STYLE.md
+│   │   ├── API_SPECIFICATION.md
+│   │   ├── QUICKSTART.md
+│   │   ├── IMPLEMENTATION_PLAN.md
+│   │   ├── SHADCN_IMPLEMENTATION_SUMMARY.md
+│   │   ├── UI_SYSTEM_SUMMARY.md
+│   │   └── DOCKER_DEPLOYMENT.md
+│   │
+│   ├── maintenance/                # 维护性文档
+│   │   ├── DOC_CODE_CONSISTENCY_REPORT.md
+│   │   ├── DOC_UPDATE_SUMMARY_2026-02-10.md
+│   │   ├── IMPROVEMENT_SUMMARY_2026-02-10.md
+│   │   ├── INTEGRATION_SUMMARY.md
+│   │   ├── LLM_SYSTEM_OVERVIEW.md
+│   │   ├── MIGRATION_SUMMARY.md
+│   │   ├── PROJECT_HEALTH_CHECK_2026-02-10.md
+│   │   ├── TOOL_APPLICATION_SUMMARY_2026-02-10.md
+│   │   └── WORKFLOW_SPLIT_SUMMARY_2026-02-10.md
+│   │
+│   └── archive/                    # 归档文档
+│       └── docs/                   # 旧版本文档
 │
 ├── src/                            # 💻 源代码
-│   ├── agents/                     # AI Agent 实现
-│   │   ├── analyst.py              # Analyst基类
-│   │   ├── deepseek_analyst.py     # DeepSeek Analyst实现
-│   │   ├── writer.py               # Writer基类
-│   │   ├── deepseek_writer.py      # DeepSeek Writer实现
-│   │   └── feedback_agent.py       # 反馈评估Agent
-│   │
-│   ├── workflows/                  # 工作流编排
-│   │   ├── ingestion_workflow.py   # 数据摄入与对齐工作流
-│   │   └── training_workflow.py    # 训练工作流
-│   │
-│   ├── modules/                    # 功能模块
-│   │   └── alignment/
-│   │       ├── alignment_engine.py        # 对齐引擎基类
-│   │       └── deepseek_alignment_engine.py # DeepSeek对齐实现
+│   ├── api/                        # FastAPI后端服务 ⭐
+│   │   ├── main.py                 # API入口
+│   │   ├── routes/                 # API路由
+│   │   │   ├── projects.py         # 项目管理API（V1，已废弃）
+│   │   │   ├── projects_v2.py      # 项目管理API（V2，推荐）⭐
+│   │   │   └── workflows.py        # 工作流API
+│   │   ├── schemas/                # API数据模型
+│   │   │   ├── projects.py
+│   │   │   ├── projects_v2.py
+│   │   │   └── workflows.py
+│   │   ├── services/               # 业务服务层
+│   │   └── middleware/             # 中间件
 │   │
 │   ├── core/                       # 核心组件
+│   │   ├── interfaces.py           # 接口定义（BaseTool, BaseAgent, BaseWorkflow）
 │   │   ├── config.py               # 配置管理
-│   │   ├── schemas.py              # 数据模型（Pydantic）
-│   │   ├── schemas_writer.py       # Writer相关模型
-│   │   ├── interfaces.py           # 接口定义
-│   │   ├── project_manager.py      # 项目管理
-│   │   └── artifact_manager.py     # 数据版本管理
+│   │   │
+│   │   ├── schemas_novel/          # 小说相关数据模型（已拆分）⭐
+│   │   │   ├── __init__.py
+│   │   │   ├── basic.py            # 基础数据结构（Chapter, Paragraph等）
+│   │   │   ├── segmentation.py     # 分段相关（SegmentedChapter等）
+│   │   │   ├── annotation.py       # 标注相关（AnnotatedChapter, EventTimeline等）
+│   │   │   ├── system.py           # 系统元素相关（SystemCatalog等）
+│   │   │   └── validation.py       # 验证相关（ValidationResult等）
+│   │   │
+│   │   ├── schemas_script.py       # 脚本相关数据模型
+│   │   ├── schemas_alignment.py    # 对齐相关数据模型
+│   │   ├── schemas_project.py      # 项目相关数据模型
+│   │   ├── schemas.py              # 通用数据模型
+│   │   │
+│   │   ├── project_manager.py      # 项目管理（V1）
+│   │   ├── project_manager_v2.py   # 项目管理（V2，推荐）⭐
+│   │   ├── llm_rate_limiter.py     # LLM速率限制
+│   │   ├── two_pass_tool.py        # Two-Pass工具基类
+│   │   └── exceptions.py           # 异常定义
+│   │
+│   ├── tools/                      # 独立工具库（无状态）
+│   │   ├── __init__.py
+│   │   │
+│   │   ├── novel_importer.py       # 小说导入
+│   │   ├── novel_metadata_extractor.py  # 元数据提取
+│   │   ├── novel_chapter_detector.py    # 章节检测
+│   │   ├── novel_segmenter.py      # 小说分段（Two-Pass）⭐
+│   │   ├── novel_annotator.py      # 小说标注（Two-Pass）⭐
+│   │   ├── novel_tagger.py         # 功能标签生成
+│   │   ├── novel_validator.py      # 小说验证
+│   │   │
+│   │   ├── novel_system_detector.py     # 系统元素检测 ⭐
+│   │   ├── novel_system_analyzer.py     # 系统元素分析
+│   │   ├── novel_system_tracker.py      # 系统元素追踪
+│   │   │
+│   │   ├── srt_importer.py         # SRT导入
+│   │   ├── srt_text_extractor.py   # SRT文本提取
+│   │   ├── script_segmenter.py     # 脚本分段（Two-Pass）⭐
+│   │   ├── script_validator.py     # 脚本验证
+│   │   │
+│   │   ├── novel_script_aligner.py # 小说-脚本对齐
+│   │   │
+│   │   ├── hook_detector.py        # Hook检测
+│   │   └── hook_content_analyzer.py # Hook分析
+│   │
+│   ├── workflows/                  # 工作流编排
+│   │   ├── novel_processing_workflow.py   # 小说处理工作流
+│   │   ├── script_processing_workflow.py  # 脚本处理工作流
+│   │   ├── preprocess_service.py          # 预处理服务（后台任务）⭐
+│   │   ├── report_generator.py            # 报告生成
+│   │   └── training_workflow_v2.py        # 训练工作流V2
 │   │
 │   ├── prompts/                    # 🎯 提示词管理
-│   │   ├── analyst.yaml
-│   │   ├── alignment.yaml
-│   │   ├── writer.yaml
-│   │   └── feedback.yaml
+│   │   ├── novel_chapter_segmentation_pass1.yaml  # 小说分段Pass1 ⭐
+│   │   ├── novel_chapter_segmentation_pass2.yaml  # 小说分段Pass2 ⭐
+│   │   ├── novel_annotation_pass1.yaml            # 小说标注Pass1
+│   │   ├── novel_annotation_pass2.yaml            # 小说标注Pass2
+│   │   ├── novel_annotation_pass3_functional_tags.yaml  # 功能标签Pass3
+│   │   ├── novel_tagging.yaml
+│   │   ├── novel_system_detection.yaml
+│   │   ├── novel_system_analysis.yaml
+│   │   ├── novel_system_tracking.yaml
+│   │   ├── novel_system_templates.yaml
+│   │   ├── novel_script_alignment.yaml
+│   │   ├── script_segmentation_abc_classification.yaml  # 脚本分段ABC分类
+│   │   ├── hook_detection.yaml
+│   │   └── hook_content_analysis.yaml
 │   │
 │   ├── utils/                      # 工具函数
-│   │   ├── logger.py               # 日志工具
-│   │   ├── prompt_loader.py        # 提示词加载
-│   │   └── text_processing.py      # 文本处理
+│   │   ├── llm_output_parser.py    # LLM输出解析
+│   │   └── novel_helpers.py        # 小说处理辅助函数
 │   │
-│   └── tools/                      # 独立工具（预留）
+│   └── agents/                     # AI Agent实现（预留）
+│
+├── frontend-new/                   # 🎨 前端项目（当前使用）⭐
+│   ├── src/
+│   │   ├── components/             # UI组件（shadcn UI）
+│   │   │   ├── ui/                 # shadcn基础组件
+│   │   │   ├── app-sidebar.tsx     # 应用侧边栏
+│   │   │   ├── site-header.tsx     # 站点头部
+│   │   │   ├── chart-area-interactive.tsx  # 交互式图表
+│   │   │   ├── data-table.tsx      # 数据表格
+│   │   │   └── layout/             # 布局组件
+│   │   │
+│   │   ├── pages/                  # 页面组件
+│   │   │   ├── Dashboard.tsx               # 项目列表
+│   │   │   ├── ProjectDetailPage.tsx      # 项目详情 ⭐
+│   │   │   ├── NovelViewerPage.tsx        # 小说查看器
+│   │   │   ├── ScriptViewerPage.tsx       # 脚本查看器
+│   │   │   ├── WorkflowPage.tsx           # 工作流页面
+│   │   │   └── SettingsPage.tsx           # 设置页面
+│   │   │
+│   │   ├── api/                    # API客户端
+│   │   │   ├── projectsV2.ts       # V2项目API ⭐
+│   │   │   └── workflows.ts        # 工作流API
+│   │   │
+│   │   ├── types/                  # TypeScript类型定义
+│   │   │   └── project.ts
+│   │   │
+│   │   ├── lib/                    # 工具库
+│   │   │   ├── queryClient.ts      # React Query配置
+│   │   │   └── utils.ts
+│   │   │
+│   │   ├── store/                  # 状态管理（Zustand）
+│   │   ├── hooks/                  # 自定义Hooks
+│   │   ├── App.tsx                 # 应用入口
+│   │   ├── main.tsx                # 主入口
+│   │   └── index.css               # 全局样式
+│   │
+│   ├── public/                     # 静态资源
+│   ├── components.json             # shadcn配置
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts
+│   └── README.md
 │
 ├── scripts/                        # 🔧 脚本工具
-│   ├── examples/                   # 使用示例
-│   │   └── generate_ep01_recap.py  # EP01生成示例
-│   ├── validate_standards.py       # 代码标准验证
-│   ├── migrate_artifacts.py        # 数据迁移脚本
-│   └── debug_hook_detection.py     # 调试工具
+│   ├── test/                       # 测试脚本
+│   │   ├── test_novel_*.py         # 小说相关测试
+│   │   ├── test_script_*.py        # 脚本相关测试
+│   │   ├── test_llm_*.py           # LLM相关测试
+│   │   └── test_*.py               # 其他测试
+│   │
+│   ├── ui/                         # UI相关脚本
+│   │   ├── init_ui_project.sh
+│   │   └── start_backend.sh
+│   │
+│   ├── setup_claude.sh
+│   ├── test_resume.sh
+│   ├── migrate_raw_to_categories.py
+│   └── split_*.py
 │
 ├── data/                           # 📦 数据目录
 │   ├── project_index.json          # 项目索引
 │   └── projects/                   # 各项目数据
-│       └── PROJ_XXX/
+│       └── project_XXX/
+│           ├── metadata.json       # 项目元数据
 │           ├── raw/                # 原始数据
-│           │   ├── novel.txt
-│           │   └── *.srt
+│           │   ├── novel/          # 小说原始文件
+│           │   └── srt/            # SRT原始文件
+│           │
+│           ├── processed/          # 处理后数据
+│           │   ├── novel/          # 小说处理结果
+│           │   │   ├── metadata.json        # 元数据
+│           │   │   ├── chapters.json        # 章节列表
+│           │   │   ├── chapter_XX.json      # 单章详情
+│           │   │   ├── segmented/           # 分段结果
+│           │   │   ├── annotated/           # 标注结果
+│           │   │   └── system_catalog.json  # 系统目录
+│           │   │
+│           │   └── script/         # 脚本处理结果
+│           │       ├── episodes.json        # 集数列表
+│           │       ├── ep_XX.json           # 单集详情
+│           │       └── segmented/           # 分段结果
+│           │
 │           ├── alignment/          # 对齐数据
-│           │   ├── novel_events_latest.json
-│           │   ├── epXX_script_events_latest.json
-│           │   └── alignment_latest.json
 │           ├── analysis/           # 分析结果
 │           ├── training/           # 训练数据
-│           │   └── reports/
-│           └── production/         # 生产输出
-│               └── scripts/
+│           └── reports/            # 报告输出
 │
-├── logs/                           # 📝 日志目录
-│   └── output/
-│       ├── app.log
-│       └── operation_history.jsonl
+├── config/                         # ⚙️ 配置文件目录
+├── output/                         # 📝 系统输出
+│   └── operation_history.jsonl     # 操作历史日志
 │
-├── main.py                         # 🚀 主入口
+├── templates/                      # 📋 模板文件
+├── requirements-api.txt            # API依赖
 ├── requirements.txt                # Python依赖
+├── CHANGELOG.md                    # 变更日志
 ├── README.md                       # 项目说明
 └── .gitignore                      # Git忽略规则
 ```
 
 ## 🎯 关键文件说明
 
+### 后端服务
+
+#### API路由
+- **src/api/routes/projects_v2.py** ⭐ (推荐使用):
+  - `GET /api/v2/projects` - 获取项目列表
+  - `POST /api/v2/projects` - 创建项目
+  - `GET /api/v2/projects/{id}` - 获取项目详情
+  - `GET /api/v2/projects/{id}/meta` - 获取项目元数据
+  - `POST /api/v2/projects/{id}/files` - 上传文件（支持自动预处理）
+  - `GET /api/v2/projects/{id}/preprocess-status` - 获取预处理状态
+  - `GET /api/v2/projects/{id}/chapters` - 获取章节列表
+  - `GET /api/v2/projects/{id}/episodes` - 获取集数列表
+  - `DELETE /api/v2/projects/{id}` - 删除项目
+
+### 前端应用
+
+#### 核心页面
+- **frontend-new/src/pages/ProjectDetailPage.tsx**: 项目详情页
+  - 项目信息展示
+  - 文件上传（支持拖拽）
+  - 原始文件列表
+  - 预处理状态追踪（实时更新）
+  - 章节/集数列表展示
+
 ### 配置文件
 
 - **src/core/config.py**: 
   - 统一的配置管理
-  - `IngestionConfig`: 摄入工作流配置
+  - `ProjectConfig`: 项目配置
   - `LLMConfig`: LLM相关配置
 
 ### 数据模型
 
-- **src/core/schemas.py**:
-  - `NarrativeEvent`: 叙事事件（SVO结构）
-  - `SceneAnalysis`: 场景分析结果
+#### Schemas拆分（已模块化）⭐
+- **src/core/schemas_novel/** (已拆分):
+  - `basic.py`: Chapter, Paragraph, NovelMetadata
+  - `segmentation.py`: SegmentedChapter, SegmentationResult
+  - `annotation.py`: AnnotatedChapter, EventTimeline, SettingCorrelation
+  - `system.py`: SystemCatalog, SystemElement, SystemCategory
+  - `validation.py`: ValidationResult, ValidationIssue
+
+- **src/core/schemas_script.py**:
+  - `Episode`: 集数信息
+  - `Segment`: 脚本段落
+  - `ABCSegment`: ABC分类段落
+
+- **src/core/schemas_alignment.py**:
+  - `AlignmentResult`: 对齐结果
   - `AlignmentItem`: 对齐项
-  - `AlignmentQualityReport`: 质量评估报告
-  - `EpisodeCoverage`: 单集覆盖情况
+
+- **src/core/schemas_project.py**:
+  - `ProjectV2`: 项目信息
+  - `ProjectSources`: 源文件信息
+  - `WorkflowStages`: 工作流阶段状态
 
 ### 工作流
 
-- **src/workflows/ingestion_workflow.py**:
-  - 动态章节提取
-  - 并发事件提取
-  - 质量评估
-  - 自适应对齐
+- **src/workflows/novel_processing_workflow.py**:
+  - 导入 → 元数据提取 → 章节检测 → 分段 → 标注 → 系统检测
+  
+- **src/workflows/script_processing_workflow.py**:
+  - 导入 → 文本提取 → 分段 → 验证
+
+- **src/workflows/preprocess_service.py** ⭐:
+  - 自动识别文件类型
+  - 异步执行预处理
+  - 状态追踪和错误处理
 
 ### 提示词
 
@@ -124,6 +336,11 @@ AI-Narrated-Recap-Analyst/
 - 版本控制
 - 快速迭代
 - A/B测试
+
+**核心Prompt**:
+- `novel_chapter_segmentation_pass1.yaml` + `pass2.yaml`: Two-Pass小说分段 ⭐
+- `novel_annotation_pass1.yaml` + `pass2.yaml` + `pass3_functional_tags.yaml`: 小说标注
+- `script_segmentation_abc_classification.yaml`: 脚本ABC分类分段 ⭐
 
 ## 🔍 文件查找指南
 
@@ -133,31 +350,36 @@ AI-Narrated-Recap-Analyst/
 |------|---------|
 | **LLM配置** | `src/core/config.py` |
 | **提示词** | `src/prompts/*.yaml` |
-| **质量阈值** | `src/core/config.py` → `IngestionConfig` |
-| **并发数** | `src/core/config.py` → `max_concurrent_requests` |
-| **数据模型** | `src/core/schemas.py` |
-| **对齐算法** | `src/modules/alignment/deepseek_alignment_engine.py` |
-| **工作流逻辑** | `src/workflows/ingestion_workflow.py` |
-| **日志配置** | `src/utils/logger.py` |
+| **API路由** | `src/api/routes/*.py` |
+| **数据模型（小说）** | `src/core/schemas_novel/*.py` ⭐ |
+| **数据模型（脚本）** | `src/core/schemas_script.py` |
+| **数据模型（项目）** | `src/core/schemas_project.py` |
+| **工具实现** | `src/tools/*.py` |
+| **工作流逻辑** | `src/workflows/*.py` |
+| **前端页面** | `frontend-new/src/pages/*.tsx` |
+| **前端API客户端** | `frontend-new/src/api/*.ts` |
 
 ### 想要了解...
 
 | 问题 | 查看文档 |
 |------|---------|
-| **系统架构** | `docs/architecture/logic_flows.md` |
+| **系统架构** | `docs/DEV_STANDARDS.md`, `docs/PROJECT_STRUCTURE.md` (本文件) |
 | **代码规范** | `docs/DEV_STANDARDS.md` |
-| **项目结构** | `docs/PROJECT_STRUCTURE.md` (本文件) |
-| **小说分段分析方法** | `docs/NOVEL_SEGMENTATION_METHODOLOGY.md` (完整版) |
-| **小说分段快速参考** | `docs/NOVEL_SEGMENTATION_QUICKREF.md` (速查表) |
-| **功能优化详情** | `docs/maintenance/` 目录下的相关文档 |
+| **工具功能** | `docs/tools/*.md` |
+| **工作流说明** | `docs/workflows/*.md` |
+| **API规范** | `docs/ui/API_SPECIFICATION.md` |
+| **前端架构** | `docs/ui/UI_ARCHITECTURE.md` |
+| **LLM系统** | `docs/core/DUAL_LLM_SETUP.md`, `docs/core/LLM_INTEGRATION_GUIDE.md` |
+| **功能优化** | `docs/maintenance/*.md` |
 
 ## 📝 命名规范
 
 ### 文件命名
 
-- **Agents**: `{provider}_{agent_type}.py` (如 `deepseek_analyst.py`)
-- **Workflows**: `{workflow_name}_workflow.py`
-- **Schemas**: `schemas_{category}.py` (如 `schemas_writer.py`)
+- **Tools**: `{功能}_{操作}.py` (如 `novel_segmenter.py`)
+- **Workflows**: `{功能}_workflow.py`
+- **Schemas**: `schemas_{category}.py` 或 `schemas_{category}/` (目录)
+- **API Routes**: `{资源}` 或 `{资源}_v2.py`
 - **配置**: 统一在 `config.py`
 
 ### 文档放置规范
@@ -166,52 +388,129 @@ AI-Narrated-Recap-Analyst/
 
 | 文档类型 | 放置位置 | 示例 | 说明 |
 |---------|---------|------|------|
-| **核心文档** | `docs/` | DEV_STANDARDS.md, PROJECT_STRUCTURE.md, NOVEL_SEGMENTATION_METHODOLOGY.md | 永久性、全局性的文档 |
-| **架构设计** | `docs/architecture/` | logic_flows.md | 系统架构和设计文档 |
-| **功能优化** | `docs/maintenance/` | ingestion_optimization_*.md | 针对特定功能的优化文档 |
-| **维护记录** | `docs/maintenance/` | CLEANUP_SUMMARY.md | 清理报告、变更记录、迁移日志 |
+| **核心文档** | `docs/` | DEV_STANDARDS.md, PROJECT_STRUCTURE.md | 永久性、全局性的文档 |
+| **架构设计** | `docs/architecture/` | AUTO_PREPROCESS_IMPLEMENTATION.md | 系统架构和设计文档 |
+| **模块文档** | `docs/{module}/` | docs/tools/README.md | 各模块的技术参考 |
+| **维护记录** | `docs/maintenance/` | DOC_UPDATE_SUMMARY.md | 清理报告、变更记录、迁移日志 |
+| **归档文档** | `docs/archive/` | v2_architecture/ | 旧版本文档 |
 
 ⚠️ **严格禁止**：
-- 在 `docs/` 根目录创建针对特定功能的文档（应放在 `maintenance/` 下）
-- 在项目根目录创建任何 `.md` 或 `.txt` 文档文件
+- 在项目根目录创建任何 `.md` 或 `.txt` 文档文件（除 README.md, CHANGELOG.md）
+- 在 `docs/` 根目录创建过程性/总结性文档（应放在 `maintenance/` 下）
 
 ### 数据文件
 
-- **最新版本**: `{name}_latest.json` (指针文件)
+- **最新版本**: `{name}_latest.json` 或 `{name}.json` (指针文件)
 - **历史版本**: `{name}_v{timestamp}.json`
 - **示例**: 
-  - `novel_events_latest.json`
-  - `novel_events_v20260203_045226.json`
+  - `chapter_01.json` (最新版本)
+  - `chapter_01_v20260211_102030.json` (历史版本)
 
 ## 🚫 不应提交的文件
 
 已在 `.gitignore` 中配置：
 
-- `browser_data/` - 浏览器缓存
-- `cookies.json` - 临时cookies
-- `chapter_*.txt` - 临时文本文件
-- `*.bak` - 备份文件
+- `.cursor/` - Cursor IDE配置
+- `frontend/` - 旧版前端（已废弃）⚠️
+- `frontend-new/node_modules/` - 前端依赖
 - `__pycache__/` - Python缓存
-- `logs/` - 日志文件
-- `data/projects/` - 项目数据
+- `data/projects/` - 项目数据（可选择性提交测试数据）
+- `output/` - 运行输出
+- `*.log` - 日志文件
+- `.env` - 环境变量（敏感信息）
+- `.debug/` - 调试文件
+- `*.png`, `*.jpg` (根目录) - 截图应放在特定目录
 
 ## 🔄 数据流向
 
+### 小说处理流程
+
 ```
-原始数据 (raw/)
+原始小说 (raw/novel/*.txt)
+    ↓ NovelImporter
+小说标准化文本
+    ↓ NovelMetadataExtractor
+元数据 (metadata.json)
+    ↓ NovelChapterDetector
+章节列表 (chapters.json)
+    ↓ NovelSegmenter (Two-Pass)
+分段结果 (segmented/*.json)
+    ↓ NovelAnnotator (Two-Pass)
+标注结果 (annotated/*.json)
+    ↓ NovelSystemDetector
+系统目录 (system_catalog.json)
+```
+
+### 脚本处理流程
+
+```
+原始SRT (raw/srt/*.srt)
+    ↓ SrtImporter
+SRT标准化文件
+    ↓ SrtTextExtractor
+文本提取结果
+    ↓ ScriptSegmenter (ABC Classification)
+分段结果 (segmented/*.json)
+    ↓ ScriptValidator
+验证结果
+```
+
+### API-前端交互流程
+
+```
+用户操作 (frontend-new)
+    ↓ API Client (projectsV2.ts)
+HTTP Request
+    ↓ FastAPI Server (src/api/main.py)
+API Routes (routes/projects_v2.py)
     ↓
-Analyst 提取事件
+PreprocessService (后台任务)
     ↓
-事件数据 (alignment/)
+Novel/Script Processing Workflow
     ↓
-Alignment Engine 对齐
+数据保存 (data/projects/)
     ↓
-对齐结果 + 质量报告
-    ↓
-训练数据 (training/) 或 生产输出 (production/)
+API Response
+    ↓ React Query (自动刷新)
+前端UI更新
+```
+
+## 🏗️ 架构分层
+
+```
+┌─────────────────────────────────────────┐
+│         Frontend (React + Vite)         │
+│    Pages → Components → API Client      │
+└─────────────────┬───────────────────────┘
+                  │ HTTP/JSON
+┌─────────────────▼───────────────────────┐
+│         Backend (FastAPI)                │
+│    Routes → Services → Workflows        │
+└─────────────────┬───────────────────────┘
+                  │ Function Call
+┌─────────────────▼───────────────────────┐
+│         Workflows (Orchestration)        │
+│    NovelProcessing / ScriptProcessing   │
+└─────────────────┬───────────────────────┘
+                  │ Tool Call
+┌─────────────────▼───────────────────────┐
+│         Tools (Stateless)                │
+│    Importer / Extractor / Segmenter     │
+└─────────────────┬───────────────────────┘
+                  │ Data Access
+┌─────────────────▼───────────────────────┐
+│         Core (Schemas + Managers)        │
+│    Schemas / ProjectManager / Config    │
+└─────────────────┬───────────────────────┘
+                  │ File I/O
+┌─────────────────▼───────────────────────┐
+│         Data Storage                     │
+│    data/projects/ (JSON Files)          │
+└─────────────────────────────────────────┘
 ```
 
 ---
 
-**最后更新**: 2026-02-06  
-**维护者**: 开发团队
+**最后更新**: 2026-02-11  
+**维护者**: Project Team  
+**更新内容**: 完整重构，反映当前架构（API、前端、Schemas拆分、工作流）
