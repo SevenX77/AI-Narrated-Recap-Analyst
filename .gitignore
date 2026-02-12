@@ -30,9 +30,16 @@ logs/
 
 # Cursor/IDE
 .cursorrules
+.cursor/
+.specstory/
 .idea/
 .vscode/
 
 # Output data
 output/
 data/projects/
+
+# 根目录的截图和临时文件
+/*.png
+/*.jpg
+/*.jpeg
