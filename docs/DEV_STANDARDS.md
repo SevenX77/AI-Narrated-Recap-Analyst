@@ -334,6 +334,31 @@ GET  /api/v2/projects/{id}/preprocess-status - 获取预处理状态
 ### 3.6 Workflows (工作流层)
 - 存放于 `src/workflows/`。
 - 负责编排多个工具完成完整业务流程。
+
+#### 双工作流系统说明 (Dual Workflow Systems)
+
+项目中存在两个独立的工作流跟踪系统，服务于不同目的：
+
+| 系统 | 字段 | 用途 | API | 前端 |
+|------|------|------|-----|------|
+| **通用工作流** | `workflow_stages` | 预处理、分段、标注等通用流程 | `/api/v2/projects` | Dashboard |
+| **Phase I Analyst** | `phase_i_analyst` | 深度分析、对齐等专门工作流 | `/api/v2/projects/{id}/workflow` | ProjectWorkflowPage |
+
+**重要提示**:
+- 两个系统**互相独立**，不应混用
+- `phase_i_analyst` 是**可选字段**（Optional），需检查是否存在后再访问
+- 新项目默认只使用 `workflow_stages`，除非明确启用 Phase I 工作流
+
+**代码示例**:
+```python
+# ✅ 正确：检查 phase_i_analyst 是否存在
+if meta.phase_i_analyst:
+    meta.phase_i_analyst.step_1_import.novel_imported = True
+
+# ❌ 错误：直接访问可能为 None
+meta.phase_i_analyst.step_1_import.novel_imported = True  # AttributeError!
+```
+
 - **现有工作流**:
   - `novel_processing_workflow.py`: 小说完整处理流程
     - 导入 → 元数据提取 → 章节检测 → 分段 → 标注 → 系统检测

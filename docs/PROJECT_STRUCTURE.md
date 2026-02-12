@@ -102,8 +102,8 @@ AI-Narrated-Recap-Analyst/
 │   │   ├── schemas_project.py      # 项目相关数据模型
 │   │   ├── schemas.py              # 通用数据模型
 │   │   │
-│   │   ├── project_manager.py      # 项目管理（V1）
-│   │   ├── project_manager_v2.py   # 项目管理（V2，推荐）⭐
+│   │   ├── project_manager.py      # 项目管理（V1，已弃用）❌
+│   │   ├── project_manager_v2.py   # 项目管理（V2，当前使用）✅⭐
 │   │   ├── llm_rate_limiter.py     # LLM速率限制
 │   │   ├── two_pass_tool.py        # Two-Pass工具基类
 │   │   └── exceptions.py           # 异常定义
@@ -224,29 +224,37 @@ AI-Narrated-Recap-Analyst/
 │   ├── project_index.json          # 项目索引
 │   └── projects/                   # 各项目数据
 │       └── project_XXX/
-│           ├── metadata.json       # 项目元数据
-│           ├── raw/                # 原始数据
+│           ├── meta.json           # 项目元数据
+│           ├── raw/                # 原始数据（用户上传）
 │           │   ├── novel/          # 小说原始文件
-│           │   └── srt/            # SRT原始文件
+│           │   └── script/         # 脚本原始文件（.srt）⚠️ 从srt/改名
 │           │
-│           ├── processed/          # 处理后数据
-│           │   ├── novel/          # 小说处理结果
-│           │   │   ├── metadata.json        # 元数据
-│           │   │   ├── chapters.json        # 章节列表
-│           │   │   ├── chapter_XX.json      # 单章详情
-│           │   │   ├── segmented/           # 分段结果
-│           │   │   ├── annotated/           # 标注结果
-│           │   │   └── system_catalog.json  # 系统目录
-│           │   │
-│           │   └── script/         # 脚本处理结果
-│           │       ├── episodes.json        # 集数列表
-│           │       ├── ep_XX.json           # 单集详情
-│           │       └── segmented/           # 分段结果
-│           │
-│           ├── alignment/          # 对齐数据
-│           ├── analysis/           # 分析结果
-│           ├── training/           # 训练数据
-│           └── reports/            # 报告输出
+│           └── analyst/            # ✨ Phase I Analyst 工作流数据
+│               ├── import/         # Step 1: 导入与标准化
+│               │   ├── novel/
+│               │   │   ├── metadata.json        # 元数据
+│               │   │   ├── chapters.json        # 章节列表
+│               │   │   ├── intro.md             # 简介
+│               │   │   └── novel-imported.md    # 标准化小说
+│               │   └── script/
+│               │       ├── episodes.json        # 集数索引
+│               │       ├── ep01.json            # 集数元数据
+│               │       └── ep01-imported.md     # 标准化脚本
+│               │
+│               ├── script_analysis/    # Step 2: 脚本分析
+│               │   ├── ep01_segmentation_latest.json
+│               │   ├── ep01_hook_latest.json
+│               │   └── history/        # 历史版本
+│               │
+│               ├── novel_analysis/     # Step 3: 小说分析
+│               │   ├── chapter_001_segmentation_latest.json
+│               │   ├── chapter_001_annotation_latest.json
+│               │   ├── system_catalog_latest.json
+│               │   └── history/        # 历史版本
+│               │
+│               └── alignment/          # Step 4: 对齐分析
+│                   ├── chapter_001_ep01_alignment_latest.json
+│                   └── history/        # 历史版本
 │
 ├── config/                         # ⚙️ 配置文件目录
 ├── output/                         # 📝 系统输出
@@ -421,38 +429,54 @@ AI-Narrated-Recap-Analyst/
 - `.debug/` - 调试文件
 - `*.png`, `*.jpg` (根目录) - 截图应放在特定目录
 
-## 🔄 数据流向
+## 🔄 数据流向（Phase I Analyst Workflow）
 
-### 小说处理流程
-
-```
-原始小说 (raw/novel/*.txt)
-    ↓ NovelImporter
-小说标准化文本
-    ↓ NovelMetadataExtractor
-元数据 (metadata.json)
-    ↓ NovelChapterDetector
-章节列表 (chapters.json)
-    ↓ NovelSegmenter (Two-Pass)
-分段结果 (segmented/*.json)
-    ↓ NovelAnnotator (Two-Pass)
-标注结果 (annotated/*.json)
-    ↓ NovelSystemDetector
-系统目录 (system_catalog.json)
-```
-
-### 脚本处理流程
+### Step 1: Import 导入与标准化
 
 ```
-原始SRT (raw/srt/*.srt)
-    ↓ SrtImporter
-SRT标准化文件
-    ↓ SrtTextExtractor
-文本提取结果
-    ↓ ScriptSegmenter (ABC Classification)
-分段结果 (segmented/*.json)
-    ↓ ScriptValidator
-验证结果
+外部上传文件
+    ↓
+raw/novel/*.txt
+raw/script/*.srt
+    ↓ NovelImporter / SrtImporter
+analyst/import/novel/novel-imported.md
+analyst/import/script/ep01-imported.md
+    ↓ NovelMetadataExtractor / NovelChapterDetector
+analyst/import/novel/metadata.json
+analyst/import/novel/chapters.json
+analyst/import/script/episodes.json
+```
+
+### Step 2: Script Analysis 脚本分析
+
+```
+analyst/import/script/ep01-imported.md (取文件)
+    ↓ ScriptSegmenter + HookDetector
+analyst/script_analysis/ep01_segmentation_latest.json
+analyst/script_analysis/ep01_hook_latest.json
+```
+
+### Step 3: Novel Analysis 小说分析
+
+```
+analyst/import/novel/chapters.json (取文件)
+analyst/import/novel/novel-imported.md (取文件)
+    ↓ NovelSegmenter (Two-Pass并行)
+analyst/novel_analysis/chapter_001_segmentation_latest.json
+    ↓ NovelAnnotator (Two-Pass并行)
+analyst/novel_analysis/chapter_001_annotation_latest.json
+    ↓ NovelSystemDetector (逐章)
+analyst/novel_analysis/system_catalog_latest.json
+```
+
+### Step 4: Alignment 对齐分析
+
+```
+analyst/script_analysis/ep01_segmentation_latest.json (取文件)
++
+analyst/novel_analysis/chapter_001_annotation_latest.json (取文件)
+    ↓ NovelScriptAligner
+analyst/alignment/chapter_001_ep01_alignment_latest.json
 ```
 
 ### API-前端交互流程
@@ -464,11 +488,11 @@ HTTP Request
     ↓ FastAPI Server (src/api/main.py)
 API Routes (routes/projects_v2.py)
     ↓
-PreprocessService (后台任务)
+ImportService (后台任务)
     ↓
-Novel/Script Processing Workflow
+Novel/Script Analysis Workflow
     ↓
-数据保存 (data/projects/)
+数据保存 (analyst/)
     ↓
 API Response
     ↓ React Query (自动刷新)
@@ -511,6 +535,10 @@ API Response
 
 ---
 
-**最后更新**: 2026-02-11  
+**最后更新**: 2026-02-13  
 **维护者**: Project Team  
-**更新内容**: 完整重构，反映当前架构（API、前端、Schemas拆分、工作流）
+**更新内容**: 
+- 数据存储统一到 `analyst/` 目录
+- `raw/srt/` 改名为 `raw/script/`
+- 去除 `processed/` 和顶层 `alignment/` 文件夹
+- 采用四步工作流: import → script_analysis → novel_analysis → alignment
