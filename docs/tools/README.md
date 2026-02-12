@@ -1,358 +1,523 @@
-# Tools模块技术参考
+# 工具快速参考
 
-Tools模块包含所有无状态、原子性的功能工具。每个工具专注做好一件事。
-
-**本文档目的**: 技术参考，用于查找工具接口、理解实现逻辑、便于代码调用。
-
-## 📁 文档组织
-
-```
-docs/tools/
-├── README.md                    # 本文件：Tools概述
-│
-├── phase1_novel/                # Phase I: Novel处理工具
-│   ├── README.md
-│   ├── novel_importer.md       # 小说导入
-│   ├── novel_metadata_extractor.md
-│   ├── novel_chapter_detector.md
-│   ├── novel_segmenter.md
-│   ├── novel_chapter_splitter.md
-│   └── novel_validator.md
-│
-├── phase1_script/               # Phase I: Script处理工具
-│   ├── README.md
-│   ├── srt_importer.md
-│   ├── srt_text_extractor.md
-│   ├── script_segmenter.md
-│   └── script_validator.md
-│
-└── phase2_analysis/             # Phase II: 分析对齐工具
-    ├── README.md
-    ├── hook_detector.md
-    ├── hook_content_analyzer.md
-    ├── novel_semantic_analyzer.md
-    ├── script_semantic_analyzer.md
-    ├── semantic_matcher.md
-    ├── alignment_validator.md
-    ├── novel_tagger.md
-    └── script_tagger.md
-```
-
-## 🎯 工具设计原则
-
-### 1. 单一职责
-每个工具只做一件事，做好一件事。
-
-### 2. 无状态
-工具不保存状态，每次调用独立。
-
-### 3. 原子性
-工具执行要么成功，要么失败，不会有中间状态。
-
-### 4. 可测试
-每个工具都有对应的测试脚本。
-
-### 5. 文档完整
-每个工具都有详细的文档和使用示例。
-
-## 🔄 重要更新 (2026-02-11)
-
-**Schemas 拆分**: 小说相关的数据模型已从 `src/core/schemas.py` 拆分到 `src/core/schemas_novel/` 目录：
-- `schemas_novel/basic.py`: 基础数据结构（Chapter, Paragraph等）
-- `schemas_novel/segmentation.py`: 分段相关（SegmentedChapter等）
-- `schemas_novel/annotation.py`: 标注相关（AnnotatedChapter, EventTimeline等）
-- `schemas_novel/system.py`: 系统元素相关（SystemCatalog等）
-- `schemas_novel/validation.py`: 验证相关（ValidationResult等）
-
-**导入示例**:
-```python
-# 新的导入方式
-from src.core.schemas_novel.basic import Chapter, Paragraph
-from src.core.schemas_novel.segmentation import SegmentedChapter
-from src.core.schemas_novel.annotation import AnnotatedChapter
-```
-
-**影响范围**: 所有 Novel 相关工具的数据模型引用。工具代码已更新，文档中的示例代码可能仍引用旧路径，但不影响理解。
-
-## 📊 工具完整列表 (已实现: 18个)
-
-### Novel处理工具 (9个)
-
-| 工具 | 文档 | 职责 | LLM |
-|-----|------|------|-----|
-| `NovelImporter` | [novel_importer.md](./novel_importer.md) | 小说导入与规范化 | ❌ |
-| `NovelMetadataExtractor` | [novel_metadata_extractor.md](./novel_metadata_extractor.md) | 提取元数据（标题/作者/简介） | ✅ |
-| `NovelChapterDetector` | [novel_chapter_detector.md](./novel_chapter_detector.md) | 检测章节边界 | ❌ |
-| `NovelSegmenter` | [novel_segmenter.md](./novel_segmenter.md) | 章节ABC分段（Two-Pass） | ✅ |
-| `NovelAnnotator` | [novel_annotator.md](./novel_annotator.md) | 事件+设定标注（Three-Pass） | ✅ |
-| `NovelSystemAnalyzer` | [novel_system_analyzer.md](./novel_system_analyzer.md) | 全书系统分析 | ✅ |
-| `NovelSystemDetector` | [novel_system_detector.md](./novel_system_detector.md) | 章节系统元素检测 | ✅ |
-| `NovelSystemTracker` | [novel_system_tracker.md](./novel_system_tracker.md) | 章节系统元素追踪 | ✅ |
-| `NovelValidator` | [novel_validator.md](./novel_validator.md) | Novel质量验证 | ❌ |
-| `NovelTagger` | [novel_tagger.md](./novel_tagger.md) | Novel叙事特征标注 | ✅ |
-
-### Script处理工具 (5个)
-
-| 工具 | 文档 | 职责 | LLM |
-|-----|------|------|-----|
-| `SrtImporter` | [srt_importer.md](./srt_importer.md) | SRT字幕导入 | ❌ |
-| `SrtTextExtractor` | [srt_text_extractor.md](./srt_text_extractor.md) | SRT文本提取与清洗 | ❌ |
-| `ScriptSegmenter` | [script_segmenter.md](./script_segmenter.md) | Script分段（ABC分类） | ✅ |
-| `ScriptValidator` | [script_validator.md](./script_validator.md) | Script质量验证 | ❌ |
-
-### Hook分析工具 (2个)
-
-| 工具 | 文档 | 职责 | LLM |
-|-----|------|------|-----|
-| `HookDetector` | [hook_detector.md](./hook_detector.md) | 检测Hook边界 | ✅ |
-| `HookContentAnalyzer` | [hook_content_analyzer.md](./hook_content_analyzer.md) | Hook内容来源分析 | ✅ |
-
-### 对齐工具 (1个)
-
-| 工具 | 文档 | 职责 | LLM |
-|-----|------|------|-----|
-| `NovelScriptAligner` | [novel_script_aligner.md](./novel_script_aligner.md) | Novel与Script对齐 | ✅ |
-
-**统计**: 
-- 总计: **18个工具**
-- 文档覆盖率: **100%** (18/18)
-- LLM工具: 11个
-- 非LLM工具: 7个
+**最后更新**: 2026-02-12  
+**目的**: 提供所有工具的快速查找表和复用指南
 
 ---
 
-## 📊 工具开发路线图
+## 📋 工具总览
 
-详见：[ROADMAP.md](ROADMAP.md)
+当前项目共有 **17个工具**，按功能分为4大类：
 
-### ✅ Phase I: 素材标准化（已完成）
-- **Novel处理**: 10个工具 ✅
-- **Script处理**: 5个工具 ✅
-- **验证工具**: 2个工具 ✅
-
-### ⏳ Phase II: 内容分析（进行中）
-- **Hook分析**: 2个工具 ✅
-- **对齐匹配**: 1个工具 ✅
-
-## 📋 工具技术规范
-
-### 接口定义
-所有工具必须继承 `BaseTool` (定义于 `src/core/interfaces.py`)
-
-**基类接口**:
-```python
-class BaseTool(ABC):
-    @abstractmethod
-    def execute(self, input_data: Any) -> Any:
-        """执行工具核心功能"""
-        pass
-```
-
-### 实现规范
-```python
-from src.core.interfaces import BaseTool
-from typing import Any
-
-class MyTool(BaseTool):
-    """
-    [工具名称]
-    
-    职责 (Responsibility):
-        单一职责描述
-    
-    接口 (Interface):
-        输入: Type - 说明
-        输出: Type - 说明
-    
-    依赖 (Dependencies):
-        - Schema: 使用的数据模型
-        - Tools: 依赖的其他工具
-        - Config: 需要的配置项
-    
-    实现逻辑 (Logic):
-        1. 步骤1
-        2. 步骤2
-        3. 步骤3
-    """
-    
-    def __init__(self, config_param: Any = None):
-        super().__init__()
-        self.config_param = config_param
-    
-    def execute(self, input_data: Any) -> Any:
-        """核心执行逻辑"""
-        # 实现
-        return result
-```
-
-## 📝 工具文档模板
-
-每个工具文档 (`docs/tools/{phase}/{tool_name}.md`) 必须包含：
-
-### 1. 职责定义
-- 单一职责描述
-- 所属Phase
-- 在工具链中的位置
-
-### 2. 接口定义
-```python
-# 函数签名
-def execute(self, input: InputType) -> OutputType
-```
-- 输入参数: 类型、格式、约束
-- 输出结果: 类型、结构、字段说明
-- 异常: 可能抛出的异常类型
-
-### 3. 实现逻辑
-- 核心算法步骤
-- 调用的子工具/函数
-- 关键决策逻辑
-
-### 4. 依赖关系
-- Schema: `src/core/schemas.py` 中使用的模型
-- Tools: 依赖的其他工具（文件路径）
-- Config: `src/core/config.py` 中需要的配置项
-
-### 5. 代码示例
-```python
-# 仅展示接口调用，不是完整流程
-tool = ToolName(config)
-result = tool.execute(input_data)
-# result.field1, result.field2
-```
-
-## 🔧 开发新工具流程
-
-### Step 1: 设计与文档
-1. 在 `docs/tools/{phase}/` 创建工具文档
-2. 定义：职责、接口、实现逻辑、依赖
-3. 确认设计无误后开始编码
-
-### Step 2: 实现代码
-1. 在 `src/tools/` 创建工具文件
-2. 继承 `BaseTool`，实现 `execute()`
-3. Docstring 必须与文档一致
-4. 添加类型注解
-
-### Step 3: 验证
-1. 创建测试脚本 `scripts/test/{tool_name}_test.py`
-2. 验证功能正确性和边界情况
-3. 记录测试结果
-
-### Step 4: 集成
-1. 更新 `docs/tools/README.md` 工具列表
-2. 如有新Schema，更新 `docs/core/schemas.md`
-3. 提交代码和文档
-
-## 📚 开发参考
-
-### 归档工具参考
-可以参考但不要直接复制：
-- `archive/v2_tools_20260208/novel_processor.py`
-- `archive/v2_tools_20260208/srt_processor.py`
-
-### 相关文档
-- [ROADMAP.md](ROADMAP.md) - 工具路线图
-- [DEV_STANDARDS.md](../DEV_STANDARDS.md) - 开发规范
-- [interfaces.md](../core/interfaces.md) - 接口定义
-
-## 📚 已完成工具文档 (更新: 2026-02-10)
-
-### Novel处理工具 (10个) ✅
-
-#### 基础处理
-- [**NovelImporter**](novel_importer.md) - 小说导入与规范化
-- [**NovelMetadataExtractor**](novel_metadata_extractor.md) - 元数据提取（标题/作者/简介）
-- [**NovelChapterDetector**](novel_chapter_detector.md) - 章节边界检测
-
-#### 核心分析
-- [**NovelSegmenter**](novel_segmenter.md) - 章节ABC分段（Two-Pass）
-- [**NovelAnnotator**](novel_annotator.md) - 事件+设定标注（Three-Pass）
-
-#### 系统分析
-- [**NovelSystemAnalyzer**](novel_system_analyzer.md) - 全书系统元素分析
-- [**NovelSystemDetector**](novel_system_detector.md) - 章节系统元素检测
-- [**NovelSystemTracker**](novel_system_tracker.md) - 章节系统元素追踪
-
-#### 特征与验证
-- [**NovelTagger**](novel_tagger.md) - 叙事特征标注 **[新增: 2026-02-10]**
-- [**NovelValidator**](novel_validator.md) - Novel质量验证 **[新增: 2026-02-10]**
+| 类别 | 工具数量 | 完成度 |
+|------|---------|--------|
+| Novel处理工具 | 8个 | ✅ 100% |
+| Script处理工具 | 4个 | ✅ 100% |
+| 对齐工具 | 1个 | ✅ 100% |
+| Hook工具 | 2个 | ✅ 100% |
 
 ---
 
-### Script处理工具 (5个) ✅
+## 🔍 按场景查找工具
 
-#### 基础处理
-- [**SrtImporter**](srt_importer.md) - SRT字幕导入
-- [**SrtTextExtractor**](srt_text_extractor.md) - SRT文本提取与清洗
-- [**ScriptSegmenter**](script_segmenter.md) - Script分段（ABC分类）
+### 场景1: 处理小说文件
+```
+原始txt → NovelImporter → NovelMetadataExtractor → NovelChapterDetector 
+          → NovelSegmenter → NovelAnnotator → NovelSystemDetector
+```
 
-#### 特征与验证
-- [**ScriptValidator**](script_validator.md) - Script质量验证 **[新增: 2026-02-10]**
+### 场景2: 处理脚本文件
+```
+原始srt → SrtImporter → SrtTextExtractor → ScriptSegmenter → ScriptValidator
+```
 
----
+### 场景3: 小说-脚本对齐
+```
+Novel数据 + Script数据 → NovelScriptAligner → AlignmentReport
+```
 
-### Hook分析工具 (2个) ✅
-
-- [**HookDetector**](hook_detector.md) - Hook边界检测 **[新增: 2026-02-10]**
-- [**HookContentAnalyzer**](hook_content_analyzer.md) - Hook内容来源分析 **[新增: 2026-02-10]**
-
----
-
-### 对齐工具 (1个) ✅
-
-- [**NovelScriptAligner**](novel_script_aligner.md) - Novel与Script智能对齐
-
-## 📈 进度追踪
-
-查看 [ROADMAP.md](ROADMAP.md) 了解：
-- 已完成工具列表
-- 进行中的工具
-- 待开发工具
-- 优先级排序
+### 场景4: Hook检测（第一集开头）
+```
+Script ep01 → HookDetector → HookContentAnalyzer
+```
 
 ---
 
-## 📈 进度追踪
+## 📊 Novel工具链
 
-**最后更新**: 2026-02-10  
-**当前进度**: 18/18 核心工具完成 (100%) 🎉
+### 1. NovelImporter - 小说导入工具
+**职责**: 读取、规范化并导入小说文件
 
-### ✅ 已完成 (18个)
+| 项目 | 内容 |
+|------|------|
+| **输入** | 原始小说文件路径 + 项目名称 |
+| **输出** | `NovelImportResult` (保存路径、元数据) |
+| **文件路径** | `src/tools/novel_importer.py` |
+| **Schema** | `schemas_novel/basic.py` |
+| **依赖** | 无 |
+| **LLM** | ❌ 不使用 |
 
-**Novel处理** (10个):
-- NovelImporter, NovelMetadataExtractor, NovelChapterDetector
-- NovelSegmenter, NovelAnnotator
-- NovelSystemAnalyzer, NovelSystemDetector, NovelSystemTracker
-- NovelTagger, NovelValidator
+**核心功能**:
+- 编码检测与统一（UTF-8）
+- 换行符规范化
+- 去除BOM标记
+- 保存到 `data/projects/{project_id}/raw/novel/` 
 
-**Script处理** (5个):
-- SrtImporter, SrtTextExtractor, ScriptSegmenter
-- ScriptValidator
+---
 
-**Hook分析** (2个):
-- HookDetector, HookContentAnalyzer
+### 2. NovelMetadataExtractor - 元数据提取工具
+**职责**: 提取小说的基本信息
 
-**对齐工具** (1个):
-- NovelScriptAligner
+| 项目 | 内容 |
+|------|------|
+| **输入** | 规范化的小说文本 |
+| **输出** | `NovelMetadata` (标题、作者、标签、简介) |
+| **文件路径** | `src/tools/novel_metadata_extractor.py` |
+| **Schema** | `schemas_novel/basic.py::NovelMetadata` |
+| **依赖** | `NovelImporter` |
+| **LLM** | ✅ DeepSeek v3.2 (可选) |
+| **Prompt** | `introduction_extraction.yaml` |
 
-### 📊 文档覆盖率
+**核心功能**:
+- 提取标题、作者
+- 提取标签/分类（从【标签】格式）
+- 智能过滤简介（移除营销文案，保留世界观）
 
-| 类别 | 代码文件 | 文档文件 | 覆盖率 |
-|-----|---------|---------|--------|
-| Novel工具 | 10 | 10 | **100%** ✅ |
-| Script工具 | 5 | 5 | **100%** ✅ |
-| Hook工具 | 2 | 2 | **100%** ✅ |
-| 对齐工具 | 1 | 1 | **100%** ✅ |
-| **总计** | **18** | **18** | **100%** ✅ |
+---
 
-### 🎯 最新更新 (2026-02-10)
+### 3. NovelChapterDetector - 章节检测工具
+**职责**: 检测章节边界
 
-**本次更新**: 补充5个缺失的工具文档
-1. ✅ `novel_validator.md` - Novel质量验证
-2. ✅ `hook_detector.md` - Hook边界检测
-3. ✅ `hook_content_analyzer.md` - Hook内容分析
-4. ✅ `novel_tagger.md` - Novel叙事特征标注
-5. ✅ `script_validator.md` - Script质量验证
+| 项目 | 内容 |
+|------|------|
+| **输入** | 规范化的小说文本 |
+| **输出** | `List[ChapterInfo]` (章节索引列表) |
+| **文件路径** | `src/tools/novel_chapter_detector.py` |
+| **Schema** | `schemas_novel/basic.py::ChapterInfo` |
+| **依赖** | `NovelImporter` |
+| **LLM** | ❌ 不使用（正则表达式） |
 
-**文档质量**: 所有文档符合DEV_STANDARDS规范
+**核心功能**:
+- 识别章节标题模式（第X章、ChapterX）
+- 定位章节起始位置（行号、字符位置）
+- 统计章节字数
+- 生成章节索引
+
+---
+
+### 4. NovelSegmenter - 小说分段工具 ⭐
+**职责**: 使用Two-Pass LLM对小说章节进行叙事分段
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | 规范化的小说文本 + 章节号 |
+| **输出** | `SegmentationResult` (JSON格式) |
+| **文件路径** | `src/tools/novel_segmenter.py` |
+| **Schema** | `schemas_novel/segmentation.py` |
+| **依赖** | `NovelImporter`, `NovelChapterDetector` |
+| **LLM** | ✅ Claude Sonnet 4.5 (强制) |
+| **Prompt** | `novel_chapter_segmentation_pass1.yaml` + `pass2.yaml` |
+| **Two-Pass** | ✅ Pass 1初步分段 + Pass 2校验修正 |
+
+**核心功能**:
+- **ABC三类分段**：A类设定/B类事件/C类系统
+- **行号定位**：LLM输出行号范围，代码提取内容
+- **JSON输出**：结构化输出，可完全还原原文（99.63%）
+- **准确率**：100%（vs 旧版78%）
+
+**重要说明**: 此工具**不可使用DeepSeek**，复杂分段任务必须使用Claude
+
+---
+
+### 5. NovelAnnotator - 小说标注工具 ⭐
+**职责**: 标注事件、设定关联、功能标签
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `SegmentationResult` |
+| **输出** | `AnnotatedChapter` |
+| **文件路径** | `src/tools/novel_annotator.py` |
+| **Schema** | `schemas_novel/annotation.py` |
+| **依赖** | `NovelSegmenter` |
+| **LLM** | ✅ Claude Sonnet 4.5 |
+| **Prompt** | `novel_annotation_pass1.yaml` + `pass2.yaml` |
+| **Two-Pass** | ✅ Pass 1事件聚合 + Pass 2设定关联 |
+
+**核心功能**:
+- **Pass 1**: 事件聚合（将B类段落聚合为事件）
+- **Pass 2**: 设定关联（A类设定关联到事件：BF/BT/AF）
+- 构建累积知识库（世界观、人物、系统）
+- 输出事件时间线
+
+---
+
+### 6. NovelTagger - 功能标签生成工具
+**职责**: 生成功能标签（在NovelAnnotator基础上增强）
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `AnnotatedChapter` |
+| **输出** | `TaggedChapter` |
+| **文件路径** | `src/tools/novel_tagger.py` |
+| **Schema** | `schemas_novel/annotation.py::FunctionalTag` |
+| **依赖** | `NovelAnnotator` |
+| **LLM** | ✅ DeepSeek v3.2 |
+| **Prompt** | `novel_tagging.yaml` |
+
+**核心功能**:
+- 生成功能标签（世界观构建、冲突制造、伏笔埋设等）
+- 标注叙事手法（对比、悬念、铺垫等）
+
+---
+
+### 7. NovelValidator - 小说验证工具
+**职责**: 验证小说数据质量
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `AnnotatedChapter` |
+| **输出** | `ValidationResult` |
+| **文件路径** | `src/tools/novel_validator.py` |
+| **Schema** | `schemas_novel/validation.py` |
+| **依赖** | `NovelAnnotator` |
+| **LLM** | ❌ 不使用（规则验证） |
+
+**核心功能**:
+- 结构完整性检查
+- 数据格式验证
+- 质量评分
+
+---
+
+### 8. NovelSystemDetector - 系统元素检测工具 ⭐
+**职责**: 从标注结果中识别新系统元素
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `AnnotatedChapter` + `SystemCatalog` |
+| **输出** | `SystemUpdateResult` |
+| **文件路径** | `src/tools/novel_system_detector.py` |
+| **Schema** | `schemas_novel/system.py` |
+| **依赖** | `NovelAnnotator` |
+| **LLM** | ✅ Claude Sonnet 4.5 |
+| **Prompt** | `novel_system_detection.yaml` |
+| **独立Pass** | ✅ Pass 3（避免污染NovelAnnotator） |
+
+**核心功能**:
+- 识别新系统元素（从C类段落和事件中）
+- 自动分类到系统目录（SC001-角色、SC002-物品等）
+- 避免重复检测
+
+**设计理由**: 独立Pass而非集成到NovelAnnotator，成本增加$0.02/章，但保护NovelAnnotator稳定性
+
+---
+
+## 📊 Script工具链
+
+### 9. SrtImporter - SRT导入工具
+**职责**: 读取并规范化SRT文件
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | 原始SRT文件路径 |
+| **输出** | `SrtImportResult` |
+| **文件路径** | `src/tools/srt_importer.py` |
+| **Schema** | `schemas_script.py::SrtEntry` |
+| **依赖** | 无 |
+| **LLM** | ❌ 不使用 |
+
+**核心功能**:
+- 解析SRT格式（序号、时间轴、文本）
+- 编码检测与统一
+- 时间轴验证
+- 保存到 `data/projects/{project_id}/raw/srt/`
+
+---
+
+### 10. SrtTextExtractor - SRT文本提取工具
+**职责**: 提取纯文本并修正
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `List[SrtEntry]` |
+| **输出** | 纯文本 (Markdown格式) |
+| **文件路径** | `src/tools/srt_text_extractor.py` |
+| **Schema** | `schemas_script.py` |
+| **依赖** | `SrtImporter` |
+| **LLM** | ✅ DeepSeek v3.2 (可选) |
+| **Prompt** | 内置（标点修复） |
+
+**核心功能**:
+- 提取纯文本
+- LLM添加标点符号
+- 修正错别字
+- 智能实体识别（无小说参考时）
+
+**成本**: ~$0.02-0.04 / 集（仅标点修复）
+
+---
+
+### 11. ScriptSegmenter - 脚本分段工具 ⭐
+**职责**: 使用Two-Pass ABC分类法对脚本分段
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | Script文本 |
+| **输出** | `SegmentationResult` (ABC分类) |
+| **文件路径** | `src/tools/script_segmenter.py` |
+| **Schema** | `schemas_script.py::ABCSegment` |
+| **依赖** | `SrtTextExtractor` |
+| **LLM** | ✅ DeepSeek v3.2 标准 |
+| **Prompt** | `script_segmentation_abc_classification.yaml` |
+| **Two-Pass** | 🚧 **待改造**（当前单Pass） |
+
+**核心功能**:
+- **ABC三类分段**：A类设定/B类事件/C类系统
+- 与NovelSegmenter使用相同分类原则
+- 为对齐工具提供结构化输入
+
+**待优化**: 改造为Two-Pass以提高准确率
+
+---
+
+### 12. ScriptValidator - 脚本验证工具
+**职责**: 验证脚本数据质量
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `SegmentationResult` |
+| **输出** | `ValidationResult` |
+| **文件路径** | `src/tools/script_validator.py` |
+| **Schema** | `schemas_novel/validation.py` |
+| **依赖** | `ScriptSegmenter` |
+| **LLM** | ❌ 不使用（规则验证） |
+
+**核心功能**:
+- 结构完整性检查
+- 时间轴连续性验证
+- 质量评分
+
+---
+
+## 📊 对齐工具
+
+### 13. NovelScriptAligner - 小说-脚本对齐工具
+**职责**: 小说与脚本对齐（改编分析）
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `AnnotatedChapter` + `SegmentationResult` (Script) |
+| **输出** | `AlignmentResult` |
+| **文件路径** | `src/tools/novel_script_aligner.py` |
+| **Schema** | `schemas_alignment.py` |
+| **依赖** | `NovelAnnotator`, `ScriptSegmenter` |
+| **LLM** | ✅ Claude Sonnet 4.5 |
+| **Prompt** | `novel_script_alignment.yaml` |
+
+**核心功能**:
+- 句子级对齐
+- 改编类型分析（原样、简化、扩展、删除、新增）
+- 对齐质量评分
+
+---
+
+## 📊 Hook工具
+
+### 14. HookDetector - Hook检测工具
+**职责**: 检测脚本开头Hook（ep01前3分钟）
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | Script ep01前180秒 |
+| **输出** | `HookDetectionResult` |
+| **文件路径** | `src/tools/hook_detector.py` |
+| **Schema** | 自定义 |
+| **依赖** | `SrtTextExtractor` |
+| **LLM** | ✅ Claude Sonnet 4.5 |
+| **Prompt** | `hook_detection.yaml` |
+
+**核心功能**:
+- 识别Hook类型（冲突、悬念、反差等）
+- 定位Hook时间段
+- Hook强度评分
+
+---
+
+### 15. HookContentAnalyzer - Hook内容分析工具
+**职责**: 深度分析Hook特性
+
+| 项目 | 内容 |
+|------|------|
+| **输入** | `HookDetectionResult` + Hook文本 |
+| **输出** | `HookAnalysisResult` |
+| **文件路径** | `src/tools/hook_content_analyzer.py` |
+| **Schema** | 自定义 |
+| **依赖** | `HookDetector` |
+| **LLM** | ✅ Claude Sonnet 4.5 |
+| **Prompt** | `hook_content_analysis.yaml` |
+
+**核心功能**:
+- Hook叙事手法分析
+- Hook效果预测
+- Hook优化建议
+
+---
+
+## 🔧 复用指南
+
+### 编写新功能前必读
+
+在编写任何新功能前，**必须**检查以下Manager和工具是否已实现相关功能：
+
+### 核心Manager（必须优先使用）
+
+| Manager | 功能 | 文件路径 |
+|---------|------|----------|
+| **ArtifactManager** | 文件版本管理、自动版本化保存 | `src/core/artifact_manager.py` |
+| **ProjectManagerV2** | 项目元数据管理、目录结构创建 | `src/core/project_manager_v2.py` |
+| **LLMClientManager** | LLM客户端统一管理（Claude/DeepSeek） | `src/core/llm_client_manager.py` |
+
+**示例 - 保存工具输出**:
+```python
+# ❌ 错误：手动保存JSON
+with open(f"{project_path}/output.json", "w") as f:
+    json.dump(result, f)
+
+# ✅ 正确：使用ArtifactManager
+from src.core.artifact_manager import ArtifactManager
+artifact_manager = ArtifactManager()
+artifact_manager.save_artifact(
+    project_id=project_id,
+    artifact_type="novel_segmentation",
+    chapter_id="chapter_01",
+    data=result
+)
+```
+
+**示例 - LLM调用**:
+```python
+# ❌ 错误：直接创建客户端
+import anthropic
+client = anthropic.Anthropic(api_key="xxx")
+
+# ✅ 正确：使用LLMClientManager
+from src.core.llm_client_manager import get_llm_client, get_model_name
+client = get_llm_client("claude")  # 或 "deepseek"
+model = get_model_name("deepseek", model_type="v32")  # v32 或 v32-thinking
+```
+
+---
+
+## 📈 工具状态追踪
+
+### 已完成工具 (17/17) ✅
+
+| 工具 | 状态 | Two-Pass | LLM | 测试 |
+|------|------|----------|-----|------|
+| NovelImporter | ✅ | - | ❌ | ✅ |
+| NovelMetadataExtractor | ✅ | ❌ | DeepSeek | ✅ |
+| NovelChapterDetector | ✅ | - | ❌ | ✅ |
+| NovelSegmenter | ✅ | ✅ | Claude | ✅ |
+| NovelAnnotator | ✅ | ✅ | Claude | ✅ |
+| NovelTagger | ✅ | ❌ | DeepSeek | ✅ |
+| NovelValidator | ✅ | - | ❌ | ✅ |
+| NovelSystemDetector | ✅ | ❌ | Claude | ✅ |
+| SrtImporter | ✅ | - | ❌ | ✅ |
+| SrtTextExtractor | ✅ | ❌ | DeepSeek | ✅ |
+| ScriptSegmenter | ✅ | ⚠️ 待改造 | DeepSeek | ✅ |
+| ScriptValidator | ✅ | - | ❌ | ✅ |
+| NovelScriptAligner | ✅ | ❌ | Claude | ✅ |
+| HookDetector | ✅ | ❌ | Claude | ✅ |
+| HookContentAnalyzer | ✅ | ❌ | Claude | ✅ |
+
+### 待优化工具
+
+1. **ScriptSegmenter**: 改造为Two-Pass（提高准确率）
+2. **NovelMetadataExtractor**: 可选Two-Pass改造（提高简介过滤质量）
+
+---
+
+## 🎯 Two-Pass工具设计原则
+
+### 何时使用Two-Pass？
+
+**必须使用Two-Pass的场景**:
+- ✅ 复杂的结构化分段任务（NovelSegmenter, ScriptSegmenter）
+- ✅ 需要严格规则约束的分类任务
+- ✅ 输出结果需要与明确标准对比验证的任务
+
+**可以单次调用的场景**:
+- ⚠️ 简单的信息提取（元数据、标签）
+- ⚠️ 格式转换和文本处理
+- ⚠️ 创意生成和总结任务
+
+### Two-Pass vs 独立Pass
+
+**独立Pass原则**（避免Prompt污染）:
+- 当需要在现有工具上添加新任务时，**优先使用独立的新Pass**
+- 成本增加<$0.05/章时，**必须使用独立Pass**
+- 现有工具已验证稳定，**禁止修改现有Pass**
+
+**案例**: NovelSystemDetector作为独立Pass 3，而非集成到NovelAnnotator的Pass 2
+
+---
+
+## 📊 LLM选择指南
+
+| 任务类型 | 推荐LLM | 原因 |
+|---------|---------|------|
+| **简单信息提取** | DeepSeek v3.2 标准 | 速度快、成本低 |
+| **复杂分段任务** | Claude Sonnet 4.5 | 质量高、理解强 |
+| **深度推理** | DeepSeek v3.2 思维链 | 专用推理模型 |
+| **格式转换** | DeepSeek v3.2 标准 | 足够使用 |
+| **对齐分析** | Claude Sonnet 4.5 | 需要深度理解 |
+
+**成本对比**:
+- DeepSeek v3.2: ~$0.02/章
+- Claude Sonnet 4.5: ~$0.06/章
+- DeepSeek v3.2 思维链: ~$0.08/章
+
+**黄金法则**: 80%任务用DeepSeek，15%用Claude，5%用DeepSeek思维链
+
+---
+
+## 📝 快速查找表
+
+### 按输入类型查找
+
+| 输入 | 使用工具 |
+|------|---------|
+| 原始txt文件 | NovelImporter |
+| 原始srt文件 | SrtImporter |
+| 规范化小说文本 | NovelMetadataExtractor, NovelChapterDetector |
+| 章节文本 | NovelSegmenter |
+| 分段结果（Novel） | NovelAnnotator |
+| 标注结果（Novel） | NovelTagger, NovelValidator, NovelSystemDetector |
+| SRT条目列表 | SrtTextExtractor |
+| Script文本 | ScriptSegmenter |
+| 分段结果（Script） | ScriptValidator |
+| Novel + Script | NovelScriptAligner |
+
+### 按输出类型查找
+
+| 需要输出 | 使用工具 |
+|---------|---------|
+| 元数据（标题、作者） | NovelMetadataExtractor |
+| 章节列表 | NovelChapterDetector |
+| 分段结果（ABC分类） | NovelSegmenter, ScriptSegmenter |
+| 事件时间线 | NovelAnnotator |
+| 功能标签 | NovelTagger |
+| 系统目录 | NovelSystemDetector |
+| 对齐关系 | NovelScriptAligner |
+| Hook信息 | HookDetector, HookContentAnalyzer |
+| 质量报告 | NovelValidator, ScriptValidator |
+
+---
+
+**维护说明**: 
+- 新增工具时，请同步更新本文档
+- 修改工具接口时，请更新对应表格
+- 每次重大更新后，请在顶部更新日期
+
+**最后更新**: 2026-02-12  
+**工具总数**: 17个 (100%完成)
