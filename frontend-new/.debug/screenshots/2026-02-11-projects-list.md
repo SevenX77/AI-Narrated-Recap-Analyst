@@ -1,0 +1,63 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - button "Select Project No project selected" [ref=e10]:
+            - generic [ref=e11]:
+              - img
+            - generic [ref=e12]:
+              - generic [ref=e13]: Select Project
+              - generic [ref=e14]: No project selected
+            - img
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]: Getting Started
+          - generic [ref=e19]: Select a project to view workflow steps
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - button "Settings" [ref=e24]:
+              - img [ref=e25]
+              - generic [ref=e28]: Settings
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - generic [ref=e32]: © 2026 AI Recap Analyst
+      - button "Toggle Sidebar" [ref=e33]
+    - main [ref=e34]:
+      - generic [ref=e36]:
+        - button "Toggle Sidebar" [ref=e37]:
+          - img
+          - generic [ref=e38]: Toggle Sidebar
+        - heading "Projects" [level=1] [ref=e39]
+        - button "Toggle Mode" [ref=e41]:
+          - img
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - heading "Projects" [level=2] [ref=e47]
+            - paragraph [ref=e48]: Manage and organize your analysis projects
+          - button "New Project" [ref=e49]:
+            - img
+            - text: New Project
+        - generic [ref=e50]:
+          - generic [ref=e60]:
+            - generic [ref=e62]: Total Projects
+            - generic [ref=e64]:
+              - generic [ref=e65]: "0"
+              - img [ref=e66]
+          - generic [ref=e69]:
+            - generic [ref=e71]: Initialized
+            - generic [ref=e73]: "0"
+          - generic [ref=e74]:
+            - generic [ref=e76]: Discovered
+            - generic [ref=e78]: "0"
+        - generic [ref=e54]:
+          - heading "All Projects" [level=3] [ref=e55]
+          - generic [ref=e80]:
+            - img [ref=e81]
+            - heading "No projects yet" [level=3] [ref=e83]
+            - paragraph [ref=e84]: Create your first project to get started
+            - button "Create Project" [ref=e85]:
+              - img
+              - text: Create Project
+  - region "Notifications alt+T"

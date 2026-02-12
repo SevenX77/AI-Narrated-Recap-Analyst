@@ -1,0 +1,209 @@
+- generic [ref=e3]:
+  - generic [ref=e56]:
+    - list [ref=e58]:
+      - listitem [ref=e59]:
+        - 'button "001_末哥超凡公路 ID: PROJ_001" [ref=e60]':
+          - img [ref=e62]
+          - generic [ref=e64]:
+            - generic [ref=e65]: 001_末哥超凡公路
+            - generic [ref=e66]: "ID: PROJ_001"
+          - img [ref=e67]
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]: Workflows
+        - list [ref=e73]:
+          - listitem [ref=e74]:
+            - button "Analyst Agent" [expanded] [ref=e75]:
+              - img [ref=e76]
+              - generic [ref=e79]: Analyst Agent
+              - img [ref=e80]
+            - list [ref=e83]:
+              - listitem [ref=e84]:
+                - link "Import" [ref=e85] [cursor=pointer]:
+                  - /url: /project/PROJ_001/workflow/step_1_import
+                  - generic [ref=e86]: Import
+              - listitem [ref=e87]:
+                - generic [ref=e89]: Script Analysis
+              - listitem [ref=e90]:
+                - generic [ref=e92]: Novel Analysis
+              - listitem [ref=e93]:
+                - generic [ref=e95]: Alignment
+      - list [ref=e98]:
+        - listitem [ref=e99]:
+          - button "Settings" [ref=e100]:
+            - img [ref=e101]
+            - generic [ref=e104]: Settings
+    - button "Toggle Sidebar" [ref=e105]
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - button "Toggle Sidebar" [ref=e36]:
+          - img
+          - generic [ref=e37]: Toggle Sidebar
+        - navigation "breadcrumb" [ref=e38]:
+          - list [ref=e39]:
+            - listitem [ref=e40]:
+              - generic [ref=e41] [cursor=pointer]: 001_末哥超凡公路
+            - listitem [ref=e42]:
+              - img [ref=e43]
+            - listitem [ref=e45]:
+              - link "Import" [disabled] [ref=e46]
+      - button "Toggle Mode" [ref=e48]:
+        - img
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - 'heading "Step 1: Import" [level=2] [ref=e108]'
+        - paragraph [ref=e109]: Upload Novel and Script files to begin processing
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - img [ref=e114]
+            - generic [ref=e117]:
+              - heading "Auto Preprocessing Completed" [level=3] [ref=e118]
+              - paragraph [ref=e119]: 6 files processed
+          - button "View Logs" [ref=e120]:
+            - img
+            - text: View Logs
+        - generic [ref=e121]:
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - img [ref=e124]
+              - generic [ref=e127]: "Novel: 序列公路求生：我在末日升级物资.txt"
+            - generic [ref=e128]: 50 chapters detected
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - img [ref=e131]
+              - generic [ref=e134]: "Script: ep01.srt"
+            - generic [ref=e135]: 3675 chars processed
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - img [ref=e138]
+              - generic [ref=e141]: "Script: ep02.srt"
+            - generic [ref=e142]: 1591 chars processed
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - img [ref=e145]
+              - generic [ref=e148]: "Script: ep03.srt"
+            - generic [ref=e149]: 1225 chars processed
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - img [ref=e152]
+              - generic [ref=e155]: "Script: ep04.srt"
+            - generic [ref=e156]: 825 chars processed
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - img [ref=e159]
+              - generic [ref=e162]: "Script: ep05.srt"
+            - generic [ref=e163]: 591 chars processed
+      - generic [ref=e164]:
+        - generic [ref=e165] [cursor=pointer]:
+          - generic [ref=e167]:
+            - img [ref=e169]
+            - generic [ref=e172]:
+              - generic [ref=e173]: Novel Status
+              - generic [ref=e174]: 50 chapters detected
+          - generic [ref=e176]:
+            - generic [ref=e177]: "Chapters:"
+            - generic [ref=e178]: "50"
+        - generic [ref=e179] [cursor=pointer]:
+          - generic [ref=e181]:
+            - img [ref=e183]
+            - generic [ref=e186]:
+              - generic [ref=e187]: Script Status
+              - generic [ref=e188]: 5 episodes processed
+          - generic [ref=e190]:
+            - generic [ref=e191]: "Episodes:"
+            - generic [ref=e192]: "5"
+      - generic [ref=e193]:
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - generic [ref=e197]: Raw Files (6)
+            - generic [ref=e198]: Uploaded source files
+          - button "Upload Files" [ref=e199]:
+            - img
+            - text: Upload Files
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - heading "Novel (1)" [level=3] [ref=e203]:
+              - button "Novel (1)" [expanded] [ref=e204]:
+                - generic [ref=e205]:
+                  - generic [ref=e206]: Novel
+                  - generic [ref=e207]: (1)
+                - img
+            - region "Novel (1)" [ref=e208]:
+              - generic [ref=e211]:
+                - generic [ref=e212]:
+                  - img [ref=e213]
+                  - generic [ref=e216]:
+                    - generic [ref=e217]: 序列公路求生：我在末日升级物资.txt
+                    - generic [ref=e218]: 348.23 KB • novel • 2026-02-11 18:41
+                - generic [ref=e219]:
+                  - button "View file" [ref=e220]:
+                    - img
+                  - button "Delete file" [ref=e221]:
+                    - img
+          - generic [ref=e222]:
+            - heading "SRT (5)" [level=3] [ref=e223]:
+              - button "SRT (5)" [expanded] [ref=e224]:
+                - generic [ref=e225]:
+                  - generic [ref=e226]: SRT
+                  - generic [ref=e227]: (5)
+                - img
+            - region "SRT (5)" [ref=e228]:
+              - generic [ref=e230]:
+                - generic [ref=e231]:
+                  - generic [ref=e232]:
+                    - img [ref=e233]
+                    - generic [ref=e236]:
+                      - generic [ref=e237]: ep03.srt
+                      - generic [ref=e238]: 6.83 KB • script • 2026-02-10 16:17
+                  - generic [ref=e239]:
+                    - button "View file" [ref=e240]:
+                      - img
+                    - button "Delete file" [ref=e241]:
+                      - img
+                - generic [ref=e242]:
+                  - generic [ref=e243]:
+                    - img [ref=e244]
+                    - generic [ref=e247]:
+                      - generic [ref=e248]: ep02.srt
+                      - generic [ref=e249]: 9.25 KB • script • 2026-02-10 16:15
+                  - generic [ref=e250]:
+                    - button "View file" [ref=e251]:
+                      - img
+                    - button "Delete file" [ref=e252]:
+                      - img
+                - generic [ref=e253]:
+                  - generic [ref=e254]:
+                    - img [ref=e255]
+                    - generic [ref=e258]:
+                      - generic [ref=e259]: ep01.srt
+                      - generic [ref=e260]: 22.08 KB • script • 2026-02-10 16:10
+                  - generic [ref=e261]:
+                    - button "View file" [ref=e262]:
+                      - img
+                    - button "Delete file" [ref=e263]:
+                      - img
+                - generic [ref=e264]:
+                  - generic [ref=e265]:
+                    - img [ref=e266]
+                    - generic [ref=e269]:
+                      - generic [ref=e270]: ep05.srt
+                      - generic [ref=e271]: 3.37 KB • script • 2026-02-11 18:41
+                  - generic [ref=e272]:
+                    - button "View file" [ref=e273]:
+                      - img
+                    - button "Delete file" [ref=e274]:
+                      - img
+                - generic [ref=e275]:
+                  - generic [ref=e276]:
+                    - img [ref=e277]
+                    - generic [ref=e280]:
+                      - generic [ref=e281]: ep04.srt
+                      - generic [ref=e282]: 4.91 KB • script • 2026-02-11 18:41
+                  - generic [ref=e283]:
+                    - button "View file" [ref=e284]:
+                      - img
+                    - button "Delete file" [ref=e285]:
+                      - img
+  - region "Notifications alt+T"

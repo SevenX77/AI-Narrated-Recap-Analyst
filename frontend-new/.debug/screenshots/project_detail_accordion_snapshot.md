@@ -1,0 +1,36 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - list [ref=e8]:
+      - listitem [ref=e9]:
+        - 'button "001_末哥超凡公路 ID: PROJ_001" [ref=e10]':
+          - img [ref=e12]
+          - generic [ref=e14]:
+            - generic [ref=e15]: 001_末哥超凡公路
+            - generic [ref=e16]: "ID: PROJ_001"
+          - img [ref=e17]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: Workflows
+        - list
+      - list [ref=e25]:
+        - listitem [ref=e26]:
+          - button "Settings" [ref=e27]:
+            - img [ref=e28]
+            - generic [ref=e31]: Settings
+    - button "Toggle Sidebar" [ref=e32]
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - button "Toggle Sidebar" [ref=e36]:
+          - img
+          - generic [ref=e37]: Toggle Sidebar
+        - navigation "breadcrumb" [ref=e38]:
+          - list [ref=e39]:
+            - listitem [ref=e40]:
+              - link "001_末哥超凡公路" [disabled] [ref=e41]
+      - button "Toggle Mode" [ref=e43]:
+        - img
+    - alert [ref=e52]:
+      - heading "Failed to load workflow state" [level=5] [ref=e53]
+      - generic [ref=e54]: Failed to fetch
+  - region "Notifications alt+T"

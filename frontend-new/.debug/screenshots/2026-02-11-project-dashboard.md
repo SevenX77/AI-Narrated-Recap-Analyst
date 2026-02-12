@@ -1,0 +1,141 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - 'button "末哥超凡公路 ID: PROJ_001" [ref=e48]':
+            - generic [ref=e11]:
+              - img
+            - generic [ref=e12]:
+              - generic [ref=e13]: 末哥超凡公路
+              - generic [ref=e14]: "ID: PROJ_001"
+            - img
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]: Getting Started
+          - generic [ref=e19]: Select a project to view workflow steps
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - button "Settings" [ref=e24]:
+              - img [ref=e25]
+              - generic [ref=e28]: Settings
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - generic [ref=e32]: © 2026 AI Recap Analyst
+      - button "Toggle Sidebar" [ref=e33]
+    - main [ref=e34]:
+      - generic [ref=e36]:
+        - button "Toggle Sidebar" [ref=e37]:
+          - img
+          - generic [ref=e38]: Toggle Sidebar
+        - button "Back" [ref=e39]:
+          - img
+          - text: Back
+        - heading "Project Details" [level=1] [ref=e40]
+        - button "Toggle Mode" [ref=e42]:
+          - img
+      - generic [ref=e50]:
+        - generic [ref=e52]:
+          - 'heading "Phase I: Analyst Agent" [level=1] [ref=e53]'
+          - paragraph [ref=e54]: Content analysis workflow
+        - generic [ref=e55]:
+          - generic [ref=e57]:
+            - img [ref=e58]
+            - generic [ref=e60]: Overall Progress
+          - generic [ref=e61]:
+            - progressbar [ref=e62]
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - paragraph [ref=e66]: Completed Steps
+                - paragraph [ref=e67]: 0/4
+              - generic [ref=e68]:
+                - paragraph [ref=e69]: LLM Calls
+                - paragraph [ref=e70]: "0"
+              - generic [ref=e71]:
+                - paragraph [ref=e72]: Total Cost
+                - paragraph [ref=e73]: $0.000
+              - generic [ref=e74]:
+                - paragraph [ref=e75]: Processing Time
+                - paragraph [ref=e76]: 0s
+        - generic [ref=e77]:
+          - generic [ref=e78] [cursor=pointer]:
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - img [ref=e83]
+                - generic [ref=e86]:
+                  - generic [ref=e87]: Import & Standardize
+                  - generic [ref=e88]: Upload and standardize source files
+              - generic [ref=e89]: Ready
+            - generic [ref=e91]:
+              - progressbar [ref=e92]
+              - generic [ref=e94]:
+                - generic [ref=e95]:
+                  - paragraph [ref=e96]: LLM Calls
+                  - paragraph [ref=e97]: "0"
+                - generic [ref=e98]:
+                  - paragraph [ref=e99]: Cost
+                  - paragraph [ref=e100]: $0.000
+                - generic [ref=e101]:
+                  - paragraph [ref=e102]: Time
+                  - paragraph [ref=e103]: 0s
+          - generic [ref=e104] [cursor=pointer]:
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - img [ref=e109]
+                - generic [ref=e111]:
+                  - generic [ref=e112]: Script Analysis
+                  - generic [ref=e113]: Process script files through 7 phases
+              - generic [ref=e114]: Locked
+            - generic [ref=e116]:
+              - progressbar [ref=e117]
+              - generic [ref=e119]:
+                - generic [ref=e120]:
+                  - paragraph [ref=e121]: LLM Calls
+                  - paragraph [ref=e122]: "0"
+                - generic [ref=e123]:
+                  - paragraph [ref=e124]: Cost
+                  - paragraph [ref=e125]: $0.000
+                - generic [ref=e126]:
+                  - paragraph [ref=e127]: Time
+                  - paragraph [ref=e128]: 0s
+          - generic [ref=e129] [cursor=pointer]:
+            - generic [ref=e131]:
+              - generic [ref=e132]:
+                - img [ref=e134]
+                - generic [ref=e136]:
+                  - generic [ref=e137]: Novel Analysis
+                  - generic [ref=e138]: Analyze novel content in 8 steps
+              - generic [ref=e139]: Locked
+            - generic [ref=e141]:
+              - progressbar [ref=e142]
+              - generic [ref=e144]:
+                - generic [ref=e145]:
+                  - paragraph [ref=e146]: LLM Calls
+                  - paragraph [ref=e147]: "0"
+                - generic [ref=e148]:
+                  - paragraph [ref=e149]: Cost
+                  - paragraph [ref=e150]: $0.000
+                - generic [ref=e151]:
+                  - paragraph [ref=e152]: Time
+                  - paragraph [ref=e153]: 0s
+          - generic [ref=e154] [cursor=pointer]:
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - img [ref=e159]
+                - generic [ref=e162]:
+                  - generic [ref=e163]: Script-Novel Alignment
+                  - generic [ref=e164]: Align script sentences with novel paragraphs
+              - generic [ref=e165]: Locked
+            - generic [ref=e167]:
+              - progressbar [ref=e168]
+              - generic [ref=e170]:
+                - generic [ref=e171]:
+                  - paragraph [ref=e172]: LLM Calls
+                  - paragraph [ref=e173]: "0"
+                - generic [ref=e174]:
+                  - paragraph [ref=e175]: Cost
+                  - paragraph [ref=e176]: $0.000
+                - generic [ref=e177]:
+                  - paragraph [ref=e178]: Time
+                  - paragraph [ref=e179]: 0s
+  - region "Notifications alt+T"

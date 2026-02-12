@@ -1,0 +1,119 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e250]:
+      - list [ref=e252]:
+        - listitem [ref=e253]:
+          - 'button "末哥超凡公路 ID: PROJ_001" [ref=e254]':
+            - generic [ref=e255]:
+              - img
+            - generic [ref=e256]:
+              - generic [ref=e257]: 末哥超凡公路
+              - generic [ref=e258]: "ID: PROJ_001"
+            - img
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]: "Phase I: Analyst"
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - button "Import & Standardize ⏳" [ref=e265]:
+                - img [ref=e266]
+                - generic [ref=e269]: Import & Standardize
+                - generic [ref=e270]: ⏳
+            - listitem [ref=e271]:
+              - button "Script Analysis 🔒" [ref=e272]:
+                - img [ref=e273]
+                - generic [ref=e275]: Script Analysis
+                - generic [ref=e276]: 🔒
+            - listitem [ref=e277]:
+              - button "Novel Analysis 🔒" [ref=e278]:
+                - img [ref=e279]
+                - generic [ref=e281]: Novel Analysis
+                - generic [ref=e282]: 🔒
+            - listitem [ref=e283]:
+              - button "Alignment 🔒" [ref=e284]:
+                - img [ref=e285]
+                - generic [ref=e288]: Alignment
+                - generic [ref=e289]: 🔒
+        - list [ref=e292]:
+          - listitem [ref=e293]:
+            - button "Dashboard" [ref=e294]:
+              - img [ref=e295]
+              - generic [ref=e299]: Dashboard
+        - list [ref=e302]:
+          - listitem [ref=e303]:
+            - button "Settings" [ref=e304]:
+              - img [ref=e305]
+              - generic [ref=e308]: Settings
+      - list [ref=e310]:
+        - listitem [ref=e311]:
+          - generic [ref=e312]: © 2026 AI Recap Analyst
+      - button "Toggle Sidebar" [ref=e313]
+    - main [ref=e34]:
+      - generic [ref=e36]:
+        - button "Toggle Sidebar" [ref=e37]:
+          - img
+          - generic [ref=e38]: Toggle Sidebar
+        - button "Back" [ref=e39]:
+          - img
+          - text: Back
+        - heading "Project Details" [level=1] [ref=e40]
+        - button "Toggle Mode" [ref=e42]:
+          - img
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - 'heading "Step 1: Import & Standardize" [level=2] [ref=e183]'
+          - paragraph [ref=e184]: Upload Novel and Script files to begin processing
+        - generic [ref=e185]:
+          - generic [ref=e188]:
+            - img [ref=e190]
+            - generic [ref=e193]:
+              - generic [ref=e194]: Novel Status
+              - generic [ref=e195]: Not imported
+          - generic [ref=e198]:
+            - img [ref=e200]
+            - generic [ref=e203]:
+              - generic [ref=e204]: Script Status
+              - generic [ref=e205]: Not imported
+        - generic [ref=e206]:
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]: Raw Files (3)
+              - generic [ref=e211]: Uploaded source files
+            - button "Upload Files" [ref=e212]:
+              - img
+              - text: Upload Files
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - img [ref=e217]
+                - generic [ref=e220]:
+                  - generic [ref=e221]: ep03.srt
+                  - generic [ref=e222]: 6.83 KB • script • Feb 10, 2026
+              - generic [ref=e223]:
+                - button [ref=e224]:
+                  - img
+                - button [ref=e225]:
+                  - img
+            - generic [ref=e226]:
+              - generic [ref=e227]:
+                - img [ref=e228]
+                - generic [ref=e231]:
+                  - generic [ref=e232]: ep02.srt
+                  - generic [ref=e233]: 9.25 KB • script • Feb 10, 2026
+              - generic [ref=e234]:
+                - button [ref=e235]:
+                  - img
+                - button [ref=e236]:
+                  - img
+            - generic [ref=e237]:
+              - generic [ref=e238]:
+                - img [ref=e239]
+                - generic [ref=e242]:
+                  - generic [ref=e243]: ep01.srt
+                  - generic [ref=e244]: 22.08 KB • script • Feb 10, 2026
+              - generic [ref=e245]:
+                - button [ref=e246]:
+                  - img
+                - button [ref=e247]:
+                  - img
+  - region "Notifications alt+T"

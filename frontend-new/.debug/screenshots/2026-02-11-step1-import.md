@@ -1,0 +1,94 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - 'button "末哥超凡公路 ID: PROJ_001" [ref=e48]':
+            - generic [ref=e11]:
+              - img
+            - generic [ref=e12]:
+              - generic [ref=e13]: 末哥超凡公路
+              - generic [ref=e14]: "ID: PROJ_001"
+            - img
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]: Getting Started
+          - generic [ref=e19]: Select a project to view workflow steps
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - button "Settings" [ref=e24]:
+              - img [ref=e25]
+              - generic [ref=e28]: Settings
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - generic [ref=e32]: © 2026 AI Recap Analyst
+      - button "Toggle Sidebar" [ref=e33]
+    - main [ref=e34]:
+      - generic [ref=e36]:
+        - button "Toggle Sidebar" [ref=e37]:
+          - img
+          - generic [ref=e38]: Toggle Sidebar
+        - button "Back" [ref=e39]:
+          - img
+          - text: Back
+        - heading "Project Details" [level=1] [ref=e40]
+        - button "Toggle Mode" [ref=e42]:
+          - img
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - 'heading "Step 1: Import & Standardize" [level=2] [ref=e183]'
+          - paragraph [ref=e184]: Upload Novel and Script files to begin processing
+        - generic [ref=e185]:
+          - generic [ref=e188]:
+            - img [ref=e190]
+            - generic [ref=e193]:
+              - generic [ref=e194]: Novel Status
+              - generic [ref=e195]: Not imported
+          - generic [ref=e198]:
+            - img [ref=e200]
+            - generic [ref=e203]:
+              - generic [ref=e204]: Script Status
+              - generic [ref=e205]: Not imported
+        - generic [ref=e206]:
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]: Raw Files (3)
+              - generic [ref=e211]: Uploaded source files
+            - button "Upload Files" [ref=e212]:
+              - img
+              - text: Upload Files
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - img [ref=e217]
+                - generic [ref=e220]:
+                  - generic [ref=e221]: ep03.srt
+                  - generic [ref=e222]: 6.83 KB • script • Feb 10, 2026
+              - generic [ref=e223]:
+                - button [ref=e224]:
+                  - img
+                - button [ref=e225]:
+                  - img
+            - generic [ref=e226]:
+              - generic [ref=e227]:
+                - img [ref=e228]
+                - generic [ref=e231]:
+                  - generic [ref=e232]: ep02.srt
+                  - generic [ref=e233]: 9.25 KB • script • Feb 10, 2026
+              - generic [ref=e234]:
+                - button [ref=e235]:
+                  - img
+                - button [ref=e236]:
+                  - img
+            - generic [ref=e237]:
+              - generic [ref=e238]:
+                - img [ref=e239]
+                - generic [ref=e242]:
+                  - generic [ref=e243]: ep01.srt
+                  - generic [ref=e244]: 22.08 KB • script • Feb 10, 2026
+              - generic [ref=e245]:
+                - button [ref=e246]:
+                  - img
+                - button [ref=e247]:
+                  - img
+  - region "Notifications alt+T"
