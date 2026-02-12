@@ -82,7 +82,7 @@ def test_script_segmenter():
     logger.info("Step 3: 语义分段（ScriptSegmenter）")
     
     try:
-        segmenter = ScriptSegmenter(use_llm=True)
+        segmenter = ScriptSegmenter(provider="deepseek")
         logger.info(f"Tool: {segmenter.name}")
         logger.info(f"Description: {segmenter.description}")
         
@@ -124,20 +124,23 @@ def test_script_segmenter():
         logger.info(f"  - 平均每段字符数: {sum(seg.char_count for seg in result.segments) / result.total_segments:.1f}")
         
         # ========== 验证输出文件 ==========
-        output_path = Path(result.output_file)
-        if output_path.exists():
-            logger.info(f"\n✅ Markdown文件已生成: {output_path}")
-            logger.info(f"   文件大小: {output_path.stat().st_size} bytes")
-            
-            # 显示前500字符
-            with open(output_path, 'r', encoding='utf-8') as f:
-                content = f.read(500)
-            logger.info(f"\n📄 Markdown内容预览（前500字）：")
-            logger.info("-" * 80)
-            logger.info(content)
-            logger.info("-" * 80)
+        if result.output_file:
+            output_path = Path(result.output_file)
+            if output_path.exists():
+                logger.info(f"\n✅ Markdown文件已生成: {output_path}")
+                logger.info(f"   文件大小: {output_path.stat().st_size} bytes")
+                
+                # 显示前500字符
+                with open(output_path, 'r', encoding='utf-8') as f:
+                    content = f.read(500)
+                logger.info(f"\n📄 Markdown内容预览（前500字）：")
+                logger.info("-" * 80)
+                logger.info(content)
+                logger.info("-" * 80)
+            else:
+                logger.warning(f"\n⚠️  输出文件不存在: {output_path}")
         else:
-            logger.warning(f"\n⚠️  输出文件不存在: {output_path}")
+            logger.info("\n📌 注意：此版本不生成 Markdown 文件，只返回 JSON 数据")
         
         logger.info(f"\n{'=' * 80}")
         logger.info("🎉 测试完成！ScriptSegmenter 工作正常")
