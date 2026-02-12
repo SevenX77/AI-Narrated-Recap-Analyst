@@ -1,0 +1,42 @@
+{
+  "version": "3.0.0",
+  "description": "作品目录 - 管理所有正式作品的元数据和路径",
+  "works": {
+    "末哥超凡公路": {
+      "id": "work_001",
+      "title": "末哥超凡公路",
+      "base_path": "data/works/末哥超凡公路",
+      "has_novel": false,
+      "scripts_path": "data/works/末哥超凡公路/script",
+      "status": "active",
+      "created_at": "2026-02-10T18:26:00",
+      "metadata": {
+        "total_episodes": 3,
+        "episodes": ["ep01", "ep02", "ep03"]
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2026-02-10T18:13:00",
+    "last_updated": "2026-02-10T18:26:00",
+    "total_works": 1
+  },
+  "notes": {
+    "design_principle": "作品是否有原小说，通过 has_novel 字段或目录下是否存在 novel/ 文件夹判断，无需目录层级区分",
+    "work_structure": {
+      "id": "唯一标识符 (work_xxx)",
+      "title": "作品名称",
+      "base_path": "作品根目录 (data/works/{作品名}/)",
+      "has_novel": "是否有原小说 (boolean)",
+      "novel_path": "原小说路径（可选，有原小说时存在）",
+      "scripts_path": "解说稿路径",
+      "status": "状态 (active | archived | processing)",
+      "created_at": "创建时间 (ISO 8601)",
+      "metadata": "自定义元数据（章节数、集数等）"
+    },
+    "directory_structure": {
+      "with_novel": "data/works/{作品名}/novel/ + data/works/{作品名}/script/",
+      "without_novel": "data/works/{作品名}/script/ (没有novel目录)"
+    }
+  }
+}

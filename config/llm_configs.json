@@ -1,0 +1,107 @@
+{
+  "claude_claude_sonnet_4_5_20250929": {
+    "provider": "claude",
+    "model": "claude-sonnet-4-5-20250929",
+    "requests_per_minute": 30,
+    "requests_per_day": null,
+    "tokens_per_minute": 40000,
+    "tokens_per_day": null,
+    "max_concurrent": 2,
+    "max_retries": 3,
+    "base_retry_delay": 3.0,
+    "max_retry_delay": 60.0,
+    "rate_limit_errors": [
+      "403",
+      "429",
+      "rate limit",
+      "too many requests"
+    ],
+    "is_tested": false,
+    "last_test_date": null,
+    "test_notes": "OneChats Claude配置，保守限流"
+  },
+  "anthropic_claude": {
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20241022",
+    "requests_per_minute": 50,
+    "requests_per_day": null,
+    "tokens_per_minute": 40000,
+    "tokens_per_day": null,
+    "max_concurrent": 3,
+    "max_retries": 3,
+    "base_retry_delay": 2.0,
+    "max_retry_delay": 60.0,
+    "rate_limit_errors": [
+      "403",
+      "429",
+      "rate limit",
+      "too many requests"
+    ],
+    "is_tested": false,
+    "last_test_date": null,
+    "test_notes": "默认配置，待测试验证"
+  },
+  "deepseek_chat": {
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "requests_per_minute": 100,
+    "requests_per_day": null,
+    "tokens_per_minute": null,
+    "tokens_per_day": null,
+    "max_concurrent": 3,
+    "max_retries": 3,
+    "base_retry_delay": 3.0,
+    "max_retry_delay": 60.0,
+    "rate_limit_errors": [
+      "403",
+      "429",
+      "rate limit",
+      "too many requests"
+    ],
+    "is_tested": true,
+    "last_test_date": "2026-02-10",
+    "test_notes": "测试验证：可支持更高QPM"
+  },
+  "openai_gpt4": {
+    "provider": "openai",
+    "model": "gpt-4",
+    "requests_per_minute": 500,
+    "requests_per_day": 10000,
+    "tokens_per_minute": 10000,
+    "tokens_per_day": null,
+    "max_concurrent": 5,
+    "max_retries": 3,
+    "base_retry_delay": 1.0,
+    "max_retry_delay": 60.0,
+    "rate_limit_errors": [
+      "403",
+      "429",
+      "rate limit",
+      "too many requests"
+    ],
+    "is_tested": false,
+    "last_test_date": null,
+    "test_notes": "付费账户配置"
+  },
+  "conservative": {
+    "provider": "unknown",
+    "model": "unknown",
+    "requests_per_minute": 10,
+    "requests_per_day": null,
+    "tokens_per_minute": null,
+    "tokens_per_day": null,
+    "max_concurrent": 1,
+    "max_retries": 5,
+    "base_retry_delay": 5.0,
+    "max_retry_delay": 60.0,
+    "rate_limit_errors": [
+      "403",
+      "429",
+      "rate limit",
+      "too many requests"
+    ],
+    "is_tested": false,
+    "last_test_date": null,
+    "test_notes": "保守配置，用于未知模型"
+  }
+}
