@@ -12,12 +12,15 @@ Script Segmenter Tool v2
 import logging
 import time
 import re
+import json
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 
 from src.core.interfaces import BaseTool
 from src.core.schemas_script import SrtEntry, ScriptSegment, ScriptSegmentationResult
 from src.utils.prompt_loader import load_prompts
+from src.utils.llm_output_parser import LLMOutputParser
+from src.core.exceptions import ToolExecutionError, LLMCallError, ParsingError
 
 logger = logging.getLogger(__name__)
 
@@ -110,6 +113,10 @@ class ScriptSegmenter(BaseTool):
             srt_entries
         )
         
+        # Step 3.5: ABC Classification
+        logger.info("Step 3.5: ABC Classification")
+        segments = self._classify_segments_abc(segments)
+        
         # Step 4: Statistics
         avg_sentence_count = (
             sum(seg.sentence_count for seg in segments) / len(segments)
@@ -121,13 +128,19 @@ class ScriptSegmenter(BaseTool):
         logger.info(f"Segmentation complete: {len(segments)} segments, {processing_time:.2f}s")
         logger.info(f"Average sentence count per segment: {avg_sentence_count:.1f}")
         
-        # Step 5: Build result
+        # Step 5: Generate and save Markdown
+        logger.info("Step 4: Generating Markdown output")
+        output_file = self._generate_and_save_markdown(
+            segments, project_name, episode_name
+        )
+        
+        # Step 6: Build result
         return ScriptSegmentationResult(
             segments=segments,
             total_segments=len(segments),
             avg_sentence_count=avg_sentence_count,
             segmentation_mode="two_pass",
-            output_file=None,  # No longer generate Markdown
+            output_file=str(output_file),
             processing_time=processing_time
         )
     
@@ -236,6 +249,8 @@ class ScriptSegmenter(BaseTool):
         """
         解析LLM输出，提取段落句子序号范围
         
+        使用统一的 LLMOutputParser 工具进行解析。
+        
         LLM输出格式示例：
         - **段落1**：收音机播报消息
           句号：1-3
@@ -245,68 +260,37 @@ class ScriptSegmenter(BaseTool):
         
         Returns:
             List[Dict]: 解析后的段落列表
-                [
-                    {
-                        "index": 1,
-                        "description": "收音机播报消息",
-                        "start_sentence": 1,
-                        "end_sentence": 3
-                    },
-                    ...
-                ]
+        
+        Raises:
+            ParsingError: 解析失败时抛出
         """
-        paragraphs = []
-        
-        # 正则匹配段落头部
-        # 匹配: - **段落1**：收音机播报消息
-        paragraph_pattern = r'^\- \*\*段落(\d+)\*\*：(.+?)$'
-        
-        # 匹配: 句号：1-3
-        sentence_range_pattern = r'^\s*句号[：:]\s*(\d+)-(\d+)'
-        
-        lines = llm_output.split('\n')
-        current_paragraph = None
-        
-        for line in lines:
-            line_stripped = line.strip()
+        try:
+            # 使用统一的解析工具
+            paragraphs = LLMOutputParser.parse_segmented_output(
+                llm_output=llm_output,
+                paragraph_pattern=r'^\- \*\*段落(\d+)\*\*：(.+?)$',
+                range_pattern=r'^\s*句号[：:]\s*(\d+)-(\d+)',
+                range_key="句号",
+                description_group=2,
+                type_group=None  # 脚本分段没有类型
+            )
             
-            # 匹配段落头部
-            para_match = re.match(paragraph_pattern, line_stripped)
-            if para_match:
-                # 保存上一个段落
-                if current_paragraph:
-                    paragraphs.append(current_paragraph)
-                
-                # 创建新段落
-                current_paragraph = {
-                    "index": int(para_match.group(1)),
-                    "description": para_match.group(2).strip(),
-                    "start_sentence": None,
-                    "end_sentence": None
-                }
-                continue
+            # 转换字段名（start_line → start_sentence）
+            for para in paragraphs:
+                para["start_sentence"] = para.pop("start_line")
+                para["end_sentence"] = para.pop("end_line")
             
-            # 匹配句子序号范围
-            range_match = re.match(sentence_range_pattern, line_stripped)
-            if range_match and current_paragraph:
-                current_paragraph["start_sentence"] = int(range_match.group(1))
-                current_paragraph["end_sentence"] = int(range_match.group(2))
-                continue
-        
-        # 保存最后一个段落
-        if current_paragraph:
-            paragraphs.append(current_paragraph)
-        
-        logger.info(f"Parsed {len(paragraphs)} paragraphs from LLM output")
-        
-        # 验证解析结果
-        for para in paragraphs:
-            if para.get("start_sentence") is None or para.get("end_sentence") is None:
-                logger.warning(f"Paragraph {para['index']} missing sentence range")
-            else:
-                logger.debug(f"Paragraph {para['index']}: sentences {para['start_sentence']}-{para['end_sentence']}")
-        
-        return paragraphs
+            logger.info(f"✅ 成功解析 {len(paragraphs)} 个段落")
+            return paragraphs
+            
+        except Exception as e:
+            logger.error(f"❌ LLM输出解析失败: {e}")
+            raise ParsingError(
+                message="脚本分段解析失败",
+                parser_name="ScriptSegmenter",
+                raw_output=llm_output[:200],
+                original_error=e
+            )
     
     def _extract_paragraph_contents_by_sentences(
         self,
@@ -416,3 +400,125 @@ class ScriptSegmenter(BaseTool):
         end_time = srt_entries[end_index].end_time
         
         return start_time, end_time
+    
+    def _classify_segments_abc(
+        self,
+        segments: List[ScriptSegment]
+    ) -> List[ScriptSegment]:
+        """
+        对段落进行ABC分类
+        
+        Args:
+            segments: 段落列表
+        
+        Returns:
+            添加了category字段的段落列表
+        """
+        if not segments:
+            return segments
+        
+        # 格式化段落文本
+        segments_text = []
+        for seg in segments:
+            segments_text.append(f"【段落{seg.index}】({seg.start_time} - {seg.end_time})")
+            segments_text.append(f"{seg.content}")
+            segments_text.append("")
+        
+        segments_text_str = '\n'.join(segments_text)
+        
+        # 加载Prompt
+        prompt_abc = load_prompts("script_segmentation_abc_classification")
+        
+        user_prompt = prompt_abc["user_template"].format(
+            segments_text=segments_text_str
+        )
+        
+        # 调用LLM进行分类
+        try:
+            start_time = time.time()
+            response = self.llm_client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {"role": "system", "content": prompt_abc["system"]},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.1,
+                max_tokens=2048,
+                response_format={"type": "json_object"}
+            )
+            
+            result_json = json.loads(response.choices[0].message.content)
+            classifications = result_json.get("classifications", [])
+            
+            logger.info(f"ABC Classification complete: {time.time() - start_time:.2f}s")
+            
+            # 将分类结果应用到segments
+            classification_dict = {
+                item["index"]: item["category"] 
+                for item in classifications
+            }
+            
+            for seg in segments:
+                seg.category = classification_dict.get(seg.index, "B")  # 默认B类
+            
+            # 统计各类数量
+            category_counts = {"A": 0, "B": 0, "C": 0}
+            for seg in segments:
+                if seg.category in category_counts:
+                    category_counts[seg.category] += 1
+            
+            logger.info(f"   Classification: A={category_counts['A']}, B={category_counts['B']}, C={category_counts['C']}")
+            
+        except Exception as e:
+            logger.error(f"ABC Classification failed: {e}")
+            logger.info("   Falling back to default category (B) for all segments")
+            for seg in segments:
+                seg.category = "B"
+        
+        return segments
+    
+    def _generate_and_save_markdown(
+        self,
+        segments: List[ScriptSegment],
+        project_name: str,
+        episode_name: str
+    ) -> Path:
+        """
+        生成Markdown格式输出并保存
+        
+        Args:
+            segments: 段落列表
+            project_name: 项目名称
+            episode_name: 集数名称
+        
+        Returns:
+            输出文件路径
+        """
+        # 生成Markdown内容
+        lines = []
+        
+        # 添加标题
+        lines.append(f"# {episode_name}\n")
+        
+        # 添加每个段落
+        for seg in segments:
+            # 段落标题：时间戳 + 分类
+            category_tag = f" [{seg.category}]" if seg.category else ""
+            lines.append(f"## [{seg.start_time} - {seg.end_time}]{category_tag}\n")
+            
+            # 段落内容
+            lines.append(f"{seg.content}\n")
+        
+        markdown_content = '\n'.join(lines)
+        
+        # 保存到项目目录
+        project_dir = Path("data/projects") / project_name / "script"
+        project_dir.mkdir(parents=True, exist_ok=True)
+        
+        output_file = project_dir / f"{episode_name}.md"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(markdown_content)
+        
+        logger.info(f"Markdown saved to: {output_file}")
+        
+        return output_file

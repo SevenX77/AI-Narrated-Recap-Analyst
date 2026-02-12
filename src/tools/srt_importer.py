@@ -344,6 +344,105 @@ class SrtImporter(BaseTool):
         
         logger.debug(f"SRT validation passed: {len(entries)} entries")
     
+    def save_processed_markdown(
+        self, 
+        processed_text: str,
+        entries: List[SrtEntry], 
+        project_name: str, 
+        episode_name: str
+    ) -> Path:
+        """
+        保存处理后的文本为 Markdown 格式
+        使用处理好的带标点文本，按句子分割，匹配SRT时间戳
+        格式：[开始时间 --> 结束时间] 句子内容
+        
+        策略：通过编辑距离匹配，找到processed句子在原始SRT中的准确对应范围
+        
+        Args:
+            processed_text: LLM处理后的带标点文本
+            entries: 原始SRT条目（用于提取时间戳）
+            project_name: 项目名称
+            episode_name: 集数名称
+        """
+        import re
+        from difflib import SequenceMatcher
+        
+        # 1. 按句子分割处理后的文本（中文句号、问号、感叹号）
+        sentences = re.split(r'([。！？])', processed_text)
+        # 重新组合句子和标点
+        formatted_sentences = []
+        for i in range(0, len(sentences) - 1, 2):
+            if i + 1 < len(sentences):
+                sentence = sentences[i] + sentences[i + 1]
+                sentence = sentence.strip()
+                if sentence:
+                    formatted_sentences.append(sentence)
+        
+        # 2. 移除标点符号的辅助函数
+        def clean_text(text: str) -> str:
+            return re.sub(r'[，、；：""''（）《》【】\s.,;:!?"\'\(\)\[\]{}]', '', text)
+        
+        # 3. 为每个句子匹配时间戳
+        markdown_lines = []
+        current_srt_idx = 0
+        
+        for sentence in formatted_sentences:
+            sentence_clean = clean_text(sentence)
+            if len(sentence_clean) < 2:
+                continue
+            
+            # 从当前位置开始，尝试找到最佳匹配范围
+            best_match_start = current_srt_idx
+            best_match_end = current_srt_idx
+            best_ratio = 0
+            
+            # 尝试不同长度的SRT窗口（1-10条）
+            for window_size in range(1, min(11, len(entries) - current_srt_idx + 1)):
+                end_idx = current_srt_idx + window_size - 1
+                if end_idx >= len(entries):
+                    break
+                
+                # 合并这个窗口内的所有SRT文本
+                window_text = ''.join([entries[i].text.replace('\n', '') for i in range(current_srt_idx, end_idx + 1)])
+                window_clean = clean_text(window_text)
+                
+                # 计算相似度
+                ratio = SequenceMatcher(None, sentence_clean, window_clean).ratio()
+                
+                if ratio > best_ratio:
+                    best_ratio = ratio
+                    best_match_start = current_srt_idx
+                    best_match_end = end_idx
+                
+                # 如果找到了足够好的匹配（>0.7），优先选择较短的窗口
+                # 这样可以避免把多个句子合并在一起
+                if ratio > 0.7:
+                    break
+            
+            # 使用最佳匹配的时间戳
+            start_time = entries[best_match_start].start_time
+            end_time = entries[best_match_end].end_time
+            
+            # 格式化为 markdown
+            markdown_lines.append(f"[{start_time} --> {end_time}] {sentence}")
+            
+            # 更新当前索引（跳过已匹配的SRT条目）
+            current_srt_idx = best_match_end + 1
+            if current_srt_idx >= len(entries):
+                break
+        
+        markdown_content = '\n'.join(markdown_lines)
+        
+        project_dir = Path("data/projects") / project_name / "processed" / "script"
+        project_dir.mkdir(parents=True, exist_ok=True)
+        
+        output_file = project_dir / f"{episode_name}-imported.md"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(markdown_content)
+            
+        logger.info(f"Saved processed markdown: {output_file}")
+        return output_file
+
     def _save_to_project(
         self,
         content: str,
@@ -352,7 +451,7 @@ class SrtImporter(BaseTool):
     ) -> Path:
         """保存规范化后的SRT到项目目录"""
         # 创建项目目录结构
-        project_dir = Path("data/projects") / project_name / "raw"
+        project_dir = Path("data/projects") / project_name / "raw" / "srt"
         project_dir.mkdir(parents=True, exist_ok=True)
         
         # 保存文件

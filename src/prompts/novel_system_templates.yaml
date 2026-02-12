@@ -1,0 +1,128 @@
+# Novel System Templates - 小说系统类型模板
+# 用作参考模板，但每部小说应根据实际设定灵活调整
+
+# ============================================================================
+# 模板1: 末世生存 + 系统流
+# ============================================================================
+apocalypse_survival_system:
+  name: "末世生存系统流"
+  typical_categories:
+    - category: "生存资源"
+      importance: critical
+      examples: ["水", "食物", "燃料", "药品", "香烟"]
+      tracking: quantity
+      
+    - category: "交通工具"
+      importance: critical
+      examples: ["自行车", "汽车", "摩托车", "载具"]
+      tracking: state_change
+      
+    - category: "武器装备"
+      importance: important
+      examples: ["手弩", "刀具", "防护装备"]
+      tracking: state_change
+      
+    - category: "系统货币"
+      importance: critical
+      examples: ["杀戮点", "积分", "能量点"]
+      tracking: quantity
+      
+    - category: "能力体系"
+      importance: important
+      examples: ["序列超凡", "升级系统", "技能"]
+      tracking: state_change
+      
+    - category: "威胁元素"
+      importance: important
+      examples: ["诡异", "丧尸", "变异生物"]
+      tracking: encounter
+
+# ============================================================================
+# 模板2: 修仙/玄幻
+# ============================================================================
+cultivation:
+  name: "修仙/玄幻"
+  typical_categories:
+    - category: "境界等级"
+      importance: critical
+      examples: ["炼气", "筑基", "金丹", "元婴"]
+      tracking: state_change
+      
+    - category: "功法技能"
+      importance: critical
+      examples: ["剑法", "心法", "神通"]
+      tracking: state_change
+      
+    - category: "修炼资源"
+      importance: important
+      examples: ["灵石", "丹药", "灵草"]
+      tracking: quantity
+      
+    - category: "法宝装备"
+      importance: important
+      examples: ["飞剑", "护甲", "储物袋"]
+      tracking: state_change
+
+# ============================================================================
+# 模板3: 游戏异世界
+# ============================================================================
+game_world:
+  name: "游戏异世界"
+  typical_categories:
+    - category: "等级经验"
+      importance: critical
+      examples: ["等级", "经验值", "技能点"]
+      tracking: quantity
+      
+    - category: "装备武器"
+      importance: critical
+      examples: ["武器", "防具", "饰品"]
+      tracking: state_change
+      
+    - category: "技能魔法"
+      importance: important
+      examples: ["主动技能", "被动技能", "魔法"]
+      tracking: state_change
+      
+    - category: "货币物资"
+      importance: important
+      examples: ["金币", "材料", "消耗品"]
+      tracking: quantity
+
+# ============================================================================
+# 模板4: 都市异能
+# ============================================================================
+urban_superpower:
+  name: "都市异能"
+  typical_categories:
+    - category: "异能体系"
+      importance: critical
+      examples: ["异能等级", "异能类型", "能力值"]
+      tracking: state_change
+      
+    - category: "现代装备"
+      importance: important
+      examples: ["手机", "车辆", "特殊道具"]
+      tracking: state_change
+      
+    - category: "社会资源"
+      importance: important
+      examples: ["金钱", "人脉", "势力"]
+      tracking: quantity
+
+# ============================================================================
+# 使用说明
+# ============================================================================
+usage_notes: |
+  这些模板仅供参考，实际分析时需要：
+  
+  1. **识别小说类型**：根据前50章内容判断小说类型
+  2. **参考模板**：选择最接近的模板类型
+  3. **灵活调整**：
+     - 保留模板中出现的元素
+     - 添加小说特有的创新元素
+     - 调整类别名称以符合小说设定
+  4. **智能归类**：
+     - 相似元素合并到同一类别
+     - 避免过度细分（控制在5-10个类别）
+     - 每个类别下的元素应有共性

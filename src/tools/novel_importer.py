@@ -125,6 +125,8 @@ class NovelImporter(BaseTool):
                 content=normalized_content,
                 project_name=project_name
             )
+            # 保存 Markdown 版本
+            self._save_imported_markdown(normalized_content, project_name)
             logger.info(f"Saved to: {saved_path}")
         else:
             logger.info("Skip saving to disk (save_to_disk=False)")
@@ -340,6 +342,44 @@ class NovelImporter(BaseTool):
         
         logger.debug(f"Content validation passed: {len(content)} chars, {len(valid_lines)} valid lines")
     
+    def _save_imported_markdown(self, content: str, project_name: str) -> Path:
+        """
+        保存为 Markdown 格式 (novel-imported.md)
+        处理每一章的标题为 Markdown 标题，标准格式“# 第x章 xxxx”
+        """
+        import re
+        
+        lines = content.split('\n')
+        chapter_lines = []
+        found_first_chapter = False
+        
+        for line in lines:
+            stripped = line.strip()
+            # 匹配章节标题：=== 第X章 ... === 或 第X章 ...
+            chapter_match = re.match(r'^(?:===)?\s*(第\s*\d+\s*章.*)(?:===)?$', stripped)
+            
+            if chapter_match:
+                found_first_chapter = True
+                title_content = chapter_match.group(1).strip()
+                # 移除可能存在的尾部 ===
+                title_content = re.sub(r'\s*===+$', '', title_content)
+                chapter_lines.append(f"# {title_content}")
+            elif found_first_chapter:
+                # 第一章之后的内容都放入正文
+                chapter_lines.append(line)
+        
+        project_dir = Path("data/projects") / project_name / "processed" / "novel"
+        project_dir.mkdir(parents=True, exist_ok=True)
+        
+        # 保存 novel-imported.md（只包含正文，intro.md 由 preprocess_service 从 metadata 生成）
+        chapter_content = '\n'.join(chapter_lines).strip()
+        output_file = project_dir / "novel-imported.md"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(chapter_content)
+        logger.debug(f"Saved novel content: {output_file}")
+        
+        return output_file
+
     def _save_to_project(self, content: str, project_name: str) -> Path:
         """
         保存规范化后的文本到项目目录

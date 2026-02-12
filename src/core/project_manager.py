@@ -12,8 +12,9 @@ class ProjectManager:
         self.projects = {}
         self.next_id = 1
         self._load_index()
+        # ⚠️ 已禁用自动扫描（迁移到 V2）
         # Scan on init to ensure index is up to date with source folder
-        self._scan_and_update()
+        # self._scan_and_update()
 
     def _load_index(self):
         if os.path.exists(self.index_path):
@@ -43,7 +44,7 @@ class ProjectManager:
         if not os.path.exists(config.analysis_source_dir):
             return
 
-        existing_paths = {p['source_path']: pid for pid, p in self.projects.items()}
+        existing_paths = {p['source_path']: pid for pid, p in self.projects.items() if 'source_path' in p}
         
         for item in os.listdir(config.analysis_source_dir):
             item_path = os.path.join(config.analysis_source_dir, item)

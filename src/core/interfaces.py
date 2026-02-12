@@ -3,6 +3,9 @@ from typing import Any, Dict, List, Optional
 from dataclasses import dataclass, field
 import logging
 
+# 导入统一异常（延迟导入避免循环依赖）
+# from src.core.exceptions import ToolExecutionError, ValidationError
+
 # Configure logging
 logger = logging.getLogger(__name__)
 

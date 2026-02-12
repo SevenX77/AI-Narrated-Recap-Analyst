@@ -21,9 +21,11 @@ from pathlib import Path
 from typing import Optional, Dict, Any, List, Tuple
 
 from src.core.interfaces import BaseTool
-from src.core.schemas_novel import ParagraphSegment, ParagraphSegmentationResult
+from src.core.schemas_novel import ParagraphSegment, ParagraphSegmentationResult, SegmentationOutput
 from src.core.llm_client_manager import get_llm_client, get_model_name
 from src.utils.prompt_loader import load_prompts
+from src.utils.llm_output_parser import LLMOutputParser
+from src.core.exceptions import ToolExecutionError, LLMCallError, ParsingError
 
 logger = logging.getLogger(__name__)
 
@@ -54,18 +56,20 @@ class NovelSegmenter(BaseTool):
         self,
         chapter_content: str,
         chapter_number: int,
+        chapter_title: str = "",
         **kwargs
-    ) -> ParagraphSegmentationResult:
+    ) -> SegmentationOutput:
         """
         执行章节分段
         
         Args:
             chapter_content: 章节文本内容（不包含章节标题行）
             chapter_number: 章节序号
+            chapter_title: 章节标题（可选，用于Markdown生成）
             **kwargs: 其他参数
         
         Returns:
-            ParagraphSegmentationResult: 分段结果
+            SegmentationOutput: 包含JSON和Markdown的完整输出
         """
         logger.info(f"Starting segmentation for chapter {chapter_number}")
         logger.info(f"Chapter content length: {len(chapter_content)} chars")
@@ -93,8 +97,8 @@ class NovelSegmenter(BaseTool):
         
         processing_time = time.time() - start_time
         
-        # Step 5: 生成结果
-        result = ParagraphSegmentationResult(
+        # Step 5: 生成JSON结果
+        json_result = ParagraphSegmentationResult(
             chapter_number=chapter_number,
             total_paragraphs=len(paragraphs),
             paragraphs=paragraphs,
@@ -106,10 +110,23 @@ class NovelSegmenter(BaseTool):
             }
         )
         
-        logger.info(f"Segmentation complete: {len(paragraphs)} paragraphs, {processing_time:.2f}s")
-        logger.info(f"Type distribution: {result.metadata['type_distribution']}")
+        # Step 6: 生成简洁版Markdown
+        logger.info("Step 6: Generating markdown output")
+        markdown_content = self._generate_markdown(
+            chapter_number=chapter_number,
+            chapter_title=chapter_title,
+            paragraphs=paragraphs
+        )
         
-        return result
+        logger.info(f"Segmentation complete: {len(paragraphs)} paragraphs, {processing_time:.2f}s")
+        logger.info(f"Type distribution: {json_result.metadata['type_distribution']}")
+        
+        # 返回完整输出
+        return SegmentationOutput(
+            json_result=json_result,
+            markdown_content=markdown_content,
+            llm_raw_output=llm_result_pass2
+        )
     
     def _twopass_llm_segmentation(
         self, 
@@ -205,6 +222,8 @@ class NovelSegmenter(BaseTool):
         """
         解析LLM输出，提取段落行号范围
         
+        使用统一的 LLMOutputParser 工具进行解析。
+        
         LLM输出格式示例：
         - **段落1（B类-事件）**：收音机播报上沪沦陷
           行号：1-5
@@ -214,70 +233,32 @@ class NovelSegmenter(BaseTool):
         
         Returns:
             List[Dict]: 解析后的段落列表
-                [
-                    {
-                        "index": 1,
-                        "type": "B",
-                        "description": "收音机播报上沪沦陷",
-                        "start_line": 1,
-                        "end_line": 5
-                    },
-                    ...
-                ]
+        
+        Raises:
+            ParsingError: 解析失败时抛出
         """
-        paragraphs = []
-        
-        # 正则匹配段落头部
-        # 匹配: - **段落1（B类-事件）**：收音机播报上沪沦陷
-        paragraph_pattern = r'^\- \*\*段落(\d+)（([ABC])类.*?）\*\*：(.+?)$'
-        
-        # 匹配: 行号：1-5
-        line_range_pattern = r'^\s*行号[：:]\s*(\d+)-(\d+)'
-        
-        lines = llm_output.split('\n')
-        current_paragraph = None
-        
-        for line in lines:
-            line_stripped = line.strip()
+        try:
+            # 使用统一的解析工具
+            paragraphs = LLMOutputParser.parse_segmented_output(
+                llm_output=llm_output,
+                paragraph_pattern=r'^\- \*\*段落(\d+)（([ABC])类.*?）\*\*：(.+?)$',
+                range_pattern=r'^\s*行号[：:]\s*(\d+)-(\d+)',
+                range_key="行号",
+                description_group=3,
+                type_group=2
+            )
             
-            # 匹配段落头部
-            para_match = re.match(paragraph_pattern, line_stripped)
-            if para_match:
-                # 保存上一个段落
-                if current_paragraph:
-                    paragraphs.append(current_paragraph)
-                
-                # 创建新段落
-                current_paragraph = {
-                    "index": int(para_match.group(1)),
-                    "type": para_match.group(2),
-                    "description": para_match.group(3).strip(),
-                    "start_line": None,
-                    "end_line": None
-                }
-                continue
+            logger.info(f"✅ 成功解析 {len(paragraphs)} 个段落")
+            return paragraphs
             
-            # 匹配行号范围
-            range_match = re.match(line_range_pattern, line_stripped)
-            if range_match and current_paragraph:
-                current_paragraph["start_line"] = int(range_match.group(1))
-                current_paragraph["end_line"] = int(range_match.group(2))
-                continue
-        
-        # 保存最后一个段落
-        if current_paragraph:
-            paragraphs.append(current_paragraph)
-        
-        logger.info(f"Parsed {len(paragraphs)} paragraphs from LLM output")
-        
-        # 验证解析结果
-        for para in paragraphs:
-            if para.get("start_line") is None or para.get("end_line") is None:
-                logger.warning(f"Paragraph {para['index']} missing line range")
-            else:
-                logger.debug(f"Paragraph {para['index']}: lines {para['start_line']}-{para['end_line']}")
-        
-        return paragraphs
+        except Exception as e:
+            logger.error(f"❌ LLM输出解析失败: {e}")
+            raise ParsingError(
+                message="小说分段解析失败",
+                parser_name="NovelSegmenter",
+                raw_output=llm_output[:200],
+                original_error=e
+            )
     
     def _extract_paragraph_contents(
         self,
@@ -390,3 +371,74 @@ class NovelSegmenter(BaseTool):
         for para in paragraphs:
             distribution[para.type] += 1
         return distribution
+    
+    def _generate_markdown(
+        self,
+        chapter_number: int,
+        chapter_title: str,
+        paragraphs: List[ParagraphSegment]
+    ) -> str:
+        """
+        生成简洁版Markdown（只含分段原文和类型）
+        
+        格式：
+        # 第X章：标题
+        
+        ---
+        
+        ## 段落 1 [B类-事件]
+        
+        （完整段落内容）
+        
+        ---
+        
+        ## 段落 2 [A类-设定]
+        
+        （完整段落内容）
+        
+        ---
+        
+        Args:
+            chapter_number: 章节序号
+            chapter_title: 章节标题
+            paragraphs: 段落列表
+        
+        Returns:
+            str: Markdown格式文本
+        """
+        # 类型映射
+        type_names = {
+            "A": "A类-设定",
+            "B": "B类-事件",
+            "C": "C类-系统"
+        }
+        
+        # 构建Markdown
+        lines = []
+        
+        # 标题
+        if chapter_title:
+            lines.append(f"# 第{chapter_number}章：{chapter_title}")
+        else:
+            lines.append(f"# 第{chapter_number}章")
+        
+        lines.append("")
+        
+        # 遍历段落
+        for para in paragraphs:
+            lines.append("---")
+            lines.append("")
+            
+            # 段落标题
+            type_name = type_names.get(para.type, para.type)
+            lines.append(f"## 段落 {para.index} [{type_name}]")
+            lines.append("")
+            
+            # 段落内容
+            lines.append(para.content)
+            lines.append("")
+        
+        # 末尾分隔符
+        lines.append("---")
+        
+        return '\n'.join(lines)
